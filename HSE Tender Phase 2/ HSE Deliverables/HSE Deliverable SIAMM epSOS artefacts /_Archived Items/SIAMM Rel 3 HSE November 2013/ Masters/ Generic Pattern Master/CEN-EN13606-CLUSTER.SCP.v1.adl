@@ -1,0 +1,267 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.SCP.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131009">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Code for a Cluster Model that allows the registration of:
+- State
+- Certainty
+- Absence/presence  (Negation)
+
+PM: Set the flag in the 13606-1 attribute when not a default value
+
+
+This ClusterModel can be used in any place in the SIAMM pattern where needed.
+The most common spot is ResultValues and NamedObject
+">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- SCP
+        parts existence matches {0..1} cardinality matches {0..3; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..1} matches {  -- SCPState
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0015] occurrences matches {0..1} matches {  -- StateComment
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0005] occurrences matches {0..1} matches {  -- StateComment
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0018] occurrences matches {1..1} matches {  -- SCPSValueNT
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0004] occurrences matches {0..1} matches {  -- SCPSValueNT
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"NotExecuted","Intermediate","Final","Deprecated"; "Final"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0007] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0006] occurrences matches {0..1} matches {  -- SCPCertainty
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0021] occurrences matches {0..1} matches {  -- SCPCComment
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0067] occurrences matches {0..1} matches {  -- SCPCComment
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {1..1} matches {  -- SCPCIndicator
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0062] occurrences matches {0..1} matches {  -- SCPCIndicator
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"C","U","CS","US","CM","UM","CV","UV","I"; "C"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0069] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {0..1} matches {  -- SCPPresence/Absence
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0027] occurrences matches {1..1} matches {  -- SCPPAIndicator
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0056] occurrences matches {1..1} matches {  -- SCPPAIndicator
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"Present","Absent"; "Present"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0030] occurrences matches {0..1} matches {  -- SCPPAComment
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0001] occurrences matches {0..1} matches {  -- SCPPAComment
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0064] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0047] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"SCP">
+                    description = <"SCP">
+                >
+                ["at0002"] = <
+                    text = <"SCPState">
+                    description = <"Status
+Each element in an artifact, that contains defines an Information Model, can have a Status attached to it.
+
+There are three STATE MODELS provided.
+	•	The simple one that can be used for for instance the Observation Archetype.
+	•	The one provided by EN13606 in part 3
+	•	The one proposed by OpenEHR
+
+It is proposed to use the Simple and OpenEHR variant.
+
+
+Any item can be Final, Not-Final or Not-Available
+Sometimes there is a more elaborate Sate Model attached to it in the case of Actions.
+
+Is the result: final, preliminary, not available?
+-1=Preliminary
+0= Not available
+1= Final
+">
+                >
+                ["at0006"] = <
+                    text = <"SCPCertainty">
+                    description = <"Certainty
+C= Certain
+U= Uncertain">
+                >
+                ["at0010"] = <
+                    text = <"SCPPresence/Absence">
+                    description = <"Presence/Absence
+
+Coding for Presente or Absense
+
+
+Allowed     P - Present (default)
+          A - Absense
+">
+                >
+                ["at0015"] = <
+                    text = <"StateComment">
+                    description = <"register comments
+">
+                >
+                ["at0018"] = <
+                    text = <"SCPSValueNT">
+                    description = <"Code for the State 
+Mainly used to annotate the results of a process
+See 13606-3 and openEHR 
+
+Codes are:
+Not Executed
+Intermediate
+Final
+Deprecated
+">
+                >
+                ["at0021"] = <
+                    text = <"SCPCComment">
+                    description = <"Document any uncertainty as text.">
+                >
+                ["at0024"] = <
+                    text = <"SCPCIndicator">
+                    description = <"Certain/Uncertain coded as  C/U
+C			=Certain
+U			=Uncertain
+Slightly		=CS, US
+Moderately= CM, UM
+Very		=CV, UV
+Indiferent	=I
+
+
+
+">
+                >
+                ["at0027"] = <
+                    text = <"SCPPAIndicator">
+                    description = <"Codes:
+- Present
+- Absent">
+                >
+                ["at0030"] = <
+                    text = <"SCPPAComment">
+                    description = <"">
+                >
+                ["at0056"] = <
+                    text = <"SCPPAIndicator">
+                    description = <"Codes:
+- Present
+- Absent">
+                >
+                ["at0062"] = <
+                    text = <"SCPCIndicator">
+                    description = <"Certain/Uncertain coded as  C/U
+C			=Certain
+U			=Uncertain
+Slightly		=CS, US
+Moderately= CM, UM
+Very		=CV, UV
+Indiferent	=I">
+                >
+                ["at0067"] = <
+                    text = <"SCPCComment">
+                    description = <"Document any uncertainty as text.">
+                >
+                ["at0001"] = <
+                    text = <"SCPPAComment">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"SCPSValueNT">
+                    description = <"Code for the State 
+Mainly used to annotate the results of a process
+See 13606-3 and openEHR 
+
+Codes are:
+NotExecuted
+Intermediate
+Final
+Deprecated
+">
+                >
+                ["at0005"] = <
+                    text = <"StateComment">
+                    description = <"register comments">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

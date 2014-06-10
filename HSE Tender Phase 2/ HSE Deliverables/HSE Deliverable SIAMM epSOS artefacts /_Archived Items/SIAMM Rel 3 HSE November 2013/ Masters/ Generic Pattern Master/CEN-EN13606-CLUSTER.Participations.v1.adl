@@ -1,0 +1,243 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Participations.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organization"] = <"ERS B.V.">
+        ["email"] = <"">
+        ["name"] = <"GF">
+        ["language"] = <"en-gb English (United Kingdom)">
+        ["date"] = <"20131010">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Participations
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..*} matches {  -- PHealthcareProvider
+                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                    ELEMENT[at0014] occurrences matches {0..1} matches {  -- PHPRole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0001] occurrences matches {0..1} matches {  -- PHPRole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0017] occurrences matches {0..1} matches {  -- PHPCompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0003] occurrences matches {0..1} matches {  -- PHPCompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0020] occurrences matches {0..1} matches {  -- PHPName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0053] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0006] occurrences matches {0..*} matches {  -- POtherEntities
+                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                    ELEMENT[at0023] occurrences matches {0..1} matches {  -- POERole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0004] occurrences matches {0..1} matches {  -- POERole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0026] occurrences matches {0..1} matches {  -- POECompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0005] occurrences matches {0..1} matches {  -- POECompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0029] occurrences matches {0..0} matches {  -- POEName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0054] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {0..*} matches {  -- PSubjectOfCare
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0032] occurrences matches {0..1} matches {  -- PSCRole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0007] occurrences matches {0..1} matches {  -- PSCRole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0035] occurrences matches {0..1} matches {  -- PSCCompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0008] occurrences matches {0..1} matches {  -- PSCCompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0038] occurrences matches {0..1} matches {  -- PSCName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0051] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0011] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Participations">
+                    description = <"Participations">
+                >
+                ["at0002"] = <
+                    text = <"PHealthcareProvider">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"POtherEntities">
+                    description = <"CLUSTER model that codes for the participation of any actor not being the HcP or SubjectOfCare.
+">
+                >
+                ["at0010"] = <
+                    text = <"PSubjectOfCare">
+                    description = <"CLUSTER model that codes for the participation of an Patient.
+In the case of an ENTRY this will be Patient that is involved as an actor in the treatment process that is documented.
+Most often the name of the patient is not recorded in 13606 conformant systems for privacy reasons. There are conditions that the name of the patient must be recorded.
+">
+                >
+                ["at0014"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+">
+                >
+                ["at0017"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0020"] = <
+                    text = <"PHPName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0023"] = <
+                    text = <"POERole">
+                    description = <"">
+                >
+                ["at0026"] = <
+                    text = <"POECompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc.
+">
+                >
+                ["at0029"] = <
+                    text = <"POEName">
+                    description = <"Codes for the subordinate entity, when needed, via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0032"] = <
+                    text = <"PSCRole">
+                    description = <"Codes for the Role the entity has.
+PSC=Subject of Care">
+                >
+                ["at0035"] = <
+                    text = <"PSCCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0038"] = <
+                    text = <"PSCName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0001"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+">
+                >
+                ["at0003"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0004"] = <
+                    text = <"POERole">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"POECompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc.
+">
+                >
+                ["at0007"] = <
+                    text = <"PSCRole">
+                    description = <"Codes for the Role the entity has.
+PSC=Subject of Care">
+                >
+                ["at0008"] = <
+                    text = <"PSCCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

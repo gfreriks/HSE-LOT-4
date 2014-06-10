@@ -1,0 +1,90 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOBatchSerialNumbers.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Code for identifying Serial/batch numbers
+">
+            keywords = <"SIAMM","NamedObject","NonLivingObject">
+            copyright = <"ERS B.V.">
+            use = <"Use in SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOBatchSerialNumbers
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NONLOSerialNumber
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0007] occurrences matches {1..1} matches {  -- NONLOSerialNumber
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NONLOSerialNumberType
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0008] occurrences matches {1..1} matches {  -- NONLOSerialNumberType
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0009] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOBatchSerialNumbers">
+                    description = <"NONLOBatchSerialNumbers">
+                >
+                ["at0002"] = <
+                    text = <"NONLOSerialNumber">
+                    description = <"Code for the Serial / Batch numbers
+">
+                >
+                ["at0005"] = <
+                    text = <"NONLOSerialNumberType">
+                    description = <"Serial Batch number type
+">
+                >
+                ["at0007"] = <
+                    text = <"NONLOSerialNumber">
+                    description = <"Code for the Serial / Batch numbers">
+                >
+                ["at0008"] = <
+                    text = <"NONLOSerialNumberType">
+                    description = <"Serial Batch number type
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

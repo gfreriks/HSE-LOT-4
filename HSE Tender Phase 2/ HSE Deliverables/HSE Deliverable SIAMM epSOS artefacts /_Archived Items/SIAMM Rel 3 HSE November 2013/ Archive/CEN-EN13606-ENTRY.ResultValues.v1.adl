@@ -1,0 +1,629 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.ResultValues.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS">
+        ["name"] = <"GF">
+        ["date"] = <"20130924">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Part of the SIAMM Generic Pattern that holds part of the Name-Result pair: the Results">
+            keywords = <"SIAMM","ENTRY","ResultValues">
+            copyright = <"ERS B.V.">
+            use = <"As part of SIAMM">
+            misuse = <"*** RNFraction is in two aternative variants. A decision is pending ***">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- ResultValues
+        items existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+            ELEMENT[at0001] occurrences matches {0..1} matches {  -- ResultCodedtext
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0012] occurrences matches {1..1} matches {  -- CODED_TEXT
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- ResultComments
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0017] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0003] occurrences matches {0..1} matches {  -- ResultNumeric
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    CLUSTER[at0018] occurrences matches {1..1} matches {  -- RNValue
+                        parts existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                            ELEMENT[at0045] occurrences matches {1..1} matches {  -- RNValueNumber
+                                value existence matches {0..1} matches {
+                                    REAL[at0060] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0048] occurrences matches {0..1} matches {  -- RNVNumberPrecision
+                                value existence matches {0..1} matches {
+                                    INT[at0061] occurrences matches {0..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0051] occurrences matches {0..1} matches {  -- RNVNumberScale
+                                value existence matches {0..1} matches {
+                                    INT[at0062] occurrences matches {0..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0054] occurrences matches {0..1} matches {  -- RNVNumberSensitivity
+                                value existence matches {0..1} matches {
+                                    PQ[at0063] occurrences matches {0..1} matches {  -- PQ
+                                        units existence matches {1..1} matches {
+                                            CS[at0066] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"%"}
+                                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0057] occurrences matches {0..1} matches {  -- RNVNumberSpecificity
+                                value existence matches {0..1} matches {
+                                    PQ[at0067] occurrences matches {0..1} matches {  -- PQ
+                                        units existence matches {1..1} matches {*}
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0016] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0022] occurrences matches {0..1} matches {  -- RNAllowedRange
+                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                            ELEMENT[at0078] occurrences matches {0..1} matches {  -- RNARLowerBound
+                                value existence matches {0..1} matches {
+                                    REAL[at0015] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0081] occurrences matches {0..1} matches {  -- RNARLowerBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0025] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0084] occurrences matches {0..1} matches {  -- RNARUpperBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0028] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0087] occurrences matches {0..1} matches {  -- RNARUpperBound
+                                value existence matches {0..1} matches {
+                                    REAL[at0027] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0023] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0026] occurrences matches {0..1} matches {  -- RNSignalRange
+                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                            ELEMENT[at0102] occurrences matches {0..1} matches {  -- RNSRLowerBound
+                                value existence matches {0..1} matches {
+                                    REAL[at0038] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0105] occurrences matches {0..1} matches {  -- RNSRLowerBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0039] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0108] occurrences matches {0..1} matches {  -- RNSRUpperBound
+                                value existence matches {0..1} matches {
+                                    REAL[at0040] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0111] occurrences matches {0..1} matches {  -- RNSRUpperBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0041] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0004] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0030] occurrences matches {0..1} matches {  -- RNNormalRange
+                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                            ELEMENT[at0117] occurrences matches {0..1} matches {  -- RNNRLowerBound
+                                value existence matches {0..1} matches {
+                                    REAL[at0033] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0120] occurrences matches {0..1} matches {  -- RNNRLowerBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0035] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0123] occurrences matches {0..1} matches {  -- RNNRUpperBoundComment
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0037] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0126] occurrences matches {0..1} matches {  -- RNNRUpperBound
+                                value existence matches {0..1} matches {
+                                    INT[at0036] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0133] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0034] occurrences matches {0..1} matches {  -- RNFraction
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0065] occurrences matches {1..1} matches {  -- RNNumberNominator
+                                value existence matches {0..1} matches {
+                                    INT[at0032] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0068] occurrences matches {1..1} matches {  -- RNNumberDenominator
+                                value existence matches {0..1} matches {
+                                    INT[at0029] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0014] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0013] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {  -- SlotMultimedia
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {  -- SlotSemanticOrdinal
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0007] occurrences matches {0..1} matches {  -- SlotLinks
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..1} matches {  -- SlotCalculation
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0009] occurrences matches {0..1} matches {  -- SlotComplexCusterMoodelName
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0010] occurrences matches {0..1} matches {  -- SlotSCP
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            CLUSTER[at0011] occurrences matches {0..1} matches {  -- RNStDev
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0019] occurrences matches {1..1} matches {  -- RNStDevResult
+                        value existence matches {0..1} matches {
+                            INT[at0043] occurrences matches {1..1} matches {  -- INT
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {1..1} matches {  -- RNStDevNumber
+                        value existence matches {0..1} matches {
+                            REAL[at0044] occurrences matches {1..1} matches {  -- REAL
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0031] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0001"] = <
+                    text = <"ResultCodedtext">
+                    description = <"Holds the result as Codedtext">
+                >
+                ["at0002"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0003"] = <
+                    text = <"ResultNumeric">
+                    description = <"Holds one numeric result
+
+Codes for:
+	•	Numeric result including
+	•	Units of Measurement via Data Type
+	•	Normal range: the range of normal values as publsihed
+	•	Signal range: the used to generate alerts
+	•	Allowed range: the Multitude that can be entered as number
+
+The WHAT: NamedObject will hold the Name attached to the numeric result.
+e.g.
+WHAT:NamedObject...NameType=‘Finding:Lab-Test’
+WHAT:NamedObject...Name=‘Glucose concentration’
+WHAT:ResultValueNumericResult=’7.4’, Units=’mM/L’
+">
+                >
+                ["at0005"] = <
+                    text = <"SlotMultimedia">
+                    description = <"Holds the Multimedia slot">
+                >
+                ["at0006"] = <
+                    text = <"SlotSemanticOrdinal">
+                    description = <"Holds the slot for the SemanticOrdinal to record semi-quantitative result">
+                >
+                ["at0007"] = <
+                    text = <"SlotLinks">
+                    description = <"Holds the slot to Links, that connect to information sources outside the archetype">
+                >
+                ["at0008"] = <
+                    text = <"SlotCalculation">
+                    description = <"Holds the slot for a calculated result, including the lagorithm">
+                >
+                ["at0009"] = <
+                    text = <"SlotComplexCusterMoodelName">
+                    description = <"Holds a SLOT to any ComplexCLusterModel that defines specific data elements">
+                >
+                ["at0010"] = <
+                    text = <"SlotSCP">
+                    description = <"Holds  SLOT to document: Status, Certainty and Precense">
+                >
+                ["at0018"] = <
+                    text = <"RNValue">
+                    description = <"Holds the numeric value with its Units of Measurement
+
+CLUSTER model that codes for a Number and Units of Measurement HL7: UCAM
+And Number attributes such as:
+- Precision
+- Scale
+- Sensitivity
+- Specificity
+">
+                >
+                ["at0022"] = <
+                    text = <"RNAllowedRange">
+                    description = <"CLUSTER model that codes for the Allowed range in an artefact for a Number.
+It is a course grained number that the AOM allws to be specified and sets allowed numbers.
+It specifies a constraint at design time.
+A constraint that can be refined in Templates and at run-time depending on circumstances.
+E.G
+  Systolic Blood Pressure
+Number 120 mmHg
+Magnitude: 0-1000
+Results like -10 or 2000 are NOT allowed.
+">
+                >
+                ["at0026"] = <
+                    text = <"RNSignalRange">
+                    description = <"CLUSTER model that codes for a range of values that can give rise to a signal when the number is outside this range
+">
+                >
+                ["at0030"] = <
+                    text = <"RNNormalRange">
+                    description = <"CLUSTER model that codes for a range of normal values
+">
+                >
+                ["at0034"] = <
+                    text = <"RNFraction">
+                    description = <"The number/result as a fraction = Nominator / Denominator, both as Integers
+E.g. 2 out of 5, 1 on a scale 1 out of 10,
+When multiplied by 100 it is equal to Percentage.
+Percentage is defined in HL7 UCUM
+">
+                >
+                ["at0065"] = <
+                    text = <"RNNumberNominator">
+                    description = <"">
+                >
+                ["at0068"] = <
+                    text = <"RNNumberDenominator">
+                    description = <"The Denominator of the pair
+">
+                >
+                ["at0078"] = <
+                    text = <"RNARLowerBound">
+                    description = <"Codes for the Allowed range Upper bound 
+">
+                >
+                ["at0081"] = <
+                    text = <"RNARLowerBoundComment">
+                    description = <"">
+                >
+                ["at0084"] = <
+                    text = <"RNARUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound ">
+                >
+                ["at0087"] = <
+                    text = <"RNARUpperBound">
+                    description = <"Codes for the Allowed range Upper bound 
+">
+                >
+                ["at0102"] = <
+                    text = <"RNSRLowerBound">
+                    description = <"Codes for the Signal range lower bound using using an Archetype slot to ResultNumericValue
+">
+                >
+                ["at0105"] = <
+                    text = <"RNSRLowerBoundComment">
+                    description = <"Codes for comment on the Signal range Lower bound 
+">
+                >
+                ["at0108"] = <
+                    text = <"RNSRUpperBound">
+                    description = <"Codes for the Signal range Upper bound using using an 
+">
+                >
+                ["at0111"] = <
+                    text = <"RNSRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0117"] = <
+                    text = <"RNNRLowerBound">
+                    description = <"Codes for the Normal range lower bound 
+">
+                >
+                ["at0120"] = <
+                    text = <"RNNRLowerBoundComment">
+                    description = <"Codes for comment on the Normal range Lower bound 
+">
+                >
+                ["at0123"] = <
+                    text = <"RNNRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0126"] = <
+                    text = <"RNNRUpperBound">
+                    description = <"Codes for the Normal range Upper bound ">
+                >
+                ["at0011"] = <
+                    text = <"RNStDev">
+                    description = <"
+Mean ± x StDev">
+                >
+                ["at0019"] = <
+                    text = <"RNStDevResult">
+                    description = <"The resulting standard deviation
+">
+                >
+                ["at0024"] = <
+                    text = <"RNStDevNumber">
+                    description = <"The number of standard deviations that is reported about.
+
+Mean ± x StDev">
+                >
+                ["at0012"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0025"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0027"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0028"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0029"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0032"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0033"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0035"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0036"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0037"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0038"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0039"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0040"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0041"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0043"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0044"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0045"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0048"] = <
+                    text = <"RNVNumberPrecision">
+                    description = <"Codes for the Precision of the number
+Precision is the number of digits in a number. Scale is the number of digits to the right of the decimal point in a number. For example, the number 123.45 has a precision of 5 and a scale of 2.
+WIKIhttp://en.wikipedia.org/wiki/Significant_figures">
+                >
+                ["at0051"] = <
+                    text = <"RNVNumberScale">
+                    description = <"Codes for the Scale of a result
+
+Precision is the number of digits in a number. Scale is the number of digits to the right of the decimal point in a number. For example, the number 123.45 has a precision of 5 and a scale of 2.
+">
+                >
+                ["at0054"] = <
+                    text = <"RNVNumberSensitivity">
+                    description = <"Codes for the Sensitivity of a result
+
+http://rationalwiki.org/wiki/Sensitivity_and_specificity
+
+Definitions
+Sensitivity is essentially how good a test is at finding something if it's there. It is a measure of how often the test will correctly identify a positive. For example, a blood test for a virus may be as high as 99% or more - meaning that for every 100 infected people testing, 99 or more of them will be correctly identified. This is a good figure to take note of, but doesn't necessarily reflect a test's true effectiveness, as will become apparent.
+Specificity is a measure of how accurate a test is against false positives. A sniffer dog looking for drugs would have a low specificity if it is often lead astray by things that aren't drugs - cosmetics or food, for example. Specificity can be considered as the percentage of times a test will correctly identify a negative result. Again, this can be 99% or more for good tests, although a particularly unruly and easily distracted sniffer dog would be much, much lower.
+">
+                >
+                ["at0057"] = <
+                    text = <"RNVNumberSpecificity">
+                    description = <"Codes for the Specificity of a result
+
+http://rationalwiki.org/wiki/Sensitivity_and_specificity
+
+Definitions
+	▪	Sensitivity is essentially how good a test is at finding something if it's there. It is a measure of how often the test will correctly identify a positive. For example, a blood test for a virus may be as high as 99% or more - meaning that for every 100 infected people testing, 99 or more of them will be correctly identified. This is a good figure to take note of, but doesn't necessarily reflect a test's true effectiveness, as will become apparent.
+	▪	Specificity is a measure of how accurate a test is against false positives. A sniffer dog looking for drugs would have a low specificity if it is often lead astray by things that aren't drugs - cosmetics or food, for example. Specificity can be considered as the percentage of times a test will correctly identify a negative result. Again, this can be 99% or more for good tests, although a particularly unruly and easily distracted sniffer dog would be much, much lower.">
+                >
+                ["at0060"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0061"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0062"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0063"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0067"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

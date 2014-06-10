@@ -1,0 +1,133 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOName.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for ">
+            keywords = <"SIAMM","NamedObject","NonLiving","Name">
+            copyright = <"ERS B.V.">
+            use = <"Use for SIAMM Generic artefact">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOName
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {  -- NONLONameValidity
+                include
+                    archetype_id/value matches {/.LocalisationInTime/}
+            }
+            ELEMENT[at0019] occurrences matches {1..1} matches {  -- NONLOName
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0001] occurrences matches {0..1} matches {  -- NONLOName
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {  -- NONLOReferencedName
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NONLONameType
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0002] occurrences matches {0..1} matches {  -- NONLONameType
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0015"] = <
+                    text = <"NONLONameValidity">
+                    description = <"Codes for validity in time,
+Via A Artefact Slot Reference to Location In Time
+">
+                >
+                ["at0019"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0004"] = <
+                    text = <"NONLOReferencedName">
+                    description = <"Code for the Name of the Non Living Object Type. This can be to a resource/catalogue with more information.via LINKS
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0008"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0001"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0002"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

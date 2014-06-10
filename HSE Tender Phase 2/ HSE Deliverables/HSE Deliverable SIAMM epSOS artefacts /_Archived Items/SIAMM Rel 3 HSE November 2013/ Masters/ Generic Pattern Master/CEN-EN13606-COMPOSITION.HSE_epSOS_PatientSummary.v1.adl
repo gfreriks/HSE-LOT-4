@@ -1,0 +1,308 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.HSE_epSOS_PatientSummary.v3
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131104">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This COMPOSITION (TEMPLATE) defines the superstructure of th epSOS specification (2013) as Interface (exchange) specification">
+            keywords = <"HSE","SAM","Source: epSOS D3.3.2 v0.6 29 10 2012","Subject Area Model">
+            copyright = <"ERS B.V.">
+            use = <"Designed for use in the HSE National Services Framework: Information Architecture :SAM
+To be used as the interface (exchange) specification of the epSOS data set.">
+            misuse = <"Outside the HSE Services Framework.
+Do not use it as persitence/Query specification. This specification must be mapped in order to store and retrieve the normalise infomation.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- HSE epSOS_PatientSummary
+        content existence matches {0..1} cardinality matches {0..3; ordered; unique} matches {
+            SECTION[at0001] occurrences matches {0..1} matches {  -- epSOSPatientData
+                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                    SECTION[at0018] occurrences matches {0..1} matches {  -- ePDIdentification
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0019] occurrences matches {0..1} matches {  -- ePDPersonalInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0020] occurrences matches {0..1} matches {  -- ePDContactInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0022] occurrences matches {0..1} matches {  -- ePDInsuranceInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+            SECTION[at0002] occurrences matches {0..1} matches {  -- epSOSPatientClinicalData
+                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                    SECTION[at0003] occurrences matches {0..1} matches {  -- ePCDAlerts
+                        members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                            SECTION[at0011] occurrences matches {0..1} matches {  -- ePCDAAllergies
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0032] occurrences matches {0..1} matches {  -- ePCDIntolelrances
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0004] occurrences matches {0..1} matches {  -- ePCDHistoryOfPastIllness
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            SECTION[at0023] occurrences matches {0..1} matches {  -- ePCDHPIVaccinations
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0024] occurrences matches {0..1} matches {  -- ePCDHPISurgicalProcedures
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0025] occurrences matches {0..1} matches {  -- ePCDHPIInactiveProblems
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0005] occurrences matches {0..1} matches {  -- ePCDMedicalProblems
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            SECTION[at0026] occurrences matches {0..1} matches {  -- ePCDMPListCurrentProblemsDiagnosis
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0027] occurrences matches {0..1} matches {  -- ePCDMPMedicalDevicesImplants
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0028] occurrences matches {0..1} matches {  -- ePCDMPAutonomyInvalidity
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0029] occurrences matches {0..1} matches {  -- ePCDMPSurgicalProcedures
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0030] occurrences matches {0..1} matches {  -- ePCDMPTreatmentRecommendations
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0006] occurrences matches {0..1} matches {  -- ePCDMedicationSummary
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0007] occurrences matches {0..1} matches {  -- ePCSSocialHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0008] occurrences matches {0..1} matches {  -- ePCDPregnancyHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0009] occurrences matches {0..1} matches {  -- ePCDPhysicalFindings
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0010] occurrences matches {0..1} matches {  -- ePCDDIagnositicTests
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+            SECTION[at0012] occurrences matches {0..1} matches {  -- epSOSPatientSummaryData
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    SECTION[at0014] occurrences matches {0..1} matches {  -- ePSDSendingCountryA
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0015] occurrences matches {0..1} matches {  -- ePSDPatientSummary
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0016] occurrences matches {0..1} matches {  -- ePSDAuthor
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0017] occurrences matches {0..1} matches {  -- ePSDLegalEntity
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CONTSYS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"HSE epSOS_PatientSummary">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"epSOSPatientData">
+                    description = <"All the data in this section will be modelled in one ENTRY: NamedObject.
+
+For reference the epSOS catagories are included (0-0)">
+                >
+                ["at0002"] = <
+                    text = <"epSOSPatientClinicalData">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ePCDAlerts">
+                    description = <"Allergie and Intolelrances">
+                >
+                ["at0004"] = <
+                    text = <"ePCDHistoryOfPastIllness">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"ePCDMedicalProblems">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"ePCDMedicationSummary">
+                    description = <"PM; ENTRY MedicinalProductDispensations
+
+List of current medicines.
+(All prescribed medicine whose period of time indicated for the treatment has not yet expired whether it has been dispensed or not.).
+
+Active Ingerdient, Active ingredient code, Strength, Pharmaceutical Dose form, Number of Units per Intake, Ferquency of Intakes, Duration of Treatment">
+                >
+                ["at0007"] = <
+                    text = <"ePCSSocialHistory">
+                    description = <"PM; ENTRY SocialHistoryObservations
+
+Social history Observations( realted to Smoking, Alcohol, Diet), Reference data range">
+                >
+                ["at0008"] = <
+                    text = <"ePCDPregnancyHistory">
+                    description = <"PM; ENTRY Pregnancy ??? Expected date
+
+Expected data of delivery">
+                >
+                ["at0009"] = <
+                    text = <"ePCDPhysicalFindings">
+                    description = <"VItalSigns:ENRTIE  Blood Pressure (Systolic and DIastolic)
+
+Systolic, Diastolic, Data of measurement">
+                >
+                ["at0010"] = <
+                    text = <"ePCDDIagnositicTests">
+                    description = <"PM; ENTRY Observation:diagnositc:Blood Group
+
+Result of Blood group, Date of measurement">
+                >
+                ["at0012"] = <
+                    text = <"epSOSPatientSummaryData">
+                    description = <"pm: much of this info will be dealth with in the 13606 Reference Model
+
+Country, Summary creation date, Last Update, Author, Legalentity">
+                >
+                ["at0014"] = <
+                    text = <"ePSDSendingCountryA">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"ePSDPatientSummary">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"ePSDAuthor">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"ePSDLegalEntity">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"ePDIdentification">
+                    description = <"Country ID, unique for the patient in that country. Example: ID for United Kingdom patient">
+                >
+                ["at0019"] = <
+                    text = <"ePDPersonalInformation">
+                    description = <"Full Name, Date of Birth, Gender">
+                >
+                ["at0020"] = <
+                    text = <"ePDContactInformation">
+                    description = <"Address, Telephone numbre, e-Mail Address, Preferred HcP/Legal organisation contact">
+                >
+                ["at0022"] = <
+                    text = <"ePDInsuranceInformation">
+                    description = <"Insurance number">
+                >
+                ["at0011"] = <
+                    text = <"ePCDAAllergies">
+                    description = <"PM: ENTRY:Allergy
+
+Description, Allergy description id Code, Onset Date, Agent id Code">
+                >
+                ["at0023"] = <
+                    text = <"ePCDHPIVaccinations">
+                    description = <"PM ENTRY: Vaccinations
+
+Vaccination (disease), Brand name, Vaccination ID Code, Vaccination Date">
+                >
+                ["at0024"] = <
+                    text = <"ePCDHPISurgicalProcedures">
+                    description = <"PM; ENTRYInterventions
+
+Procedures prior to the past 6 months
+Procedure description, Procedure ID Code, Prcedure execution Date">
+                >
+                ["at0025"] = <
+                    text = <"ePCDHPIInactiveProblems">
+                    description = <"PN; ENTRY: Problems
+List of Resolved, Closed, or Inactive problems
+
+Problem description, Problem ID, Onset time, End date">
+                >
+                ["at0026"] = <
+                    text = <"ePCDMPListCurrentProblemsDiagnosis">
+                    description = <"PM: ENTRY Diagnositic Inferences
+
+Problem/diagnosis description, Problem ID Code, Onset time">
+                >
+                ["at0027"] = <
+                    text = <"ePCDMPMedicalDevicesImplants">
+                    description = <"PM: ENTRY: Devices/Implante
+
+Device and Implant description, Device ID code, Implantation date
+">
+                >
+                ["at0028"] = <
+                    text = <"ePCDMPAutonomyInvalidity">
+                    description = <"PM; ENTRY ????
+
+Autonomy description, Invalidiy Id">
+                >
+                ["at0029"] = <
+                    text = <"ePCDMPSurgicalProcedures">
+                    description = <"PM: ENTRY Surigal Procedures
+
+Major surgical procedures in the past 6 months
+
+Prodedure description, Procedure Id, Procedure date">
+                >
+                ["at0030"] = <
+                    text = <"ePCDMPTreatmentRecommendations">
+                    description = <"pm: ENTRY TreatmentPlans/Recommendations ???
+
+Recommendation description, Recommendation It">
+                >
+                ["at0032"] = <
+                    text = <"ePCDIntolelrances">
+                    description = <"Description, Allergy description id Code, Onset Date, Agent id Code">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["CONTSYS"] = <
+            items = <
+                ["at0000"] = <[CONTSYS::PatientSummary]>
+                ["at0001"] = <[CONTSYS::SubjectOfCare]>
+            >
+        >
+    >
+    constraint_binding = <
+    >
