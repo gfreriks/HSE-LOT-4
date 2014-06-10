@@ -1,0 +1,373 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.LocalisationInPatientSystem.v2
+
+concept
+    [at0230]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"Gerard Freriks">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20140220">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    CLUSTER[at0230] occurrences matches {0..1} matches {  -- LocalisationInPatientSystem
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            ELEMENT[at0286] occurrences matches {0..1} matches {  -- LIPWholePerson
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0287] occurrences matches {0..1} matches {  -- LIPWholePerson
+                        codedValue existence matches {1..1} matches {
+                            CD[at0288] occurrences matches {0..1} matches {  -- WholePerson
+                                codeValue existence matches {0..1} matches {*}
+                            }
+                            CD[at0289] occurrences matches {0..1} matches {  -- PartofPerson
+                                codeValue existence matches {0..1} matches {*}
+                            }
+                        }
+                        originalText existence matches {0..1} matches {"Whole","NotWhole"; "Whole"}
+                    }
+                }
+            }
+            ELEMENT[at0290] occurrences matches {0..1} matches {  -- LIPBodyFunctions
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0291] occurrences matches {0..1} matches {  -- LIPBodyFunctions
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0292] occurrences matches {0..1} matches {  -- LIPCellularSystems
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0293] occurrences matches {0..1} matches {  -- LIPCellularSystems
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0294] occurrences matches {0..1} matches {  -- LIPBioChemistry
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0295] occurrences matches {0..1} matches {  -- LIPBioChemistry
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0296] occurrences matches {0..1} matches {  -- LIPGenetics
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0297] occurrences matches {0..1} matches {  -- LIPGenetics
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0298] occurrences matches {0..1} matches {  -- LIPEnvironments
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0299] occurrences matches {0..1} matches {  -- LIPEnvironments
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0300] occurrences matches {0..1} matches {  -- LIPBodyParts
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0301] occurrences matches {0..1} matches {  -- LIPBodyPart
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0302] occurrences matches {0..1} matches {  -- LIPBodyPart
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {
+                                    [ac0116]
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0303] occurrences matches {0..*} matches {  -- LIPBodyPartLocalisation
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0304] occurrences matches {0..1} matches {  -- LIPBodyPartLocalisation
+                                codedValue existence matches {1..1} matches {
+                                    CD[at0305] occurrences matches {0..1} matches {  -- Left
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0125]
+                                        }
+                                    }
+                                    CD[at0306] occurrences matches {0..1} matches {  -- Right
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0132]
+                                        }
+                                    }
+                                    CD[at0307] occurrences matches {0..1} matches {  -- Frontal
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0118]
+                                        }
+                                    }
+                                    CD[at0308] occurrences matches {0..1} matches {  -- Posterior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0133]
+                                        }
+                                    }
+                                    CD[at0309] occurrences matches {0..1} matches {  -- Superior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0136]
+                                        }
+                                    }
+                                    CD[at0310] occurrences matches {0..1} matches {  -- Inferior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0121]
+                                        }
+                                    }
+                                }
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0223] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0219] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0230"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"LocalisationInPatientSystem">
+                >
+                ["at0286"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+=> NO SNOMED CODE for Whole person <=
+
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0287"] = <
+                    text = <"LIPWholePerson">
+                    description = <"=> NO SNOMED CODE for 'Whole person' and 'Not Whole person' <=
+
+Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NWWhole">
+                >
+                ["at0288"] = <
+                    text = <"WholePerson">
+                    description = <"A default created CD">
+                >
+                ["at0289"] = <
+                    text = <"PartofPerson">
+                    description = <"A default created CD">
+                >
+                ["at0290"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"=> There is NO LOINC PRIMITIVE for ' Physiology' <=
+
+Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0291"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0292"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"=> There is NO LOJNC pRIMITIVE for ' cellular' <=
+
+Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0293"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0294"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"=> There is NO LOINC PRIMITIVE for 'Chemistry' <=
+
+Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0295"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0296"] = <
+                    text = <"LIPGenetics">
+                    description = <"=> There is NO LOINC PRIMITIVE for 'Genetics' <=
+
+Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0297"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0298"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0299"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0300"] = <
+                    text = <"LIPBodyParts">
+                    description = <"Codes for the Body part and localization">
+                >
+                ["at0301"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0302"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0303"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the relative location:
+
+- Left		= Left of Sagitalplane
+- Right		= Right of Sagitalplane
+- Frontal	= In front of Coronal plane
+- Posterior	= Behind the Coronal Plane
+- Superior	= Above Travelsal plane
+- Inferior	= Below Travesal plane
+
+">
+                >
+                ["at0304"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Positions in the body">
+                >
+                ["at0305"] = <
+                    text = <"Left">
+                    description = <"Let of the sagital plane">
+                >
+                ["at0306"] = <
+                    text = <"Right">
+                    description = <"Right of the sgaital plane">
+                >
+                ["at0307"] = <
+                    text = <"Frontal">
+                    description = <"">
+                >
+                ["at0308"] = <
+                    text = <"Posterior">
+                    description = <"">
+                >
+                ["at0309"] = <
+                    text = <"Superior">
+                    description = <"">
+                >
+                ["at0310"] = <
+                    text = <"Inferior">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0287"] = <[SNOMED-CT::125676002]>
+                ["at0288"] = <[SNOMED-CT::261188006]>
+                ["at0293"] = <[SNOMED-CT::362837007]>
+                ["at0297"] = <[SNOMED-CT::67271001]>
+                ["at0299"] = <[SNOMED-CT::276339004]>
+                ["at0230"] = <[SNOMED-CT::116154003],[SNOMED-CT::246267002]>
+                ["at0290"] = <[SNOMED-CT::1360005]>
+                ["at0300"] = <[SNOMED-CT::38866009]>
+                ["at0301"] = <[SNOMED-CT::38866009]>
+                ["at0302"] = <[SNOMED-CT::38866009]>
+                ["at0307"] = <[SNOMED-CT::81654009]>
+                ["at0310"] = <[SNOMED-CT::261089000]>
+                ["at0306"] = <[SNOMED-CT::24028007]>
+                ["at0308"] = <[SNOMED-CT::255551008]>
+                ["at0303"] = <[SNOMED-CT::246267002]>
+                ["at0292"] = <[SNOMED-CT::362837007]>
+                ["at0298"] = <[SNOMED-CT::276339004]>
+                ["at0296"] = <[SNOMED-CT::67271001]>
+                ["at0286"] = <[SNOMED-CT::125676002]>
+                ["at0294"] = <[SNOMED-CT::80534008]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0230"] = <[SIAMMR3::LocalisationInPatientSystem]>
+                ["at0290"] = <[SIAMMR3::LIPBodyFunctions]>
+                ["at0300"] = <[SIAMMR3::LIPBodyParts]>
+                ["at0301"] = <[SIAMMR3::LIPBodyPart]>
+                ["at0303"] = <[SIAMMR3::LIPBodyPartLocalisation]>
+                ["at0292"] = <[SIAMMR3::LIPCellularSystems]>
+                ["at0298"] = <[SIAMMR3::LIPEnvironments]>
+                ["at0296"] = <[SIAMMR3::LIPGenetics]>
+                ["at0286"] = <[SIAMMR3::LIPWholePerson]>
+                ["at0294"] = <[SIAMMR3::LIPBioChemistry]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0301"] = <[LOINC::65737-9]>
+                ["at0303"] = <[LOINC::71521-9]>
+                ["at0298"] = <[LOINC::61134-3]>
+                ["at0286"] = <[LOINC::67746-8]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

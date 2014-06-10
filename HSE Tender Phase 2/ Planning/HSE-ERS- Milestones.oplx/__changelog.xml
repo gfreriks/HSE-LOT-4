@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.1</version>
+  <task-change-set user="GF" date="2013-09-23T13:09:56.393Z" timestamp="2013-09-23T13:09:56.393Z">
+    <change idref="t63" to="t-1" to-position="0" resolved="yes">
+      <change idref="t63" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t63" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t63" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-16T06:00:00.000Z"/>
+      <change idref="t63" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t63" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t63" attribute="title" type="string" to="QuickOff"/>
+    </change>
+    <change idref="t2" to="t-1" to-position="2" resolved="yes">
+      <change idref="t2" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t2" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t2" attribute="title" type="string" to="Part 2"/>
+    </change>
+    <change idref="t3" to="t-1" to-position="3" resolved="yes">
+      <change idref="t3" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t3" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t3" attribute="title" type="string" to="Part 3"/>
+    </change>
+    <change idref="t4" to="t-1" to-position="4" resolved="yes">
+      <change idref="t4" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t4" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t4" attribute="title" type="string" to="Part 4"/>
+    </change>
+    <change idref="t1" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t1" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
+    <change idref="t1" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="t1" attribute="title" type="string" from="Task 1" to="Part 1" resolved="yes"/>
+    <change idref="t1" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
+    <change idref="t1" attribute="staticCost" type="real" from="0" resolved="yes"/>
+    <change idref="t1" attribute="effort" type="real" from="28800" resolved="yes"/>
+    <change idref="t1" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
+    <change idref="t1" attribute="scheduleType" type="real" from="0" resolved="yes"/>
+    <change idref="t1" attribute="internalAssignments" type="string" from="" resolved="yes"/>
+    <change idref="t1" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
+    <change idref="t1" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
+    <change idref="t30" to="t1" to-position="0" resolved="yes">
+      <change idref="t30" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t30" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t30" attribute="title" type="string" to="Document Part 1"/>
+    </change>
+    <change idref="t53" to="t3" to-position="0" resolved="yes">
+      <change idref="t53" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t53" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t53" attribute="title" type="string" to="Document Part 3"/>
+    </change>
+    <change idref="t61" to="t4" to-position="0" resolved="yes">
+      <change idref="t61" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t61" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t61" attribute="title" type="string" to="Document Part 4"/>
+    </change>
+    <change idref="t31" to="t30" to-position="0" resolved="yes">
+      <change idref="t31" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t31" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t5" to="t30" to-position="1" resolved="yes">
+      <change idref="t5" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t5" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t5" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-16T12:45:00.000Z"/>
+      <change idref="t5" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t5" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t5" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t9" to="t30" to-position="2" resolved="yes">
+      <change idref="t9" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t9" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t9" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-29T13:00:00.000Z"/>
+      <change idref="t9" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t9" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t9" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t10" to="t30" to-position="3" resolved="yes">
+      <change idref="t10" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t10" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t10" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-11T09:30:00.000Z"/>
+      <change idref="t10" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t10" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t10" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t11" to="t30" to-position="4" resolved="yes">
+      <change idref="t11" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t11" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t11" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-18T12:45:00.000Z"/>
+      <change idref="t11" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t11" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t11" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t12" to="t30" to-position="5" resolved="yes">
+      <change idref="t12" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t12" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t12" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-29T12:30:00.000Z"/>
+      <change idref="t12" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t12" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t12" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t13" to="t30" to-position="6" resolved="yes">
+      <change idref="t13" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t13" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t13" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-05T09:30:00.000Z"/>
+      <change idref="t13" attribute="noLaterThanConstraintDate" type="date" to="2013-12-05T23:00:00.000Z"/>
+      <change idref="t13" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t13" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t13" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t54" to="t53" to-position="0" resolved="yes">
+      <change idref="t54" attribute="effort" type="real" from="28800" to="1584000"/>
+      <change idref="t54" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t47" to="t53" to-position="1" resolved="yes">
+      <change idref="t47" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t47" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t47" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t47" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t47" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t48" to="t53" to-position="2" resolved="yes">
+      <change idref="t48" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t48" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t48" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t48" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t48" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t49" to="t53" to-position="3" resolved="yes">
+      <change idref="t49" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t49" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t49" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t49" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t49" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t50" to="t53" to-position="4" resolved="yes">
+      <change idref="t50" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t50" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t50" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t50" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t50" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t51" to="t53" to-position="5" resolved="yes">
+      <change idref="t51" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t51" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t51" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t51" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t51" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t52" to="t53" to-position="6" resolved="yes">
+      <change idref="t52" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t52" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t52" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-31T07:00:00.000Z"/>
+      <change idref="t52" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t52" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t52" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t62" to="t61" to-position="0" resolved="yes">
+      <change idref="t62" attribute="effort" type="real" from="28800" to="1584000"/>
+      <change idref="t62" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t55" to="t61" to-position="1" resolved="yes">
+      <change idref="t55" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t55" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t55" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t55" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t55" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t56" to="t61" to-position="2" resolved="yes">
+      <change idref="t56" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t56" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t56" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t56" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t56" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t57" to="t61" to-position="3" resolved="yes">
+      <change idref="t57" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t57" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t57" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t57" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t57" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t58" to="t61" to-position="4" resolved="yes">
+      <change idref="t58" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t58" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t58" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t58" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t58" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t59" to="t61" to-position="5" resolved="yes">
+      <change idref="t59" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t59" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t59" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t59" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t59" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t60" to="t61" to-position="6" resolved="yes">
+      <change idref="t60" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t60" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t60" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-31T07:00:00.000Z"/>
+      <change idref="t60" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t60" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t60" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t45" to="t2" to-position="0" resolved="yes">
+      <change idref="t45" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t45" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t45" attribute="title" type="string" to="Document Part 2"/>
+    </change>
+    <change idref="t70" to="t2" to-position="1" resolved="yes">
+      <change idref="t70" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t70" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t64" to="t2" to-position="2" resolved="yes">
+      <change idref="t64" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t64" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t64" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-16T12:45:00.000Z"/>
+      <change idref="t64" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t64" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t64" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t65" to="t2" to-position="3" resolved="yes">
+      <change idref="t65" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t65" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t65" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-29T13:00:00.000Z"/>
+      <change idref="t65" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t65" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t65" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t66" to="t2" to-position="4" resolved="yes">
+      <change idref="t66" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t66" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t66" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-11T09:30:00.000Z"/>
+      <change idref="t66" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t66" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t66" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t67" to="t2" to-position="5" resolved="yes">
+      <change idref="t67" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t67" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t67" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-18T14:15:00.000Z"/>
+      <change idref="t67" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t67" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t67" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t68" to="t2" to-position="6" resolved="yes">
+      <change idref="t68" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t68" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t68" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-29T12:30:00.000Z"/>
+      <change idref="t68" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t68" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t68" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t69" to="t2" to-position="7" resolved="yes">
+      <change idref="t69" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t69" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t69" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-05T12:15:00.000Z"/>
+      <change idref="t69" attribute="noLaterThanConstraintDate" type="date" to="2013-12-05T23:00:00.000Z"/>
+      <change idref="t69" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t69" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t69" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-23T13:45:18.212Z" timestamp="2013-09-23T13:45:18.212Z">
+    <change idref="t69" from="t2" from-position="7" resolved="yes">
+      <change idref="t69" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t69" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t69" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-05T12:15:00.000Z"/>
+      <change idref="t69" attribute="noLaterThanConstraintDate" type="date" to="2013-12-05T23:00:00.000Z"/>
+      <change idref="t69" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t69" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t69" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t68" from="t2" from-position="6" resolved="yes">
+      <change idref="t68" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t68" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t68" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-29T12:30:00.000Z"/>
+      <change idref="t68" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t68" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t68" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t67" from="t2" from-position="5" resolved="yes">
+      <change idref="t67" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t67" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t67" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-18T14:15:00.000Z"/>
+      <change idref="t67" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t67" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t67" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t66" from="t2" from-position="4" resolved="yes">
+      <change idref="t66" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t66" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t66" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-11T09:30:00.000Z"/>
+      <change idref="t66" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t66" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t66" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t65" from="t2" from-position="3" resolved="yes">
+      <change idref="t65" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t65" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t65" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-29T13:00:00.000Z"/>
+      <change idref="t65" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t65" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t65" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t64" from="t2" from-position="2" resolved="yes">
+      <change idref="t64" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t64" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t64" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-16T12:45:00.000Z"/>
+      <change idref="t64" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t64" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t64" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t70" from="t2" from-position="1" resolved="yes">
+      <change idref="t70" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t70" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t9" attribute="noEarlierThanConstraintDate" type="date" from="2013-10-29T13:00:00.000Z" to="2013-11-05T07:00:00.000Z" resolved="yes"/>
+    <change idref="t10" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-11T09:30:00.000Z" to="2013-11-26T07:00:00.000Z" resolved="yes"/>
+    <change idref="t11" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-18T12:45:00.000Z" to="2013-12-18T07:00:00.000Z" resolved="yes"/>
+    <change idref="t12" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-29T12:30:00.000Z" to="2014-01-07T07:00:00.000Z" resolved="yes"/>
+    <change idref="t13" attribute="noLaterThanConstraintDate" type="date" from="2013-12-05T23:00:00.000Z" resolved="yes"/>
+    <change idref="t13" attribute="noEarlierThanConstraintDate" type="date" from="2013-12-05T09:30:00.000Z" to="2014-01-17T09:30:00.000Z" resolved="yes"/>
+    <change idref="t77" to="t45" to-position="0" resolved="yes">
+      <change idref="t77" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t77" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t71" to="t45" to-position="1" resolved="yes">
+      <change idref="t71" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t71" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t71" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-16T12:45:00.000Z"/>
+      <change idref="t71" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t71" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t71" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t72" to="t45" to-position="2" resolved="yes">
+      <change idref="t72" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t72" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t72" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-05T07:00:00.000Z"/>
+      <change idref="t72" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t72" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t72" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t73" to="t45" to-position="3" resolved="yes">
+      <change idref="t73" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t73" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t73" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-26T07:00:00.000Z"/>
+      <change idref="t73" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t73" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t73" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t74" to="t45" to-position="4" resolved="yes">
+      <change idref="t74" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t74" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t74" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-18T07:00:00.000Z"/>
+      <change idref="t74" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t74" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t74" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t75" to="t45" to-position="5" resolved="yes">
+      <change idref="t75" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t75" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t75" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-07T07:00:00.000Z"/>
+      <change idref="t75" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t75" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t75" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t76" to="t45" to-position="6" resolved="yes">
+      <change idref="t76" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t76" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t76" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-17T09:30:00.000Z"/>
+      <change idref="t76" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t76" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t76" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t52" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-31T07:00:00.000Z" to="2014-03-28T07:00:00.000Z" resolved="yes"/>
+    <change idref="t60" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-31T07:00:00.000Z" to="2014-03-28T07:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-23T14:32:10.831Z" timestamp="2013-09-23T14:32:10.831Z">
+    <change idref="t5" attribute="noEarlierThanConstraintDate" type="date" from="2013-10-16T12:45:00.000Z" to="2013-11-04T07:00:00.000Z" resolved="yes"/>
+    <change idref="t9" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-05T07:00:00.000Z" to="2013-11-21T07:00:00.000Z" resolved="yes"/>
+    <change idref="t10" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-26T07:00:00.000Z" to="2013-12-12T07:00:00.000Z" resolved="yes"/>
+    <change idref="t11" attribute="noEarlierThanConstraintDate" type="date" from="2013-12-18T07:00:00.000Z" to="2014-01-03T07:00:00.000Z" resolved="yes"/>
+    <change idref="t12" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-07T07:00:00.000Z" to="2014-01-23T07:00:00.000Z" resolved="yes"/>
+    <change idref="t13" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-17T09:30:00.000Z" to="2014-02-04T07:00:00.000Z" resolved="yes"/>
+    <change idref="t31" attribute="effort" type="real" from="288000" to="2361600" resolved="yes"/>
+    <change idref="t78" to="t45" to-position="7" resolved="yes">
+      <change idref="t78" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t78" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t78" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-12T07:00:00.000Z"/>
+      <change idref="t78" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t78" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t78" attribute="title" type="string" to="Validation Del2.2 Data Dictionary"/>
+    </change>
+    <change idref="t71" attribute="noEarlierThanConstraintDate" type="date" from="2013-10-16T12:45:00.000Z" to="2013-11-04T07:00:00.000Z" resolved="yes"/>
+    <change idref="t72" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-05T07:00:00.000Z" to="2013-11-21T07:00:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="noEarlierThanConstraintDate" type="date" from="2013-11-26T07:00:00.000Z" to="2013-12-12T07:00:00.000Z" resolved="yes"/>
+    <change idref="t74" attribute="noEarlierThanConstraintDate" type="date" from="2013-12-18T07:00:00.000Z" to="2014-01-03T07:00:00.000Z" resolved="yes"/>
+    <change idref="t75" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-07T07:00:00.000Z" to="2014-01-23T07:00:00.000Z" resolved="yes"/>
+    <change idref="t76" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-17T09:30:00.000Z" to="2014-02-04T07:00:00.000Z" resolved="yes"/>
+    <change idref="t77" attribute="effort" type="real" from="288000" to="2361600" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-23T15:31:40.586Z" timestamp="2013-09-23T15:31:40.586Z">
+    <change idref="t12" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-23T07:00:00.000Z" to="2014-01-22T07:00:00.000Z" resolved="yes"/>
+    <change idref="t13" attribute="noEarlierThanConstraintDate" type="date" from="2014-02-04T07:00:00.000Z" to="2014-02-03T07:00:00.000Z" resolved="yes"/>
+    <change idref="t47" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z" resolved="yes"/>
+    <change idref="t48" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z" resolved="yes"/>
+    <change idref="t49" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-18T07:00:00.000Z" resolved="yes"/>
+    <change idref="t50" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z" resolved="yes"/>
+    <change idref="t51" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-18T07:00:00.000Z" resolved="yes"/>
+    <change idref="t54" attribute="effort" type="real" from="1584000" to="3456000" resolved="yes"/>
+    <change idref="t60" from="t61" from-position="6" resolved="yes">
+      <change idref="t60" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t60" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t60" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-28T07:00:00.000Z"/>
+      <change idref="t60" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t60" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t60" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t59" from="t61" from-position="5" resolved="yes">
+      <change idref="t59" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t59" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t59" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t59" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t59" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t58" from="t61" from-position="4" resolved="yes">
+      <change idref="t58" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t58" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t58" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t58" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t58" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t57" from="t61" from-position="3" resolved="yes">
+      <change idref="t57" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t57" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t57" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t57" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t57" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t56" from="t61" from-position="2" resolved="yes">
+      <change idref="t56" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t56" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t56" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t56" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t56" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t55" from="t61" from-position="1" resolved="yes">
+      <change idref="t55" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t55" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t55" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t55" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t55" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t62" from="t61" from-position="0" resolved="yes">
+      <change idref="t62" attribute="effort" type="real" from="28800" to="1584000"/>
+      <change idref="t62" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t86" to="t61" to-position="0" resolved="yes">
+      <change idref="t86" attribute="effort" type="real" from="28800" to="3456000"/>
+      <change idref="t86" attribute="title" type="string" to="Desktop Research"/>
+    </change>
+    <change idref="t80" to="t61" to-position="1" resolved="yes">
+      <change idref="t80" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t80" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z"/>
+      <change idref="t80" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t80" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t80" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t81" to="t61" to-position="2" resolved="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t81" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t81" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z"/>
+      <change idref="t81" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t81" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t81" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t82" to="t61" to-position="3" resolved="yes">
+      <change idref="t82" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t82" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t82" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-18T07:00:00.000Z"/>
+      <change idref="t82" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t82" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t82" attribute="title" type="string" to="DeadLIne Comments"/>
+    </change>
+    <change idref="t83" to="t61" to-position="4" resolved="yes">
+      <change idref="t83" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t83" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t83" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t83" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t83" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t83" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t84" to="t61" to-position="5" resolved="yes">
+      <change idref="t84" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t84" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t84" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-18T07:00:00.000Z"/>
+      <change idref="t84" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t84" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t84" attribute="title" type="string" to="Deadline Comments"/>
+    </change>
+    <change idref="t85" to="t61" to-position="6" resolved="yes">
+      <change idref="t85" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t85" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t85" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-28T07:00:00.000Z"/>
+      <change idref="t85" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t85" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t85" attribute="title" type="string" to="Final draft Document"/>
+    </change>
+    <change idref="t75" attribute="noEarlierThanConstraintDate" type="date" from="2014-01-23T07:00:00.000Z" to="2014-01-21T07:00:00.000Z" resolved="yes"/>
+    <change idref="t76" attribute="noEarlierThanConstraintDate" type="date" from="2014-02-04T07:00:00.000Z" to="2014-02-03T07:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T07:56:31.391Z" timestamp="2013-09-24T07:56:31.391Z">
+    <change idref="t5" from="t30" from-position="1" resolved="yes">
+      <change idref="t5" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t5" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t5" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-04T07:00:00.000Z"/>
+      <change idref="t5" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t5" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t5" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t98" to="t30" to-position="1" resolved="yes">
+      <change idref="t98" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t98" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-28T07:00:00.000Z"/>
+      <change idref="t98" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}"/>
+      <change idref="t98" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t98" attribute="title" type="string" to="WS - All 4 groups"/>
+    </change>
+    <change idref="t71" from="t45" from-position="1" resolved="yes">
+      <change idref="t71" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t71" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t71" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-04T07:00:00.000Z"/>
+      <change idref="t71" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t71" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t71" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t93" to="t45" to-position="1" resolved="yes">
+      <change idref="t93" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t93" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-28T07:00:00.000Z"/>
+      <change idref="t93" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}"/>
+      <change idref="t93" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t93" attribute="title" type="string" to="WS - All 4 groups"/>
+    </change>
+    <change idref="t47" from="t53" from-position="1" resolved="yes">
+      <change idref="t47" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t47" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t47" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z"/>
+      <change idref="t47" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t47" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t47" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t103" to="t53" to-position="1" resolved="yes">
+      <change idref="t103" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t103" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
+      <change idref="t103" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}"/>
+      <change idref="t103" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t103" attribute="title" type="string" to="WS - All 4 groups"/>
+    </change>
+    <change idref="t87" to="t53" to-position="7" resolved="yes">
+      <change idref="t87" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t87" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t87" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t87" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMTg3XGNvY29hc3VicnRmMzkwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBEbyB3ZSBuZWVkIGFuIGV4dHJhIFdTL0RlbW8/fQ=="/>
+      <change idref="t87" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t87" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.34902&quot;;
+        g = &quot;0.34902&quot;;
+        r = &quot;0.34902&quot;;
+    };
+}"/>
+      <change idref="t87" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t87" attribute="title" type="string" to="Validation Filled Data Dictionary + Archetypes + Codes"/>
+    </change>
+    <change idref="t80" from="t61" from-position="1" resolved="yes">
+      <change idref="t80" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t80" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-05T07:00:00.000Z"/>
+      <change idref="t80" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t80" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t80" attribute="title" type="string" to="WS"/>
+    </change>
+    <change idref="t113" to="t61" to-position="1" resolved="yes">
+      <change idref="t113" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t113" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}"/>
+      <change idref="t113" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t113" attribute="title" type="string" to="WS - All 4 groups"/>
+    </change>
+    <change idref="t63" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;font-weight&quot; = 9;
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t78" attribute="title" type="string" from="Validation Del2.2 Data Dictionary" to="Validation Del2.2 Data Dictionary + Archetypes" resolved="yes"/>
+    <change idref="t78" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0" resolved="yes"/>
+    <change idref="t78" attribute="noEarlierThanConstraintDate" type="date" from="2013-12-12T07:00:00.000Z" to="2013-12-02T07:00:00.000Z" resolved="yes"/>
+    <change idref="t78" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.34902&quot;;
+        g = &quot;0.34902&quot;;
+        r = &quot;0.34902&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t94" to="t93" to-position="0" resolved="yes">
+      <change idref="t94" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t94" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t94" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t94" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t94" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t94" attribute="title" type="string" to="Group1"/>
+    </change>
+    <change idref="t95" to="t93" to-position="1" resolved="yes">
+      <change idref="t95" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t95" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t95" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-29T07:00:00.000Z"/>
+      <change idref="t95" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t95" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t95" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t95" attribute="title" type="string" to="Group2"/>
+    </change>
+    <change idref="t96" to="t93" to-position="2" resolved="yes">
+      <change idref="t96" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t96" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t96" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-11T07:00:00.000Z"/>
+      <change idref="t96" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t96" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t96" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t96" attribute="title" type="string" to="Group3"/>
+    </change>
+    <change idref="t97" to="t93" to-position="3" resolved="yes">
+      <change idref="t97" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t97" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t97" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-12T07:00:00.000Z"/>
+      <change idref="t97" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t97" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t97" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t97" attribute="title" type="string" to="Group4"/>
+    </change>
+    <change idref="t99" to="t98" to-position="0" resolved="yes">
+      <change idref="t99" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t99" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t99" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t99" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t99" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t99" attribute="title" type="string" to="Group1"/>
+    </change>
+    <change idref="t100" to="t98" to-position="1" resolved="yes">
+      <change idref="t100" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t100" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t100" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-29T07:00:00.000Z"/>
+      <change idref="t100" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t100" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t100" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t100" attribute="title" type="string" to="Group2"/>
+    </change>
+    <change idref="t101" to="t98" to-position="2" resolved="yes">
+      <change idref="t101" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t101" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t101" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-11T07:00:00.000Z"/>
+      <change idref="t101" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t101" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t101" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t101" attribute="title" type="string" to="Group3"/>
+    </change>
+    <change idref="t102" to="t98" to-position="3" resolved="yes">
+      <change idref="t102" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t102" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t102" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-12T07:00:00.000Z"/>
+      <change idref="t102" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t102" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t102" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t102" attribute="title" type="string" to="Group4"/>
+    </change>
+    <change idref="t104" to="t103" to-position="0" resolved="yes">
+      <change idref="t104" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t104" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t104" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-02T07:00:00.000Z"/>
+      <change idref="t104" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t104" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t104" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t104" attribute="title" type="string" to="Group1"/>
+    </change>
+    <change idref="t105" to="t103" to-position="1" resolved="yes">
+      <change idref="t105" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t105" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t105" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-03T07:00:00.000Z"/>
+      <change idref="t105" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t105" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t105" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t105" attribute="title" type="string" to="Group2"/>
+    </change>
+    <change idref="t106" to="t103" to-position="2" resolved="yes">
+      <change idref="t106" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t106" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t106" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-16T07:00:00.000Z"/>
+      <change idref="t106" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t106" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t106" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t106" attribute="title" type="string" to="Group3"/>
+    </change>
+    <change idref="t107" to="t103" to-position="3" resolved="yes">
+      <change idref="t107" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t107" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t107" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-17T07:00:00.000Z"/>
+      <change idref="t107" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t107" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t107" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t107" attribute="title" type="string" to="Group4"/>
+    </change>
+    <change idref="t114" to="t113" to-position="0" resolved="yes">
+      <change idref="t114" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t114" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t114" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-02T07:00:00.000Z"/>
+      <change idref="t114" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t114" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t114" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t114" attribute="title" type="string" to="Group1"/>
+    </change>
+    <change idref="t115" to="t113" to-position="1" resolved="yes">
+      <change idref="t115" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t115" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t115" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-03T07:00:00.000Z"/>
+      <change idref="t115" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t115" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t115" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t115" attribute="title" type="string" to="Group2"/>
+    </change>
+    <change idref="t116" to="t113" to-position="2" resolved="yes">
+      <change idref="t116" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t116" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t116" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-16T07:00:00.000Z"/>
+      <change idref="t116" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t116" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t116" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t116" attribute="title" type="string" to="Group3"/>
+    </change>
+    <change idref="t117" to="t113" to-position="3" resolved="yes">
+      <change idref="t117" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t117" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t117" attribute="noEarlierThanConstraintDate" type="date" to="2013-12-17T07:00:00.000Z"/>
+      <change idref="t117" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t117" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t117" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t117" attribute="title" type="string" to="Group4"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T08:34:53.770Z" timestamp="2013-09-24T08:34:53.770Z">
+    <change idref="t118" to="t53" to-position="8" resolved="yes">
+      <change idref="t118" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t118" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}"/>
+      <change idref="t118" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t118" attribute="title" type="string" to="WS /Demo- All 4 groups"/>
+    </change>
+    <change idref="t63" attribute="criticalPathProperties" type="dict" to="{
+    color =     {
+        h = &quot;0.4&quot;;
+        s = &quot;0.5&quot;;
+        v = &quot;0.8&quot;;
+    };
+    enabled = 0;
+    root = 63;
+}" resolved="yes"/>
+    <change idref="t78" attribute="title" type="string" from="Validation Del2.2 Data Dictionary + Archetypes" to="Validation Del2.2 Data Dictionary + Archetype LIbrary" resolved="yes"/>
+    <change idref="t119" to="t118" to-position="0" resolved="yes">
+      <change idref="t119" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t119" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t119" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t119" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t119" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t119" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t119" attribute="title" type="string" to="Group1"/>
+    </change>
+    <change idref="t120" to="t118" to-position="1" resolved="yes">
+      <change idref="t120" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t120" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t120" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t120" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t120" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t120" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t120" attribute="title" type="string" to="Group2"/>
+    </change>
+    <change idref="t121" to="t118" to-position="2" resolved="yes">
+      <change idref="t121" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t121" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t121" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t121" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t121" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t121" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t121" attribute="title" type="string" to="Group3"/>
+    </change>
+    <change idref="t122" to="t118" to-position="3" resolved="yes">
+      <change idref="t122" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t122" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t122" attribute="noEarlierThanConstraintDate" type="date" to="2014-03-04T07:00:00.000Z"/>
+      <change idref="t122" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t122" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}"/>
+      <change idref="t122" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t122" attribute="title" type="string" to="Group4"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T09:43:57.124Z" timestamp="2013-09-24T09:43:57.124Z">
+    <change idref="t63" attribute="title" type="string" from="QuickOff" to="KickOff" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T10:20:46.882Z" timestamp="2013-09-24T10:20:46.882Z">
+    <change idref="t120" attribute="percentCompleteForMilestone" type="real" from="0" to="1" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T11:31:31.730Z" timestamp="2013-09-24T11:31:31.730Z">
+    <change idref="t118" attribute="title" type="string" from="WS /Demo- All 4 groups" to="WS /Demo- All 4 groups - Tentative" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T17:10:10.151Z" timestamp="2013-09-24T17:10:10.151Z">
+    <change idref="t9" attribute="noLaterThanConstraintDate" type="date" to="2013-12-02T23:00:00.000Z" resolved="yes"/>
+    <change idref="t10" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t11" attribute="noLaterThanConstraintDate" type="date" to="2014-01-12T23:00:00.000Z" resolved="yes"/>
+    <change idref="t12" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t31" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.74902&quot;;
+        g = &quot;0.74902&quot;;
+        r = &quot;0.74902&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t74" from="t45" from-position="4" resolved="yes">
+      <change idref="t74" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t74" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t74" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-03T07:00:00.000Z"/>
+      <change idref="t74" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t74" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t74" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t72" from="t45" from-position="2" resolved="yes">
+      <change idref="t72" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t72" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t72" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-21T07:00:00.000Z"/>
+      <change idref="t72" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t72" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t72" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t124" to="t45" to-position="2" resolved="yes">
+      <change idref="t124" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t124" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t124" attribute="noEarlierThanConstraintDate" type="date" to="2013-11-21T07:00:00.000Z"/>
+      <change idref="t124" attribute="noLaterThanConstraintDate" type="date" to="2013-12-02T23:00:00.000Z"/>
+      <change idref="t124" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t124" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t124" attribute="title" type="string" to="First draft Document"/>
+    </change>
+    <change idref="t125" to="t45" to-position="4" resolved="yes">
+      <change idref="t125" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t125" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t125" attribute="noEarlierThanConstraintDate" type="date" to="2014-01-03T07:00:00.000Z"/>
+      <change idref="t125" attribute="noLaterThanConstraintDate" type="date" to="2014-01-12T23:00:00.000Z"/>
+      <change idref="t125" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t125" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t125" attribute="title" type="string" to="Second draft Document"/>
+    </change>
+    <change idref="t48" attribute="noLaterThanConstraintDate" type="date" to="2014-02-11T23:00:00.000Z" resolved="yes"/>
+    <change idref="t49" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t50" attribute="noLaterThanConstraintDate" type="date" to="2014-03-11T16:00:00.000Z" resolved="yes"/>
+    <change idref="t51" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t54" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.74902&quot;;
+        g = &quot;0.74902&quot;;
+        r = &quot;0.74902&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t73" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t75" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t77" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.74902&quot;;
+        g = &quot;0.74902&quot;;
+        r = &quot;0.74902&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t81" attribute="noLaterThanConstraintDate" type="date" to="2014-02-10T23:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t84" attribute="noLaterThanConstraintDate" type="date" to="2014-03-24T23:00:00.000Z" resolved="yes"/>
+    <change idref="t84" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.803922&quot;;
+        g = &quot;0.439216&quot;;
+        r = &quot;0.8&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t86" attribute="styleDict" type="dict" to="{
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.74902&quot;;
+        g = &quot;0.74902&quot;;
+        r = &quot;0.74902&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t93" attribute="styleDict" type="dict" from="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t98" attribute="styleDict" type="dict" from="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t103" attribute="styleDict" type="dict" from="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t113" attribute="styleDict" type="dict" from="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t118" attribute="styleDict" type="dict" from="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+}" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.152941&quot;;
+        g = &quot;0.152941&quot;;
+        r = &quot;0.6&quot;;
+    };
+    &quot;gantt-fill-color&quot; =     {
+        b = &quot;0.301961&quot;;
+        g = &quot;0.301961&quot;;
+        r = &quot;0.847059&quot;;
+    };
+}" resolved="yes"/>
+    <change idref="t118" attribute="noLaterThanConstraintDate" type="date" to="2014-03-10T23:00:00.000Z" resolved="yes"/>
+    <change idref="t118" attribute="noEarlierThanConstraintDate" type="date" to="2014-02-23T23:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T17:19:22.327Z" timestamp="2013-09-24T17:19:22.327Z">
+    <change idref="t54" attribute="internalAssignments" type="string" from="" to="1 {50}" resolved="yes"/>
+    <change idref="t54" attribute="noEarlierThanConstraintDate" type="date" to="2013-10-01T06:00:00.000Z" resolved="yes"/>
+    <change idref="t54" attribute="resourceLeveledDate" type="date" to="2013-10-01T06:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T17:31:46.785Z" timestamp="2013-09-24T17:31:46.785Z">
+    <change idref="t9" attribute="internalPrerequisitesString" type="string" to="102FS" resolved="yes"/>
+    <change idref="t10" attribute="internalPrerequisitesString" type="string" to="9FS" resolved="yes"/>
+    <change idref="t11" attribute="internalPrerequisitesString" type="string" to="10FS" resolved="yes"/>
+    <change idref="t12" attribute="internalPrerequisitesString" type="string" to="11FS" resolved="yes"/>
+    <change idref="t13" attribute="internalPrerequisitesString" type="string" to="12FS" resolved="yes"/>
+    <change idref="t48" attribute="internalPrerequisitesString" type="string" to="107SS" resolved="yes"/>
+    <change idref="t49" attribute="internalPrerequisitesString" type="string" to="48SS" resolved="yes"/>
+    <change idref="t50" attribute="internalPrerequisitesString" type="string" to="49SS" resolved="yes"/>
+    <change idref="t51" attribute="internalPrerequisitesString" type="string" to="50SS" resolved="yes"/>
+    <change idref="t52" attribute="internalPrerequisitesString" type="string" to="51SS" resolved="yes"/>
+    <change idref="t73" attribute="internalPrerequisitesString" type="string" to="124SS" resolved="yes"/>
+    <change idref="t75" attribute="internalPrerequisitesString" type="string" to="125SS" resolved="yes"/>
+    <change idref="t76" attribute="internalPrerequisitesString" type="string" to="75SS" resolved="yes"/>
+    <change idref="t95" attribute="internalPrerequisitesString" type="string" to="94SS" resolved="yes"/>
+    <change idref="t96" attribute="internalPrerequisitesString" type="string" to="95SS" resolved="yes"/>
+    <change idref="t97" attribute="internalPrerequisitesString" type="string" to="96SS" resolved="yes"/>
+    <change idref="t100" attribute="internalPrerequisitesString" type="string" to="99FS" resolved="yes"/>
+    <change idref="t101" attribute="internalPrerequisitesString" type="string" to="100FS" resolved="yes"/>
+    <change idref="t102" attribute="internalPrerequisitesString" type="string" to="101FS" resolved="yes"/>
+    <change idref="t105" attribute="internalPrerequisitesString" type="string" to="104SS" resolved="yes"/>
+    <change idref="t106" attribute="internalPrerequisitesString" type="string" to="105SS" resolved="yes"/>
+    <change idref="t107" attribute="internalPrerequisitesString" type="string" to="106SS" resolved="yes"/>
+    <change idref="t124" attribute="internalPrerequisitesString" type="string" to="97SS" resolved="yes"/>
+    <change idref="t125" attribute="internalPrerequisitesString" type="string" to="73SS" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T17:37:30.623Z" timestamp="2013-09-24T17:37:30.623Z">
+    <change idref="t-1" attribute="criticalPathProperties" type="dict" from="{
+    color =     {
+        b = &quot;0.5&quot;;
+        g = &quot;0.5&quot;;
+        r = 1;
+    };
+    enabled = 0;
+    root = &quot;-1&quot;;
+}" to="{
+    color =     {
+        b = &quot;0.5&quot;;
+        g = &quot;0.5&quot;;
+        r = 1;
+    };
+    enabled = 1;
+    root = &quot;-1&quot;;
+}" resolved="yes"/>
+    <change idref="t81" attribute="internalPrerequisitesString" type="string" to="117SS" resolved="yes"/>
+    <change idref="t82" attribute="internalPrerequisitesString" type="string" to="81SS" resolved="yes"/>
+    <change idref="t83" attribute="internalPrerequisitesString" type="string" to="82SS" resolved="yes"/>
+    <change idref="t84" attribute="internalPrerequisitesString" type="string" to="83SS" resolved="yes"/>
+    <change idref="t85" attribute="internalPrerequisitesString" type="string" to="84SS" resolved="yes"/>
+    <change idref="t94" attribute="internalPrerequisitesString" type="string" to="99SS" resolved="yes"/>
+    <change idref="t95" attribute="internalPrerequisitesString" type="string" from="94SS" to="94SS, 100SS" resolved="yes"/>
+    <change idref="t96" attribute="internalPrerequisitesString" type="string" from="95SS" to="95SS, 101SS" resolved="yes"/>
+    <change idref="t97" attribute="internalPrerequisitesString" type="string" from="96SS" to="96SS, 102SS" resolved="yes"/>
+    <change idref="t114" attribute="percentCompleteForMilestone" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t114" attribute="internalPrerequisitesString" type="string" to="104SS" resolved="yes"/>
+    <change idref="t115" attribute="internalPrerequisitesString" type="string" to="105SS, 114SS" resolved="yes"/>
+    <change idref="t116" attribute="internalPrerequisitesString" type="string" to="106SS, 115SS" resolved="yes"/>
+    <change idref="t117" attribute="internalPrerequisitesString" type="string" to="107SS, 116SS" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="GF" date="2013-09-24T17:40:12.844Z" timestamp="2013-09-24T17:40:12.844Z">
+    <change idref="t3" attribute="noEarlierThanConstraintDate" type="date" to="2013-09-12T06:00:00.000Z" resolved="yes"/>
+    <change idref="t54" attribute="effort" type="real" from="3456000" to="1857600" resolved="yes"/>
+  </task-change-set>
+  <resource-change-set user="GF" date="2013-09-24T17:19:22.322Z" timestamp="2013-09-24T17:19:22.322Z">
+    <change idref="r2" to="r-1" to-position="1" resolved="yes">
+      <change idref="r2" attribute="name" type="string" to="ERS RS"/>
+      <change idref="r2" attribute="unitsAvailable" type="real" from="1" to="0.5"/>
+    </change>
+    <change idref="r1" attribute="unitsAvailable" type="real" from="1" to="0.5" resolved="yes"/>
+    <change idref="r1" attribute="name" type="string" from="Resource 1" to="ERS GF" resolved="yes"/>
+  </resource-change-set>
+  <metadata-change-set user="GF" date="2013-09-23T13:09:56.390Z" timestamp="2013-09-23T13:09:56.390Z">
+    <change idref="m1" attribute="scheduleGranularity" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2013-10-01T06:00:00.000Z" resolved="yes"/>
+    <change idref="m1" attribute="projectTitle" type="string" to="HSE-ERS" resolved="yes"/>
+  </metadata-change-set>
+  <metadata-change-set user="GF" date="2013-09-24T17:19:22.321Z" timestamp="2013-09-24T17:19:22.321Z">
+    <change idref="m1" attribute="publishAllocations" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="m1" attribute="subscribeToAllocations" type="real" from="0" to="1" resolved="yes"/>
+  </metadata-change-set>
+</changelog>

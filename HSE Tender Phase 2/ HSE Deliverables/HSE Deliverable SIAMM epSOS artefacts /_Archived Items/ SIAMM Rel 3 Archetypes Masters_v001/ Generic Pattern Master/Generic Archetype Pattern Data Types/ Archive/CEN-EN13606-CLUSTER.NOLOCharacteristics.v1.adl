@@ -1,0 +1,1077 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOLOCharacteristics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"CLUSTER coding for characteristics of Living Objects">
+            keywords = <"SIAMM","NamedObject","LivingObject">
+            copyright = <"ERS B.V.">
+            use = <"In SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOLOCharacteristics
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..*} matches {  -- NOLOName
+                parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                    CLUSTER[at0024] occurrences matches {0..1} matches {  -- NOLONameUseGroup
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            ELEMENT[at0065] occurrences matches {0..1} matches {  -- NOLONameUsage
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0101] occurrences matches {0..1} matches {  -- NOLONameUsage
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0072] occurrences matches {0..1} matches {  -- NOLONameUsageID
+                                value existence matches {0..1} matches {
+                                    INT[at0102] occurrences matches {0..1} matches {  -- NOLONameUsageID
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0014] occurrences matches {0..1} matches {  -- NOLONNameUsageValidity
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0031] occurrences matches {0..1} matches {  -- LITAbsolute
+                                        parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                value existence matches {0..1} matches {
+                                                    DATE[at0055] occurrences matches {0..1} matches {  -- DATE
+                                                        date existence matches {1..1} matches {2013-10-06}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0037] occurrences matches {0..1} matches {  -- LITAbsBeginAccuracy
+                                                value existence matches {0..1} matches {
+                                                    ORD[at0056] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                                        symbol existence matches {1..1} matches {
+                                                            CODED_TEXT[at0070] occurrences matches {1..1} matches {  -- 
+                                                                codedValue existence matches {1..1} matches {*}
+                                                                originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                            }
+                                                        }
+                                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0038] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                                value existence matches {0..1} matches {
+                                                    DATE[at0057] occurrences matches {0..1} matches {  -- DATE
+                                                        date existence matches {1..1} matches {2013-10-06}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0039] occurrences matches {0..1} matches {  -- LITAbsEndAccuracy
+                                                value existence matches {0..1} matches {
+                                                    ORD[at0058] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                                        symbol existence matches {1..1} matches {
+                                                            CODED_TEXT[at0071] occurrences matches {1..1} matches {  -- 
+                                                                codedValue existence matches {1..1} matches {*}
+                                                                originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                            }
+                                                        }
+                                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                                value existence matches {0..1} matches {
+                                                    DURATION[at0059] occurrences matches {0..1} matches {  -- DURATION
+                                                        days existence matches {0..1} matches {0; 0}
+                                                        hours existence matches {0..1} matches {0; 0}
+                                                        minutes existence matches {0..1} matches {0; 0}
+                                                        seconds existence matches {0..1} matches {0; 0}
+                                                        fractional_second existence matches {0..1} matches {*}
+                                                        sign existence matches {0..1} matches {0; 1}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {  -- LITAbsDurationAccuracy
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0060] occurrences matches {0..1} matches {  -- ISO22220 Accuracy duration
+                                                        originalText existence matches {0..1} matches {"A","E","U"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0078] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0079] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0099] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0028] occurrences matches {1..*} matches {  -- NOLONameFamilyGroup
+                        parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                            ELEMENT[at0083] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0054] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0086] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                value existence matches {0..1} matches {
+                                    INT[at0063] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0018] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0032] occurrences matches {0..*} matches {  -- NOLONameTitleGroup
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0091] occurrences matches {0..1} matches {  -- NOLONameTitle
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0096] occurrences matches {0..1} matches {  -- NOLONameTitle
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0094] occurrences matches {0..1} matches {  -- NOLONameTitleSequenceNumber
+                                value existence matches {0..1} matches {
+                                    INT[at0097] occurrences matches {0..1} matches {  -- NOLONameTitleSequenceNumber
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0008] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0036] occurrences matches {0..*} matches {  -- NOLONamePrefixGroup
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0100] occurrences matches {0..1} matches {  -- NOLONamePrefix
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0076] occurrences matches {0..1} matches {  -- NOLONamePrefix
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0103] occurrences matches {0..1} matches {  -- NOLONamePrefixSequenceNumber
+                                value existence matches {0..1} matches {
+                                    INT[at0075] occurrences matches {0..1} matches {  -- NOLONamePrefixSequenceNumber
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0069] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0040] occurrences matches {0..*} matches {  -- NOLONameSuffixGroup
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0109] occurrences matches {0..1} matches {  -- NOLONameSuffix
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0095] occurrences matches {0..1} matches {  -- NOLONameSuffix
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0112] occurrences matches {0..1} matches {  -- NOLONameSufffixSequenceNumber
+                                value existence matches {0..1} matches {
+                                    INT[at0077] occurrences matches {0..1} matches {  -- NOLONameSufffixSequenceNumber
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0013] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0044] occurrences matches {0..*} matches {  -- NOLONameConditionalUse
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0053] occurrences matches {0..1} matches {  -- NOLONameConditionalUse
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"1","2","3","4","5","6","7","8","9"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0047] occurrences matches {0..*} matches {  -- NOLONamePreferredFlag
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0068] occurrences matches {0..1} matches {  -- NOLONamePreferredFlag
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"Peferred","NotPreferred"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0061] occurrences matches {0..1} matches {  -- NOLONameUnstructured
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0098] occurrences matches {0..1} matches {  -- NOLONameUnstructured
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0003] occurrences matches {0..*} matches {  -- NOLONameGivenGroup
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0016] occurrences matches {1..1} matches {  -- NOLONameGivenName
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0066] occurrences matches {0..1} matches {  -- NOLONameGivenName
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0020] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                value existence matches {0..1} matches {
+                                    INT[at0067] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0064] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0012] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {0..0} matches {  -- NOLOBiometricIdentifiers
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                structure_type existence matches {1..1} matches {
+                    CS[at0022] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0001] occurrences matches {0..*} matches {  -- NOLODemographics
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0029] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"Male","Female","Intersex","Not stated/inadequateky described"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0006] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0051] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0007] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0045] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0009] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0043] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"1","2","3","4","5","6","7","8","9"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0011] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                        value existence matches {0..1} matches {
+                            INT[at0033] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0019] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0050] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0021] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0034] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"Male","Female","Intersex","Not stated / inadequately described"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0025] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0049] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0026] occurrences matches {0..1} matches {  -- NOLODRace
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0052] occurrences matches {0..1} matches {  -- NOLODRace
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0080] occurrences matches {0..1} matches {  -- NOLODBirthDetails
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0081] occurrences matches {0..1} matches {  -- NOLODBirthDate
+                                value existence matches {0..1} matches {
+                                    DATE[at0085] occurrences matches {1..1} matches {  -- NOLODBirthDate
+                                        date existence matches {1..1} matches {2013-10-03}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0082] occurrences matches {0..1} matches {  -- NOLODDeathFollowUpIndicator
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0030] occurrences matches {0..1} matches {  -- NOLODDeathFollowUpIndicator
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0084] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0088] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0089] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                value existence matches {0..1} matches {
+                                    DATE[at0093] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                        date existence matches {1..1} matches {2013-10-03}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0090] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0048] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0046] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0004] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0017] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics">
+                >
+                ["at0002"] = <
+                    text = <"NOLOName">
+                    description = <"ISO:22220
+Code for Name related topics of a Living Object:
+	•	Name Use Group
+	•	Name FamilyName Group
+  	•	Name GivenNameGroup    
+	•	Name Title group
+	•	Name Prefix group
+	•	Name Suffix Group
+	•	Name Preferred Flag
+	•	Name Conditional  Use
+As many times LOName can be invoked as necessary.
+The Preferred Flag indicates the preferred name.
+">
+                >
+                ["at0010"] = <
+                    text = <"NOLOBiometricIdentifiers">
+                    description = <"CBEFF
+ISO/IEC 19785-1
+
+To be Completed">
+                >
+                ["at0024"] = <
+                    text = <"NOLONameUseGroup">
+                    description = <"ISO:22220
+Codes the context for the group
+	•	NameUsage
+	•	USageID
+	•	UsageIDValidity
+">
+                >
+                ["at0028"] = <
+                    text = <"NOLONameFamilyGroup">
+                    description = <"ISO:22220
+
+Codes for a Family name
+">
+                >
+                ["at0032"] = <
+                    text = <"NOLONameTitleGroup">
+                    description = <"ISO:22220
+Codes for the Titles
+">
+                >
+                ["at0036"] = <
+                    text = <"NOLONamePrefixGroup">
+                    description = <"ISO:22220
+Codes for the Name Prefixes
+">
+                >
+                ["at0040"] = <
+                    text = <"NOLONameSuffixGroup">
+                    description = <"ISO:22220
+Codes for the Name Sufffixes
+">
+                >
+                ["at0044"] = <
+                    text = <"NOLONameConditionalUse">
+                    description = <"ISO:22220
+Codes an indicator of specific conditions or rules that should be applied to a subject of care
+
+1- Unreliable
+2- Known misspelling
+3- Name not to be used
+4- Name linkage forbidden by law
+
+6- Special privacy/security requirement
+
+9- Temporary name">
+                >
+                ["at0047"] = <
+                    text = <"NOLONamePreferredFlag">
+                    description = <"ISO:22220
+Indicating which name from the gFamily group  is preferred">
+                >
+                ["at0061"] = <
+                    text = <"NOLONameUnstructured">
+                    description = <"">
+                >
+                ["at0065"] = <
+                    text = <"NOLONameUsage">
+                    description = <"ISO:22220
+Codes a classification that enables differentiation between the usage of names for a subject of care. An individual name may have many name uses.">
+                >
+                ["at0072"] = <
+                    text = <"NOLONameUsageID">
+                    description = <"ISO:22220 
+
+The combination of identifier type, identifier issuer and identifier name that specifies the link between this name and reporting or other unique identifier usage.
+">
+                >
+                ["at0083"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0086"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0091"] = <
+                    text = <"NOLONameTitle">
+                    description = <"ISO 22220
+
+Codes the Title
+">
+                >
+                ["at0094"] = <
+                    text = <"NOLONameTitleSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0100"] = <
+                    text = <"NOLONamePrefix">
+                    description = <"ISO 22220
+
+Codes the Name Prefix
+">
+                >
+                ["at0103"] = <
+                    text = <"NOLONamePrefixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0109"] = <
+                    text = <"NOLONameSuffix">
+                    description = <"ISO 22220
+
+Codes the Name Suffix
+">
+                >
+                ["at0112"] = <
+                    text = <"NOLONameSufffixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0003"] = <
+                    text = <"NOLONameGivenGroup">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0020"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0001"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0005"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female
+3- Intersex - Indeterminate
+
+9- Not sated/Inadequately described">
+                >
+                ["at0006"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0007"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"ISO 22220
+
+The country in which the subject of care was born.
+">
+                >
+                ["at0009"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0011"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"ISO:2220
+Codes for the birth order">
+                >
+                ["at0019"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0021"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate
+
+9- Not stated / inadequately described">
+                >
+                ["at0025"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)
+">
+                >
+                ["at0026"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0014"] = <
+                    text = <"NOLONNameUsageValidity">
+                    description = <"ISO 2222
+Codes the date at which this name usage for the name to which the usage is associated starts to be used.
+The date at which this name usage for the name to which the usage is associated ceased to be used.
+Via an Archetype Slot to LocalisationInTime
+">
+                >
+                ["at0031"] = <
+                    text = <"LITAbsolute">
+                    description = <"Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0035"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0037"] = <
+                    text = <"LITAbsBeginAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the BeginTime.
+
+See 22220">
+                >
+                ["at0038"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0039"] = <
+                    text = <"LITAbsEndAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the EndTime.">
+                >
+                ["at0041"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0042"] = <
+                    text = <"LITAbsDurationAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the DurationTime.">
+                >
+                ["at0055"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0056"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year
+">
+                >
+                ["at0057"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0058"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0059"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0060"] = <
+                    text = <"ISO22220 Accuracy duration">
+                    description = <"A- Accurate
+E- Estimated
+U- Unknown">
+                >
+                ["at0080"] = <
+                    text = <"NOLODBirthDetails">
+                    description = <"NOLODBirthDetails">
+                >
+                ["at0081"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth
+
+">
+                >
+                ["at0082"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+
+
+[PM: Via SCP?]">
+                >
+                ["at0085"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth
+">
+                >
+                ["at0088"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 2220
+Codes for the details about the death
+
+">
+                >
+                ["at0089"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death
+
+">
+                >
+                ["at0090"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0093"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death
+
+">
+                >
+                ["at0034"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate
+
+9- Not stated / inadequately described
+">
+                >
+                ["at0029"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female
+3- Intersex - Indeterminate
+
+9- Not sated/Inadequately described">
+                >
+                ["at0030"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+
+
+[PM: Via SCP?]">
+                >
+                ["at0033"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"ISO:2220
+Codes for ">
+                >
+                ["at0043"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0045"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"ISO 22220
+
+The country in which the subject of care was born.
+">
+                >
+                ["at0048"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0049"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)
+">
+                >
+                ["at0050"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0051"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0052"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0053"] = <
+                    text = <"NOLONameConditionalUse">
+                    description = <"ISO:22220
+Codes an indicator of specific conditions or rules that should be applied to a subject of care
+
+1- Unreliable
+2- Known misspelling
+3- Name not to be used
+4- Name linkage forbidden by law
+
+6- Special privacy/security requirement
+
+9- Temporary name">
+                >
+                ["at0054"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0063"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0066"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0067"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0068"] = <
+                    text = <"NOLONamePreferredFlag">
+                    description = <"ISO:22220
+Indicating which name from the gFamily group  is preferred">
+                >
+                ["at0075"] = <
+                    text = <"NOLONamePrefixSequenceNumber">
+                    description = <"">
+                >
+                ["at0076"] = <
+                    text = <"NOLONamePrefix">
+                    description = <"ISO 22220
+
+Codes the Name Prefix
+">
+                >
+                ["at0077"] = <
+                    text = <"NOLONameSufffixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0095"] = <
+                    text = <"NOLONameSuffix">
+                    description = <"ISO 22220
+
+Codes the Name Suffix
+">
+                >
+                ["at0096"] = <
+                    text = <"NOLONameTitle">
+                    description = <"ISO 22220
+
+Codes the Title
+">
+                >
+                ["at0097"] = <
+                    text = <"NOLONameTitleSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0098"] = <
+                    text = <"NOLONameUnstructured">
+                    description = <"">
+                >
+                ["at0101"] = <
+                    text = <"NOLONameUsage">
+                    description = <"ISO:22220
+Codes a classification that enables differentiation between the usage of names for a subject of care. An individual name may have many name uses.">
+                >
+                ["at0102"] = <
+                    text = <"NOLONameUsageID">
+                    description = <"ISO:22220 
+
+The combination of identifier type, identifier issuer and identifier name that specifies the link between this name and reporting or other unique identifier usage.
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,340 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOCharacteristics.v1
+
+concept
+    [at0108]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.Freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140223">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"NOLOName
+
+NamedObjet NonlIving Object">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+        >
+    >
+
+definition
+    CLUSTER[at0108] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            ELEMENT[at0112] occurrences matches {0..1} matches {  -- NONLOUnstructured
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0114] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0002] occurrences matches {0..1} matches {  -- NONLOName
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {  -- NONLONameValidity
+                        include
+                            archetype_id/value matches {/.LocalisationInTime/}
+                    }
+                    ELEMENT[at0008] occurrences matches {1..1} matches {  -- NONLOName
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0016] occurrences matches {0..1} matches {  -- NONLOName
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0009] occurrences matches {0..*} matches {  -- NONLOReferencedName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    ELEMENT[at0011] occurrences matches {0..1} matches {  -- NONLONameType
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0019] occurrences matches {0..1} matches {  -- NONLONameType
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0316] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0202] occurrences matches {0..*} matches {  -- NONLOOtherCharacteristics
+                parts existence matches {0..1} cardinality matches {0..5; unordered; unique} matches {
+                    ELEMENT[at0211] occurrences matches {0..1} matches {  -- NONLONFirstUseDate
+                        value existence matches {0..1} matches {
+                            DATE[at0244] occurrences matches {1..1} matches {  -- NONLONFirstUseDate
+                                date existence matches {1..1} matches {2013-09-30}
+                            }
+                        }
+                    }
+                    ELEMENT[at0234] occurrences matches {0..1} matches {  -- NONLONDecommissionDate
+                        value existence matches {0..1} matches {
+                            DATE[at0245] occurrences matches {1..1} matches {  -- NONLONDecommissionDate
+                                date existence matches {1..1} matches {2013-09-30}
+                            }
+                        }
+                    }
+                    ELEMENT[at0240] occurrences matches {0..1} matches {  -- NONLONAge
+                        value existence matches {0..1} matches {
+                            DURATION[at0246] occurrences matches {1..1} matches {  -- NONLONAge
+                                days existence matches {0..1} matches {0; 0}
+                                hours existence matches {0..1} matches {0; 0}
+                                minutes existence matches {0..1} matches {0; 0}
+                                seconds existence matches {0..1} matches {0; 0}
+                                fractional_second existence matches {0..1} matches {*}
+                                sign existence matches {0..1} matches {1; 1}
+                            }
+                        }
+                    }
+                    ELEMENT[at0241] occurrences matches {0..1} matches {  -- NONLONDimensions
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0247] occurrences matches {0..1} matches {  -- NONLONDimensions
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0242] occurrences matches {0..1} matches {  -- NONLONNextServiceDate
+                        value existence matches {0..1} matches {
+                            DATE[at0248] occurrences matches {1..1} matches {  -- NONLONNextServiceDate
+                                date existence matches {1..1} matches {2013-09-30}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0322] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0111] occurrences matches {0..1} matches {  -- ComplexClusterModel
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- NOLOCharacteristics
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0001"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics
+
+=> NO SNOMED PRIMITIVE for Characteristics of a Living object <=
+=> NO SNOMED PRIMITIVE for 'Characteristics' of a Living Object<=">
+                >
+                ["at0002"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+=>NO SNOMED CODE for a Name of any Non-Living Object (Physical or logical <=
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0005"] = <
+                    text = <"NONLONameValidity">
+                    description = <"Codes for validity in time,
+Via A Artefact Slot Reference to Location In Time
+">
+                >
+                ["at0008"] = <
+                    text = <"NONLOName">
+                    description = <"=> There is NO SNOMED PRIMITIVE for 'Name' and 'NonLiving' <=
+=> There is NO LOINC PRIMITIVE for 'Object', Non-Living'
+
+Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0009"] = <
+                    text = <"NONLOReferencedName">
+                    description = <"Code for the Name of the Non Living Object Type. This can be to a resource/catalogue with more information.via LINKS
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0011"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0016"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0019"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0108"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0111"] = <
+                    text = <"ComplexClusterModel">
+                    description = <"A CLuster Model that lists the deatiled characteristics of the NamedObject Non Living
+E.g. The details of a medicinal products, or Lab tests, Interventions">
+                >
+                ["at0112"] = <
+                    text = <"NONLOUnstructured">
+                    description = <"Code for the unstructuredCharacteristics
+">
+                >
+                ["at0114"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0202"] = <
+                    text = <"NONLOOtherCharacteristics">
+                    description = <"NONLOOtherCharacteristics
+
+=> NO SNOMED PRIMITIVE for the general term 'Characteristics' <=">
+                >
+                ["at0211"] = <
+                    text = <"NONLONFirstUseDate">
+                    description = <"Code for the Date first used
+
+
+=> There is NO LOINC PRIMITIVE for 'first' and 'use' <=">
+                >
+                ["at0234"] = <
+                    text = <"NONLONDecommissionDate">
+                    description = <"Code for the date to be decomissioned
+
+=> NO SNOMED CODE for 'Decommission' of a 'NonLiving Object' <=
+">
+                >
+                ["at0240"] = <
+                    text = <"NONLONAge">
+                    description = <"=> There is NO LOINC PRIMITIVE for ' age' <=
+
+
+Code for the duration the NLO is used
+">
+                >
+                ["at0241"] = <
+                    text = <"NONLONDimensions">
+                    description = <"=> There is NO LOINC PRIMITIVE for'dimension' <=
+
+
+Code for the dimensions:
+length:width:height, units
+volume, units
+...
+">
+                >
+                ["at0242"] = <
+                    text = <"NONLONNextServiceDate">
+                    description = <"Codes for the next service date
+
+=> NO  SNOMED CODE for Service Date of a Non-Living Object <=
+">
+                >
+                ["at0244"] = <
+                    text = <"NONLONFirstUseDate">
+                    description = <"Code for the Date first used
+">
+                >
+                ["at0245"] = <
+                    text = <"NONLONDecommissionDate">
+                    description = <"Code for the date to be decomissioned
+">
+                >
+                ["at0246"] = <
+                    text = <"NONLONAge">
+                    description = <"Code for the duration the NLO is used">
+                >
+                ["at0247"] = <
+                    text = <"NONLONDimensions">
+                    description = <"Code for the dimensions:
+length:width:height, units
+volume, units
+...
+">
+                >
+                ["at0248"] = <
+                    text = <"NONLONNextServiceDate">
+                    description = <"Codes for the next service date">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0008"] = <[SNOMED-CT::272734009]>
+                ["at0240"] = <[SNOMED-CT::424144002]>
+                ["at0241"] = <[SNOMED-CT::255506008]>
+                ["at0211"] = <[SNOMED-CT::419385000]>
+                ["at0001"] = <[SNOMED-CT::272734009]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0112"] = <[SIAMMR3::NONLOUnstructured]>
+                ["at0002"] = <[SIAMMR3::NONLOName]>
+                ["at0008"] = <[SIAMMR3::NONLOName]>
+                ["at0011"] = <[SIAMMR3::NONLONameType]>
+                ["at0005"] = <[SIAMMR3::NONLONNameValidity]>
+                ["at0009"] = <[SIAMMR3::NONLONReferencedName]>
+                ["at0202"] = <[SIAMMR3::NONLOOtherCharacteristics]>
+                ["at0240"] = <[SIAMMR3::NONLONAge]>
+                ["at0234"] = <[SIAMMR3::NONLONDecommissionDate]>
+                ["at0241"] = <[SIAMMR3::NONLONDimensions]>
+                ["at0211"] = <[SIAMMR3::NONLONFirstUseDate]>
+                ["at0242"] = <[SIAMMR3::NONLONNextServiceDate]>
+                ["at0001"] = <[SIAMMR3::NOLOCharacteristics]>
+                ["at0108"] = <[SIAMMR3::NONLOCharacteristics]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0242"] = <[LOINC::42548-8],[LOINC::46697-9]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

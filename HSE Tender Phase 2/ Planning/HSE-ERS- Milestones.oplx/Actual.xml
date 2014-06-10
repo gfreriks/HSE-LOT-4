@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="nPghLybE6g7">
+  <start-date>2013-10-01T06:00:00.000Z</start-date>
+  <granularity>days</granularity>
+  <prototype-task>
+    <task id="t4294967294">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967293">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967292">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r4294967294">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967293">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967292">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967291">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r1"/>
+    <child-resource idref="r2"/>
+  </resource>
+  <resource id="r1">
+    <name>ERS GF</name>
+    <type>Staff</type>
+    <units-available>0.5</units-available>
+  </resource>
+  <resource id="r2">
+    <name>ERS RS</name>
+    <type>Staff</type>
+    <units-available>0.5</units-available>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t63"/>
+    <child-task idref="t1"/>
+    <child-task idref="t2"/>
+    <child-task idref="t3"/>
+    <child-task idref="t4"/>
+  </task>
+  <task id="t1">
+    <title>Part 1</title>
+    <type>group</type>
+    <child-task idref="t30"/>
+  </task>
+  <task id="t2">
+    <title>Part 2</title>
+    <type>group</type>
+    <child-task idref="t45"/>
+  </task>
+  <task id="t3">
+    <title>Part 3</title>
+    <type>group</type>
+    <start-constraint-date>2013-09-12T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t53"/>
+    <start-no-earlier-than>2013-09-12T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t4">
+    <title>Part 4</title>
+    <type>group</type>
+    <child-task idref="t61"/>
+  </task>
+  <task id="t9">
+    <title>First draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-21T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2013-12-02T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t102"/>
+    <start-no-earlier-than>2013-11-21T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2013-12-02T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t10">
+    <title>DeadLIne Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-12T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t9"/>
+    <start-no-earlier-than>2013-12-12T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t11">
+    <title>Second draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-01-03T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-01-12T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t10"/>
+    <start-no-earlier-than>2014-01-03T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-01-12T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t12">
+    <title>Deadline Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-01-22T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t11"/>
+    <start-no-earlier-than>2014-01-22T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t13">
+    <title>Final draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-03T07:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t12"/>
+    <start-no-earlier-than>2014-02-03T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t30">
+    <title>Document Part 1</title>
+    <type>group</type>
+    <child-task idref="t31"/>
+    <child-task idref="t98"/>
+    <child-task idref="t9"/>
+    <child-task idref="t10"/>
+    <child-task idref="t11"/>
+    <child-task idref="t12"/>
+    <child-task idref="t13"/>
+  </task>
+  <task id="t31">
+    <title>Desktop Research</title>
+    <effort>2361600</effort>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.74902" g="0.74902" b="0.74902"/>
+      </value>
+    </style>
+  </task>
+  <task id="t45">
+    <title>Document Part 2</title>
+    <type>group</type>
+    <child-task idref="t77"/>
+    <child-task idref="t93"/>
+    <child-task idref="t124"/>
+    <child-task idref="t73"/>
+    <child-task idref="t125"/>
+    <child-task idref="t75"/>
+    <child-task idref="t76"/>
+    <child-task idref="t78"/>
+  </task>
+  <task id="t48">
+    <title>First draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-05T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-02-11T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t107" kind="SS"/>
+    <start-no-earlier-than>2014-02-05T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-02-11T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t49">
+    <title>DeadLIne Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-18T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t48" kind="SS"/>
+    <start-no-earlier-than>2014-02-18T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t50">
+    <title>Second draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-03-11T16:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t49" kind="SS"/>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-03-11T16:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t51">
+    <title>Deadline Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-18T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t50" kind="SS"/>
+    <start-no-earlier-than>2014-03-18T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t52">
+    <title>Final draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-28T07:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t51" kind="SS"/>
+    <start-no-earlier-than>2014-03-28T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t53">
+    <title>Document Part 3</title>
+    <type>group</type>
+    <child-task idref="t54"/>
+    <child-task idref="t103"/>
+    <child-task idref="t48"/>
+    <child-task idref="t49"/>
+    <child-task idref="t50"/>
+    <child-task idref="t51"/>
+    <child-task idref="t52"/>
+    <child-task idref="t87"/>
+    <child-task idref="t118"/>
+  </task>
+  <task id="t54">
+    <title>Desktop Research</title>
+    <leveled-start>2013-10-01T06:00:00.000Z</leveled-start>
+    <effort>1857600</effort>
+    <start-constraint-date>2013-10-01T06:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.74902" g="0.74902" b="0.74902"/>
+      </value>
+    </style>
+    <assignment idref="r1" units="0.5"/>
+    <start-no-earlier-than>2013-10-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t61">
+    <title>Document Part 4</title>
+    <type>group</type>
+    <child-task idref="t86"/>
+    <child-task idref="t113"/>
+    <child-task idref="t81"/>
+    <child-task idref="t82"/>
+    <child-task idref="t83"/>
+    <child-task idref="t84"/>
+    <child-task idref="t85"/>
+  </task>
+  <task id="t63">
+    <title>KickOff</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-10-16T06:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="font-weight">9</value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2013-10-16T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t73">
+    <title>DeadLIne Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-12T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t124" kind="SS"/>
+    <start-no-earlier-than>2013-12-12T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t75">
+    <title>Deadline Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-01-21T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t125" kind="SS"/>
+    <start-no-earlier-than>2014-01-21T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t76">
+    <title>Final draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-03T07:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t75" kind="SS"/>
+    <start-no-earlier-than>2014-02-03T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t77">
+    <title>Desktop Research</title>
+    <effort>2361600</effort>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.74902" g="0.74902" b="0.74902"/>
+      </value>
+    </style>
+  </task>
+  <task id="t78">
+    <title>Validation Del2.2 Data Dictionary + Archetype LIbrary</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-02T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.34902" g="0.34902" b="0.34902"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2013-12-02T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t81">
+    <title>First draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-05T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-02-10T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t117" kind="SS"/>
+    <start-no-earlier-than>2014-02-05T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-02-10T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t82">
+    <title>DeadLIne Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-18T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t81" kind="SS"/>
+    <start-no-earlier-than>2014-02-18T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t83">
+    <title>Second draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t82" kind="SS"/>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t84">
+    <title>Deadline Comments</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-18T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-03-24T23:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.8" g="0.439216" b="0.803922"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t83" kind="SS"/>
+    <start-no-earlier-than>2014-03-18T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-03-24T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t85">
+    <title>Final draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-28T07:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t84" kind="SS"/>
+    <start-no-earlier-than>2014-03-28T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t86">
+    <title>Desktop Research</title>
+    <effort>3456000</effort>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.74902" g="0.74902" b="0.74902"/>
+      </value>
+    </style>
+  </task>
+  <task id="t87">
+    <title>Validation Filled Data Dictionary + Archetypes + Codes</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>Do we need an extra WS/Demo?</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <style>
+      <value key="gantt-fill-color">
+        <color r="0.34902" g="0.34902" b="0.34902"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t93">
+    <title>WS - All 4 groups</title>
+    <type>group</type>
+    <start-constraint-date>2013-10-28T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t94"/>
+    <child-task idref="t95"/>
+    <child-task idref="t96"/>
+    <child-task idref="t97"/>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2013-10-28T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t94">
+    <title>Group1</title>
+    <type>milestone</type>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t99" kind="SS"/>
+  </task>
+  <task id="t95">
+    <title>Group2</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-10-29T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t94" kind="SS"/>
+    <prerequisite-task idref="t100" kind="SS"/>
+    <start-no-earlier-than>2013-10-29T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t96">
+    <title>Group3</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-11T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t95" kind="SS"/>
+    <prerequisite-task idref="t101" kind="SS"/>
+    <start-no-earlier-than>2013-11-11T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t97">
+    <title>Group4</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-12T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t96" kind="SS"/>
+    <prerequisite-task idref="t102" kind="SS"/>
+    <start-no-earlier-than>2013-11-12T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t98">
+    <title>WS - All 4 groups</title>
+    <type>group</type>
+    <start-constraint-date>2013-10-28T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t99"/>
+    <child-task idref="t100"/>
+    <child-task idref="t101"/>
+    <child-task idref="t102"/>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2013-10-28T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t99">
+    <title>Group1</title>
+    <type>milestone</type>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+  </task>
+  <task id="t100">
+    <title>Group2</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-10-29T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t99"/>
+    <start-no-earlier-than>2013-10-29T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t101">
+    <title>Group3</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-11T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t100"/>
+    <start-no-earlier-than>2013-11-11T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t102">
+    <title>Group4</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-12T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t101"/>
+    <start-no-earlier-than>2013-11-12T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t103">
+    <title>WS - All 4 groups</title>
+    <type>group</type>
+    <child-task idref="t104"/>
+    <child-task idref="t105"/>
+    <child-task idref="t106"/>
+    <child-task idref="t107"/>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+  </task>
+  <task id="t104">
+    <title>Group1</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-02T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2013-12-02T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t105">
+    <title>Group2</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-03T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t104" kind="SS"/>
+    <start-no-earlier-than>2013-12-03T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t106">
+    <title>Group3</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-16T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t105" kind="SS"/>
+    <start-no-earlier-than>2013-12-16T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t107">
+    <title>Group4</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-17T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t106" kind="SS"/>
+    <start-no-earlier-than>2013-12-17T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t113">
+    <title>WS - All 4 groups</title>
+    <type>group</type>
+    <child-task idref="t114"/>
+    <child-task idref="t115"/>
+    <child-task idref="t116"/>
+    <child-task idref="t117"/>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+  </task>
+  <task id="t114">
+    <title>Group1</title>
+    <type>milestone</type>
+    <completion-percentage>1</completion-percentage>
+    <start-constraint-date>2013-12-02T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t104" kind="SS"/>
+    <start-no-earlier-than>2013-12-02T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t115">
+    <title>Group2</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-03T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t105" kind="SS"/>
+    <prerequisite-task idref="t114" kind="SS"/>
+    <start-no-earlier-than>2013-12-03T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t116">
+    <title>Group3</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-16T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t106" kind="SS"/>
+    <prerequisite-task idref="t115" kind="SS"/>
+    <start-no-earlier-than>2013-12-16T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t117">
+    <title>Group4</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-12-17T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t107" kind="SS"/>
+    <prerequisite-task idref="t116" kind="SS"/>
+    <start-no-earlier-than>2013-12-17T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t118">
+    <title>WS /Demo- All 4 groups - Tentative</title>
+    <type>group</type>
+    <start-constraint-date>2014-02-23T23:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-03-10T23:00:00.000Z</end-constraint-date>
+    <child-task idref="t119"/>
+    <child-task idref="t120"/>
+    <child-task idref="t121"/>
+    <child-task idref="t122"/>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-02-23T23:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-03-10T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t119">
+    <title>Group1</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t120">
+    <title>Group2</title>
+    <type>milestone</type>
+    <completion-percentage>1</completion-percentage>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t121">
+    <title>Group3</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t122">
+    <title>Group4</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-03-04T07:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0.6" g="0.152941" b="0.152941"/>
+      </value>
+      <value key="gantt-fill-color">
+        <color r="0.847059" g="0.301961" b="0.301961"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2014-03-04T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t124">
+    <title>First draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-11-21T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2013-12-02T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t97" kind="SS"/>
+    <start-no-earlier-than>2013-11-21T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2013-12-02T23:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t125">
+    <title>Second draft Document</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-01-03T07:00:00.000Z</start-constraint-date>
+    <end-constraint-date>2014-01-12T23:00:00.000Z</end-constraint-date>
+    <prerequisite-task idref="t73" kind="SS"/>
+    <start-no-earlier-than>2014-01-03T07:00:00.000Z</start-no-earlier-than>
+    <end-no-later-than>2014-01-12T23:00:00.000Z</end-no-later-than>
+  </task>
+  <critical-path root="-1" enabled="true" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+  <critical-path root="63" enabled="false" resources="false">
+    <color h="0.4" s="0.5" v="0.8"/>
+  </critical-path>
+</scenario>

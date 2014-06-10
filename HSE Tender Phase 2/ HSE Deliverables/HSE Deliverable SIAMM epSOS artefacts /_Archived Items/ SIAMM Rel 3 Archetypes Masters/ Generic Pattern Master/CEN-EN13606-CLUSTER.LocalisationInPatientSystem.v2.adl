@@ -1,0 +1,393 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.LocalisationInPatientSystem.v2
+
+concept
+    [at0012]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"gfrer@luna.nl">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140127">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    CLUSTER[at0012] occurrences matches {0..1} matches {  -- LocalisationInPatientSystem
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- LIPWholePerson
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0020] occurrences matches {0..1} matches {  -- LIPWholePerson
+                        codedValue existence matches {1..1} matches {
+                            CD[at0034] occurrences matches {0..1} matches {  -- WholePerson
+                                codeValue existence matches {0..1} matches {
+                                    [ac0012]
+                                }
+                            }
+                            CD[at0035] occurrences matches {0..1} matches {  -- PartofPerson
+                                codeValue existence matches {0..1} matches {
+                                    [ac0011]
+                                }
+                            }
+                        }
+                        originalText existence matches {0..1} matches {"Whole","NotWhole"; "Whole"}
+                    }
+                }
+            }
+            ELEMENT[at0014] occurrences matches {0..1} matches {  -- LIPBodyFunctions
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0021] occurrences matches {0..1} matches {  -- LIPBodyFunctions
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0015] occurrences matches {0..1} matches {  -- LIPCellularSystems
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0022] occurrences matches {0..1} matches {  -- LIPCellularSystems
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- LIPBioChemistry
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0023] occurrences matches {0..1} matches {  -- LIPBioChemistry
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0017] occurrences matches {0..1} matches {  -- LIPGenetics
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0024] occurrences matches {0..1} matches {  -- LIPGenetics
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0018] occurrences matches {0..1} matches {  -- LIPEnvironments
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0025] occurrences matches {0..1} matches {  -- LIPEnvironments
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0019] occurrences matches {0..1} matches {  -- LIPBodyParts
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0026] occurrences matches {0..1} matches {  -- LIPBodyPart
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0029] occurrences matches {0..1} matches {  -- LIPBodyPart
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0027] occurrences matches {0..*} matches {  -- LIPBodyPartLocalisation
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0003] occurrences matches {0..1} matches {  -- LIPBodyPartLocalisation
+                                codedValue existence matches {1..1} matches {
+                                    CD[at0004] occurrences matches {0..1} matches {  -- Left
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0022]
+                                        }
+                                    }
+                                    CD[at0005] occurrences matches {0..1} matches {  -- Right
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0018]
+                                        }
+                                    }
+                                    CD[at0006] occurrences matches {0..1} matches {  -- Frontal
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0023]
+                                        }
+                                    }
+                                    CD[at0007] occurrences matches {0..1} matches {  -- Posterior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0017]
+                                        }
+                                    }
+                                    CD[at0008] occurrences matches {0..1} matches {  -- Superior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0019]
+                                        }
+                                    }
+                                    CD[at0009] occurrences matches {0..1} matches {  -- Inferior
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0015]
+                                        }
+                                    }
+                                }
+                                originalText existence matches {0..1} matches {
+                                    [ac0001]
+                                }
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0036] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0039] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", "SNOMED-CT", "epSOS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0012"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"LocalisationInPatientSystem">
+                >
+                ["at0013"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0014"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0015"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0016"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0017"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0018"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0019"] = <
+                    text = <"LIPBodyParts">
+                    description = <"Codes for the Body part and localization">
+                >
+                ["at0020"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NWWhole">
+                >
+                ["at0021"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0022"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0023"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0024"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0025"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0026"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0027"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the relative location:
+
+- Left		= Left of Sagitalplane
+- Right		= Right of Sagitalplane
+- Frontal	= In front of Coronal plane
+- Posterior	= Behind the Coronal Plane
+- Inferior      = Below the 
+- Superior	= Above Travelsal plane
+- Inferior	= Below Travesal plane
+
+">
+                >
+                ["at0029"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0034"] = <
+                    text = <"WholePerson">
+                    description = <"A default created CD">
+                >
+                ["at0035"] = <
+                    text = <"PartofPerson">
+                    description = <"A default created CD">
+                >
+                ["at0003"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Positions in the body">
+                >
+                ["at0004"] = <
+                    text = <"Left">
+                    description = <"Let of the sagital plane">
+                >
+                ["at0005"] = <
+                    text = <"Right">
+                    description = <"Right of the sgaital plane">
+                >
+                ["at0006"] = <
+                    text = <"Frontal">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"Posterior">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"Superior">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"Inferior">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"RelativeLocations">
+                    description = <"Relative locations in the bbody with respect to the body plane">
+                >
+                ["ac0011"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0015"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0017"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0018"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0019"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0022"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["ac0023"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0022"] = <[SNOMED-CT::362837007]>
+                ["at0025"] = <[SNOMED-CT::276339004]>
+                ["at0024"] = <[SNOMED-CT::67271001]>
+                ["at0012"] = <[SNOMED-CT::116154003]>
+                ["at0013"] = <[SNOMED-CT::125676002]>
+                ["at0034"] = <[SNOMED-CT::261188006]>
+                ["at0020"] = <[SNOMED-CT::125676002]>
+                ["at0016"] = <[SNOMED-CT::441900009]>
+                ["at0018"] = <[SNOMED-CT::276339004]>
+                ["at0017"] = <[SNOMED-CT::67271001]>
+                ["at0026"] = <[SNOMED-CT::38866009]>
+                ["at0009"] = <[SNOMED-CT::261089000]>
+                ["at0007"] = <[SNOMED-CT::255551008]>
+                ["at0005"] = <[SNOMED-CT::24028007]>
+                ["at0006"] = <[SNOMED-CT::81654009]>
+                ["at0029"] = <[SNOMED-CT::38866009]>
+                ["at0019"] = <[SNOMED-CT::229983003]>
+                ["at0003"] = <[SNOMED-CT::106233006]>
+                ["at0015"] = <[SNOMED-CT::362837007]>
+            >
+        >
+    >
+    constraint_binding = <
+        ["epSOS"] = <
+            items = <
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+                ["ac0001"] = <[SNOMED-CT::397155001]>
+            >
+        >
+    >

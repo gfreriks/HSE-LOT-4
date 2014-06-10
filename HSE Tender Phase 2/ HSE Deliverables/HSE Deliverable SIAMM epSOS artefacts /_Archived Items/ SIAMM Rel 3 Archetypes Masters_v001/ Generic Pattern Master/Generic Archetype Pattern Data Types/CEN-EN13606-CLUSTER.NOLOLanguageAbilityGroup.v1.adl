@@ -1,0 +1,108 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOLOLanguageAbilityGroup.v1
+
+concept
+    [at0138]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140223">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Document the language abilities">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"In SIAMM">
+        >
+    >
+
+definition
+    CLUSTER[at0138] occurrences matches {0..1} matches {  -- NOLOLanguageAbilityGroup
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            ELEMENT[at0238] occurrences matches {0..1} matches {  -- NOLOLanguagePreference
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0311] occurrences matches {0..1} matches {  -- NOLOLanguagePreference
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0252] occurrences matches {0..1} matches {  -- NOLOLanguage
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0314] occurrences matches {0..1} matches {  -- NOLOLanguage
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- NOLOName
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0138"] = <
+                    text = <"NOLOLanguageAbilityGroup">
+                    description = <"NOLOLanguageAbilityGroup">
+                >
+                ["at0238"] = <
+                    text = <"NOLOLanguagePreference">
+                    description = <"=> There is NO LOINC PRIMITIVE for 'language' <=
+=> There is NO LOINC PRIMITIVE for 'preference' <=
+
+Value List to be provided">
+                >
+                ["at0252"] = <
+                    text = <"NOLOLanguage">
+                    description = <"=> There is NO SNOMED PRIMITIVE for ' language' <=">
+                >
+                ["at0311"] = <
+                    text = <"NOLOLanguagePreference">
+                    description = <"">
+                >
+                ["at0314"] = <
+                    text = <"NOLOLanguage">
+                    description = <"See ISO 639">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0238"] = <[SNOMED-CT::428996008]>
+                ["at0138"] = <[SNOMED-CT::54505-3]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0252"] = <[SIAMMR3::NOLOLanguage]>
+                ["at0238"] = <[SIAMMR3::NOLOLanguagePreference]>
+                ["at0138"] = <[SIAMMR3::NOLOLanguageAbilityGroup]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0252"] = <[LOINC::54505-3]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

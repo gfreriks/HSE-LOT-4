@@ -1,0 +1,145 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOGeographicalPosition.v2
+
+concept
+    [at0115]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140223">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Document the geo position">
+            copyright = <"ERS B.V.">
+            use = <"in SIAMM">
+        >
+    >
+
+definition
+    CLUSTER[at0115] occurrences matches {0..1} matches {  -- NOGeographicalPosition
+        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+            ELEMENT[at0116] occurrences matches {0..1} matches {  -- NOGPLatitude
+                value existence matches {0..1} matches {
+                    PQ[at0120] occurrences matches {0..1} matches {  -- NOGPLatitude
+                        units existence matches {1..1} matches {
+                            CS[at0123] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"deg"}
+                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0117] occurrences matches {0..1} matches {  -- NOGPLongitude
+                value existence matches {0..1} matches {
+                    PQ[at0121] occurrences matches {0..1} matches {  -- NOGPLongitude
+                        units existence matches {1..1} matches {
+                            CS[at0124] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"deg"}
+                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0118] occurrences matches {0..1} matches {  -- NOGPAltitude
+                value existence matches {0..1} matches {
+                    PQ[at0122] occurrences matches {0..1} matches {  -- NOGPAltitude
+                        units existence matches {1..1} matches {
+                            CS[at0125] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"deg"}
+                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0232] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0115"] = <
+                    text = <"NOGeographicalPosition">
+                    description = <"NOGeographicalPosition">
+                >
+                ["at0116"] = <
+                    text = <"NOGPLatitude">
+                    description = <"=> There is NO SNOMED PRIMITIVE for 'latitude' <=
+">
+                >
+                ["at0117"] = <
+                    text = <"NOGPLongitude">
+                    description = <"=> There is NO SNOMED PRIMITIVE for 'longitude' <=">
+                >
+                ["at0118"] = <
+                    text = <"NOGPAltitude">
+                    description = <"">
+                >
+                ["at0120"] = <
+                    text = <"NOGPLatitude">
+                    description = <"NOGPLatitude
+
+=> NO SNOMED code found <=">
+                >
+                ["at0121"] = <
+                    text = <"NOGPLongitude">
+                    description = <"NOGPLongitude">
+                >
+                ["at0122"] = <
+                    text = <"NOGPAltitude">
+                    description = <"NOGPAltitude">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0122"] = <[SNOMED-CT::76661004]>
+                ["at0118"] = <[SNOMED-CT::76661004]>
+                ["at0115"] = <[SNOMED-CT::308916002]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0118"] = <[SIAMMR3::NOGPAltitude]>
+                ["at0117"] = <[SIAMMR3::NOGPLongitude]>
+                ["at0115"] = <[SIAMMR3::NOGeographicalPosition]>
+                ["at0116"] = <[SIAMMR3::NOGPLatitude]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0118"] = <[LOINC::41905-1]>
+                ["at0117"] = <[LOINC::42131-3]>
+                ["at0115"] = <[LOINC::29073-4]>
+                ["at0116"] = <[LOINC::42130-5]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

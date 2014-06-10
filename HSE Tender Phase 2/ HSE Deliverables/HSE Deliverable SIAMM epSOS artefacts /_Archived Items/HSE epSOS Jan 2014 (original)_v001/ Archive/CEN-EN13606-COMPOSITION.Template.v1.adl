@@ -1,0 +1,115 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.DocumentName.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131125">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Demo for HSE">
+            keywords = <"demo","hse">
+            copyright = <"ERS">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- TestDocument
+        content existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+            SECTION[at0001] occurrences matches {0..*} matches {  -- Problems
+                members existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    SECTION[at0003] occurrences matches {0..1} matches {  -- ContextInfo
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0005] occurrences matches {0..1} matches {  -- ClinicalStatement2:ValidityPeriod
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            ENTRY[at0006] occurrences matches {0..1} matches {  -- ClinicalStatement 1:Reasons
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            ENTRY[at0007] occurrences matches {0..1} matches {  -- ClinicalStatement 3:ReportingPeriod
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    ENTRY[at0004] occurrences matches {0..1} matches {  -- ClinicalStatement 4:Diagnosis
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+            ENTRY[at0002] occurrences matches {0..1} matches {  -- ClinicalStatement:Author
+                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"LOCAL", "CONTSYS", "DCM", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"TestDocument">
+                    description = <"DocumentName">
+                >
+                ["at0001"] = <
+                    text = <"Problems">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"ClinicalStatement:Author">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ContextInfo">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"ClinicalStatement 4:Diagnosis">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"ClinicalStatement2:ValidityPeriod">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"ClinicalStatement 1:Reasons">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"ClinicalStatement 3:ReportingPeriod">
+                    description = <"DGDHDJDKDKLDL">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["LOCAL"] = <
+            items = <
+                ["at0000"] = <[LOCAL::LocalCode0987]>
+            >
+        >
+        ["CONTSYS"] = <
+            items = <
+                ["at0004"] = <[CONTSYS::HealthAssessment]>
+                ["at0007"] = <[CONTSYS::Period]>
+            >
+        >
+        ["DCM"] = <
+            items = <
+            >
+        >
+    >
+    constraint_binding = <
+    >

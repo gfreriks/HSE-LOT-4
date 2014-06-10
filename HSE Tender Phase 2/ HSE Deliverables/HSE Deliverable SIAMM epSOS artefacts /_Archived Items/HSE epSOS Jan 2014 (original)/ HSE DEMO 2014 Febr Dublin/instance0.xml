@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ENTRY archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0000">
+   <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+         xsi:type="SIMPLE_TEXT">
+      <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+         <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </codingScheme>
+         <codingSchemeName>codingSchemeName_value</codingSchemeName>
+         <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+         <codeValue>codeValue_value</codeValue>
+      </nullFlavor>
+      <originalText>originalText_value</originalText>
+   </name>
+   <archetype_id>archetype_id_value</archetype_id>
+   <rc_id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat"
+          xsi:type="II">
+      <extension>extension_value</extension>
+      <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+      <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+         <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+            <time>2077-12-18T22:26:59</time>
+         </low>
+         <lowClosed>false</lowClosed>
+         <highClosed>false</highClosed>
+         <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                xsi:type="DURATION">
+            <days>-482014780</days>
+            <hours>-1106684775</hours>
+            <minutes>-1438556988</minutes>
+            <seconds>-969737891</seconds>
+            <fractional_second>-3.99236E8</fractional_second>
+            <sign>-521734263</sign>
+         </width>
+      </validTime>
+      <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+         <oid>oid_value</oid>
+      </root>
+   </rc_id>
+   <synthesised>true</synthesised>
+   <sensitivity>-409547965</sensitivity>
+   <links xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::LINKat"
+          xsi:type="LINK">
+      <nature archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+         <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </codingScheme>
+         <codingSchemeName>codingSchemeName_value</codingSchemeName>
+         <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+         <codeValue>codeValue_value</codeValue>
+      </nature>
+      <follow_link>false</follow_link>
+      <target archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>2066-02-20T21:43:31</time>
+            </low>
+            <lowClosed>false</lowClosed>
+            <highClosed>true</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-1706498349</days>
+               <hours>-1107895425</hours>
+               <minutes>-857612023</minutes>
+               <seconds>-460309253</seconds>
+               <fractional_second>-4.60512128E8</fractional_second>
+               <sign>-1272450126</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </target>
+   </links>
+   <feeder_audit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::AUDITINFOat"
+                 xsi:type="AUDIT_INFO">
+      <ehr_system archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>1954-04-18T04:13:32</time>
+            </low>
+            <lowClosed>true</lowClosed>
+            <highClosed>false</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-896367857</days>
+               <hours>-1232951909</hours>
+               <minutes>-338578459</minutes>
+               <seconds>-1573757110</seconds>
+               <fractional_second>-6.7933672E7</fractional_second>
+               <sign>-176824750</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </ehr_system>
+      <time_committed archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+         <time>2063-10-08T18:17:30</time>
+      </time_committed>
+      <committer archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>2082-08-10T20:48:21</time>
+            </low>
+            <lowClosed>true</lowClosed>
+            <highClosed>false</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-1729445154</days>
+               <hours>-1656911251</hours>
+               <minutes>-1649592431</minutes>
+               <seconds>-956949886</seconds>
+               <fractional_second>-9.78052992E8</fractional_second>
+               <sign>-864365483</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </committer>
+   </feeder_audit>
+   <act_id>act_id_value</act_id>
+   <uncertainty_expressed>true</uncertainty_expressed>
+   <info_provider xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::FUNCTIONALROLEat"
+                  xsi:type="FUNCTIONAL_ROLE">
+      <performer archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>2041-03-23T05:13:12</time>
+            </low>
+            <lowClosed>false</lowClosed>
+            <highClosed>false</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-143097196</days>
+               <hours>-6992288</hours>
+               <minutes>-1627943650</minutes>
+               <seconds>-1116828645</seconds>
+               <fractional_second>-1.023006976E9</fractional_second>
+               <sign>-907323214</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </performer>
+   </info_provider>
+   <subject_of_information xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::RELATEDPARTYat"
+                           xsi:type="RELATED_PARTY">
+      <relationship archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+                    xsi:type="CODED_TEXT">
+         <originalText>originalText_value</originalText>
+         <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+            <codingSchemeName>codingSchemeName_value</codingSchemeName>
+            <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+            <codeValue>codeValue_value</codeValue>
+            <displayName>displayName_value</displayName>
+            <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+               <inverted>false</inverted>
+            </qualifiers>
+         </codedValue>
+      </relationship>
+   </subject_of_information>
+   <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0432"
+          xsi:type="CLUSTER">
+      <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+            xsi:type="CODED_TEXT">
+         <originalText>originalText_value</originalText>
+         <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+            <codingSchemeName>codingSchemeName_value</codingSchemeName>
+            <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+            <codeValue>codeValue_value</codeValue>
+            <displayName>displayName_value</displayName>
+            <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+               <inverted>true</inverted>
+               <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CEat" xsi:type="CE">
+                  <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                  <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                  <codeValue>codeValue_value</codeValue>
+                  <displayName>displayName_value</displayName>
+               </qualCode>
+            </qualifiers>
+         </codedValue>
+      </name>
+      <archetype_id>archetype_id_value</archetype_id>
+      <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>1944-11-24T20:52:13</time>
+            </low>
+            <lowClosed>true</lowClosed>
+            <highClosed>true</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-1880077534</days>
+               <hours>-1158266489</hours>
+               <minutes>-826759345</minutes>
+               <seconds>-2144200353</seconds>
+               <fractional_second>-3.8252592E8</fractional_second>
+               <sign>-1437956444</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </rc_id>
+      <synthesised>true</synthesised>
+      <sensitivity>-486310502</sensitivity>
+      <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0442" xsi:type="CS">
+         <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </codingScheme>
+         <codingSchemeName>codingSchemeName_value</codingSchemeName>
+         <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+         <codeValue>codeValue_value</codeValue>
+      </structure_type>
+      <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0434"
+             xsi:type="ELEMENT">
+         <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+               xsi:type="SIMPLE_TEXT">
+            <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+               <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </codingScheme>
+               <codingSchemeName>codingSchemeName_value</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>codeValue_value</codeValue>
+            </nullFlavor>
+            <originalText>originalText_value</originalText>
+         </name>
+         <archetype_id>archetype_id_value</archetype_id>
+         <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+            <extension>extension_value</extension>
+            <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+            <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+               <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                  <time>2010-11-27T21:33:11</time>
+               </low>
+               <lowClosed>false</lowClosed>
+               <highClosed>false</highClosed>
+               <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                      xsi:type="DURATION">
+                  <days>-830483932</days>
+                  <hours>-1929686346</hours>
+                  <minutes>-2033245692</minutes>
+                  <seconds>-2103367799</seconds>
+                  <fractional_second>-3.33544384E8</fractional_second>
+                  <sign>-1242850977</sign>
+               </width>
+            </validTime>
+            <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+               <oid>oid_value</oid>
+            </root>
+         </rc_id>
+         <synthesised>false</synthesised>
+         <sensitivity>-260907022</sensitivity>
+         <value archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0444"
+                xsi:type="SIMPLE_TEXT">
+            <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+               <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </codingScheme>
+               <codingSchemeName>codingSchemeName_value</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>codeValue_value</codeValue>
+            </nullFlavor>
+            <originalText>originalText_value</originalText>
+         </value>
+      </parts>
+      <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0435"
+             xsi:type="CLUSTER">
+         <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+               xsi:type="SIMPLE_TEXT">
+            <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+               <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </codingScheme>
+               <codingSchemeName>codingSchemeName_value</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>codeValue_value</codeValue>
+            </nullFlavor>
+            <originalText>originalText_value</originalText>
+         </name>
+         <archetype_id>archetype_id_value</archetype_id>
+         <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+            <extension>extension_value</extension>
+            <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+            <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+               <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                  <time>1925-06-25T13:26:18</time>
+               </low>
+               <lowClosed>true</lowClosed>
+               <highClosed>true</highClosed>
+               <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                      xsi:type="DURATION">
+                  <days>-1719103785</days>
+                  <hours>-1454634982</hours>
+                  <minutes>-305794736</minutes>
+                  <seconds>-1299326336</seconds>
+                  <fractional_second>-5.0790432E8</fractional_second>
+                  <sign>-1865864700</sign>
+               </width>
+            </validTime>
+            <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+               <oid>oid_value</oid>
+            </root>
+         </rc_id>
+         <synthesised>false</synthesised>
+         <sensitivity>-1470269180</sensitivity>
+         <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0016" xsi:type="CS">
+            <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+               <oid>oid_value</oid>
+            </codingScheme>
+            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+            <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+            <codeValue>STRC01</codeValue>
+         </structure_type>
+         <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0445"
+                xsi:type="CLUSTER">
+            <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+                  xsi:type="CODED_TEXT">
+               <originalText>originalText_value</originalText>
+               <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+                  <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                  <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                  <codeValue>codeValue_value</codeValue>
+                  <displayName>displayName_value</displayName>
+                  <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+                     <inverted>true</inverted>
+                     <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CEat" xsi:type="CE">
+                        <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                        <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                        <codeValue>codeValue_value</codeValue>
+                        <displayName>displayName_value</displayName>
+                     </qualCode>
+                  </qualifiers>
+               </codedValue>
+            </name>
+            <archetype_id>archetype_id_value</archetype_id>
+            <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+               <extension>extension_value</extension>
+               <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+               <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+                  <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                     <time>2025-09-14T02:17:54</time>
+                  </low>
+                  <lowClosed>false</lowClosed>
+                  <highClosed>false</highClosed>
+                  <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                         xsi:type="DURATION">
+                     <days>-1149669615</days>
+                     <hours>-1225526520</hours>
+                     <minutes>-788244642</minutes>
+                     <seconds>-809422370</seconds>
+                     <fractional_second>-7.666832E8</fractional_second>
+                     <sign>-133317984</sign>
+                  </width>
+               </validTime>
+               <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </root>
+            </rc_id>
+            <synthesised>true</synthesised>
+            <sensitivity>-15262067</sensitivity>
+            <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0001" xsi:type="CS">
+               <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </codingScheme>
+               <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>STRC01</codeValue>
+            </structure_type>
+            <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0460"
+                   xsi:type="ELEMENT">
+               <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+                     xsi:type="SIMPLE_TEXT">
+                  <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+                     <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                        <oid>oid_value</oid>
+                     </codingScheme>
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                  </nullFlavor>
+                  <originalText>originalText_value</originalText>
+               </name>
+               <archetype_id>archetype_id_value</archetype_id>
+               <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+                  <extension>extension_value</extension>
+                  <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+                  <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+                     <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                        <time>2032-08-07T21:26:39</time>
+                     </low>
+                     <lowClosed>false</lowClosed>
+                     <highClosed>true</highClosed>
+                     <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                            xsi:type="DURATION">
+                        <days>-575652488</days>
+                        <hours>-1858743878</hours>
+                        <minutes>-181239813</minutes>
+                        <seconds>-571208696</seconds>
+                        <fractional_second>-4.67196192E8</fractional_second>
+                        <sign>-762528828</sign>
+                     </width>
+                  </validTime>
+                  <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                     <oid>oid_value</oid>
+                  </root>
+               </rc_id>
+               <synthesised>false</synthesised>
+               <sensitivity>-1738599136</sensitivity>
+               <value archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0322" xsi:type="PQ">
+                  <value>2.5999999046325684</value>
+                  <units archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0326" xsi:type="CS">
+                     <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                        <oid>oid_value</oid>
+                     </codingScheme>
+                     <codingSchemeName>UCUM</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>d</codeValue>
+                  </units>
+                  <precision>-1711010864</precision>
+               </value>
+            </parts>
+         </parts>
+      </parts>
+   </items>
+   <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0024"
+          xsi:type="CLUSTER">
+      <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+            xsi:type="CODED_TEXT">
+         <originalText>originalText_value</originalText>
+         <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+            <codingSchemeName>codingSchemeName_value</codingSchemeName>
+            <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+            <codeValue>codeValue_value</codeValue>
+            <displayName>displayName_value</displayName>
+            <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+               <inverted>true</inverted>
+               <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CVat" xsi:type="CV">
+                  <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                  <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                  <codeValue>codeValue_value</codeValue>
+                  <displayName>displayName_value</displayName>
+               </qualCode>
+            </qualifiers>
+         </codedValue>
+      </name>
+      <archetype_id>archetype_id_value</archetype_id>
+      <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+         <extension>extension_value</extension>
+         <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+         <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+            <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+               <time>2033-06-21T06:16:18</time>
+            </low>
+            <lowClosed>false</lowClosed>
+            <highClosed>true</highClosed>
+            <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                   xsi:type="DURATION">
+               <days>-1042609908</days>
+               <hours>-2006540136</hours>
+               <minutes>-1081503173</minutes>
+               <seconds>-954514501</seconds>
+               <fractional_second>-2.59607664E8</fractional_second>
+               <sign>-1935072340</sign>
+            </width>
+         </validTime>
+         <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </root>
+      </rc_id>
+      <synthesised>true</synthesised>
+      <sensitivity>-1202245720</sensitivity>
+      <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0307" xsi:type="CS">
+         <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+            <oid>oid_value</oid>
+         </codingScheme>
+         <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+         <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+         <codeValue>STRC01</codeValue>
+      </structure_type>
+      <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0123"
+             xsi:type="CLUSTER">
+         <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+               xsi:type="CODED_TEXT">
+            <originalText>originalText_value</originalText>
+            <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+               <codingSchemeName>codingSchemeName_value</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>codeValue_value</codeValue>
+               <displayName>displayName_value</displayName>
+               <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+                  <inverted>true</inverted>
+                  <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CVat" xsi:type="CV">
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                     <displayName>displayName_value</displayName>
+                  </qualCode>
+               </qualifiers>
+            </codedValue>
+         </name>
+         <archetype_id>archetype_id_value</archetype_id>
+         <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+            <extension>extension_value</extension>
+            <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+            <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+               <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                  <time>2075-12-07T08:12:28</time>
+               </low>
+               <lowClosed>false</lowClosed>
+               <highClosed>true</highClosed>
+               <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                      xsi:type="DURATION">
+                  <days>-121555217</days>
+                  <hours>-248017231</hours>
+                  <minutes>-1304551123</minutes>
+                  <seconds>-186721870</seconds>
+                  <fractional_second>-6.26463808E8</fractional_second>
+                  <sign>-856605934</sign>
+               </width>
+            </validTime>
+            <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+               <oid>oid_value</oid>
+            </root>
+         </rc_id>
+         <synthesised>true</synthesised>
+         <sensitivity>-1990272255</sensitivity>
+         <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0153" xsi:type="CS">
+            <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+               <oid>oid_value</oid>
+            </codingScheme>
+            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+            <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+            <codeValue>STRC01</codeValue>
+         </structure_type>
+         <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0126"
+                xsi:type="CLUSTER">
+            <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CODEDTEXTat"
+                  xsi:type="CODED_TEXT">
+               <originalText>originalText_value</originalText>
+               <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+                  <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                  <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                  <codeValue>codeValue_value</codeValue>
+                  <displayName>displayName_value</displayName>
+                  <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+                     <inverted>true</inverted>
+                     <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CVat" xsi:type="CV">
+                        <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                        <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                        <codeValue>codeValue_value</codeValue>
+                        <displayName>displayName_value</displayName>
+                     </qualCode>
+                  </qualifiers>
+               </codedValue>
+            </name>
+            <archetype_id>archetype_id_value</archetype_id>
+            <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+               <extension>extension_value</extension>
+               <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+               <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+                  <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                     <time>1927-02-08T19:43:30</time>
+                  </low>
+                  <lowClosed>true</lowClosed>
+                  <highClosed>true</highClosed>
+                  <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                         xsi:type="DURATION">
+                     <days>-522205057</days>
+                     <hours>-238649606</hours>
+                     <minutes>-791879813</minutes>
+                     <seconds>-560720112</seconds>
+                     <fractional_second>-6.40865408E8</fractional_second>
+                     <sign>-758317604</sign>
+                  </width>
+               </validTime>
+               <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </root>
+            </rc_id>
+            <synthesised>false</synthesised>
+            <sensitivity>-1724188764</sensitivity>
+            <structure_type archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0133" xsi:type="CS">
+               <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                  <oid>oid_value</oid>
+               </codingScheme>
+               <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+               <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+               <codeValue>STRC01</codeValue>
+            </structure_type>
+            <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0128"
+                   xsi:type="ELEMENT">
+               <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+                     xsi:type="SIMPLE_TEXT">
+                  <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+                     <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                        <oid>oid_value</oid>
+                     </codingScheme>
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                  </nullFlavor>
+                  <originalText>originalText_value</originalText>
+               </name>
+               <archetype_id>archetype_id_value</archetype_id>
+               <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+                  <extension>extension_value</extension>
+                  <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+                  <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+                     <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                        <time>1926-10-13T11:46:42</time>
+                     </low>
+                     <lowClosed>false</lowClosed>
+                     <highClosed>false</highClosed>
+                     <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                            xsi:type="DURATION">
+                        <days>-629931393</days>
+                        <hours>-455362622</hours>
+                        <minutes>-1500156277</minutes>
+                        <seconds>-1925849864</seconds>
+                        <fractional_second>-1.19920856E8</fractional_second>
+                        <sign>-365052592</sign>
+                     </width>
+                  </validTime>
+                  <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                     <oid>oid_value</oid>
+                  </root>
+               </rc_id>
+               <synthesised>false</synthesised>
+               <sensitivity>-905335484</sensitivity>
+               <value archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0129"
+                      xsi:type="CODED_TEXT">
+                  <originalText>BedWaitingTime</originalText>
+                  <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                     <displayName>displayName_value</displayName>
+                     <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+                        <inverted>false</inverted>
+                        <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CEat" xsi:type="CE">
+                           <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                           <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                           <codeValue>codeValue_value</codeValue>
+                           <displayName>displayName_value</displayName>
+                        </qualCode>
+                     </qualifiers>
+                  </codedValue>
+               </value>
+            </parts>
+            <parts archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0131"
+                   xsi:type="ELEMENT">
+               <name archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::SIMPLETEXTat"
+                     xsi:type="SIMPLE_TEXT">
+                  <nullFlavor archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CSat" xsi:type="CS">
+                     <codingScheme archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                        <oid>oid_value</oid>
+                     </codingScheme>
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                  </nullFlavor>
+                  <originalText>originalText_value</originalText>
+               </name>
+               <archetype_id>archetype_id_value</archetype_id>
+               <rc_id archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IIat" xsi:type="II">
+                  <extension>extension_value</extension>
+                  <assigningAuthorityName>assigningAuthorityName_value</assigningAuthorityName>
+                  <validTime archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::IVLTSat" xsi:type="IVLTS">
+                     <low archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::TSat" xsi:type="TS">
+                        <time>1983-03-15T10:46:32</time>
+                     </low>
+                     <lowClosed>false</lowClosed>
+                     <highClosed>true</highClosed>
+                     <width archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::DURATIONat"
+                            xsi:type="DURATION">
+                        <days>-222904941</days>
+                        <hours>-1702349119</hours>
+                        <minutes>-1914740161</minutes>
+                        <seconds>-641587423</seconds>
+                        <fractional_second>-1.467741824E9</fractional_second>
+                        <sign>-166993295</sign>
+                     </width>
+                  </validTime>
+                  <root archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::OIDat" xsi:type="OID">
+                     <oid>oid_value</oid>
+                  </root>
+               </rc_id>
+               <synthesised>true</synthesised>
+               <sensitivity>-1248235918</sensitivity>
+               <value archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::at0132"
+                      xsi:type="CODED_TEXT">
+                  <originalText>AdministrativeData</originalText>
+                  <codedValue archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CDat" xsi:type="CD">
+                     <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                     <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                     <codeValue>codeValue_value</codeValue>
+                     <displayName>displayName_value</displayName>
+                     <qualifiers archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CRat" xsi:type="CR">
+                        <inverted>true</inverted>
+                        <qualCode archetype_ID="CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1::CVat" xsi:type="CV">
+                           <codingSchemeName>codingSchemeName_value</codingSchemeName>
+                           <codingSchemeVersion>codingSchemeVersion_value</codingSchemeVersion>
+                           <codeValue>codeValue_value</codeValue>
+                           <displayName>displayName_value</displayName>
+                        </qualCode>
+                     </qualifiers>
+                  </codedValue>
+               </value>
+            </parts>
+         </parts>
+      </parts>
+   </items>
+</ENTRY>

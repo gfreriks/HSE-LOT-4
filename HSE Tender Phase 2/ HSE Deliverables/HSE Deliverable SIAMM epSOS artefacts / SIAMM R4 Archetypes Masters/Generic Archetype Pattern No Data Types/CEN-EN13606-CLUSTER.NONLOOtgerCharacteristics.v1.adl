@@ -1,0 +1,157 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOOtherCharacteristics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for characteristics dealing with begin, end of existence, Duration, Dimensions
+">
+            keywords = <"SIAMM","NamedObject","NonLivingObject">
+            copyright = <"ERS B.V.">
+            use = <"Use in SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOOtgerCharacteristics
+        parts existence matches {0..1} cardinality matches {0..5; unordered; unique} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NONLONFirstUseDate
+                value existence matches {0..1} matches {
+                    DATE[at0018] occurrences matches {1..1} matches {  -- DATE
+                        date existence matches {1..1} matches {2013-09-30}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NONLONDecommissionDate
+                value existence matches {0..1} matches {
+                    DATE[at0016] occurrences matches {1..1} matches {  -- DATE
+                        date existence matches {1..1} matches {2013-09-30}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NONLONAge
+                value existence matches {0..1} matches {
+                    DURATION[at0015] occurrences matches {1..1} matches {  -- DURATION
+                        days existence matches {0..1} matches {0; 0}
+                        hours existence matches {0..1} matches {0; 0}
+                        minutes existence matches {0..1} matches {0; 0}
+                        seconds existence matches {0..1} matches {0; 0}
+                        fractional_second existence matches {0..1} matches {*}
+                        sign existence matches {0..1} matches {0; 1}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- NONLONDimensions
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0017] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- NONLONNextServiceDate
+                value existence matches {0..1} matches {
+                    DATE[at0019] occurrences matches {1..1} matches {  -- DATE
+                        date existence matches {1..1} matches {2013-09-30}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0001] occurrences matches {0..1} matches {  -- ComplexClusterModel
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOOtgerCharacteristics">
+                    description = <"NONLOOtgerCharacteristics">
+                >
+                ["at0002"] = <
+                    text = <"NONLONFirstUseDate">
+                    description = <"Code for the Date first used
+">
+                >
+                ["at0005"] = <
+                    text = <"NONLONDecommissionDate">
+                    description = <"Code for the date to be decomissioned
+">
+                >
+                ["at0008"] = <
+                    text = <"NONLONAge">
+                    description = <"Code for the duration the NLO is used
+">
+                >
+                ["at0011"] = <
+                    text = <"NONLONDimensions">
+                    description = <"Code for the dimensions:
+length:width:height, units
+volume, units
+...
+">
+                >
+                ["at0013"] = <
+                    text = <"NONLONNextServiceDate">
+                    description = <"Codes for the next service date
+">
+                >
+                ["at0015"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"Code for the dimensions:
+length:width:height, units
+volume, units
+...
+">
+                >
+                ["at0018"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0019"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"ComplexClusterModel">
+                    description = <"A CLuster Model that lists the deatiled characteristics of the NamedObject Non Living
+E.g. The details of a medicinal products, or Lab tests, Interventions">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

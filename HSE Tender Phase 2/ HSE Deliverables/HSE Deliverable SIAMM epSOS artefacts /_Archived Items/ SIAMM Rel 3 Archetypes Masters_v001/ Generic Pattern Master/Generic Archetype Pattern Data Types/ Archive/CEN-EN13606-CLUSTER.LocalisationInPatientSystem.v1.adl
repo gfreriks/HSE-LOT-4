@@ -1,0 +1,258 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.LocalisationInPatientSystem.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131005">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            keywords = <"SIAMM","Context: WHERE">
+            copyright = <"ERS B.V.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- LocalisationInPatientSystem
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- LIPWholePerson
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0020] occurrences matches {0..1} matches {  -- LIPWholePerson
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {"Whole","NotWhole"}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..*} matches {  -- LIPBodyFunctions
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0007] occurrences matches {0..1} matches {  -- LIPBodyFunctions
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..*} matches {  -- LIPCellularSystems
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0015] occurrences matches {0..1} matches {  -- LIPCellularSystems
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..*} matches {  -- LIPBioChemistry
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0006] occurrences matches {0..1} matches {  -- LIPBioChemistry
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..*} matches {  -- LIPGenetics
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0018] occurrences matches {0..1} matches {  -- LIPGenetics
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..*} matches {  -- LIPEnvironments
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0017] occurrences matches {0..1} matches {  -- LIPEnvironments
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0019] occurrences matches {0..*} matches {  -- LIPBodyParts
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0027] occurrences matches {0..1} matches {  -- LIPBodyPart
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0009] occurrences matches {0..1} matches {  -- LIPBodyPart
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0003] occurrences matches {0..*} matches {  -- LIPBodyPartLocalisation
+                        value existence matches {0..1} matches {
+                            ORD[at0012] occurrences matches {0..1} matches {  -- LIPBodyPartLocalisation
+                                symbol existence matches {1..1} matches {
+                                    CODED_TEXT[at0014] occurrences matches {1..1} matches {  -- 
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"Left","Right","Frontal","Posterior","Superior","Inferior"; ""}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>0..<1|; 0}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0004] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {*}
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"Codes for the Localisation of  the Act that is modeled.
+WHERE in the Patient System is the archetype active?
+The Patient System is the location of the topic with the patient as focus. It helps to define what the Archetype is about.
+When the topic is ECG the localisation for Body Part is the heart and the BodyFunction: Elctrical systems of the heart.
+In the case of an ENTRY archetype the exact location of an Act (process) most likely will be modeled in the WHAT:NamedObject branch where the participating entity os modeled.
+In the case of a CLUSTER archetype this can be sued to indicate what part of the Patient System is the topic for that archetype.
+
+Preferably use the WHO ICF as primary coding system.
+">
+                >
+                ["at0002"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0005"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0008"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0011"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0013"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0016"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0019"] = <
+                    text = <"LIPBodyParts">
+                    description = <"Codes for the Body part and localization">
+                >
+                ["at0027"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0003"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the relative location:
+
+- Left		= Left of Sgaital plane
+- Right		= Right of Sgaital plane
+- Frontal	= In front of Coronal plane
+- Posterior	= Behind the Coronal Plane
+- Superior	= Above Travelsal plane
+- Inferior	= Below Travesal plane
+
+">
+                >
+                ["at0006"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0007"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0009"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0012"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the relative location:
+
+- Left		= Left of Sgaital plane
+- Right		= Right of Sgaital plane
+- Frontal	= In front of Coronal plane
+- Posterior	= Behind the Coronal Plane
+- Superior	= Above Travelsal plane">
+                >
+                ["at0015"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0017"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0018"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0020"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NWWhole">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

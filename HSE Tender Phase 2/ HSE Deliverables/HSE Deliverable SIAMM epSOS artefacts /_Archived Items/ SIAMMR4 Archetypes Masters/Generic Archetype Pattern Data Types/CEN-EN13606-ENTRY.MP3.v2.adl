@@ -1,0 +1,144 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.MP3F.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-RecordServices.eu">
+        ["name"] = <"Gerard Freriks">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130918">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"The SIAMM Backbone pattern for all artefacts">
+            keywords = <"SIAMM","Main Pattern","Release 3">
+            copyright = <"ERS B.V.">
+            use = <"Used to specialise into COntSys harmonised Generic Ineformation Models">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- ENTRY.MPF
+        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            allow_archetype CLUSTER[at0001] occurrences matches {0..1} matches {  -- MetaDataFile
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0002] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0003] occurrences matches {1..1} matches {  -- WhatNamedObject
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0004] occurrences matches {1..1} matches {  -- WhatResults
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {  -- ContextLPS
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {  -- ContextLT
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0007] occurrences matches {0..1} matches {  -- ContextLS
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {  -- ContextWhy
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0009] occurrences matches {0..*} matches {  -- ContextWho
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {  -- ContextHow
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0011] occurrences matches {0..1} matches {  -- SCP
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SIAMMR3", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"ENTRY.MPF">
+                    description = <"MainPattern to be speialised">
+                >
+                ["at0001"] = <
+                    text = <"MetaDataFile">
+                    description = <"Slot that Specifies Metadata about the file (13606-2)">
+                >
+                ["at0002"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"Slot that via a Cluster Model Specifies meta data about the artefact">
+                >
+                ["at0003"] = <
+                    text = <"WhatNamedObject">
+                    description = <"Slot to hold the Cluster model specifying any NamedObject">
+                >
+                ["at0004"] = <
+                    text = <"WhatResults">
+                    description = <"Slot to connect to ResultValues">
+                >
+                ["at0005"] = <
+                    text = <"ContextLPS">
+                    description = <"Slot that specifies the Localisation in the PatientSystem">
+                >
+                ["at0006"] = <
+                    text = <"ContextLT">
+                    description = <"Slot that specifies the Localistation in Tme">
+                >
+                ["at0007"] = <
+                    text = <"ContextLS">
+                    description = <"Slot that defines the Localisation in Space">
+                >
+                ["at0008"] = <
+                    text = <"ContextWhy">
+                    description = <"SLot that specifies the the Reasons">
+                >
+                ["at0009"] = <
+                    text = <"ContextWho">
+                    description = <"Slot that defines the Participations">
+                >
+                ["at0010"] = <
+                    text = <"ContextHow">
+                    description = <"Slot that sepcifies the Method">
+                >
+                ["at0011"] = <
+                    text = <"SCP">
+                    description = <"SLot that specifies Status, Certainty and Presence">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SIAMMR3"] = <
+            items = <
+                ["at0000"] = <[SIAMMR3::ENTRY.MPF]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,603 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.PrHcRUHISH.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-RecordServices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20130918">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Define the Social History">
+            keywords = <"SIAMM","Main Pattern","Release 3","HcRe-Use","EUGuidelne">
+            copyright = <"ERS B.V.">
+            use = <"Used to specialise into oOntSys harmonised Generic Ineformation Models">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- C5.1-SocialHistory
+        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            CLUSTER[at0012] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0013] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0022] occurrences matches {0..1} matches {  -- TargetReferenceModel
+                                originalText existence matches {0..1} matches {"En13606:2008"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0014] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0023] occurrences matches {0..1} matches {  -- TargetReferenceModelClass
+                                originalText existence matches {0..1} matches {"Entry"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0015] occurrences matches {0..1} matches {  -- ArtefactUse
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0024] occurrences matches {0..1} matches {  -- ArtefactUse
+                                originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0016] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0025] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                originalText existence matches {0..1} matches {"Observation"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0017] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0026] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"HealthIssue"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0018] occurrences matches {0..1} matches {  -- ProcessPattern
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0027] occurrences matches {0..1} matches {  -- ProcessPattern
+                                originalText existence matches {0..1} matches {"Order","Execute","Assess","ResultCollection","Inference"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0019] occurrences matches {0..1} matches {  -- ProcessContext
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0028] occurrences matches {0..1} matches {  -- ProcessContext
+                                originalText existence matches {0..1} matches {"Diagnostic","Therapeutic","Administrative","Management","ReUse"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0020] occurrences matches {0..1} matches {  -- ReferencesCodingSystems
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0029] occurrences matches {0..*} matches {  -- CodingSystem1
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0032] occurrences matches {1..1} matches {  -- CodingSystem1Name
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0033] occurrences matches {1..1} matches {  -- CodingSystem1Version
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0034] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0030] occurrences matches {1..1} matches {  -- SIAMMVersion
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0035] occurrences matches {1..1} matches {  -- SIAMMVersion
+                                        originalText existence matches {0..1} matches {"Rel3"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0031] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0021] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0344] occurrences matches {1..1} matches {  -- ResultValue
+                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                    ELEMENT[at0345] occurrences matches {0..1} matches {  -- C5.1.1-SocialHistory
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0355] occurrences matches {1..1} matches {  -- ResultCodedtext
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0354] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0612] occurrences matches {1..1} matches {  -- NamedObject
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0006] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0009] occurrences matches {0..1} matches {  -- NONLOName
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0036] occurrences matches {1..1} matches {  -- NONLOName
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0037] occurrences matches {0..1} matches {  -- NONLOName
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"HistorySocial"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0039] occurrences matches {0..1} matches {  -- NONLONameType
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0040] occurrences matches {0..1} matches {  -- NONLONameType
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"History"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0041] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0042] occurrences matches {0..*} matches {  -- NONLOOtherCharacteristics
+                                parts existence matches {0..1} cardinality matches {0..5; unordered; unique} matches {
+                                    ELEMENT[at0043] occurrences matches {0..1} matches {  -- C5.1.2-ReferenceDateBegin
+                                        value existence matches {0..1} matches {
+                                            DATE[at0044] occurrences matches {1..1} matches {  -- NONLONFirstUseDate
+                                                date existence matches {1..1} matches {2013-09-30}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0045] occurrences matches {0..1} matches {  -- C5.1.3-ReferenceDateRangeEnd
+                                        value existence matches {0..1} matches {
+                                            DATE[at0046] occurrences matches {1..1} matches {  -- NONLONDecommissionDate
+                                                date existence matches {1..1} matches {2013-09-30}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0053] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0055] occurrences matches {1..1} matches {  -- NOLOCharacteristics
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0866] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SIAMMR3", "SNOMED-CT", "LOINC", "DCM", "epSOS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"C5.1-SocialHistory">
+                    description = <"MainPattern to be specialised">
+                >
+                ["at0012"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0013"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0014"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0015"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0016"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0017"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ContSys concept
+
+=> Should ContSysCODES become part of SNOMED <=
+">
+                >
+                ["at0018"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0019"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0020"] = <
+                    text = <"ReferencesCodingSystems">
+                    description = <"Used to define as part of the archetype a coding system that is referenced inside the archetype">
+                >
+                ["at0022"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0023"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0024"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0025"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0026"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ContSys concept
+">
+                >
+                ["at0027"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0028"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0029"] = <
+                    text = <"CodingSystem1">
+                    description = <"Container for CodingSystem1.
+Can be repeated">
+                >
+                ["at0030"] = <
+                    text = <"SIAMMVersion">
+                    description = <"The version of SIAMM that is used">
+                >
+                ["at0032"] = <
+                    text = <"CodingSystem1Name">
+                    description = <"The name (URL) of the codings system">
+                >
+                ["at0033"] = <
+                    text = <"CodingSystem1Version">
+                    description = <"The version of the coding system">
+                >
+                ["at0035"] = <
+                    text = <"SIAMMVersion">
+                    description = <"The version of SIAMM that is used">
+                >
+                ["at0344"] = <
+                    text = <"ResultValue">
+                    description = <"Social history observatins re;ated to smoking, alcohol, and diet">
+                >
+                ["at0345"] = <
+                    text = <"C5.1.1-SocialHistory">
+                    description = <"Holds the result as Codedtext
+
+Social History observations related tosmoking, alcohol, and diet">
+                >
+                ["at0355"] = <
+                    text = <"ResultCodedtext">
+                    description = <"Holds the result as Codedtext">
+                >
+                ["at0612"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0866"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0009"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+=>NO SNOMED CODE for a Name of any Non-Living Object (Physical or logical <=
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0036"] = <
+                    text = <"NONLOName">
+                    description = <"=> There is NO SNOMED PRIMITIVE for 'Name' and 'NonLiving' <=
+=> There is NO LOINC PRIMITIVE for 'Object', Non-Living'
+
+Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0037"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0039"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0040"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0041"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0042"] = <
+                    text = <"NONLOOtherCharacteristics">
+                    description = <"NONLOOtherCharacteristics
+
+=> NO SNOMED PRIMITIVE for the general term 'Characteristics' <=">
+                >
+                ["at0043"] = <
+                    text = <"C5.1.2-ReferenceDateBegin">
+                    description = <"Code for the Date first used
+
+
+=> There is NO LOINC PRIMITIVE for 'first' and 'use' <=">
+                >
+                ["at0044"] = <
+                    text = <"NONLONFirstUseDate">
+                    description = <"Code for the Date first used
+">
+                >
+                ["at0045"] = <
+                    text = <"C5.1.3-ReferenceDateRangeEnd">
+                    description = <"Code for the date to be decomissioned
+
+=> NO SNOMED CODE for 'Decommission' of a 'NonLiving Object' <=
+">
+                >
+                ["at0046"] = <
+                    text = <"NONLONDecommissionDate">
+                    description = <"Code for the date to be decomissioned
+">
+                >
+                ["at0053"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0055"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics
+
+=> NO SNOMED PRIMITIVE for Characteristics of a Living object <=
+=> NO SNOMED PRIMITIVE for 'Characteristics' of a Living Object<=">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+        ["SIAMMR3"] = <
+            items = <
+                ["at0019"] = <[SIAMMR3::ProcessContext]>
+                ["at0012"] = <[SIAMMR3::MetaDataArtefact]>
+                ["at0015"] = <[SIAMMR3::ArtefactUse]>
+                ["at0018"] = <[SIAMMR3::ProcessPattern]>
+                ["at0029"] = <[SIAMMR3::CodingSystem1]>
+                ["at0032"] = <[SIAMMR3::CodingSystem1Name]>
+                ["at0033"] = <[SIAMMR3::CodingSystem1Version]>
+                ["at0030"] = <[SIAMMR3::SIAMMVersion]>
+                ["at0035"] = <[SIAMMR3::SIAMMVersion]>
+                ["at0014"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0016"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0355"] = <[SIAMMR3::ResultCodedtext]>
+                ["at0024"] = <[SIAMMR3::ArtefactUse]>
+                ["at0028"] = <[SIAMMR3::ProcessContext]>
+                ["at0027"] = <[SIAMMR3::ProcessPattern]>
+                ["at0022"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0023"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0026"] = <[SIAMMR3::TargetReferenceModelClassName]>
+                ["at0017"] = <[SIAMMR3::TargetReferenceModelClassName]>
+                ["at0009"] = <[SIAMMR3::NONLOName]>
+                ["at0036"] = <[SIAMMR3::NONLOName]>
+                ["at0039"] = <[SIAMMR3::NONLONameType]>
+                ["at0055"] = <[SIAMMR3::NOLOCharacteristics]>
+                ["at0020"] = <[SIAMMR3::ReferencesCodingSystems]>
+                ["at0013"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0006"] = <[SIAMMR3::NONLOCharacteristics]>
+                ["at0042"] = <[SIAMMR3::NONLOOtherCharacteristics]>
+                ["at0045"] = <[SIAMMR3::NONLONDecommissionDate]>
+                ["at0025"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0612"] = <[SIAMMR3::NamedObject]>
+                ["at0344"] = <[SIAMMR3::ResultValues]>
+                ["at0345"] = <[SIAMMR3::ResultCodedtext]>
+                ["at0000"] = <[SIAMMR3::ENTRY.MPF]>
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0036"] = <[SNOMED-CT::272734009]>
+                ["at0055"] = <[SNOMED-CT::272734009]>
+                ["at0043"] = <[SNOMED-CT::419385000]>
+                ["at0612"] = <[SNOMED-CT::272734009]>
+                ["at0344"] = <[SNOMED-CT::423100009]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0612"] = <[LOINC::52458-7]>
+            >
+        >
+        ["DCM"] = <
+            items = <
+                ["at0006"] = <[DCM::CEN-EN13606-CLUSTER.NONLOCharacteristics.v1]>
+                ["at0612"] = <[DCM::CEN-EN13606-CLUSTER.NamedObject.v1]>
+            >
+        >
+        ["epSOS"] = <
+            items = <
+                ["at0043"] = <[epSOS::C5.1.2-ReferenceDateBegin]>
+                ["at0045"] = <[epSOS::C5.1.3-ReferenceDateRangeEnd]>
+                ["at0345"] = <[epSOS::C5.1.1-SocialHistory]>
+                ["at0000"] = <[epSOS::C5.1-SocialHistory]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,96 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOUniqueIdetifiers.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130927">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"CLUSTER Model that codes for the set of Unique Identifiers and their attributes for this entity
+Part of NamedObject
+">
+            keywords = <"SIAMM","NamedObject">
+            copyright = <"ERS B.V.">
+            use = <"For use in SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOUniqueIdetifiers
+        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- NOUIDType
+                value existence matches {0..1} matches {*}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOUniqueIdetifiers">
+                    description = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+
+">
+                >
+                ["at0002"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0005"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- ,Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0008"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0011"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

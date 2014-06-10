@@ -1,0 +1,105 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOCharacteristics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20130927">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"CLUSTER model coding for Non Living Object characteristics
+">
+            keywords = <"SIAMM","NamedObject">
+            copyright = <"ERS B.V>">
+            use = <"In SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOCharacteristics
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype CLUSTER[at0024] occurrences matches {0..1} matches {  -- NONLOName
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {  -- NONLOBatchSerialNumbers
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0030] occurrences matches {0..*} matches {  -- NONLOOtherCharacteristics
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            ELEMENT[at0039] occurrences matches {0..1} matches {  -- NONLOUnstructured
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0041] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0042] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0024"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0027"] = <
+                    text = <"NONLOBatchSerialNumbers">
+                    description = <"Code for identifying Serial/batch numbers
+">
+                >
+                ["at0030"] = <
+                    text = <"NONLOOtherCharacteristics">
+                    description = <"Codes for characteristics dealing with begin, end of existence, Duration, Dimensions
+">
+                >
+                ["at0039"] = <
+                    text = <"NONLOUnstructured">
+                    description = <"Code for the unstructuredCharacteristics
+">
+                >
+                ["at0041"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

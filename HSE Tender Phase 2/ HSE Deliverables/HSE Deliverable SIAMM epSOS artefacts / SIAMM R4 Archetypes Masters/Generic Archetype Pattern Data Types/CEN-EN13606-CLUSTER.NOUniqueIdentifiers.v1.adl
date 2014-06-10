@@ -1,0 +1,154 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOUniqueIdentifiers.v1
+
+concept
+    [at0197]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140223">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity">
+        >
+    >
+
+definition
+    CLUSTER[at0197] occurrences matches {0..*} matches {  -- NOUniqueIdentifiers
+        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+            ELEMENT[at0198] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0203] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0199] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0204] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                        originalText existence matches {0..1} matches {"Local","Area","State","National"}
+                    }
+                }
+            }
+            ELEMENT[at0200] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0205] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0201] occurrences matches {0..1} matches {  -- NOUIDType
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0206] occurrences matches {0..1} matches {  -- NOUIDType
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0317] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0197"] = <
+                    text = <"NOUniqueIdentifiers">
+                    description = <"NOUniqueIdentifiers">
+                >
+                ["at0198"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0199"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0200"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0201"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0203"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier">
+                >
+                ["at0204"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Area, region, district identifier
+3- State, province/territory identifier
+4- National identifier">
+                >
+                ["at0205"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0206"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0197"] = <[SNOMED-CT::118522005]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0199"] = <[SIAMMR3::NOUIDGeoArea]>
+                ["at0200"] = <[SIAMMR3::NOUIDIssuer]>
+                ["at0201"] = <[SIAMMR3::NOUIDType]>
+                ["at0198"] = <[SIAMMR3::NOUIDDesignation]>
+                ["at0197"] = <[SIAMMR3::NOUniqueIdetifiers]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0197"] = <[LOINC::52417-3]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

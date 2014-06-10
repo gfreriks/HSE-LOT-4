@@ -1,0 +1,88 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.HowResultCollection.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131117">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Cluster Model for the SIAMM pattern to document the HOW for ResultCollection">
+            keywords = <"SIAMM","HOW","ResultCollection","RC">
+            copyright = <"ERS B.V.">
+            use = <"In SIAMM">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- RC
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- FacultiesUsed
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0008] occurrences matches {0..1} matches {  -- FacultiesUsed
+                        originalText existence matches {0..1} matches {"Seeing","Hearing","Touching","Smelling","Tasting","Digitally"; "Seeing"}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- MediumUsed
+                value existence matches {0..1} matches {*}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0007] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"RC">
+                    description = <"Cluster Model for the SIAMM pattern to document the HOW for ResultCollection">
+                >
+                ["at0002"] = <
+                    text = <"FacultiesUsed">
+                    description = <"- Seeing
+- Hearing
+- Touching
+- Smelling
+- Tasting
+">
+                >
+                ["at0005"] = <
+                    text = <"MediumUsed">
+                    description = <"When digitally: define the Medium Used (e-mail, etc.)">
+                >
+                ["at0008"] = <
+                    text = <"FacultiesUsed">
+                    description = <"- Seeing
+- Hearing
+- Touching
+- Smelling
+- Tasting
+- Digitally
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

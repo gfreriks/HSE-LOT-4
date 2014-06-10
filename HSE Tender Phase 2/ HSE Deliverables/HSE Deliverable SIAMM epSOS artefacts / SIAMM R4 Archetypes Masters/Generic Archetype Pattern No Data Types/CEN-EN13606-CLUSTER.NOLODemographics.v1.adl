@@ -1,0 +1,177 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOLODemographics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131003">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOLODemographics
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0019] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0021] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0024] occurrences matches {0..1} matches {  -- NOLODRace
+                value existence matches {0..1} matches {*}
+            }
+            allow_archetype CLUSTER[at0041] occurrences matches {0..1} matches {  -- NOLODBirthDetails
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0043] occurrences matches {0..1} matches {  -- NOLODDeathDetails
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0044] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0002"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female
+3- Intersex - Indeterminate
+
+9- Not sated/Inadequately described">
+                >
+                ["at0005"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0008"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"ISO 22220
+
+The country in which the subject of care was born.
+">
+                >
+                ["at0011"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0013"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"ISO:2220
+Codes for the birth order">
+                >
+                ["at0016"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0019"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate
+
+9- Not stated / inadequately described">
+                >
+                ["at0021"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)
+">
+                >
+                ["at0024"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0041"] = <
+                    text = <"NOLODBirthDetails">
+                    description = <"ISO 22220
+
+
+Codes for the details about the birth
+">
+                >
+                ["at0043"] = <
+                    text = <"NOLODDeathDetails">
+                    description = <"ISO 2220
+Codes for the details about the death
+
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

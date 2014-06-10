@@ -1,0 +1,281 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.DEMOtwoDatapoints.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"gfrer@luna.nl">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140117">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- BedWaitingTime
+        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            CLUSTER[at0432] occurrences matches {1..1} matches {  -- ResultValues
+                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                    ELEMENT[at0434] occurrences matches {0..1} matches {  -- ResultComments
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0444] occurrences matches {0..1} matches {  -- ResultComments
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0435] occurrences matches {0..1} matches {  -- ResultNumeric
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0445] occurrences matches {1..1} matches {  -- RNValue
+                                parts existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                                    ELEMENT[at0460] occurrences matches {1..1} matches {  -- RNValueNumber
+                                        value existence matches {0..1} matches {
+                                            PQ[at0322] occurrences matches {0..1} matches {  -- BedWaitingTime
+                                                units existence matches {1..1} matches {
+                                                    CS[at0326] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"d","wk","mo"}
+                                                        codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0.0|}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0001] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0016] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0442] occurrences matches {1..1} matches {*}  -- 
+                }
+            }
+            CLUSTER[at0024] occurrences matches {1..1} matches {  -- NamedObject
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0123] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0126] occurrences matches {0..1} matches {  -- NONLOName
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0128] occurrences matches {1..1} matches {  -- NONLOName
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0129] occurrences matches {0..1} matches {  -- NONLOName
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"BedWaitingTime"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0131] occurrences matches {0..1} matches {  -- NONLONameType
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0132] occurrences matches {0..1} matches {  -- NONLONameType
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"AdministrativeData"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0133] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0153] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0307] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", "CONTSYS", "LOINC", "IrelandCS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"BedWaitingTime">
+                    description = <"DEMOtwoDatapoints">
+                >
+                ["at0432"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0434"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0435"] = <
+                    text = <"ResultNumeric">
+                    description = <"Holds one numeric result
+
+Codes for:
+	•	Numeric result including
+	•	Units of Measurement via Data Type
+	•	Normal range: the range of normal values as publsihed
+	•	Signal range: the used to generate alerts
+	•	Allowed range: the Multitude that can be entered as number
+
+The WHAT: NamedObject will hold the Name attached to the numeric result.
+e.g.
+WHAT:NamedObject...NameType=‘Finding:Lab-Test’
+WHAT:NamedObject...Name=‘Glucose concentration’
+WHAT:ResultValueNumericResult=’7.4’, Units=’mM/L’
+">
+                >
+                ["at0444"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0445"] = <
+                    text = <"RNValue">
+                    description = <"Holds the numeric value with its Units of Measurement
+
+CLUSTER model that codes for a Number and Units of Measurement HL7: UCAM
+And Number attributes such as:
+- Precision
+- Scale
+- Sensitivity
+- Specificity
+">
+                >
+                ["at0460"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0024"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0123"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0126"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0128"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0129"] = <
+                    text = <"NONLOName">
+                    description = <"The time measured in days between the request and fulfilment.">
+                >
+                ["at0131"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0132"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0133"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0153"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0322"] = <
+                    text = <"BedWaitingTime">
+                    description = <"The time measured in days/ Weeks/ Months between the request and fulfilment.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+                ["at0024"] = <[DCM::CEN-EN13606-CLUSTER.NamedObject.v2]>
+            >
+        >
+        ["CONTSYS"] = <
+            items = <
+            >
+        >
+        ["LOINC"] = <
+            items = <
+            >
+        >
+        ["IrelandCS"] = <
+            items = <
+                ["at0129"] = <[IrelandCS::HSE123]>
+                ["at0322"] = <[IrelandCS::HSE123]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

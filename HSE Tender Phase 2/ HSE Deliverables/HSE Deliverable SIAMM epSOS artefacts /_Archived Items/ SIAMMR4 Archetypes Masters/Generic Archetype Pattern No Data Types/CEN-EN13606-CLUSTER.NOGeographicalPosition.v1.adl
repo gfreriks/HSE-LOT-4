@@ -1,0 +1,88 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOGeographicalPosition.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131003">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"CLUSTER coding for the geographical position:
+- Altitude
+- Longitude
+- Latitude
+
+A geographic coordinate system is a coordinate system that enables every location on the Earth to be specified by a set of numbers or letters. The coordinates are often chosen such that one of the numbers represents vertical position , and two or three of the numbers represent horizontal position . A common choice of coordinates is latitude , longitude and elevation .[1]
+Any position on the earth defined by means of its geographical coordinates, either astronomical or geodetic. 
+http://en.wikipedia.org/wiki/Geographic_coordinate_system
+">
+            keywords = <"SIAMM","NoamedObject","Geographical position">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM generic pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOGeographicalPosition
+        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOGPLatitude
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOGPLongitude
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NOGPAltitude
+                value existence matches {0..1} matches {*}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOGeographicalPosition">
+                    description = <"CLUSTER coding for characteristics of Postal (Physical) Addresses
+
+ISO:22220
+A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. “suburb/town/locality name”, “postal code”, “state/territory/province”, and “country”, forms a complete geographical/physical address.
+">
+                >
+                ["at0002"] = <
+                    text = <"NOGPLatitude">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"NOGPLongitude">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"NOGPAltitude">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,307 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Participations.v2
+
+concept
+    [at0207]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordsrvices.eu">
+        ["name"] = <"Gerard Freriks">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20140209">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Define the Subject of the Statement.
+">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"As part of SIAMM R3">
+        >
+    >
+
+definition
+    CLUSTER[at0207] occurrences matches {0..*} matches {  -- Participations
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            CLUSTER[at0208] occurrences matches {0..*} matches {  -- PHealthcareProvider
+                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                    ELEMENT[at0212] occurrences matches {0..1} matches {  -- PHPRole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0224] occurrences matches {0..1} matches {  -- PHPRole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0213] occurrences matches {0..1} matches {  -- PHPCompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0225] occurrences matches {0..1} matches {  -- PHPCompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0214] occurrences matches {0..1} matches {  -- PHPName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0391] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0209] occurrences matches {0..*} matches {  -- POtherEntities
+                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                    ELEMENT[at0216] occurrences matches {0..1} matches {  -- POERole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0226] occurrences matches {0..1} matches {  -- POERole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0217] occurrences matches {0..1} matches {  -- POECompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0227] occurrences matches {0..1} matches {  -- POECompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0218] occurrences matches {0..0} matches {  -- POEName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0394] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0210] occurrences matches {0..*} matches {  -- PSubjectOfCare
+                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                    ELEMENT[at0220] occurrences matches {0..1} matches {  -- PSCRole
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0228] occurrences matches {0..1} matches {  -- PSCRole
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {"patient"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0221] occurrences matches {0..1} matches {  -- PSCCompetences
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0229] occurrences matches {0..1} matches {  -- PSCCompetences
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0222] occurrences matches {0..1} matches {  -- PSCName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0003] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0009] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0207"] = <
+                    text = <"Participations">
+                    description = <"Participations
+
+=> NO SNOMED CODE to indocate Participation of one entity to an other <=">
+                >
+                ["at0208"] = <
+                    text = <"PHealthcareProvider">
+                    description = <"=> Ther is NO SNOMED code for healthcare Provider <=">
+                >
+                ["at0209"] = <
+                    text = <"POtherEntities">
+                    description = <"CLUSTER model that codes for the participation of any actor not being the HcP or SubjectOfCare.
+
+=> There is NO SNOMED code for Healthcare actor <=
+">
+                >
+                ["at0210"] = <
+                    text = <"PSubjectOfCare">
+                    description = <"CLUSTER model that codes for the participation of an Patient.
+In the case of an ENTRY this will be Patient that is involved as an actor in the treatment process that is documented.
+Most often the name of the patient is not recorded in 13606 conformant systems for privacy reasons. There are conditions that the name of the patient must be recorded.
+">
+                >
+                ["at0212"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+
+
+=> There is NO SNOMED code for Role an actor in Health can play <=">
+                >
+                ["at0213"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0214"] = <
+                    text = <"PHPName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+
+
+">
+                >
+                ["at0216"] = <
+                    text = <"POERole">
+                    description = <"Role Code Set for Subjects: 13606-3 Termlist Subject_Catagory
+patient DS01
+relative of patient DS01
+foetus or neonate
+mother
+donor
+other person
+body part or specimen
+device or implant or prosthesis
+other entity
+">
+                >
+                ["at0217"] = <
+                    text = <"POECompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc.
+">
+                >
+                ["at0218"] = <
+                    text = <"POEName">
+                    description = <"Codes for the subordinate entity, when needed, via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0220"] = <
+                    text = <"PSCRole">
+                    description = <"DS01- patient
+DS02- relative of patient
+DS03- mother
+DS04- donor
+DS06- other person
+DS07- body part or specimen
+DS08- device or implant or prosthesis
+DS05- other entity">
+                >
+                ["at0221"] = <
+                    text = <"PSCCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0222"] = <
+                    text = <"PSCName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0224"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+">
+                >
+                ["at0225"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0226"] = <
+                    text = <"POERole">
+                    description = <"Role Code Set for Subjects: 13606-3 Termlist Subject_Catagory
+DS00- patient
+DS01- relative of patient
+DS02- foetus or neonate
+DS03- mother
+DS04- donor
+DS06- other person
+DS07- body part or specimen
+DS08- device or implant or prosthesis
+DS05- other entity
+">
+                >
+                ["at0227"] = <
+                    text = <"POECompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc.
+">
+                >
+                ["at0228"] = <
+                    text = <"PSCRole">
+                    description = <"DS01- patient
+DS02- relative of patient
+DS03- mother
+DS04- donor
+DS06- other person
+DS07- body part or specimen
+DS08- device or implant or prosthesis
+DS05- other entity patient">
+                >
+                ["at0229"] = <
+                    text = <"PSCCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0210"] = <[SNOMED-CT::410604004]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0208"] = <[SIAMMR3::PHealthcareProvider]>
+                ["at0213"] = <[SIAMMR3::PHPCompetences]>
+                ["at0212"] = <[SIAMMR3::PHPRole]>
+                ["at0209"] = <[SIAMMR3::POtherEntities]>
+                ["at0217"] = <[SIAMMR3::POECompetences]>
+                ["at0210"] = <[SIAMMR3::PSubjectOfCare]>
+                ["at0216"] = <[SIAMMR3::POERole]>
+                ["at0221"] = <[SIAMMR3::PSCCompetences]>
+                ["at0220"] = <[SIAMMR3::PSCRole]>
+                ["at0207"] = <[SIAMMR3::Participations]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

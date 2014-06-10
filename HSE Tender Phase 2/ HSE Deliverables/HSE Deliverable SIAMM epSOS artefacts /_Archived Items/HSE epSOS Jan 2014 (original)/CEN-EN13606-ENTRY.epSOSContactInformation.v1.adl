@@ -1,0 +1,530 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.epSOSContactInformation.v1
+
+concept
+    [at0002]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131214">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Document the Contact information">
+            keywords = <"SIAMM","HSE","epSOS">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM">
+        >
+    >
+
+definition
+    ENTRY[at0002] occurrences matches {0..1} matches {  -- EPsoscONTACTInformation
+        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            CLUSTER[at0048] occurrences matches {1..1} matches {  -- NamedObject
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0049] occurrences matches {0..1} matches {  -- NOLOCharacteristics
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0050] occurrences matches {0..1} matches {  -- NOLOName
+                                parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                                    CLUSTER[at0051] occurrences matches {1..*} matches {  -- NOLONameFamilyGroup
+                                        parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0053] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                                value existence matches {0..1} matches {
+                                                    INT[at0055] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                                        value existence matches {1..1} matches {|>0|; 1}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0070] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0057] occurrences matches {0..1} matches {  -- NOLONameGivenGroup
+                                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                            ELEMENT[at0058] occurrences matches {0..1} matches {  -- NOLONameGivenName
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0059] occurrences matches {0..1} matches {  -- NOLONameGivenName
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                                value existence matches {0..1} matches {
+                                                    INT[at0066] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                                        value existence matches {1..1} matches {|>0|; 1}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0071] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0056] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0102] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0098] occurrences matches {0..1} matches {  -- NOPostalAddress
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0109] occurrences matches {0..1} matches {  -- NOPACountryIdentifier
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0110] occurrences matches {0..1} matches {  -- NOPACountryIdentifier
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0145] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0084] occurrences matches {1..1} matches {  -- NOOtherAddress Mail Tel
+                        parts existence matches {0..1} cardinality matches {0..2; unordered} matches {
+                            CLUSTER[at0085] occurrences matches {0..1} matches {  -- NOOADigitalCommunication
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0086] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0087] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                                originalText existence matches {0..1} matches {"e-mail"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0091] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0092] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                                originalText existence matches {0..1} matches {"URI","URL","TweetAddress","FaceBookAddress"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0079] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0094] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationEMail
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0095] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0096] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                                originalText existence matches {0..1} matches {"Telephone (Landline)","Telephone Mobile"; "Telephone (Landline)"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0097] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0099] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                                originalText existence matches {0..1} matches {"URI","URL","TweetAddress","FaceBookAddress"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0080] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0074] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0002] occurrences matches {1..1} matches {  -- EPsoscONTACTInformation
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0044] occurrences matches {1..1} matches {  -- Participations
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0114] occurrences matches {0..*} matches {  -- POtherEntities
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            ELEMENT[at0115] occurrences matches {0..1} matches {  -- POERole
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0116] occurrences matches {0..1} matches {  -- POERole
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0120] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0142] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", "epSOS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0002"] = <
+                    text = <"EPsoscONTACTInformation">
+                    description = <"EPsoscONTACTInformation">
+                >
+                ["at0048"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+
+CONTACT INFORMATION
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0049"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics">
+                >
+                ["at0050"] = <
+                    text = <"NOLOName">
+                    description = <"ISO:22220
+Code for Name related topics of a Living Object:
+	•	Name Use Group
+	•	Name FamilyName Group
+  	•	Name GivenNameGroup    
+	•	Name Title group
+	•	Name Prefix group
+	•	Name Suffix Group
+	•	Name Preferred Flag
+	•	Name Conditional  Use
+As many times LOName can be invoked as necessary.
+The Preferred Flag indicates the preferred name.
+">
+                >
+                ["at0051"] = <
+                    text = <"NOLONameFamilyGroup">
+                    description = <"ISO:22220
+
+This field can contain more than one element. Example: Español Smith
+">
+                >
+                ["at0052"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0053"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0054"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0055"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0057"] = <
+                    text = <"NOLONameGivenGroup">
+                    description = <"The Name of the patient (Example: John). This field can contain more than one element">
+                >
+                ["at0058"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0059"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0065"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0066"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0098"] = <
+                    text = <"NOPostalAddress">
+                    description = <"NOPostalAddress Contact person">
+                >
+                ["at0109"] = <
+                    text = <"NOPACountryIdentifier">
+                    description = <"ISO:22220
+
+A code representing the country component of aContact person
+">
+                >
+                ["at0110"] = <
+                    text = <"NOPACountryIdentifier">
+                    description = <"ISO:22220
+
+A code representing the country component of a subject of care’s address.
+">
+                >
+                ["at0084"] = <
+                    text = <"NOOtherAddress Mail Tel">
+                    description = <"NOOtherAddress">
+                >
+                ["at0085"] = <
+                    text = <"NOOADigitalCommunication">
+                    description = <"ISO 2220
+Codes or any Digital Address: e-mail
+">
+                >
+                ["at0086"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+
+See 13606-3 also">
+                >
+                ["at0087"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+See 13606-3 also">
+                >
+                ["at0091"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0092"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0094"] = <
+                    text = <"NOOADigitalCommunicationEMail">
+                    description = <"ISO 2220
+Codes or any Digital Address: Telephone
+">
+                >
+                ["at0095"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+
+See 13606-3 also">
+                >
+                ["at0096"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+See 13606-3 also">
+                >
+                ["at0097"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0099"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0044"] = <
+                    text = <"Participations">
+                    description = <"Participations">
+                >
+                ["at0114"] = <
+                    text = <"POtherEntities">
+                    description = <"CLUSTER model that codes for the participation of any actor not being the HcP or SubjectOfCare.
+">
+                >
+                ["at0115"] = <
+                    text = <"POERole">
+                    description = <"Role and type of the contact.
+
+--> Not a perfect match with SIAMM <---">
+                >
+                ["at0116"] = <
+                    text = <"POERole">
+                    description = <"">
+                >
+                ["at0120"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+                ["at0084"] = <[DCM::CEN-EN13606-CLUSTER.NOOtherAddress_Mail_Tel.v1]>
+                ["at0094"] = <[DCM::CEN-EN13606-CLUSTER.NOOADigitalCommunicationEMail.v1]>
+                ["at0044"] = <[DCM::CEN-EN13606-CLUSTER.Participations.v1]>
+                ["at0048"] = <[DCM::CEN-EN13606-CLUSTER.NamedObject_SoC.v1]>
+            >
+        >
+        ["epSOS"] = <
+            items = <
+                ["at0050"] = <[epSOS::R1.8.1]>
+                ["at0052"] = <[epSOS::R1.8.1]>
+                ["at0053"] = <[epSOS::R1.8.1]>
+                ["at0051"] = <[epSOS::R1.8.1]>
+                ["at0057"] = <[epSOS::R1.8.2]>
+                ["at0058"] = <[epSOS::R1.8.2]>
+                ["at0059"] = <[epSOS::R1.8.2]>
+                ["at0084"] = <[epSOS::R1.8.4]>
+                ["at0085"] = <[epSOS::R1.8.4.2]>
+                ["at0091"] = <[epSOS::R1.8.4.2]>
+                ["at0092"] = <[epSOS::R1.8.4.2]>
+                ["at0086"] = <[epSOS::R1.8.4.2]>
+                ["at0087"] = <[epSOS::R1.8.4.2]>
+                ["at0094"] = <[epSOS::R1.8.4.1]>
+                ["at0097"] = <[epSOS::R1.8.4.1]>
+                ["at0099"] = <[epSOS::R1.8.4.1]>
+                ["at0095"] = <[epSOS::R1.8.4.1]>
+                ["at0109"] = <[epSOS::R1.8.3.6]>
+                ["at0110"] = <[epSOS::R1.8.3.6]>
+                ["at0096"] = <[epSOS::R1.8.4.1]>
+                ["at0115"] = <[epSOS::R1.8.5]>
+                ["at0098"] = <[epSOS::R1.8.3.6]>
+                ["at0002"] = <[epSOS::R1.8]>
+                ["at0048"] = <[epSOS::R1.8]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,275 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.HSE_DEmo.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131127">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Summary
+        content existence matches {0..1} cardinality matches {0..3; unordered} matches {
+            SECTION[at0001] occurrences matches {0..1} matches {  -- Context
+                members existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    SECTION[at0002] occurrences matches {0..*} matches {  -- Localisation InTime/Space
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0003] occurrences matches {0..1} matches {  -- Date/Time
+                                items existence matches {0..1} cardinality matches {0..1; unordered} matches {
+                                    ELEMENT[at0016] occurrences matches {0..1} matches {  -- Date
+                                        value existence matches {0..1} matches {
+                                            TS[at0017] occurrences matches {0..1} matches {  -- TS
+                                                time existence matches {1..1} matches {yyyy-??-??T??:??:??}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            ENTRY[at0008] occurrences matches {0..1} matches {  -- Locations
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0018] occurrences matches {0..1} matches {  -- Location
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    SECTION[at0007] occurrences matches {0..1} matches {  -- WHY
+                        members existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ENTRY[at0011] occurrences matches {0..*} matches {  -- Reasons
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0012] occurrences matches {0..1} matches {  -- Reason
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0013] occurrences matches {0..1} matches {  -- Reason
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0004] occurrences matches {0..1} matches {  -- HealthcareProblems
+                members existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ENTRY[at0010] occurrences matches {0..*} matches {  -- HcProblem
+                        include
+                            archetype_id/value matches {/.Findings/}
+                            archetype_id/value matches {/.Complaints/}
+                            archetype_id/value matches {/.Diagnosis/}
+                    }
+                    ENTRY[at0019] occurrences matches {0..*} matches {  -- LabResults
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0020] occurrences matches {0..1} matches {  -- LabResultGlucose
+                                value existence matches {0..1} matches {
+                                    PQ[at0021] occurrences matches {0..1} matches {  -- PQ
+                                        units existence matches {1..1} matches {
+                                            CS[at0023] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"mmol/L"}
+                                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                    PQ[at0024] occurrences matches {0..1} matches {  -- PQ
+                                        units existence matches {1..1} matches {
+                                            CS[at0026] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"g/L"}
+                                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ENTRY[at0005] occurrences matches {0..*} matches {  -- HealthcareProvider
+                items existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0006] occurrences matches {0..1} matches {  -- HcPName
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0009] occurrences matches {1..1} matches {  -- HcPName
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0014] occurrences matches {0..*} matches {  -- HcPTitles
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0015] occurrences matches {0..1} matches {  -- HcPTitle
+                                originalText existence matches {0..1} matches {"Mr","Mrs","Ms"; "Mr"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CONTSYS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"HSE_DEmo">
+                    description = <"HSE_DEmo">
+                >
+                ["at0001"] = <
+                    text = <"WHERE">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"SECTION">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Time">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"ProblemList">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"Author">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"Location">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"ENTRY">
+                    description = <"">
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Summary">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"HealthcareProvider">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"Localisation InTime/Space">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"Context">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"WHY">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"HealthcareProblems">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"Locations">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Date/Time">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"HcProblem">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"HcPName">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"HcPName">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"Reasons">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"Reason">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"Reason">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"HcPTitles">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"HcPTitle">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"Date">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"TS">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"Location">
+                    description = <"">
+                >
+                ["at0019"] = <
+                    text = <"LabResults">
+                    description = <"">
+                >
+                ["at0020"] = <
+                    text = <"LabResultGlucose">
+                    description = <"">
+                >
+                ["at0021"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0024"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["CONTSYS"] = <
+            items = <
+                ["at0009"] = <[CONTSYS::HealthCareProvider]>
+                ["at0013"] = <[CONTSYS::Contributingfactors]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

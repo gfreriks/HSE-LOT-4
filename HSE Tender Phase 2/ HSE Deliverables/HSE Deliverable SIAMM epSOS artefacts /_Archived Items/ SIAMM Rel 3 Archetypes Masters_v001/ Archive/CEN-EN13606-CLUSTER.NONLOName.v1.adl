@@ -1,0 +1,92 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOName.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for ">
+            keywords = <"SIAMM","NamedObject","NonLiving","Name">
+            copyright = <"ERS B.V.">
+            use = <"Use for SIAMM Generic artefact">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOName
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0010] occurrences matches {0..1} matches {  -- NONLONameType
+            }
+            allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {  -- NONLONameValidity
+                include
+                    archetype_id/value matches {/.LocalisationInTime/}
+            }
+            ELEMENT[at0019] occurrences matches {1..1} matches {  -- NONLOName
+                value existence matches {0..1} matches {*}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0020] occurrences matches {1..1} matches {*}  -- 
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0010"] = <
+                    text = <"NONLONameType">
+                    description = <"Code for the kind of the Non Living Object
+E.g. Intervention:Prescription procedure
+The NONLOName will indicate what specific procedure
+">
+                >
+                ["at0015"] = <
+                    text = <"NONLONameValidity">
+                    description = <"Codes for validity in time,
+Via A Artefact Slot Reference
+">
+                >
+                ["at0019"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

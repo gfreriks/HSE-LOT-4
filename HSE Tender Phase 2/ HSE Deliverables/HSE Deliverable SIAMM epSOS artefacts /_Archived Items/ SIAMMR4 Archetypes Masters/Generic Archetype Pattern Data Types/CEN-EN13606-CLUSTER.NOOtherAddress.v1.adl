@@ -1,0 +1,304 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOOtherAddress.v1
+
+concept
+    [at0146]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140223">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"NOOtherAddress
+
+Document digital addresses">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+        >
+    >
+
+definition
+    CLUSTER[at0146] occurrences matches {0..*} matches {  -- NOOtherAddress
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            CLUSTER[at0147] occurrences matches {0..*} matches {  -- NOOADigitalCommunication
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0150] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0351] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                codedValue existence matches {1..1} matches {
+                                    CD[at0352] occurrences matches {0..1} matches {  -- Telehone
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0113]
+                                        }
+                                    }
+                                    CD[at0353] occurrences matches {0..1} matches {  -- Mobile
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0112]
+                                        }
+                                    }
+                                    CD[at0354] occurrences matches {0..1} matches {  -- Fax
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0111]
+                                        }
+                                    }
+                                    CD[at0355] occurrences matches {0..1} matches {  -- eMail
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0109]
+                                        }
+                                    }
+                                    CD[at0356] occurrences matches {0..1} matches {  -- URL
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0115]
+                                        }
+                                    }
+                                    CD[at0357] occurrences matches {0..1} matches {  -- Coded value 6
+                                        codeValue existence matches {0..1} matches {
+                                            [ac0104]
+                                        }
+                                    }
+                                }
+                                originalText existence matches {0..1} matches {
+                                    [ac0102]
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0151] occurrences matches {0..*} matches {  -- NOOADigitalCommunicationPreference
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0157] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationPreference
+                                originalText existence matches {0..1} matches {"Business","DatTime","Weekend","AlltheTime","Evening"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0152] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0158] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                originalText existence matches {0..1} matches {"URI","URL","TweetAddress","FaceBookAddress"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0153] occurrences matches {0..1} matches {  -- NOOAAddressDigitalCommunicationUsageCode
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0159] occurrences matches {0..1} matches {  -- NOOAAddressDigitalCommunicationUsageCode
+                                originalText existence matches {0..1} matches {"Business","Personal","Both"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0141] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            ELEMENT[at0148] occurrences matches {0..1} matches {  -- NOOAUnstructured
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0155] occurrences matches {0..1} matches {  -- NOOAUnstructured
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0143] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SNOMED-CT", "SIAMMR3", "LOINC", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0146"] = <
+                    text = <"NOOtherAddress">
+                    description = <"NOOtherAddress">
+                >
+                ["at0147"] = <
+                    text = <"NOOADigitalCommunication">
+                    description = <"ISO 2220
+Codes or any Digital Address
+">
+                >
+                ["at0148"] = <
+                    text = <"NOOAUnstructured">
+                    description = <"Other Address in free text
+">
+                >
+                ["at0150"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"=> NO SNOMD CODE for 'Communicatio Medium'
+
+ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+
+See 13606-3TermList also">
+                >
+                ["at0151"] = <
+                    text = <"NOOADigitalCommunicationPreference">
+                    description = <"ISO: 22220
+
+=> There is NO SNMED code for Communication Preference <=
+
+An indication of the preferences for use of this contact type.
+
+B- Business hours
+D- Daytime hours
+W- Weekend hours
+A- All the time
+E- Evening hours
+">
+                >
+                ["at0152"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+
+=> There is NO SNOMED code for 'digital address' of anything <=
+
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0153"] = <
+                    text = <"NOOAAddressDigitalCommunicationUsageCode">
+                    description = <"ISO:22220
+
+A code representing the manner of use that a person applies to an electronic communication medium.
+
+1- Business
+2- Personal
+3- Both
+3-
+">
+                >
+                ["at0155"] = <
+                    text = <"NOOAUnstructured">
+                    description = <"Other Address in free text">
+                >
+                ["at0157"] = <
+                    text = <"NOOADigitalCommunicationPreference">
+                    description = <"ISO: 22220
+
+An indication of the preferences for use of this contact type.
+
+B- Business hours
+D- Daytime hours
+W- Weekend hours
+A- All the time
+E- Evening hours
+">
+                >
+                ["at0158"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0159"] = <
+                    text = <"NOOAAddressDigitalCommunicationUsageCode">
+                    description = <"ISO:22220
+
+A code representing the manner of use that a person applies to an electronic communication medium.
+The code is the text as defined in the List of allowed entries
+
+1- Business
+2- Personal
+3- Both
+3-
+">
+                >
+                ["at0351"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"">
+                >
+                ["at0352"] = <
+                    text = <"Telehone">
+                    description = <"A default created CD">
+                >
+                ["at0353"] = <
+                    text = <"Mobile">
+                    description = <"=> There is NO SNOMED code for general Mobile Telephone <=">
+                >
+                ["at0354"] = <
+                    text = <"Fax">
+                    description = <"A default created CD
+
+=> There is NO SNOMED general code for Fax <=">
+                >
+                ["at0355"] = <
+                    text = <"eMail">
+                    description = <"A default created CD
+
+=> There NO SNOMD code for eMail <=">
+                >
+                ["at0356"] = <
+                    text = <"URL">
+                    description = <"A default created CD
+=> There is NO SNOMED code for URL <=">
+                >
+                ["at0357"] = <
+                    text = <"Coded value 6">
+                    description = <"A default created CD">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0357"] = <[SNOMED-CT::74964007]>
+                ["at0352"] = <[SNOMED-CT::359993007]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0153"] = <[SIAMMR3::NOOAAddressDigitalCommunicationUsageCode]>
+                ["at0159"] = <[SIAMMR3::NOOAAddressDigitalCommunicationUsageCode]>
+                ["at0152"] = <[SIAMMR3::NOOADigitalCommunicationDetails]>
+                ["at0148"] = <[SIAMMR3::NOOAUnstructured]>
+                ["at0147"] = <[SIAMMR3::NOOADigitalCommunication]>
+                ["at0150"] = <[SIAMMR3::NOOADigitalCommunicationMedium]>
+                ["at0146"] = <[SIAMMR3::NOOtherAddress]>
+                ["at0151"] = <[SIAMMR3::NOOADigitalCommunicationPreference]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+            >
+        >
+    >
+    constraint_binding = <
+    >

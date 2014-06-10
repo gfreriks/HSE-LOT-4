@@ -1,0 +1,142 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Demo1.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"gfrer@luna.nl">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140201">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Demo1
+        items existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            CLUSTER[at0001] occurrences matches {0..*} matches {  -- CLUSTER 2
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0007] occurrences matches {0..*} matches {  -- ELEMENT 2.1
+                        value existence matches {0..1} matches {
+                            PQ[at0023] occurrences matches {0..1} matches {  -- PQ
+                                units existence matches {1..1} matches {*}
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0010] occurrences matches {0..*} matches {  -- ELEMENT 2.1
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0026] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0024] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0003] occurrences matches {1..*} matches {  -- CLUSTER 1
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0013] occurrences matches {0..1} matches {  -- ELEMENT 1.1
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0015] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                codedValue existence matches {1..1} matches {
+                                    CD[at0021] occurrences matches {0..1} matches {  -- Coded value 1
+                                        codeValue existence matches {0..1} matches {"Item1"}
+                                        mappings existence matches {0..1} cardinality matches {0..0; unordered} matches {*}
+                                        qualifiers existence matches {0..1} cardinality matches {0..0; unordered} matches {*}
+                                    }
+                                }
+                                originalText existence matches {0..1} matches {"ItemA","ItemB"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0022] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"IrelandCS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Demo1">
+                    description = <"Demo1">
+                >
+                ["at0001"] = <
+                    text = <"CLUSTER 2">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"CLUSTER 1">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"ELEMENT 2.1">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"ELEMENT 2.1">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"ELEMENT 1.1">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"CODED_TEXT">
+                    description = <"Coded text 1.1.1">
+                >
+                ["at0021"] = <
+                    text = <"Coded value 1">
+                    description = <"A default created CD">
+                >
+                ["at0023"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0026"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+        ["IrelandCS"] = <
+            items = <
+                ["at0021"] = <[IrelandCS::I1]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

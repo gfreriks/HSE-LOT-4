@@ -1,0 +1,2047 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.HSE_epSOS_PatientSummary.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131104">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This COMPOSITION (TEMPLATE) defines the superstructure of th epSOS specification (2013) as Interface (exchange) specification">
+            keywords = <"HSE","SAM","Source: epSOS D3.3.2 v0.6 29 10 2012","Subject Area Model">
+            copyright = <"ERS B.V.">
+            use = <"Designed for use in the HSE National Services Framework: Information Architecture :SAM
+To be used as the interface (exchange) specification of the epSOS data set.">
+            misuse = <"Outside the HSE Services Framework.
+Do not use it as persitence/Query specification. This specification must be mapped in order to store and retrieve the normalise infomation.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- HSE epSOS_PatientSummary
+        content existence matches {0..1} cardinality matches {0..4; ordered; unique} matches {
+            SECTION[at0001] occurrences matches {0..1} matches {  -- epSOSPatientData
+                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                    SECTION[at0018] occurrences matches {0..1} matches {  -- ePDIdentification
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0605] occurrences matches {0..*} matches {  -- ePDIdentification
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    CLUSTER[at0606] occurrences matches {1..1} matches {  -- NOUniqueIdetifiers
+                                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                            ELEMENT[at0607] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0608] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0609] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0610] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                                        originalText existence matches {0..1} matches {"Local","Area","State","National"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0611] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0612] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0613] occurrences matches {0..1} matches {  -- NOUIDType
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0614] occurrences matches {0..1} matches {  -- NOUIDType
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0616] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    SECTION[at0019] occurrences matches {0..1} matches {  -- ePDPersonalInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0617] occurrences matches {0..*} matches {  -- ePDPersonalInformation
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    CLUSTER[at0618] occurrences matches {1..1} matches {  -- NOLODemographics
+                                        parts existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+                                            ELEMENT[at0619] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0620] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"Male","Female"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0621] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0622] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0623] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0624] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0625] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0626] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0627] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                                                value existence matches {0..1} matches {
+                                                    INT[at0628] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                                                        value existence matches {1..1} matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0629] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0630] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0631] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0632] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"Male","Female","Intersex"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0633] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0634] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0635] occurrences matches {0..1} matches {  -- NOLODRace
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0636] occurrences matches {0..1} matches {  -- NOLODRace
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0637] occurrences matches {0..1} matches {  -- NOLODBirthDetails
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    ELEMENT[at0638] occurrences matches {0..1} matches {  -- NOLODBirthDate
+                                                        value existence matches {0..1} matches {
+                                                            DATE[at0639] occurrences matches {1..1} matches {  -- NOLODBirthDate
+                                                                date existence matches {1..1} matches {2013-10-03}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0640] occurrences matches {0..1} matches {  -- NOLODDeathFollowUpIndicator
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0641] occurrences matches {1..1} matches {  -- NOLODDeathFollowUpIndicator
+                                                                originalText existence matches {0..1} matches {"Yes","No"; "No"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0642] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0643] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    ELEMENT[at0644] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                                        value existence matches {0..1} matches {
+                                                            DATE[at0645] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                                                date existence matches {1..1} matches {2013-10-03}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0646] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                                                        value existence matches {0..1} matches {
+                                                            CODED_TEXT[at0647] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                                                                codedValue existence matches {1..1} matches {*}
+                                                                originalText existence matches {0..1} matches {/.*/}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0648] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0650] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    SECTION[at0020] occurrences matches {0..1} matches {  -- ePDContactInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0651] occurrences matches {0..*} matches {  -- ePDContactInformation
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    CLUSTER[at0652] occurrences matches {1..1} matches {  -- NOPostalAddress
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            ELEMENT[at0653] occurrences matches {0..1} matches {  -- NOPABuilding/Department
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0654] occurrences matches {0..1} matches {  -- NOPABuilding/Department
+                                                        originalText existence matches {0..1} matches {"APT","CTGE","DUP","F","FY","KSK","MB","MSNT","OFF","PTHS","RM","SE","SHED","SHOP","SITE","SL","STU","TNHS","U","VLLA","WARD","WE"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0655] occurrences matches {0..1} matches {  -- NOPASite
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0656] occurrences matches {0..1} matches {  -- NOPASite
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0657] occurrences matches {0..1} matches {  -- NOPAFloorLevelNumber
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0658] occurrences matches {0..1} matches {  -- NOPAFloorLevelNumber
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0659] occurrences matches {0..1} matches {  -- NOPAFloorlevelType
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0660] occurrences matches {0..1} matches {  -- NOPAFloorlevelType
+                                                        originalText existence matches {0..1} matches {"B","FL","G","L","LG","M","UG"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0661] occurrences matches {0..1} matches {  -- NOPAStreetNumber
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0662] occurrences matches {0..1} matches {  -- NOPAStreetNumber
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0663] occurrences matches {0..1} matches {  -- NOPALotNumber
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0664] occurrences matches {0..1} matches {  -- NOPALotNumber
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0665] occurrences matches {0..1} matches {  -- NOPAStreetName1
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0666] occurrences matches {0..1} matches {  -- NOPAStreetName1
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0667] occurrences matches {0..1} matches {  -- NOPAStreetName2
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0668] occurrences matches {0..1} matches {  -- NOPAStreetName2
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0669] occurrences matches {0..1} matches {  -- NOPAStreetTypeCode
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0670] occurrences matches {0..1} matches {  -- NOPAStreetTypeCode
+                                                        originalText existence matches {0..1} matches {"Ally","Arc","Ave","Bvd","Bypa","Crc","Cct","Cm","Ct","Cres","Cds","Dr","Esp","Grn","Gr","Hwy","Jnc","Lane","Ln","Link","Mews","Pde","Pt","Ridge","Rd","Sq","St","Tce"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0671] occurrences matches {0..1} matches {  -- NOPAStreetSuffixCode
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0672] occurrences matches {0..1} matches {  -- NOPAStreetSuffixCode
+                                                        originalText existence matches {0..1} matches {"CN","E","EX","LR","N","NE","NW","S","SE","SW","UP","W"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0673] occurrences matches {0..1} matches {  -- NOPASuburbTownLocality
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0674] occurrences matches {0..1} matches {  -- NOPASuburbTownLocality
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0675] occurrences matches {0..1} matches {  -- NOPAStateTerritoryProvince
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0676] occurrences matches {0..1} matches {  -- NOPAStateTerritoryProvince
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0677] occurrences matches {0..1} matches {  -- NOPAZipPostalCode
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0678] occurrences matches {0..1} matches {  -- NOPAZipPostalCode
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0679] occurrences matches {0..1} matches {  -- NOPACountryIdentifier
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0680] occurrences matches {0..1} matches {  -- NOPACountryIdentifier
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0681] occurrences matches {0..1} matches {  -- NOPAAddressType
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0682] occurrences matches {0..1} matches {  -- NOPAAddressType
+                                                        originalText existence matches {0..1} matches {"1","2","3","4","8","9"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0683] occurrences matches {0..1} matches {  -- NOPAUnstructuredAddress
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0684] occurrences matches {0..1} matches {  -- NOPAUnstructuredAddress
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0685] occurrences matches {0..1} matches {  -- NOPABuilding/DepartmentSubType
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0686] occurrences matches {0..1} matches {  -- NOPABuilding/DepartmentSubType
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            allow_archetype CLUSTER[at0687] occurrences matches {0..1} matches {  -- NOPAPhysicalAddressValidity
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0689] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0690] occurrences matches {1..1} matches {  -- NOOtherAddress
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            CLUSTER[at0691] occurrences matches {0..*} matches {  -- NOOADigitalCommunication
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                    ELEMENT[at0692] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0693] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                                                originalText existence matches {0..1} matches {"Telephone","Mobile","Fax","Pager","eMail","URL","Other"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0694] occurrences matches {0..*} matches {  -- NOOADigitalCommunicationPreference
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0695] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationPreference
+                                                                originalText existence matches {0..1} matches {"Business","DatTime","Weekend","AlltheTime","Evening"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0696] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0697] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                                                originalText existence matches {0..1} matches {"URI","URL","TweetAddress","FaceBookAddress"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0698] occurrences matches {0..1} matches {  -- NOOAAddressDigitalCommunicationUsageCode
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0699] occurrences matches {0..1} matches {  -- NOOAAddressDigitalCommunicationUsageCode
+                                                                originalText existence matches {0..1} matches {"Business","Personal","Both"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0700] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0701] occurrences matches {0..1} matches {  -- NOOAUnstructured
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0702] occurrences matches {0..1} matches {  -- NOOAUnstructured
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0704] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    SECTION[at0022] occurrences matches {0..1} matches {  -- ePDInsuranceInformation
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0705] occurrences matches {0..*} matches {  -- ePDInsuranceInformation
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    CLUSTER[at0706] occurrences matches {1..1} matches {  -- NOUniqueIdetifiers
+                                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                            ELEMENT[at0707] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0708] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0709] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0710] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                                        originalText existence matches {0..1} matches {"Local","Area","State","National"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0711] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0712] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0713] occurrences matches {0..1} matches {  -- NOUIDType
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0714] occurrences matches {0..1} matches {  -- NOUIDType
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0716] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0002] occurrences matches {0..1} matches {  -- epSOSPatientClinicalData
+                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                    SECTION[at0003] occurrences matches {0..1} matches {  -- ePCDAlerts
+                        members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
+                            SECTION[at0011] occurrences matches {0..1} matches {  -- ePCDAAllergies
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0032] occurrences matches {0..1} matches {  -- ePCDIntolelrances
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0004] occurrences matches {0..1} matches {  -- ePCDHistoryOfPastIllness
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            SECTION[at0023] occurrences matches {0..1} matches {  -- ePCDHPIVaccinations
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0024] occurrences matches {0..1} matches {  -- ePCDHPISurgicalProcedures
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0025] occurrences matches {0..1} matches {  -- ePCDHPIInactiveProblems
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0005] occurrences matches {0..1} matches {  -- ePCDMedicalProblems
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            SECTION[at0026] occurrences matches {0..1} matches {  -- ePCDMPListCurrentProblemsDiagnosis
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0027] occurrences matches {0..1} matches {  -- ePCDMPMedicalDevicesImplants
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0028] occurrences matches {0..1} matches {  -- ePCDMPAutonomyInvalidity
+                                members existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {*}
+                            }
+                            SECTION[at0029] occurrences matches {0..1} matches {  -- ePCDMPSurgicalProcedures
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                            SECTION[at0030] occurrences matches {0..1} matches {  -- ePCDMPTreatmentRecommendations
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                    SECTION[at0006] occurrences matches {0..1} matches {  -- ePCDMedicationSummary
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0007] occurrences matches {0..1} matches {  -- ePCSSocialHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0008] occurrences matches {0..1} matches {  -- ePCDPregnancyHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0009] occurrences matches {0..1} matches {  -- ePCDPhysicalFindings
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0010] occurrences matches {0..1} matches {  -- ePCDDIagnositicTests
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+            SECTION[at0012] occurrences matches {0..1} matches {  -- epSOSPatientSummaryData
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    SECTION[at0014] occurrences matches {0..1} matches {  -- ePSDSendingCountryA
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0015] occurrences matches {0..1} matches {  -- ePSDPatientSummary
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0016] occurrences matches {0..1} matches {  -- ePSDAuthor
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0017] occurrences matches {0..1} matches {  -- ePSDLegalEntity
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+            ENTRY[at0013] occurrences matches {1..1} matches {  -- ENTRY.MPF.Composition
+                items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+                    CLUSTER[at0135] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0136] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0137] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                                        originalText existence matches {0..1} matches {"EN13606:2008"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0138] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0139] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                                        originalText existence matches {0..1} matches {"Composition"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0140] occurrences matches {1..1} matches {  -- ArtefactUse
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0141] occurrences matches {1..1} matches {  -- ArtefactUse
+                                        originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0142] occurrences matches {1..1} matches {  -- TargetReferenceModelClassType
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0143] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                        originalText existence matches {0..1} matches {"Observation"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0144] occurrences matches {1..1} matches {  -- TargetReferenceModelClassName
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0145] occurrences matches {1..1} matches {  -- TargetReferenceModelClassType
+                                        codedValue existence matches {1..1} matches {
+                                            CD[at0031] occurrences matches {1..1} matches {  -- Coded value 1
+                                                codeValue existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        originalText existence matches {0..1} matches {"patient summary"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0146] occurrences matches {1..1} matches {  -- ProcessPattern
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0147] occurrences matches {1..1} matches {  -- ProcessPattern
+                                        originalText existence matches {0..1} matches {"ResultCollection"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0148] occurrences matches {1..1} matches {  -- ProcessContext
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0149] occurrences matches {1..1} matches {  -- ProcessContext
+                                        originalText existence matches {0..1} matches {"ReUse"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0150] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0171] occurrences matches {1..1} matches {  -- NamedObject
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0311] occurrences matches {1..1} matches {  -- LocalisationInPatientSystem
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0312] occurrences matches {1..1} matches {  -- LIPWholePerson
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0313] occurrences matches {1..1} matches {  -- LIPWholePerson
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"Whole","NotWhole"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0590] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0419] occurrences matches {0..*} matches {  -- NOUniqueIdetifiers
+                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                    ELEMENT[at0420] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0421] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0422] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0423] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                                originalText existence matches {0..1} matches {"Local","Area","State","National"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0424] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0425] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0426] occurrences matches {0..1} matches {  -- NOUIDType
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0427] occurrences matches {0..1} matches {  -- NOUIDType
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0021] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0577] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", "CONTSYS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"HSE epSOS_PatientSummary">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"epSOSPatientData">
+                    description = <"All the data in this section will be modelled in one ENTRY: NamedObject.
+
+For reference the epSOS catagories are included (0-0)">
+                >
+                ["at0002"] = <
+                    text = <"epSOSPatientClinicalData">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ePCDAlerts">
+                    description = <"Allergie and Intollelrances">
+                >
+                ["at0004"] = <
+                    text = <"ePCDHistoryOfPastIllness">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"ePCDMedicalProblems">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"ePCDMedicationSummary">
+                    description = <"PM; ENTRY MedicinalProductDispensations
+
+List of current medicines.
+(All prescribed medicine whose period of time indicated for the treatment has not yet expired whether it has been dispensed or not.).
+
+Active Ingerdient, Active ingredient code, Strength, Pharmaceutical Dose form, Number of Units per Intake, Ferquency of Intakes, Duration of Treatment">
+                >
+                ["at0007"] = <
+                    text = <"ePCSSocialHistory">
+                    description = <"PM; ENTRY SocialHistoryObservations
+
+Social history Observations( realted to Smoking, Alcohol, Diet), Reference data range">
+                >
+                ["at0008"] = <
+                    text = <"ePCDPregnancyHistory">
+                    description = <"PM; ENTRY Pregnancy ??? Expected date
+
+Expected data of delivery">
+                >
+                ["at0009"] = <
+                    text = <"ePCDPhysicalFindings">
+                    description = <"VItalSigns:ENRTIE  Blood Pressure (Systolic and DIastolic)
+
+Systolic, Diastolic, Data of measurement">
+                >
+                ["at0010"] = <
+                    text = <"ePCDDIagnositicTests">
+                    description = <"PM; ENTRY Observation:diagnositc:Blood Group
+
+Result of Blood group, Date of measurement">
+                >
+                ["at0012"] = <
+                    text = <"epSOSPatientSummaryData">
+                    description = <"pm: much of this info will be dealth with in the 13606 Reference Model
+
+Country, Summary creation date, Last Update, Author, Legalentity">
+                >
+                ["at0014"] = <
+                    text = <"ePSDSendingCountryA">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"ePSDPatientSummary">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"ePSDAuthor">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"ePSDLegalEntity">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"ePDIdentification">
+                    description = <"Country ID, unique for the patient in that country. Example: ID for United Kingdom patient">
+                >
+                ["at0019"] = <
+                    text = <"ePDPersonalInformation">
+                    description = <"Full Name, Date of Birth, Gender">
+                >
+                ["at0020"] = <
+                    text = <"ePDContactInformation">
+                    description = <"Address, Telephone numbre, e-Mail Address, Preferred HcP/Legal organisation contact
+">
+                >
+                ["at0022"] = <
+                    text = <"ePDInsuranceInformation">
+                    description = <"Insurance number">
+                >
+                ["at0011"] = <
+                    text = <"ePCDAAllergies">
+                    description = <"PM: ENTRY:Allergy
+
+Description, Allergy description id Code, Onset Date, Agent id Code">
+                >
+                ["at0023"] = <
+                    text = <"ePCDHPIVaccinations">
+                    description = <"PM ENTRY: Vaccinations
+
+Vaccination (disease), Brand name, Vaccination ID Code, Vaccination Date">
+                >
+                ["at0024"] = <
+                    text = <"ePCDHPISurgicalProcedures">
+                    description = <"PM; ENTRYInterventions
+
+Procedures prior to the past 6 months
+Procedure description, Procedure ID Code, Prcedure execution Date">
+                >
+                ["at0025"] = <
+                    text = <"ePCDHPIInactiveProblems">
+                    description = <"PN; ENTRY: Problems
+List of Resolved, Closed, or Inactive problems
+
+Problem description, Problem ID, Onset time, End date">
+                >
+                ["at0026"] = <
+                    text = <"ePCDMPListCurrentProblemsDiagnosis">
+                    description = <"PM: ENTRY Diagnositic Inferences
+
+Problem/diagnosis description, Problem ID Code, Onset time">
+                >
+                ["at0027"] = <
+                    text = <"ePCDMPMedicalDevicesImplants">
+                    description = <"PM: ENTRY: Devices/Implante
+
+Device and Implant description, Device ID code, Implantation date
+">
+                >
+                ["at0028"] = <
+                    text = <"ePCDMPAutonomyInvalidity">
+                    description = <"PM; ENTRY ????
+
+Autonomy description, Invalidiy Id">
+                >
+                ["at0029"] = <
+                    text = <"ePCDMPSurgicalProcedures">
+                    description = <"PM: ENTRY Surigal Procedures
+
+Major surgical procedures in the past 6 months
+
+Prodedure description, Procedure Id, Procedure date">
+                >
+                ["at0030"] = <
+                    text = <"ePCDMPTreatmentRecommendations">
+                    description = <"pm: ENTRY TreatmentPlans/Recommendations ???
+
+Recommendation description, Recommendation It">
+                >
+                ["at0032"] = <
+                    text = <"ePCDIntolelrances">
+                    description = <"Description, Allergy description id Code, Onset Date, Agent id Code">
+                >
+                ["at0013"] = <
+                    text = <"ENTRY.MPF.Composition">
+                    description = <"MainPattern to be specialised for use in this COMPOSITION that describes the epSOS Patient Summary.">
+                >
+                ["at0135"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0136"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0137"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0138"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0139"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0140"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0141"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0142"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0143"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0144"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ontSys concept
+">
+                >
+                ["at0145"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes for the binding with one ContSys concept
+">
+                >
+                ["at0146"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0147"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0148"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0149"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0150"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0171"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0311"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"Codes for the Localisation of  the Act that is modeled.
+WHERE in the Patient System is the archetype active?
+The Patient System is the location of the topic with the patient as focus. It helps to define what the Archetype is about.
+When the topic is ECG the localisation for Body Part is the heart and the BodyFunction: Elctrical systems of the heart.
+In the case of an ENTRY archetype the exact location of an Act (process) most likely will be modeled in the WHAT:NamedObject branch where the participating entity os modeled.
+In the case of a CLUSTER archetype this can be sued to indicate what part of the Patient System is the topic for that archetype.
+
+Preferably use the WHO ICF as primary coding system.
+">
+                >
+                ["at0312"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0313"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NWWhole">
+                >
+                ["at0419"] = <
+                    text = <"NOUniqueIdetifiers">
+                    description = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+
+">
+                >
+                ["at0420"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0421"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier">
+                >
+                ["at0422"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0423"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Area, region, district identifier
+3- State, province/territory identifier
+4- National identifier">
+                >
+                ["at0424"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0425"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0426"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0427"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0605"] = <
+                    text = <"ePDIdentification">
+                    description = <"">
+                >
+                ["at0606"] = <
+                    text = <"NOUniqueIdetifiers">
+                    description = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+
+">
+                >
+                ["at0607"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0608"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier">
+                >
+                ["at0609"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0610"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Area, region, district identifier
+3- State, province/territory identifier
+4- National identifier">
+                >
+                ["at0611"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0612"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0613"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0614"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0617"] = <
+                    text = <"ePDPersonalInformation">
+                    description = <"">
+                >
+                ["at0618"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0619"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female
+3- Intersex - Indeterminate
+
+9- Not sated/Inadequately described">
+                >
+                ["at0620"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female">
+                >
+                ["at0621"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0622"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0623"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"ISO 22220
+
+The country in which the subject of care was born.
+">
+                >
+                ["at0624"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"NOLODCountryPlaceOfOrigin
+
+Use ISO Country code">
+                >
+                ["at0625"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0626"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0627"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"ISO:2220
+Codes for the birth order">
+                >
+                ["at0628"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"">
+                >
+                ["at0629"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0630"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0631"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate
+
+9- Not stated / inadequately described">
+                >
+                ["at0632"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate">
+                >
+                ["at0633"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)
+">
+                >
+                ["at0634"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)">
+                >
+                ["at0635"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0636"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0637"] = <
+                    text = <"NOLODBirthDetails">
+                    description = <"NOLODBirthDetails">
+                >
+                ["at0638"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth
+
+">
+                >
+                ["at0639"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth">
+                >
+                ["at0640"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+
+
+[PM: Via SCP?]">
+                >
+                ["at0641"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+">
+                >
+                ["at0642"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0643"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 2220
+Codes for the details about the death
+
+">
+                >
+                ["at0644"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death
+
+">
+                >
+                ["at0645"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death">
+                >
+                ["at0646"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0647"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0648"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0651"] = <
+                    text = <"ePDContactInformation">
+                    description = <"Address, Telephone numbre, e-Mail Address, Preferred HcP/Legal organisation contact
+">
+                >
+                ["at0652"] = <
+                    text = <"NOPostalAddress">
+                    description = <"NOPostalAddress">
+                >
+                ["at0653"] = <
+                    text = <"NOPABuilding/Department">
+                    description = <"ISO:22220
+
+The specification of the type of a separately identifiable portion within a building/complex, marina etc. to clearly distinguish it from another.
+
+APT- Appertement
+CTGE- Cottage
+DUP- Duplex
+F- Flat
+FY- Factory
+KSK- Kiosk
+MB- Marine Berth
+MSNT- Maisonette
+OFF- Office
+PTHS- Penhouse
+RM- Room
+SE- Suite
+SHED- Shed
+SHOP- Shop
+SITE- Site
+SL- Stall
+STU- Studio
+TNHS- Townhouse
+U- Unit
+VLLA- Villa
+WARD- Ward
+WE- Warehouse">
+                >
+                ["at0654"] = <
+                    text = <"NOPABuilding/Department">
+                    description = <"ISO:22220
+
+The specification of the type of a separately identifiable portion within a building/complex, marina etc. to clearly distinguish it from another.
+
+APT- Appertement
+CTGE- Cottage
+DUP- Duplex
+F- Flat
+FY- Factory
+KSK- Kiosk
+MB- Marine Berth
+MSNT- Maisonette
+OFF- Office
+PTHS- Penhouse
+RM- Room
+SE- Suite
+SHED- Shed
+SHOP- Shop
+SITE- Site
+SL- Stall
+STU- Studio
+TNHS- Townhouse
+U- Unit
+VLLA- Villa
+WARD- Ward
+WE- Warehouse">
+                >
+                ["at0655"] = <
+                    text = <"NOPASite">
+                    description = <"ISO:22220
+
+Name of the building
+
+The full name used to identify the physical building or property as part of its location.
+">
+                >
+                ["at0656"] = <
+                    text = <"NOPASite">
+                    description = <"ISO:22220
+
+Name of the building
+
+The full name used to identify the physical building or property as part of its location.
+">
+                >
+                ["at0657"] = <
+                    text = <"NOPAFloorLevelNumber">
+                    description = <"ISO 22220
+Descriptor used to identify the floor or level of a multi-storey building/complex.
+">
+                >
+                ["at0658"] = <
+                    text = <"NOPAFloorLevelNumber">
+                    description = <"ISO 22220
+Descriptor used to identify the floor or level of a multi-storey building/complex.
+">
+                >
+                ["at0659"] = <
+                    text = <"NOPAFloorlevelType">
+                    description = <"ISO:22220
+
+Descriptor used to classify the type of floor or level of a multi-storey building/complex.
+
+B- Basement
+FL- Floor
+G- Ground
+L- Level
+LG- Lower Ground
+M- Mezzanine
+UG- Upper Ground">
+                >
+                ["at0660"] = <
+                    text = <"NOPAFloorlevelType">
+                    description = <"ISO:22220
+Descriptor used to classify the type of floor or level of a multi-storey building/complex.
+
+B- Basement
+FL- Floor
+G- Ground
+L- Level
+LG- Lower Ground
+M- Mezzanine
+UG- Upper Ground">
+                >
+                ["at0661"] = <
+                    text = <"NOPAStreetNumber">
+                    description = <"ISO:22220
+
+The numeric or string reference number of a house or property that is unique within a street name or suburb.
+">
+                >
+                ["at0662"] = <
+                    text = <"NOPAStreetNumber">
+                    description = <"ISO:22220
+
+The numeric or string reference number of a house or property that is unique within a street name or suburb.
+">
+                >
+                ["at0663"] = <
+                    text = <"NOPALotNumber">
+                    description = <"ISO:22220
+
+The lot reference allocated to an address in the absence of street numbering.
+">
+                >
+                ["at0664"] = <
+                    text = <"NOPALotNumber">
+                    description = <"ISO:22220
+
+The lot reference allocated to an address in the absence of street numbering.
+">
+                >
+                ["at0665"] = <
+                    text = <"NOPAStreetName1">
+                    description = <"ISO22220
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0666"] = <
+                    text = <"NOPAStreetName1">
+                    description = <"ISO22220
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0667"] = <
+                    text = <"NOPAStreetName2">
+                    description = <"ISO:22220 (Extension)
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0668"] = <
+                    text = <"NOPAStreetName2">
+                    description = <"ISO:22220 (Extension)
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0669"] = <
+                    text = <"NOPAStreetTypeCode">
+                    description = <"ISO:22220
+A code that identifies the type of public thoroughfare.
+
+Ally
+Arc
+Ave
+Bvd
+Bypa
+Crc
+Cct
+Cm
+Ct
+Cres
+Cds
+Dr
+Esp
+Grn
+Gr
+Hwy
+Jnc
+Lane
+Ln
+Link
+Mews
+Pde
+Pt
+Ridge
+Rd
+Sq
+St
+Tce">
+                >
+                ["at0670"] = <
+                    text = <"NOPAStreetTypeCode">
+                    description = <"ISO:22220
+A code that identifies the type of public thoroughfare.
+
+Ally
+Arc
+Ave
+Bvd
+Bypa
+Crc
+Cct
+Cm
+Ct
+Cres
+Cds
+Dr
+Esp
+Grn
+Gr
+Hwy
+Jnc
+Lane
+Ln
+Link
+Mews
+Pde
+Pt
+Ridge
+Rd
+Sq
+St
+Tcethat identifies the type of public thoroughfare.">
+                >
+                ["at0671"] = <
+                    text = <"NOPAStreetSuffixCode">
+                    description = <"Term used to qualify street name used for directional references.
+
+CN- Central
+E- East
+EX- Extension
+LR- Lower
+N- North
+NE- Norrth-East
+NW- North-West
+S- South
+SE- South-East
+SW- South-West
+UP- Upper
+W- West">
+                >
+                ["at0672"] = <
+                    text = <"NOPAStreetSuffixCode">
+                    description = <"ISO:22220
+
+Term used to qualify street name used for directional references.
+
+CN- Central
+E- East
+EX- Extension
+LR- Lower
+N- North
+NE- Norrth-East
+NW- North-West
+S- South
+SE- South-East
+SW- South-West
+UP- Upper
+W- West">
+                >
+                ["at0673"] = <
+                    text = <"NOPASuburbTownLocality">
+                    description = <"ISO:22220
+
+The full name of the general locality containing the specific address of a subject of care.
+">
+                >
+                ["at0674"] = <
+                    text = <"NOPASuburbTownLocality">
+                    description = <"ISO:22220
+
+The full name of the general locality containing the specific address of a subject of care.
+">
+                >
+                ["at0675"] = <
+                    text = <"NOPAStateTerritoryProvince">
+                    description = <"ISO 22220
+An identifier of the province, state or territory in which a subject of care resides.
+">
+                >
+                ["at0676"] = <
+                    text = <"NOPAStateTerritoryProvince">
+                    description = <"ISO 22220
+An identifier of the province, state or territory in which a subject of care resides.
+">
+                >
+                ["at0677"] = <
+                    text = <"NOPAZipPostalCode">
+                    description = <"ISO:22220
+
+The code for a postal delivery area, aligned with locality, suburb or place for the address of a subject of care, as defined by the postal service.
+">
+                >
+                ["at0678"] = <
+                    text = <"NOPAZipPostalCode">
+                    description = <"ISO:22220
+
+The code for a postal delivery area, aligned with locality, suburb or place for the address of a subject of care, as defined by the postal service.
+">
+                >
+                ["at0679"] = <
+                    text = <"NOPACountryIdentifier">
+                    description = <"ISO:22220
+
+A code representing the country component of a subject of care’s address.
+">
+                >
+                ["at0680"] = <
+                    text = <"NOPACountryIdentifier">
+                    description = <"ISO:22220
+
+A code representing the country component of a subject of care’s address.
+">
+                >
+                ["at0681"] = <
+                    text = <"NOPAAddressType">
+                    description = <"ISO:22220
+A code representing a type of address.
+1- Business
+2- Mailing or postal
+3- Temporary accommodation
+4- Residential
+8- No fixed address
+9- UnKnown/ not stated / inadequately described
+
+See 13606-3
+Administrative address
+Actual address
+Legal address
+Temporal address
+Postal Address
+[TBD]
+">
+                >
+                ["at0682"] = <
+                    text = <"NOPAAddressType">
+                    description = <"ISO:22220
+A code representing a type of address.
+1- Business
+2- Mailing or postal
+3- Temporary accommodation
+4- Residential
+8- No fixed address
+9- UnKnown/ not stated / inadequately described
+
+See 13606-3
+Administrative address
+Actual address
+Legal address
+Temporal address
+Postal Address
+[TBD]
+">
+                >
+                ["at0683"] = <
+                    text = <"NOPAUnstructuredAddress">
+                    description = <"ISO 22220 (Extension)
+
+The unstructured address
+">
+                >
+                ["at0684"] = <
+                    text = <"NOPAUnstructuredAddress">
+                    description = <"ISO 22220 (Extension)
+
+The unstructured address
+">
+                >
+                ["at0685"] = <
+                    text = <"NOPABuilding/DepartmentSubType">
+                    description = <"ISO:22220
+
+The specification of the number of identifier of a building/complex, marina etc. to clearly distinguish it from another.
+
+
+">
+                >
+                ["at0686"] = <
+                    text = <"NOPABuilding/DepartmentSubType">
+                    description = <"ISO:22220
+
+The specification of the number of identifier of a building/complex, marina etc. to clearly distinguish it from another.
+
+
+">
+                >
+                ["at0687"] = <
+                    text = <"NOPAPhysicalAddressValidity">
+                    description = <"ISO 22220
+
+Code for  validity of the Physical address
+
+Using an Archetype SLOT
+">
+                >
+                ["at0690"] = <
+                    text = <"NOOtherAddress">
+                    description = <"NOOtherAddress">
+                >
+                ["at0691"] = <
+                    text = <"NOOADigitalCommunication">
+                    description = <"ISO 2220
+Codes or any Digital Address
+">
+                >
+                ["at0692"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+
+See 13606-3 also">
+                >
+                ["at0693"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+See 13606-3 also">
+                >
+                ["at0694"] = <
+                    text = <"NOOADigitalCommunicationPreference">
+                    description = <"ISO: 22220
+
+An indication of the preferences for use of this contact type.
+
+B- Business hours
+D- Daytime hours
+W- Weekend hours
+A- All the time
+E- Evening hours
+">
+                >
+                ["at0695"] = <
+                    text = <"NOOADigitalCommunicationPreference">
+                    description = <"ISO: 22220
+
+An indication of the preferences for use of this contact type.
+
+B- Business hours
+D- Daytime hours
+W- Weekend hours
+A- All the time
+E- Evening hours
+">
+                >
+                ["at0696"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0697"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0698"] = <
+                    text = <"NOOAAddressDigitalCommunicationUsageCode">
+                    description = <"ISO:22220
+
+A code representing the manner of use that a person applies to an electronic communication medium.
+
+1- Business
+2- Personal
+3- Both
+3-
+">
+                >
+                ["at0699"] = <
+                    text = <"NOOAAddressDigitalCommunicationUsageCode">
+                    description = <"ISO:22220
+
+A code representing the manner of use that a person applies to an electronic communication medium.
+
+1- Business
+2- Personal
+3- Both
+3-
+">
+                >
+                ["at0700"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0701"] = <
+                    text = <"NOOAUnstructured">
+                    description = <"Other Address in free text
+">
+                >
+                ["at0702"] = <
+                    text = <"NOOAUnstructured">
+                    description = <"Other Address in free text">
+                >
+                ["at0705"] = <
+                    text = <"ePDInsuranceInformation">
+                    description = <"Insurance number">
+                >
+                ["at0706"] = <
+                    text = <"NOUniqueIdetifiers">
+                    description = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+
+">
+                >
+                ["at0707"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0708"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier">
+                >
+                ["at0709"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0710"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- Local Subject idetifier
+2- Area, region, district identifier
+3- State, province/territory identifier
+4- National identifier">
+                >
+                ["at0711"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0712"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0713"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0714"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0031"] = <
+                    text = <"Coded value 1">
+                    description = <"A default created CD">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+                ["at0606"] = <[DCM::CEN-EN13606-CLUSTER.NOUniqueIdetifiers.v1]>
+                ["at0618"] = <[DCM::CEN-EN13606-CLUSTER.NOLODemographics.v1]>
+                ["at0652"] = <[DCM::CEN-EN13606-CLUSTER.NOPostalAddress.v1]>
+                ["at0690"] = <[DCM::CEN-EN13606-CLUSTER.NOOtherAddress.v1]>
+                ["at0706"] = <[DCM::CEN-EN13606-CLUSTER.NOUniqueIdetifiers.v1]>
+                ["at0013"] = <[DCM::CEN-EN13606-ENTRY.MP3F.v1]>
+            >
+        >
+        ["CONTSYS"] = <
+            items = <
+                ["at0000"] = <[CONTSYS::electronic patient summary]>
+                ["at0001"] = <[CONTSYS::subject of care]>
+                ["at0003"] = <[CONTSYS::health condition]>
+                ["at0011"] = <[CONTSYS::risk condition]>
+                ["at0032"] = <[CONTSYS::risk condition]>
+                ["at0004"] = <[CONTSYS::health condition]>
+                ["at0025"] = <[CONTSYS::health problem]>
+                ["at0024"] = <[CONTSYS::healthcare treatment]>
+                ["at0023"] = <[CONTSYS::healthcare treatment]>
+                ["at0027"] = <[CONTSYS::healthcare treatment]>
+                ["at0029"] = <[CONTSYS::healthcare treatment]>
+                ["at0030"] = <[CONTSYS::care plan]>
+                ["at0002"] = <[CONTSYS::observed condition]>
+                ["at0005"] = <[CONTSYS::health problem list]>
+                ["at0028"] = <[CONTSYS::observed condition]>
+                ["at0026"] = <[CONTSYS::health problem]>
+                ["at0006"] = <[CONTSYS::observed condition]>
+                ["at0007"] = <[CONTSYS::observed condition]>
+                ["at0008"] = <[CONTSYS::observed condition]>
+                ["at0009"] = <[CONTSYS::observed condition]>
+                ["at0010"] = <[CONTSYS::healthcare investigation]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

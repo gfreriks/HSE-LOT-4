@@ -1,0 +1,3780 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.MP3F.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-RecordServices.eu">
+        ["name"] = <"Gerard Freriks">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130918">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"The SIAMM Backbone pattern for all artefacts">
+            keywords = <"SIAMM","Main Pattern","Release 3">
+            copyright = <"ERS B.V.">
+            use = <"Used to specialise into COntSys harmonised Generic Ineformation Models">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- ENTRY.MPF
+        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            allow_archetype CLUSTER[at0001] occurrences matches {0..1} matches {  -- MetaDataFile
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {  -- ContextHow
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            CLUSTER[at0012] occurrences matches {0..1} matches {  -- LocalisationInPatientSystem
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0013] occurrences matches {0..1} matches {  -- LIPWholePerson
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0014] occurrences matches {0..*} matches {  -- LIPBodyFunctions
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0015] occurrences matches {0..*} matches {  -- LIPCellularSystems
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0016] occurrences matches {0..*} matches {  -- LIPBioChemistry
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0017] occurrences matches {0..*} matches {  -- LIPGenetics
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0018] occurrences matches {0..*} matches {  -- LIPEnvironments
+                        value existence matches {0..1} matches {*}
+                    }
+                    CLUSTER[at0019] occurrences matches {0..*} matches {  -- LIPBodyParts
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0020] occurrences matches {0..1} matches {  -- LIPBodyPart
+                                value existence matches {0..1} matches {*}
+                            }
+                            allow_archetype CLUSTER[at0021] occurrences matches {0..1} matches {  -- LIPBodyPartLocalisation
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0022] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {*}
+            }
+            CLUSTER[at0023] occurrences matches {0..1} matches {  -- LocalisationInSpace
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0024] occurrences matches {0..1} matches {  -- LISReal
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            allow_archetype CLUSTER[at0027] occurrences matches {0..1} matches {  -- LIPRAbsPhysical
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            CLUSTER[at0028] occurrences matches {0..1} matches {  -- LISRRel
+                                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                                    allow_archetype CLUSTER[at0031] occurrences matches {0..1} matches {  -- LIPRRPhysicalAnchor
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                    ELEMENT[at0032] occurrences matches {0..1} matches {  -- LIPRRPhysicalDelta
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0033] occurrences matches {0..1} matches {  -- LIPRRPhysicalDeltaDescription
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0035] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0034] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0029] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0025] occurrences matches {0..0} matches {  -- LISVirtual
+                        parts existence matches {0..1} cardinality matches {0..0; unordered; unique} matches {*}
+                        structure_type existence matches {1..1} matches {
+                            CS[at0030] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0026] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0036] occurrences matches {0..1} matches {  -- LocalisationInTime
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0037] occurrences matches {0..1} matches {  -- LITAbsolute
+                        parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                            ELEMENT[at0040] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                value existence matches {0..1} matches {
+                                    DATE[at0056] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {2013-10-06}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0041] occurrences matches {0..1} matches {  -- LITAbsBeginAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0057] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0069] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0042] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                value existence matches {0..1} matches {
+                                    DATE[at0058] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {2013-10-06}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0043] occurrences matches {0..1} matches {  -- LITAbsEndAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0059] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0070] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0044] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                value existence matches {0..1} matches {
+                                    DURATION[at0060] occurrences matches {0..1} matches {  -- DURATION
+                                        days existence matches {0..1} matches {0; 0}
+                                        hours existence matches {0..1} matches {0; 0}
+                                        minutes existence matches {0..1} matches {0; 0}
+                                        seconds existence matches {0..1} matches {0; 0}
+                                        fractional_second existence matches {0..1} matches {*}
+                                        sign existence matches {0..1} matches {0; 1}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0045] occurrences matches {0..1} matches {  -- LITAbsDurationAccuracy
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0061] occurrences matches {0..1} matches {  -- ISO22220 Accuracy duration
+                                        originalText existence matches {0..1} matches {"A","E","U"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0046] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0038] occurrences matches {0..1} matches {  -- LITRelative
+                        parts existence matches {0..1} cardinality matches {0..8; unordered; unique} matches {
+                            ELEMENT[at0047] occurrences matches {0..1} matches {  -- LITAnchorPointInTime
+                                value existence matches {0..1} matches {
+                                    DATE[at0062] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {2013-10-06}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0048] occurrences matches {0..1} matches {  -- LITRelAnchorPointInTimeAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0063] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0071] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0049] occurrences matches {0..1} matches {  -- LITRelDeltaInTime
+                                value existence matches {0..1} matches {
+                                    DURATION[at0064] occurrences matches {0..1} matches {  -- DURATION
+                                        days existence matches {0..1} matches {0; 0}
+                                        hours existence matches {0..1} matches {0; 0}
+                                        minutes existence matches {0..1} matches {0; 0}
+                                        seconds existence matches {0..1} matches {0; 0}
+                                        fractional_second existence matches {0..1} matches {*}
+                                        sign existence matches {0..1} matches {0; 1}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0050] occurrences matches {0..1} matches {  -- LITRelDeltaInTimeAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0065] occurrences matches {0..1} matches {  -- ISO2220 Accuracy in time
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0072] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0051] occurrences matches {0..1} matches {  -- LITRelDeltaInUnit
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0066] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0052] occurrences matches {0..1} matches {  -- LITRelDeltaInUnitAccuracy
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0067] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0053] occurrences matches {0..1} matches {  -- LITRelDeltaInDescription
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0068] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            allow_archetype CLUSTER[at0054] occurrences matches {0..1} matches {  -- LITAnchorPointByReference
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0055] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0039] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0073] occurrences matches {0..1} matches {  -- Participations
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0074] occurrences matches {0..1} matches {  -- PHealthcareProvider
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            ELEMENT[at0078] occurrences matches {0..1} matches {  -- PHPRole
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0079] occurrences matches {0..1} matches {  -- PHPCompetences
+                                value existence matches {0..1} matches {*}
+                            }
+                            allow_archetype CLUSTER[at0080] occurrences matches {0..1} matches {  -- PHPName
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0382] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0075] occurrences matches {0..*} matches {  -- POtherEntities
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            ELEMENT[at0082] occurrences matches {0..1} matches {  -- POERole
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0083] occurrences matches {0..1} matches {  -- POECompetences
+                                value existence matches {0..1} matches {*}
+                            }
+                            allow_archetype CLUSTER[at0084] occurrences matches {0..0} matches {  -- POEName
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0085] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0076] occurrences matches {0..*} matches {  -- PSubjectOfCare
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0086] occurrences matches {0..1} matches {  -- PHPRole
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0087] occurrences matches {0..1} matches {  -- PHPCompetences
+                                value existence matches {0..1} matches {*}
+                            }
+                            allow_archetype CLUSTER[at0088] occurrences matches {0..1} matches {  -- PHPName
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0384] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0201] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0090] occurrences matches {0..*} matches {  -- Reasons
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0091] occurrences matches {0..1} matches {  -- ReasonUnstructured
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0096] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0092] occurrences matches {0..*} matches {  -- ReasonStructured
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0097] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0093] occurrences matches {0..*} matches {  -- ReasonAsLinkedData
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    CLUSTER[at0124] occurrences matches {0..1} matches {  -- LocalisationInTime
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0125] occurrences matches {0..1} matches {  -- LITAbsolute
+                                parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                    ELEMENT[at0128] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                        value existence matches {0..1} matches {
+                                            DATE[at0348] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {2013-10-06}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0129] occurrences matches {0..1} matches {  -- LITAbsBeginAccuracy
+                                        value existence matches {0..1} matches {
+                                            ORD[at0349] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                                symbol existence matches {1..1} matches {
+                                                    CODED_TEXT[at0361] occurrences matches {1..1} matches {  -- 
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0..<1|; 0}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0130] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                        value existence matches {0..1} matches {
+                                            DATE[at0350] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {2013-10-06}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0131] occurrences matches {0..1} matches {  -- LITAbsEndAccuracy
+                                        value existence matches {0..1} matches {
+                                            ORD[at0351] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                                symbol existence matches {1..1} matches {
+                                                    CODED_TEXT[at0362] occurrences matches {1..1} matches {  -- 
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0..<1|; 0}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0242] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                        value existence matches {0..1} matches {
+                                            DURATION[at0352] occurrences matches {0..1} matches {  -- DURATION
+                                                days existence matches {0..1} matches {0; 0}
+                                                hours existence matches {0..1} matches {0; 0}
+                                                minutes existence matches {0..1} matches {0; 0}
+                                                seconds existence matches {0..1} matches {0; 0}
+                                                fractional_second existence matches {0..1} matches {*}
+                                                sign existence matches {0..1} matches {0; 1}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0243] occurrences matches {0..1} matches {  -- LITAbsDurationAccuracy
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0353] occurrences matches {0..1} matches {  -- ISO22220 Accuracy duration
+                                                originalText existence matches {0..1} matches {"A","E","U"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0249] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0126] occurrences matches {0..1} matches {  -- LITRelative
+                                parts existence matches {0..1} cardinality matches {0..8; unordered; unique} matches {
+                                    ELEMENT[at0339] occurrences matches {0..1} matches {  -- LITAnchorPointInTime
+                                        value existence matches {0..1} matches {
+                                            DATE[at0354] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {2013-10-06}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0340] occurrences matches {0..1} matches {  -- LITRelAnchorPointInTimeAccuracy
+                                        value existence matches {0..1} matches {
+                                            ORD[at0355] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                                symbol existence matches {1..1} matches {
+                                                    CODED_TEXT[at0363] occurrences matches {1..1} matches {  -- 
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0..<1|; 0}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0341] occurrences matches {0..1} matches {  -- LITRelDeltaInTime
+                                        value existence matches {0..1} matches {
+                                            DURATION[at0356] occurrences matches {0..1} matches {  -- DURATION
+                                                days existence matches {0..1} matches {0; 0}
+                                                hours existence matches {0..1} matches {0; 0}
+                                                minutes existence matches {0..1} matches {0; 0}
+                                                seconds existence matches {0..1} matches {0; 0}
+                                                fractional_second existence matches {0..1} matches {*}
+                                                sign existence matches {0..1} matches {0; 1}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0342] occurrences matches {0..1} matches {  -- LITRelDeltaInTimeAccuracy
+                                        value existence matches {0..1} matches {
+                                            ORD[at0357] occurrences matches {0..1} matches {  -- ISO2220 Accuracy in time
+                                                symbol existence matches {1..1} matches {
+                                                    CODED_TEXT[at0364] occurrences matches {1..1} matches {  -- 
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0..<1|; 0}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0343] occurrences matches {0..1} matches {  -- LITRelDeltaInUnit
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0358] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0344] occurrences matches {0..1} matches {  -- LITRelDeltaInUnitAccuracy
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0359] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0345] occurrences matches {0..1} matches {  -- LITRelDeltaInDescription
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0360] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0346] occurrences matches {0..1} matches {  -- LITAnchorPointByReference
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0347] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0127] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0095] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0098] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0099] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0100] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0101] occurrences matches {0..1} matches {  -- ArtefactUse
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0102] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0103] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0104] occurrences matches {0..1} matches {  -- ProcessPattern
+                        value existence matches {0..1} matches {*}
+                    }
+                    ELEMENT[at0105] occurrences matches {0..1} matches {  -- ProcessContext
+                        value existence matches {0..1} matches {*}
+                    }
+                }
+                structure_type existence matches {1..1} matches {*}
+            }
+            CLUSTER[at0106] occurrences matches {0..1} matches {  -- SCP
+                parts existence matches {0..1} cardinality matches {0..3; unordered} matches {
+                    CLUSTER[at0107] occurrences matches {0..1} matches {  -- SCPState
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0111] occurrences matches {0..1} matches {  -- StateComment
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0112] occurrences matches {1..1} matches {  -- SCPSValueNT
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0113] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0108] occurrences matches {0..1} matches {  -- SCPCertainty
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0114] occurrences matches {0..1} matches {  -- SCPCComment
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0120] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0115] occurrences matches {1..1} matches {  -- SCPCIndicator
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0121] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"C"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0116] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0109] occurrences matches {0..1} matches {  -- SCPPresence/Absence
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0117] occurrences matches {1..1} matches {  -- SCPPAIndicator
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0122] occurrences matches {1..1} matches {  -- Presence/Absense
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"P"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0118] occurrences matches {0..1} matches {  -- SCPPAComment
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0119] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0110] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0123] occurrences matches {1..1} matches {  -- NamedObject
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0002] occurrences matches {0..*} matches {  -- NOLOCharacteristics
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0003] occurrences matches {0..*} matches {  -- NOLOName
+                                parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                                    CLUSTER[at0007] occurrences matches {0..1} matches {  -- NOLONameUseGroup
+                                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                                            ELEMENT[at0209] occurrences matches {0..1} matches {  -- NOLONameUsage
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0210] occurrences matches {0..1} matches {  -- NOLONameUsageID
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            allow_archetype CLUSTER[at0211] occurrences matches {0..1} matches {  -- NOLONNameUsageValidity
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0212] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0008] occurrences matches {1..*} matches {  -- NOLONameFamilyGroup
+                                        parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                                            ELEMENT[at0213] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0214] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0215] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0009] occurrences matches {0..*} matches {  -- NOLONameTitleGroup
+                                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                            ELEMENT[at0216] occurrences matches {0..1} matches {  -- NOLONameTitle
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0217] occurrences matches {0..1} matches {  -- NOLONameTitleSequenceNumber
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0218] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0011] occurrences matches {0..*} matches {  -- NOLONamePrefixGroup
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                            ELEMENT[at0219] occurrences matches {0..1} matches {  -- NOLONamePrefix
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0220] occurrences matches {0..1} matches {  -- NOLONamePrefixSequenceNumber
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0221] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0077] occurrences matches {0..*} matches {  -- NOLONameSuffixGroup
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                            ELEMENT[at0222] occurrences matches {0..1} matches {  -- NOLONameSuffix
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0223] occurrences matches {0..1} matches {  -- NOLONameSufffixSequenceNumber
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0224] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0202] occurrences matches {0..*} matches {  -- NOLONameConditionalUse
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0203] occurrences matches {0..*} matches {  -- NOLONamePreferredFlag
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0204] occurrences matches {0..1} matches {  -- NOLONameUnstructured
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    CLUSTER[at0205] occurrences matches {0..*} matches {  -- NOLONameGivenGroup
+                                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                            ELEMENT[at0225] occurrences matches {1..1} matches {  -- NOLONameGivenName
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0226] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0227] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0206] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0004] occurrences matches {0..1} matches {  -- NOLODemographics
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0207] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0005] occurrences matches {0..1} matches {  -- NOLOBiometricIdentifiers
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0208] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0006] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0228] occurrences matches {0..*} matches {  -- NONLOCharacteristics
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            allow_archetype CLUSTER[at0229] occurrences matches {0..1} matches {  -- NONLOName
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0230] occurrences matches {0..*} matches {  -- NONLOBatchSerialNumbers
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0231] occurrences matches {0..*} matches {  -- NONLOOtherCharacteristics
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            ELEMENT[at0232] occurrences matches {0..1} matches {  -- NONLOUnstructured
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0234] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0233] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0235] occurrences matches {0..*} matches {  -- NOGeographicalPosition
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            ELEMENT[at0236] occurrences matches {0..1} matches {  -- NOGPLatitude
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0237] occurrences matches {0..1} matches {  -- NOGPLongitude
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0238] occurrences matches {0..1} matches {  -- NOGPAltitude
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0239] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0240] occurrences matches {0..*} matches {  -- NamedObject
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            allow_archetype CLUSTER[at0241] occurrences matches {0..*} matches {  -- ObjectUniqueIdentifiers
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0244] occurrences matches {0..*} matches {  -- ObjectPostalAddress
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0245] occurrences matches {0..*} matches {  -- ObjectGeographicPosition
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0246] occurrences matches {0..*} matches {  -- ObjectOtherAddress
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0247] occurrences matches {0..*} matches {  -- ObjectLocalisationInPatientSystems
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            allow_archetype CLUSTER[at0248] occurrences matches {0..*} matches {  -- ObjectComponents
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            CLUSTER[at0251] occurrences matches {0..*} matches {  -- NOLOCharacteristics
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0252] occurrences matches {0..*} matches {  -- NOLOName
+                                        parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                                            CLUSTER[at0256] occurrences matches {0..1} matches {  -- NOLONameUseGroup
+                                                parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                                                    ELEMENT[at0268] occurrences matches {0..1} matches {  -- NOLONameUsage
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0269] occurrences matches {0..1} matches {  -- NOLONameUsageID
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    allow_archetype CLUSTER[at0270] occurrences matches {0..1} matches {  -- NOLONNameUsageValidity
+                                                        include
+                                                            archetype_id/value matches {/.*/}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0271] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0257] occurrences matches {1..*} matches {  -- NOLONameFamilyGroup
+                                                parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                                                    ELEMENT[at0272] occurrences matches {0..1} matches {  -- NOLONameFamilyName
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0273] occurrences matches {0..1} matches {  -- NOLONameFamilyNameSequenceNumber
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0274] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0258] occurrences matches {0..*} matches {  -- NOLONameTitleGroup
+                                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                                    ELEMENT[at0275] occurrences matches {0..1} matches {  -- NOLONameTitle
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0276] occurrences matches {0..1} matches {  -- NOLONameTitleSequenceNumber
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0277] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0259] occurrences matches {0..*} matches {  -- NOLONamePrefixGroup
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                    ELEMENT[at0278] occurrences matches {0..1} matches {  -- NOLONamePrefix
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0279] occurrences matches {0..1} matches {  -- NOLONamePrefixSequenceNumber
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0280] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0260] occurrences matches {0..*} matches {  -- NOLONameSuffixGroup
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                    ELEMENT[at0281] occurrences matches {0..1} matches {  -- NOLONameSuffix
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0282] occurrences matches {0..1} matches {  -- NOLONameSufffixSequenceNumber
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0283] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0261] occurrences matches {0..*} matches {  -- NOLONameConditionalUse
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0262] occurrences matches {0..*} matches {  -- NOLONamePreferredFlag
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            ELEMENT[at0263] occurrences matches {0..1} matches {  -- NOLONameUnstructured
+                                                value existence matches {0..1} matches {*}
+                                            }
+                                            CLUSTER[at0264] occurrences matches {0..*} matches {  -- NOLONameGivenGroup
+                                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                                    ELEMENT[at0284] occurrences matches {1..1} matches {  -- NOLONameGivenName
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                    ELEMENT[at0285] occurrences matches {0..1} matches {  -- NOLONameGivenNameSequenceNumber
+                                                        value existence matches {0..1} matches {*}
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0286] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0265] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0253] occurrences matches {0..1} matches {  -- NOLODemographics
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0266] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0254] occurrences matches {0..1} matches {  -- NOLOBiometricIdentifiers
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0267] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0255] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0287] occurrences matches {0..*} matches {  -- NONLOCharacteristics
+                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    allow_archetype CLUSTER[at0288] occurrences matches {0..1} matches {  -- NONLOName
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                    allow_archetype CLUSTER[at0289] occurrences matches {0..*} matches {  -- NONLOBatchSerialNumbers
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                    allow_archetype CLUSTER[at0290] occurrences matches {0..*} matches {  -- NONLOOtherCharacteristics
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                    ELEMENT[at0291] occurrences matches {0..1} matches {  -- NONLOUnstructured
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0293] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0292] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0250] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0294] occurrences matches {0..*} matches {  -- NOPAPhysicalAddressValidity
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0295] occurrences matches {0..1} matches {  -- NOPABuilding/Department:
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0296] occurrences matches {0..1} matches {  -- NOPABuilding/DepartmentSubType
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0297] occurrences matches {0..1} matches {  -- NOPASite
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0298] occurrences matches {0..1} matches {  -- NOPAFloorLevelNumber
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0299] occurrences matches {0..1} matches {  -- NOPAStreetNumber
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0300] occurrences matches {0..1} matches {*}  -- NOPALotNumber
+                            ELEMENT[at0301] occurrences matches {0..1} matches {  -- NOPAStreetName1
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0302] occurrences matches {0..1} matches {  -- NOPAStreetName2
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0303] occurrences matches {0..1} matches {  -- NOPAStreetTypeCode
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0304] occurrences matches {0..1} matches {  -- NOPAStreetSuffixCode
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0305] occurrences matches {0..1} matches {  -- NOPASuburbTownLocality
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0306] occurrences matches {0..1} matches {  -- NOPAStateTerritoryProvince
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0307] occurrences matches {0..1} matches {*}  -- NOPAZipPostalCode
+                            ELEMENT[at0308] occurrences matches {0..1} matches {  -- NOPACountryIdentifier
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0309] occurrences matches {0..1} matches {  -- NOPAAddressType
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0310] occurrences matches {0..*} matches {  -- NOPAUnstructuredAddress
+                                value existence matches {0..1} matches {*}
+                            }
+                            allow_archetype CLUSTER[at0311] occurrences matches {0..1} matches {  -- NOPAPhysicalAddressValidity
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0312] occurrences matches {1..1} matches {*}  -- 
+                        }
+                    }
+                    CLUSTER[at0313] occurrences matches {0..*} matches {  -- NOUniqueIdetifiers
+                        parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                            ELEMENT[at0314] occurrences matches {0..1} matches {  -- NOUIDDesignation
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0315] occurrences matches {0..1} matches {  -- NOUIDGeoArea
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0316] occurrences matches {0..1} matches {  -- NOUIDIssuer
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0317] occurrences matches {0..1} matches {  -- NOUIDType
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0318] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0319] occurrences matches {0..*} matches {  -- LocalisationInPatientSystem
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0320] occurrences matches {0..1} matches {  -- LIPWholePerson
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0321] occurrences matches {0..*} matches {  -- LIPBodyFunctions
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0322] occurrences matches {0..*} matches {  -- LIPCellularSystems
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0323] occurrences matches {0..*} matches {  -- LIPBioChemistry
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0324] occurrences matches {0..*} matches {  -- LIPGenetics
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0325] occurrences matches {0..*} matches {  -- LIPEnvironments
+                                value existence matches {0..1} matches {*}
+                            }
+                            CLUSTER[at0326] occurrences matches {0..*} matches {  -- LIPBodyParts
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0327] occurrences matches {0..1} matches {  -- LIPBodyPart
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    allow_archetype CLUSTER[at0328] occurrences matches {0..1} matches {  -- LIPBodyPartLocalisation
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0329] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {*}
+                    }
+                    CLUSTER[at0330] occurrences matches {0..*} matches {  -- NOOtherAddress
+                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            CLUSTER[at0331] occurrences matches {0..*} matches {  -- NOOADigitalCommunication
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0334] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationMedium
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0335] occurrences matches {0..*} matches {  -- NOOADigitalCommunicationPreference
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0336] occurrences matches {0..1} matches {  -- NOOADigitalCommunicationDetails
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0337] occurrences matches {0..1} matches {  -- NOOAAddressDigitalCommunicationUsageCode
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0338] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0332] occurrences matches {0..1} matches {  -- NOOAUnstructured
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0333] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0132] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0133] occurrences matches {1..1} matches {  -- ResultValues
+                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                    ELEMENT[at0134] occurrences matches {0..1} matches {  -- ResultCodedtext
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0144] occurrences matches {1..1} matches {  -- CODED_TEXT
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0135] occurrences matches {0..1} matches {  -- ResultComments
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0145] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0136] occurrences matches {0..1} matches {  -- ResultNumeric
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0146] occurrences matches {1..1} matches {  -- RNValue
+                                parts existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                                    ELEMENT[at0155] occurrences matches {1..1} matches {  -- RNValueNumber
+                                        value existence matches {0..1} matches {
+                                            REAL[at0181] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0156] occurrences matches {0..1} matches {  -- RNVNumberPrecision
+                                        value existence matches {0..1} matches {
+                                            INT[at0182] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0157] occurrences matches {0..1} matches {  -- RNVNumberScale
+                                        value existence matches {0..1} matches {
+                                            INT[at0183] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0158] occurrences matches {0..1} matches {  -- RNVNumberSensitivity
+                                        value existence matches {0..1} matches {
+                                            PQ[at0184] occurrences matches {0..1} matches {  -- PQ
+                                                units existence matches {1..1} matches {
+                                                    CS[at0200] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"%"}
+                                                        codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0159] occurrences matches {0..1} matches {  -- RNVNumberSpecificity
+                                        value existence matches {0..1} matches {
+                                            PQ[at0185] occurrences matches {0..1} matches {  -- PQ
+                                                units existence matches {1..1} matches {*}
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0160] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0147] occurrences matches {0..1} matches {  -- RNAllowedRange
+                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                    ELEMENT[at0161] occurrences matches {0..1} matches {  -- RNARLowerBound
+                                        value existence matches {0..1} matches {
+                                            REAL[at0186] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0162] occurrences matches {0..1} matches {  -- RNARLowerBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0187] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0163] occurrences matches {0..1} matches {  -- RNARUpperBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0188] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0164] occurrences matches {0..1} matches {  -- RNARUpperBound
+                                        value existence matches {0..1} matches {
+                                            REAL[at0189] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0165] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0148] occurrences matches {0..1} matches {  -- RNSignalRange
+                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                    ELEMENT[at0166] occurrences matches {0..1} matches {  -- RNSRLowerBound
+                                        value existence matches {0..1} matches {
+                                            REAL[at0190] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0167] occurrences matches {0..1} matches {  -- RNSRLowerBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0191] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0168] occurrences matches {0..1} matches {  -- RNSRUpperBound
+                                        value existence matches {0..1} matches {
+                                            REAL[at0192] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0169] occurrences matches {0..1} matches {  -- RNSRUpperBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0193] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0170] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0149] occurrences matches {0..1} matches {  -- RNNormalRange
+                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                    ELEMENT[at0171] occurrences matches {0..1} matches {  -- RNNRLowerBound
+                                        value existence matches {0..1} matches {
+                                            REAL[at0194] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0172] occurrences matches {0..1} matches {  -- RNNRLowerBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0195] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0173] occurrences matches {0..1} matches {  -- RNNRUpperBoundComment
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0196] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0174] occurrences matches {0..1} matches {  -- RNNRUpperBound
+                                        value existence matches {0..1} matches {
+                                            INT[at0197] occurrences matches {1..1} matches {  -- INT
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0175] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0150] occurrences matches {0..1} matches {  -- RNFraction
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0176] occurrences matches {1..1} matches {  -- RNNumberNominator
+                                        value existence matches {0..1} matches {
+                                            INT[at0198] occurrences matches {1..1} matches {  -- INT
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0177] occurrences matches {1..1} matches {  -- RNNumberDenominator
+                                        value existence matches {0..1} matches {
+                                            INT[at0199] occurrences matches {1..1} matches {  -- INT
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0178] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0151] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0137] occurrences matches {0..1} matches {  -- SlotMultimedia
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    allow_archetype CLUSTER[at0138] occurrences matches {0..1} matches {  -- SlotSemanticOrdinal
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    allow_archetype CLUSTER[at0139] occurrences matches {0..1} matches {  -- SlotLinks
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    allow_archetype CLUSTER[at0140] occurrences matches {0..1} matches {  -- SlotCalculation
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    allow_archetype CLUSTER[at0141] occurrences matches {0..1} matches {  -- SlotComplexCusterMoodelName
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    CLUSTER[at0143] occurrences matches {0..1} matches {  -- RNStDev
+                        parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                            ELEMENT[at0152] occurrences matches {1..1} matches {  -- RNStDevResult
+                                value existence matches {0..1} matches {
+                                    INT[at0179] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0153] occurrences matches {1..1} matches {  -- RNStDevNumber
+                                value existence matches {0..1} matches {
+                                    REAL[at0180] occurrences matches {1..1} matches {  -- REAL
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0154] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0365] occurrences matches {0..1} matches {  -- SCP
+                        parts existence matches {0..1} cardinality matches {0..3; unordered} matches {
+                            CLUSTER[at0366] occurrences matches {0..1} matches {  -- SCPState
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0370] occurrences matches {0..1} matches {  -- StateComment
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                    ELEMENT[at0371] occurrences matches {1..1} matches {  -- SCPSValueNT
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0372] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0367] occurrences matches {0..1} matches {  -- SCPCertainty
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0373] occurrences matches {0..1} matches {  -- SCPCComment
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0379] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0374] occurrences matches {1..1} matches {  -- SCPCIndicator
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0380] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"C"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0375] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0368] occurrences matches {0..1} matches {  -- SCPPresence/Absence
+                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                    ELEMENT[at0376] occurrences matches {1..1} matches {  -- SCPPAIndicator
+                                        value existence matches {0..1} matches {
+                                            CODED_TEXT[at0381] occurrences matches {1..1} matches {  -- Presence/Absense
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"P"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0377] occurrences matches {0..1} matches {  -- SCPPAComment
+                                        value existence matches {0..1} matches {*}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0378] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0369] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"ENTRY.MPF">
+                    description = <"MainPattern to be speialised">
+                >
+                ["at0001"] = <
+                    text = <"MetaDataFile">
+                    description = <"Slot that Specifies Metadata about the file (13606-2)">
+                >
+                ["at0010"] = <
+                    text = <"ContextHow">
+                    description = <"Slot that sepcifies the Method">
+                >
+                ["at0012"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"Codes for the Localisation of  the Act that is modeled.
+WHERE in the Patient System is the archetype active?
+The Patient System is the location of the topic with the patient as focus. It helps to define what the Archetype is about.
+When the topic is ECG the localisation for Body Part is the heart and the BodyFunction: Elctrical systems of the heart.
+In the case of an ENTRY archetype the exact location of an Act (process) most likely will be modeled in the WHAT:NamedObject branch where the participating entity os modeled.
+In the case of a CLUSTER archetype this can be sued to indicate what part of the Patient System is the topic for that archetype.
+
+Preferably use the WHO ICF as primary coding system.
+">
+                >
+                ["at0013"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0014"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0015"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0016"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0017"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0018"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0019"] = <
+                    text = <"LIPBodyParts">
+                    description = <"Codes for the Body part and localization">
+                >
+                ["at0020"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0021"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the localisation of the Body Part via an Archetype Slot to the Cluster Modl: LocalisationInSpace.
+">
+                >
+                ["at0023"] = <
+                    text = <"LocalisationInSpace">
+                    description = <"Codes for the Localistation in Space of the modeled process
+">
+                >
+                ["at0024"] = <
+                    text = <"LISReal">
+                    description = <"A CLUSTER model that codes for the Real Physical locations in Absolute and Relative sense.
+
+It is making use of the NamedObject module">
+                >
+                ["at0025"] = <
+                    text = <"LISVirtual">
+                    description = <"Coding for virtual place in space.
+
+e.g. Localisation in an organisation, etc.
+
+Placeholder: tbd
+">
+                >
+                ["at0027"] = <
+                    text = <"LIPRAbsPhysical">
+                    description = <"Re-use Named-Object since the location is treated as any other Object. It will allow LocalisationInPatientSystem aswell
+
+Use those parts that deal with addresses.
+">
+                >
+                ["at0028"] = <
+                    text = <"LISRRel">
+                    description = <"Codes for the physical location in a relative sense in relation to an anchor point by re-using the Named-Object Cluster Model 
+">
+                >
+                ["at0031"] = <
+                    text = <"LIPRRPhysicalAnchor">
+                    description = <"Codes for the absolute localisation as anchor point
+Re-use Named-Object since the location is treated as for any other  entity via an Archetype Slot.
+
+Use those parts in the NamedObject that deal with addresses: NamedObject:Postaladdress or NamedObject:GeogragicalPosition.
+">
+                >
+                ["at0032"] = <
+                    text = <"LIPRRPhysicalDelta">
+                    description = <"Codes for the distance in units of measurement
+
+e.g. 5 cm
+">
+                >
+                ["at0033"] = <
+                    text = <"LIPRRPhysicalDeltaDescription">
+                    description = <"Codes for the relative position of the location with respect to the Anchor position
+TermList:
+Left, right, above, under, in front, in the back and all synonyms.
+It will encompass ‘laterality’.">
+                >
+                ["at0035"] = <
+                    text = <"CODED_TEXT">
+                    description = <"Left, right, above, under, in front, in the back and all synonyms.
+It will encompass ‘laterality’.">
+                >
+                ["at0036"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0037"] = <
+                    text = <"LITAbsolute">
+                    description = <"Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0038"] = <
+                    text = <"LITRelative">
+                    description = <"Codes fro Relative Times relative to the Anchor point / Event
+">
+                >
+                ["at0040"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0041"] = <
+                    text = <"LITAbsBeginAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the BeginTime.
+
+See 22220">
+                >
+                ["at0042"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0043"] = <
+                    text = <"LITAbsEndAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the EndTime.">
+                >
+                ["at0044"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0045"] = <
+                    text = <"LITAbsDurationAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the DurationTime.">
+                >
+                ["at0047"] = <
+                    text = <"LITAnchorPointInTime">
+                    description = <"Codes for an Anchor point measured in Absolute Time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0048"] = <
+                    text = <"LITRelAnchorPointInTimeAccuracy">
+                    description = <"See ISO22220">
+                >
+                ["at0049"] = <
+                    text = <"LITRelDeltaInTime">
+                    description = <"Codes for the Delta in Absolute Time
+">
+                >
+                ["at0050"] = <
+                    text = <"LITRelDeltaInTimeAccuracy">
+                    description = <"See ISO2220">
+                >
+                ["at0051"] = <
+                    text = <"LITRelDeltaInUnit">
+                    description = <"Codes for the Delta in other units than Absolute Time.
+E.g. Cycle, month, quarter, etc.
+">
+                >
+                ["at0052"] = <
+                    text = <"LITRelDeltaInUnitAccuracy">
+                    description = <"ISO:22220
+  tbd
+">
+                >
+                ["at0053"] = <
+                    text = <"LITRelDeltaInDescription">
+                    description = <"Codes for the position of the Delta with respect to the Anchor
+A range in time relative to the Point of Reference
+
+e.g.: the week week before Christmas
+
+Defined Modifiers for temporal relationships between ranges:
+before - after
+overlaps - overlapped-by
+during - contains
+equals -  not-equals
+meets - met-by
+starts - started by
+finishes - finished-by
+">
+                >
+                ["at0054"] = <
+                    text = <"LITAnchorPointByReference">
+                    description = <"Links package
+Links will allow reference to:- named objects
+- results of queries
+- instantiated data
+- etc.
+This Anchor point plus the Delta describes the Begin or End
+
+Via an Archetype Slot
+">
+                >
+                ["at0056"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0057"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year
+">
+                >
+                ["at0058"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0059"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0060"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0061"] = <
+                    text = <"ISO22220 Accuracy duration">
+                    description = <"A- Accurate
+E- Estimated
+U- Unknown">
+                >
+                ["at0062"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0063"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0064"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0065"] = <
+                    text = <"ISO2220 Accuracy in time">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0066"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0067"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0068"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0073"] = <
+                    text = <"Participations">
+                    description = <"Participations">
+                >
+                ["at0074"] = <
+                    text = <"PHealthcareProvider">
+                    description = <"">
+                >
+                ["at0075"] = <
+                    text = <"POtherEntities">
+                    description = <"CLUSTER model that codes for the participation of any actor not being the HcP or SubjectOfCare.
+">
+                >
+                ["at0076"] = <
+                    text = <"PSubjectOfCare">
+                    description = <"CLUSTER model that codes for the participation of an Patient.
+In the case of an ENTRY this will be Patient that is involved as an actor in the treatment process that is documented.
+Most often the name of the patient is not recorded in 13606 conformant systems for privacy reasons. There are conditions that the name of the patient must be recorded.
+">
+                >
+                ["at0078"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+">
+                >
+                ["at0079"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0080"] = <
+                    text = <"PHPName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0082"] = <
+                    text = <"POERole">
+                    description = <"">
+                >
+                ["at0083"] = <
+                    text = <"POECompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc.
+">
+                >
+                ["at0084"] = <
+                    text = <"POEName">
+                    description = <"Codes for the subordinate entity, when needed, via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0086"] = <
+                    text = <"PHPRole">
+                    description = <"Codes for the Role the entity has.
+PHPRole=HealthcareProvider
+">
+                >
+                ["at0087"] = <
+                    text = <"PHPCompetences">
+                    description = <"Codes for the competences needed for that role.
+Qualifications, etc
+">
+                >
+                ["at0088"] = <
+                    text = <"PHPName">
+                    description = <"Codes for the subordinate entity when needed,  via an Archetype Slot to NamedObject.
+That sub-ordinate entity can code for its own role.
+">
+                >
+                ["at0090"] = <
+                    text = <"Reasons">
+                    description = <"This branch of the main SIAMM pattern codes for the reasons WHY this topic is documented.
+A CLUSTER model coding for reasons WHY.
+In order to capture cause effect relationships it is necessary to be able to indicate why events happened, are happening or will happen.
+It codes for references inside and between artifacts and with the outside world:
+	•	- codes
+	•	- queries
+	•	- Artefact Slots
+	•	- external resources
+	•	- ...
+">
+                >
+                ["at0091"] = <
+                    text = <"ReasonUnstructured">
+                    description = <"Reasons Coded as Free text
+">
+                >
+                ["at0092"] = <
+                    text = <"ReasonStructured">
+                    description = <"Coded as Codedtext">
+                >
+                ["at0093"] = <
+                    text = <"ReasonAsLinkedData">
+                    description = <"Coded as Semantic Link to an instantiated data element in the EHR in the past or to a documented (instantiated) ordered, executed, assessed or terminated procedure.
+
+Via an Archetype Slot to LINKS">
+                >
+                ["at0096"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0097"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0098"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0099"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0100"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0101"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0102"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0103"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ontSys concept
+">
+                >
+                ["at0104"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0105"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	Re-Use">
+                >
+                ["at0106"] = <
+                    text = <"SCP">
+                    description = <"SCP">
+                >
+                ["at0107"] = <
+                    text = <"SCPState">
+                    description = <"Status
+Each element in an artifact, that contains defines an Information Model, can have a Status attached to it.
+
+There are three STATE MODELS provided.
+	•	The simple one that can be used for for instance the Observation Archetype.
+	•	The one provided by EN13606 in part 3
+	•	The one proposed by OpenEHR
+
+It is proposed to use the Simple and OpenEHR variant.
+
+
+Any item can be Final, Not-Final or Not-Available
+Sometimes there is a more elaborate Sate Model attached to it in the case of Actions.
+
+Is the result: final, preliminary, not available?
+-1=Preliminary
+0= Not available
+1= Final
+">
+                >
+                ["at0108"] = <
+                    text = <"SCPCertainty">
+                    description = <"Certainty
+C= Certain
+U= Uncertain">
+                >
+                ["at0109"] = <
+                    text = <"SCPPresence/Absence">
+                    description = <"Presence/Absence
+
+Coding for Presente or Absense
+
+
+Allowed     P - Present (default)
+          A - Absense
+">
+                >
+                ["at0111"] = <
+                    text = <"StateComment">
+                    description = <"register comments
+">
+                >
+                ["at0112"] = <
+                    text = <"SCPSValueNT">
+                    description = <"Code for the State 
+
+See 13606-3 and openEHR 
+
+TBD:
+">
+                >
+                ["at0114"] = <
+                    text = <"SCPCComment">
+                    description = <"Document any uncertainty as text.">
+                >
+                ["at0115"] = <
+                    text = <"SCPCIndicator">
+                    description = <"Certain/Uncertain coded as  C/U
+
+Default=Certain=C
+
+
+">
+                >
+                ["at0117"] = <
+                    text = <"SCPPAIndicator">
+                    description = <"P= Present (default)
+a
+a= absent">
+                >
+                ["at0118"] = <
+                    text = <"SCPPAComment">
+                    description = <"">
+                >
+                ["at0120"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0121"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0122"] = <
+                    text = <"Presence/Absense">
+                    description = <"Code for P or A">
+                >
+                ["at0123"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0133"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0134"] = <
+                    text = <"ResultCodedtext">
+                    description = <"Holds the result as Codedtext">
+                >
+                ["at0135"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0136"] = <
+                    text = <"ResultNumeric">
+                    description = <"Holds one numeric result
+
+Codes for:
+	•	Numeric result including
+	•	Units of Measurement via Data Type
+	•	Normal range: the range of normal values as publsihed
+	•	Signal range: the used to generate alerts
+	•	Allowed range: the Multitude that can be entered as number
+
+The WHAT: NamedObject will hold the Name attached to the numeric result.
+e.g.
+WHAT:NamedObject...NameType=‘Finding:Lab-Test’
+WHAT:NamedObject...Name=‘Glucose concentration’
+WHAT:ResultValueNumericResult=’7.4’, Units=’mM/L’
+">
+                >
+                ["at0137"] = <
+                    text = <"SlotMultimedia">
+                    description = <"Holds the Multimedia slot">
+                >
+                ["at0138"] = <
+                    text = <"SlotSemanticOrdinal">
+                    description = <"Holds the slot for the SemanticOrdinal to record semi-quantitative result">
+                >
+                ["at0139"] = <
+                    text = <"SlotLinks">
+                    description = <"Holds the slot to Links, that connect to information sources outside the archetype">
+                >
+                ["at0140"] = <
+                    text = <"SlotCalculation">
+                    description = <"Holds the slot for a calculated result, including the lagorithm">
+                >
+                ["at0141"] = <
+                    text = <"SlotComplexCusterMoodelName">
+                    description = <"Holds a SLOT to any ComplexCLusterModel that defines specific data elements">
+                >
+                ["at0143"] = <
+                    text = <"RNStDev">
+                    description = <"
+Mean ± x StDev">
+                >
+                ["at0144"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0145"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0146"] = <
+                    text = <"RNValue">
+                    description = <"Holds the numeric value with its Units of Measurement
+
+CLUSTER model that codes for a Number and Units of Measurement HL7: UCAM
+And Number attributes such as:
+- Precision
+- Scale
+- Sensitivity
+- Specificity
+">
+                >
+                ["at0147"] = <
+                    text = <"RNAllowedRange">
+                    description = <"CLUSTER model that codes for the Allowed range in an artefact for a Number.
+It is a course grained number that the AOM allws to be specified and sets allowed numbers.
+It specifies a constraint at design time.
+A constraint that can be refined in Templates and at run-time depending on circumstances.
+E.G
+  Systolic Blood Pressure
+Number 120 mmHg
+Magnitude: 0-1000
+Results like -10 or 2000 are NOT allowed.
+">
+                >
+                ["at0148"] = <
+                    text = <"RNSignalRange">
+                    description = <"CLUSTER model that codes for a range of values that can give rise to a signal when the number is outside this range
+">
+                >
+                ["at0149"] = <
+                    text = <"RNNormalRange">
+                    description = <"CLUSTER model that codes for a range of normal values
+">
+                >
+                ["at0150"] = <
+                    text = <"RNFraction">
+                    description = <"The number/result as a fraction = Nominator / Denominator, both as Integers
+E.g. 2 out of 5, 1 on a scale 1 out of 10,
+When multiplied by 100 it is equal to Percentage.
+Percentage is defined in HL7 UCUM
+">
+                >
+                ["at0152"] = <
+                    text = <"RNStDevResult">
+                    description = <"The resulting standard deviation
+">
+                >
+                ["at0153"] = <
+                    text = <"RNStDevNumber">
+                    description = <"The number of standard deviations that is reported about.
+
+Mean ± x StDev">
+                >
+                ["at0155"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0156"] = <
+                    text = <"RNVNumberPrecision">
+                    description = <"Codes for the Precision of the number
+Precision is the number of digits in a number. Scale is the number of digits to the right of the decimal point in a number. For example, the number 123.45 has a precision of 5 and a scale of 2.
+WIKIhttp://en.wikipedia.org/wiki/Significant_figures">
+                >
+                ["at0157"] = <
+                    text = <"RNVNumberScale">
+                    description = <"Codes for the Scale of a result
+
+Precision is the number of digits in a number. Scale is the number of digits to the right of the decimal point in a number. For example, the number 123.45 has a precision of 5 and a scale of 2.
+">
+                >
+                ["at0158"] = <
+                    text = <"RNVNumberSensitivity">
+                    description = <"Codes for the Sensitivity of a result
+
+http://rationalwiki.org/wiki/Sensitivity_and_specificity
+
+Definitions
+Sensitivity is essentially how good a test is at finding something if it's there. It is a measure of how often the test will correctly identify a positive. For example, a blood test for a virus may be as high as 99% or more - meaning that for every 100 infected people testing, 99 or more of them will be correctly identified. This is a good figure to take note of, but doesn't necessarily reflect a test's true effectiveness, as will become apparent.
+Specificity is a measure of how accurate a test is against false positives. A sniffer dog looking for drugs would have a low specificity if it is often lead astray by things that aren't drugs - cosmetics or food, for example. Specificity can be considered as the percentage of times a test will correctly identify a negative result. Again, this can be 99% or more for good tests, although a particularly unruly and easily distracted sniffer dog would be much, much lower.
+">
+                >
+                ["at0159"] = <
+                    text = <"RNVNumberSpecificity">
+                    description = <"Codes for the Specificity of a result
+
+http://rationalwiki.org/wiki/Sensitivity_and_specificity
+
+Definitions
+	▪	Sensitivity is essentially how good a test is at finding something if it's there. It is a measure of how often the test will correctly identify a positive. For example, a blood test for a virus may be as high as 99% or more - meaning that for every 100 infected people testing, 99 or more of them will be correctly identified. This is a good figure to take note of, but doesn't necessarily reflect a test's true effectiveness, as will become apparent.
+	▪	Specificity is a measure of how accurate a test is against false positives. A sniffer dog looking for drugs would have a low specificity if it is often lead astray by things that aren't drugs - cosmetics or food, for example. Specificity can be considered as the percentage of times a test will correctly identify a negative result. Again, this can be 99% or more for good tests, although a particularly unruly and easily distracted sniffer dog would be much, much lower.">
+                >
+                ["at0161"] = <
+                    text = <"RNARLowerBound">
+                    description = <"Codes for the Allowed range Upper bound 
+">
+                >
+                ["at0162"] = <
+                    text = <"RNARLowerBoundComment">
+                    description = <"">
+                >
+                ["at0163"] = <
+                    text = <"RNARUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound ">
+                >
+                ["at0164"] = <
+                    text = <"RNARUpperBound">
+                    description = <"Codes for the Allowed range Upper bound 
+">
+                >
+                ["at0166"] = <
+                    text = <"RNSRLowerBound">
+                    description = <"Codes for the Signal range lower bound using using an Archetype slot to ResultNumericValue
+">
+                >
+                ["at0167"] = <
+                    text = <"RNSRLowerBoundComment">
+                    description = <"Codes for comment on the Signal range Lower bound 
+">
+                >
+                ["at0168"] = <
+                    text = <"RNSRUpperBound">
+                    description = <"Codes for the Signal range Upper bound using using an 
+">
+                >
+                ["at0169"] = <
+                    text = <"RNSRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0171"] = <
+                    text = <"RNNRLowerBound">
+                    description = <"Codes for the Normal range lower bound 
+">
+                >
+                ["at0172"] = <
+                    text = <"RNNRLowerBoundComment">
+                    description = <"Codes for comment on the Normal range Lower bound 
+">
+                >
+                ["at0173"] = <
+                    text = <"RNNRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0174"] = <
+                    text = <"RNNRUpperBound">
+                    description = <"Codes for the Normal range Upper bound ">
+                >
+                ["at0176"] = <
+                    text = <"RNNumberNominator">
+                    description = <"">
+                >
+                ["at0177"] = <
+                    text = <"RNNumberDenominator">
+                    description = <"The Denominator of the pair
+">
+                >
+                ["at0179"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0180"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0181"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0182"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0183"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0184"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0185"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0186"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0187"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0188"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0189"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0190"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0191"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0192"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0193"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0194"] = <
+                    text = <"REAL">
+                    description = <"">
+                >
+                ["at0195"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0196"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0197"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0198"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0199"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics">
+                >
+                ["at0003"] = <
+                    text = <"NOLOName">
+                    description = <"ISO:22220
+Code for Name related topics of a Living Object:
+	•	Name Use Group
+	•	Name FamilyName Group
+  	•	Name GivenNameGroup    
+	•	Name Title group
+	•	Name Prefix group
+	•	Name Suffix Group
+	•	Name Preferred Flag
+	•	Name Conditional  Use
+As many times LOName can be invoked as necessary.
+The Preferred Flag indicates the preferred name.
+">
+                >
+                ["at0004"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0005"] = <
+                    text = <"NOLOBiometricIdentifiers">
+                    description = <"CBEFF
+ISO/IEC 19785-1
+To be Completed">
+                >
+                ["at0007"] = <
+                    text = <"NOLONameUseGroup">
+                    description = <"ISO:22220
+Codes the context for the group
+	•	NameUsage
+	•	USageID
+	•	UsageIDValidity
+">
+                >
+                ["at0008"] = <
+                    text = <"NOLONameFamilyGroup">
+                    description = <"ISO:22220
+
+Codes for a Family name
+">
+                >
+                ["at0009"] = <
+                    text = <"NOLONameTitleGroup">
+                    description = <"ISO:22220
+Codes for the Titles
+">
+                >
+                ["at0011"] = <
+                    text = <"NOLONamePrefixGroup">
+                    description = <"ISO:22220
+Codes for the Name Prefixes
+">
+                >
+                ["at0077"] = <
+                    text = <"NOLONameSuffixGroup">
+                    description = <"ISO:22220
+Codes for the Name Sufffixes
+">
+                >
+                ["at0202"] = <
+                    text = <"NOLONameConditionalUse">
+                    description = <"ISO:22220
+Codes an indicator of specific conditions or rules that should be applied to a subject of care
+
+1- Unreliable
+2- Known misspelling
+3- Name not to be used
+4- Name linkage forbidden by law
+
+6- Special privacy/security requirement
+
+9- Temporary name">
+                >
+                ["at0203"] = <
+                    text = <"NOLONamePreferredFlag">
+                    description = <"ISO:22220
+Indicating which name from the gFamily group  is preferred">
+                >
+                ["at0204"] = <
+                    text = <"NOLONameUnstructured">
+                    description = <"">
+                >
+                ["at0205"] = <
+                    text = <"NOLONameGivenGroup">
+                    description = <"">
+                >
+                ["at0209"] = <
+                    text = <"NOLONameUsage">
+                    description = <"ISO:22220
+Codes a classification that enables differentiation between the usage of names for a subject of care. An individual name may have many name uses.">
+                >
+                ["at0210"] = <
+                    text = <"NOLONameUsageID">
+                    description = <"ISO:22220 
+
+The combination of identifier type, identifier issuer and identifier name that specifies the link between this name and reporting or other unique identifier usage.
+">
+                >
+                ["at0211"] = <
+                    text = <"NOLONNameUsageValidity">
+                    description = <"ISO 2222
+Codes the date at which this name usage for the name to which the usage is associated starts to be used.
+The date at which this name usage for the name to which the usage is associated ceased to be used.
+Via an Archetype Slot to LocalisationInTime
+">
+                >
+                ["at0213"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0214"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"I ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0216"] = <
+                    text = <"NOLONameTitle">
+                    description = <"ISO 22220
+
+Codes the Title
+">
+                >
+                ["at0217"] = <
+                    text = <"NOLONameTitleSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0219"] = <
+                    text = <"NOLONamePrefix">
+                    description = <"ISO 22220
+
+Codes the Name Prefix
+">
+                >
+                ["at0220"] = <
+                    text = <"NOLONamePrefixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0222"] = <
+                    text = <"NOLONameSuffix">
+                    description = <"ISO 22220
+
+Codes the Name Suffix
+">
+                >
+                ["at0223"] = <
+                    text = <"NOLONameSufffixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0225"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0226"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"I ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0228"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0229"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0230"] = <
+                    text = <"NONLOBatchSerialNumbers">
+                    description = <"Code for identifying Serial/batch numbers
+">
+                >
+                ["at0231"] = <
+                    text = <"NONLOOtherCharacteristics">
+                    description = <"Codes for characteristics dealing with begin, end of existence, Duration, Dimensions
+">
+                >
+                ["at0232"] = <
+                    text = <"NONLOUnstructured">
+                    description = <"Code for the unstructuredCharacteristics
+">
+                >
+                ["at0234"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0235"] = <
+                    text = <"NOGeographicalPosition">
+                    description = <"CLUSTER coding for characteristics of Postal (Physical) Addresses
+
+ISO:22220
+A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. “suburb/town/locality name”, “postal code”, “state/territory/province”, and “country”, forms a complete geographical/physical address.
+">
+                >
+                ["at0236"] = <
+                    text = <"NOGPLatitude">
+                    description = <"">
+                >
+                ["at0237"] = <
+                    text = <"NOGPLongitude">
+                    description = <"">
+                >
+                ["at0238"] = <
+                    text = <"NOGPAltitude">
+                    description = <"">
+                >
+                ["at0240"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0241"] = <
+                    text = <"ObjectUniqueIdentifiers">
+                    description = <" CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+">
+                >
+                ["at0244"] = <
+                    text = <"ObjectPostalAddress">
+                    description = <"CLUSTER coding for characteristics of Postal (Physical) Addresses
+
+ISO:22220
+A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. “suburb/town/locality name”, “postal code”, “state/territory/province”, and “country”, forms a complete geographical/physical address.">
+                >
+                ["at0245"] = <
+                    text = <"ObjectGeographicPosition">
+                    description = <"CLUSTER coding for the geographical position:
+- Altitude
+- Longitude
+- Latitude
+
+A geographic coordinate system is a coordinate system that enables every location on the Earth to be specified by a set of numbers or letters. The coordinates are often chosen such that one of the numbers represents vertical position , and two or three of the numbers represent horizontal position . A common choice of coordinates is latitude , longitude and elevation .[1]
+Any position on the earth defined by means of its geographical coordinates, either astronomical or geodetic. 
+http://en.wikipedia.org/wiki/Geographic_coordinate_system
+">
+                >
+                ["at0246"] = <
+                    text = <"ObjectOtherAddress">
+                    description = <"CLUSTER coding for other kinds of addresses:
+- e-mail
+- social media
+- unstructured">
+                >
+                ["at0247"] = <
+                    text = <"ObjectLocalisationInPatientSystems">
+                    description = <"CLUSTER coding for the localisation in the Patient System
+Using an archetype slot and reference to: LocalisationInPatientSystems
+">
+                >
+                ["at0248"] = <
+                    text = <"ObjectComponents">
+                    description = <"A branch of NamedObject as CLUSTER coding for Components of the Entity and that is modeled via this NamedObject.
+Participations allows the coding of the Role, Competences, and a sub-ordinate entity via NamedObjects.
+Via an Archetype Slot: Participations.
+In the case of Non Living Objects components of the entity can be modeled.
+">
+                >
+                ["at0251"] = <
+                    text = <"NOLOCharacteristics">
+                    description = <"NOLOCharacteristics">
+                >
+                ["at0252"] = <
+                    text = <"NOLOName">
+                    description = <"ISO:22220
+Code for Name related topics of a Living Object:
+	•	Name Use Group
+	•	Name FamilyName Group
+  	•	Name GivenNameGroup    
+	•	Name Title group
+	•	Name Prefix group
+	•	Name Suffix Group
+	•	Name Preferred Flag
+	•	Name Conditional  Use
+As many times LOName can be invoked as necessary.
+The Preferred Flag indicates the preferred name.
+">
+                >
+                ["at0253"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0254"] = <
+                    text = <"NOLOBiometricIdentifiers">
+                    description = <"CBEFF
+ISO/IEC 19785-1
+To be Completed">
+                >
+                ["at0256"] = <
+                    text = <"NOLONameUseGroup">
+                    description = <"ISO:22220
+Codes the context for the group
+	•	NameUsage
+	•	USageID
+	•	UsageIDValidity
+">
+                >
+                ["at0257"] = <
+                    text = <"NOLONameFamilyGroup">
+                    description = <"ISO:22220
+
+Codes for a Family name
+">
+                >
+                ["at0258"] = <
+                    text = <"NOLONameTitleGroup">
+                    description = <"ISO:22220
+Codes for the Titles
+">
+                >
+                ["at0259"] = <
+                    text = <"NOLONamePrefixGroup">
+                    description = <"ISO:22220
+Codes for the Name Prefixes
+">
+                >
+                ["at0260"] = <
+                    text = <"NOLONameSuffixGroup">
+                    description = <"ISO:22220
+Codes for the Name Sufffixes
+">
+                >
+                ["at0261"] = <
+                    text = <"NOLONameConditionalUse">
+                    description = <"ISO:22220
+Codes an indicator of specific conditions or rules that should be applied to a subject of care
+
+1- Unreliable
+2- Known misspelling
+3- Name not to be used
+4- Name linkage forbidden by law
+
+6- Special privacy/security requirement
+
+9- Temporary name">
+                >
+                ["at0262"] = <
+                    text = <"NOLONamePreferredFlag">
+                    description = <"ISO:22220
+Indicating which name from the gFamily group  is preferred">
+                >
+                ["at0263"] = <
+                    text = <"NOLONameUnstructured">
+                    description = <"">
+                >
+                ["at0264"] = <
+                    text = <"NOLONameGivenGroup">
+                    description = <"">
+                >
+                ["at0268"] = <
+                    text = <"NOLONameUsage">
+                    description = <"ISO:22220
+Codes a classification that enables differentiation between the usage of names for a subject of care. An individual name may have many name uses.">
+                >
+                ["at0269"] = <
+                    text = <"NOLONameUsageID">
+                    description = <"ISO:22220 
+
+The combination of identifier type, identifier issuer and identifier name that specifies the link between this name and reporting or other unique identifier usage.
+">
+                >
+                ["at0270"] = <
+                    text = <"NOLONNameUsageValidity">
+                    description = <"ISO 2222
+Codes the date at which this name usage for the name to which the usage is associated starts to be used.
+The date at which this name usage for the name to which the usage is associated ceased to be used.
+Via an Archetype Slot to LocalisationInTime
+">
+                >
+                ["at0272"] = <
+                    text = <"NOLONameFamilyName">
+                    description = <"ISO 22220
+One of the  Family Names
+">
+                >
+                ["at0273"] = <
+                    text = <"NOLONameFamilyNameSequenceNumber">
+                    description = <"I ISO 22220
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0275"] = <
+                    text = <"NOLONameTitle">
+                    description = <"ISO 22220
+
+Codes the Title
+">
+                >
+                ["at0276"] = <
+                    text = <"NOLONameTitleSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0278"] = <
+                    text = <"NOLONamePrefix">
+                    description = <"ISO 22220
+
+Codes the Name Prefix
+">
+                >
+                ["at0279"] = <
+                    text = <"NOLONamePrefixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0281"] = <
+                    text = <"NOLONameSuffix">
+                    description = <"ISO 22220
+
+Codes the Name Suffix
+">
+                >
+                ["at0282"] = <
+                    text = <"NOLONameSufffixSequenceNumber">
+                    description = <"ISO 22220
+
+Codes for the sequence number 1, 2, 3, …)
+">
+                >
+                ["at0284"] = <
+                    text = <"NOLONameGivenName">
+                    description = <"ISO 22220
+One of the  Given Names">
+                >
+                ["at0285"] = <
+                    text = <"NOLONameGivenNameSequenceNumber">
+                    description = <"I ISO 22220
+Codes for the sequence number 1, 2, 3, …)">
+                >
+                ["at0287"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics">
+                >
+                ["at0288"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0289"] = <
+                    text = <"NONLOBatchSerialNumbers">
+                    description = <"Code for identifying Serial/batch numbers
+">
+                >
+                ["at0290"] = <
+                    text = <"NONLOOtherCharacteristics">
+                    description = <"Codes for characteristics dealing with begin, end of existence, Duration, Dimensions
+">
+                >
+                ["at0291"] = <
+                    text = <"NONLOUnstructured">
+                    description = <"Code for the unstructuredCharacteristics
+">
+                >
+                ["at0293"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0294"] = <
+                    text = <"NOPAPhysicalAddressValidity">
+                    description = <"ObjectPostalAddress">
+                >
+                ["at0295"] = <
+                    text = <"NOPABuilding/Department:">
+                    description = <"ISO:22220
+
+The specification of the type of a separately identifiable portion within a building/complex, marina etc. to clearly distinguish it from another.
+
+-Apt
+-CTGE
+-Dup
+-F
+-FY
+-KSK
+-MB
+-MSNT
+-OFF
+-PTHS
+-Rm
+">
+                >
+                ["at0296"] = <
+                    text = <"NOPABuilding/DepartmentSubType">
+                    description = <"ISO:22220
+
+The specification of the number of identifier of a building/complex, marina etc. to clearly distinguish it from another.
+">
+                >
+                ["at0297"] = <
+                    text = <"NOPASite">
+                    description = <"ISO:22220
+
+Name of the building
+
+The full name used to identify the physical building or property as part of its location.
+">
+                >
+                ["at0298"] = <
+                    text = <"NOPAFloorLevelNumber">
+                    description = <"ISO 22220
+Descriptor used to identify the floor or level of a multi-storey building/complex.
+">
+                >
+                ["at0299"] = <
+                    text = <"NOPAStreetNumber">
+                    description = <"ISO:22220
+
+The numeric or string reference number of a house or property that is unique within a street name or suburb.
+">
+                >
+                ["at0300"] = <
+                    text = <"NOPALotNumber">
+                    description = <"ISO:22220
+
+The lot reference allocated to an address in the absence of street numbering.
+">
+                >
+                ["at0301"] = <
+                    text = <"NOPAStreetName1">
+                    description = <"ISO22220
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0302"] = <
+                    text = <"NOPAStreetName2">
+                    description = <"ISO:22220 (Extention)
+
+The name that identifies a public thoroughfare and differentiates it from others in the same suburb/town/locality.
+">
+                >
+                ["at0303"] = <
+                    text = <"NOPAStreetTypeCode">
+                    description = <"ISO:22220
+
+A code that identifies the type of public thoroughfare.
+
+S(See ISO 22220">
+                >
+                ["at0304"] = <
+                    text = <"NOPAStreetSuffixCode">
+                    description = <"ISO:22220
+
+Term used to qualify street name used for directional references.
+
+-CN
+-E
+-EX
+-LR
+-N
+-NE
+-NW
+-S
+-SE
+SW
+-UP
+-W">
+                >
+                ["at0305"] = <
+                    text = <"NOPASuburbTownLocality">
+                    description = <"ISO:22220
+
+The full name of the general locality containing the specific address of a subject of care.
+">
+                >
+                ["at0306"] = <
+                    text = <"NOPAStateTerritoryProvince">
+                    description = <"NOPAStateTerritoryProvince:[0-1]:(item:Element)">
+                >
+                ["at0307"] = <
+                    text = <"NOPAZipPostalCode">
+                    description = <"ISO:22220
+
+The code for a postal delivery area, aligned with locality, suburb or place for the address of a subject of care, as defined by the postal service.
+">
+                >
+                ["at0308"] = <
+                    text = <"NOPACountryIdentifier">
+                    description = <"ISO:22220
+
+A code representing the country component of a subject of care’s address.
+
+
+ISO XXXX">
+                >
+                ["at0309"] = <
+                    text = <"NOPAAddressType">
+                    description = <"ISO:22220
+
+A code representing a type of address.
+
+See 13606-3 and ISO 22220
+
+Administrative address
+Actual address
+Legal address
+Temporal address
+Postal Address
+">
+                >
+                ["at0310"] = <
+                    text = <"NOPAUnstructuredAddress">
+                    description = <"ISO 22220 (Extention)
+
+The unstructured address
+">
+                >
+                ["at0311"] = <
+                    text = <"NOPAPhysicalAddressValidity">
+                    description = <"ISO 22220
+Code for  validity of the Physical address
+
+Uisng an Archtype Slot Localisation in Time
+">
+                >
+                ["at0313"] = <
+                    text = <"NOUniqueIdetifiers">
+                    description = <"  CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+
+">
+                >
+                ["at0314"] = <
+                    text = <"NOUIDDesignation">
+                    description = <"ISO 2220: 8.2: SubjectIdentifier
+">
+                >
+                ["at0315"] = <
+                    text = <"NOUIDGeoArea">
+                    description = <"ISO 2220: 8.3: SubjectIdentifier Geographical Area
+
+1- ,Local Subject idetifier
+2- Aream region, district identifier
+3- State/province/territory identifier
+4- National identifier">
+                >
+                ["at0316"] = <
+                    text = <"NOUIDIssuer">
+                    description = <"ISO 2220: 8.4: SubjectIdentifier Issuer
+">
+                >
+                ["at0317"] = <
+                    text = <"NOUIDType">
+                    description = <"ISO 2220: 8.5: SubjectIdentifier Type
+
+Codes for type of user/service/etc.">
+                >
+                ["at0319"] = <
+                    text = <"LocalisationInPatientSystem">
+                    description = <"Codes for the Localisation of  the Act that is modeled.
+WHERE in the Patient System is the archetype active?
+The Patient System is the location of the topic with the patient as focus. It helps to define what the Archetype is about.
+When the topic is ECG the localisation for Body Part is the heart and the BodyFunction: Elctrical systems of the heart.
+In the case of an ENTRY archetype the exact location of an Act (process) most likely will be modeled in the WHAT:NamedObject branch where the participating entity os modeled.
+In the case of a CLUSTER archetype this can be sued to indicate what part of the Patient System is the topic for that archetype.
+
+Preferably use the WHO ICF as primary coding system.
+">
+                >
+                ["at0320"] = <
+                    text = <"LIPWholePerson">
+                    description = <"Codes for certain characteristics that pertain to the person as a whole
+Allowed values:
+W- Whole
+NW-Not Whole
+E.G.
+BodyHeight = coded as W
+Fracture of the Femur = coded as NW">
+                >
+                ["at0321"] = <
+                    text = <"LIPBodyFunctions">
+                    description = <"Codes the Body functions (Physiology) the topic is about.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0322"] = <
+                    text = <"LIPCellularSystems">
+                    description = <"Codes for the involved cellular systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0323"] = <
+                    text = <"LIPBioChemistry">
+                    description = <"Codes for the involved chemical systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0324"] = <
+                    text = <"LIPGenetics">
+                    description = <"Codes for the involved genetic systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0325"] = <
+                    text = <"LIPEnvironments">
+                    description = <"Codes for the involved Environmental systems.
+Preferably use the WHO ICF as primary system.
+">
+                >
+                ["at0326"] = <
+                    text = <"LIPBodyParts">
+                    description = <"Codes for the Body part and localization">
+                >
+                ["at0327"] = <
+                    text = <"LIPBodyPart">
+                    description = <"Codes for the BodyPart involved
+Preferably use the WHO ICF as primary system.
+E.g.
+When the topic is about an ECG this will indicate that the heart is involved
+">
+                >
+                ["at0328"] = <
+                    text = <"LIPBodyPartLocalisation">
+                    description = <"Codes for the localisation of the Body Part via an Archetype Slot to the Cluster Modl: LocalisationInSpace.
+">
+                >
+                ["at0330"] = <
+                    text = <"NOOtherAddress">
+                    description = <"NOOtherAddress">
+                >
+                ["at0331"] = <
+                    text = <"NOOADigitalCommunication">
+                    description = <"ISO 2220
+Codes or any Digital Address
+">
+                >
+                ["at0332"] = <
+                    text = <"NOOAUnstructured">
+                    description = <"Other Address in free text
+">
+                >
+                ["at0334"] = <
+                    text = <"NOOADigitalCommunicationMedium">
+                    description = <"ISO: 22220
+
+A code representing a type of communication mechanism used by a subject of care.
+1- Telephone (Landline)
+2- Telephone Mobile
+3- Fax
+4- Pager
+5- e-mail
+6- URL
+
+8- Other
+
+
+See 13606-3 also">
+                >
+                ["at0335"] = <
+                    text = <"NOOADigitalCommunicationPreference">
+                    description = <"ISO: 22220
+
+An indication of the preferences for use of this contact type.
+
+B- Business hours
+D- Daytime hours
+W- Weekend hours
+A- All the time
+E- Evening hours
+">
+                >
+                ["at0336"] = <
+                    text = <"NOOADigitalCommunicationDetails">
+                    description = <"ISO:22220
+A unique combination of characters used as input to electronic telecommunication equipment for the purpose of contacting a subject of care.
+	•	URI
+	•	URL
+	•	Tweet address
+	•	Facebook address
+	•	E-mail address
+">
+                >
+                ["at0337"] = <
+                    text = <"NOOAAddressDigitalCommunicationUsageCode">
+                    description = <"ISO:22220
+
+A code representing the manner of use that a person applies to an electronic communication medium.
+
+1- Business
+2- Personal
+3- Both
+3-
+">
+                >
+                ["at0124"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0125"] = <
+                    text = <"LITAbsolute">
+                    description = <"Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0126"] = <
+                    text = <"LITRelative">
+                    description = <"Codes fro Relative Times relative to the Anchor point / Event
+">
+                >
+                ["at0128"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0129"] = <
+                    text = <"LITAbsBeginAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the BeginTime.
+
+See 22220">
+                >
+                ["at0130"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0131"] = <
+                    text = <"LITAbsEndAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the EndTime.">
+                >
+                ["at0242"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0243"] = <
+                    text = <"LITAbsDurationAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the DurationTime.">
+                >
+                ["at0339"] = <
+                    text = <"LITAnchorPointInTime">
+                    description = <"Codes for an Anchor point measured in Absolute Time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0340"] = <
+                    text = <"LITRelAnchorPointInTimeAccuracy">
+                    description = <"See ISO22220">
+                >
+                ["at0341"] = <
+                    text = <"LITRelDeltaInTime">
+                    description = <"Codes for the Delta in Absolute Time
+">
+                >
+                ["at0342"] = <
+                    text = <"LITRelDeltaInTimeAccuracy">
+                    description = <"See ISO2220">
+                >
+                ["at0343"] = <
+                    text = <"LITRelDeltaInUnit">
+                    description = <"Codes for the Delta in other units than Absolute Time.
+E.g. Cycle, month, quarter, etc.
+">
+                >
+                ["at0344"] = <
+                    text = <"LITRelDeltaInUnitAccuracy">
+                    description = <"ISO:22220
+  tbd
+">
+                >
+                ["at0345"] = <
+                    text = <"LITRelDeltaInDescription">
+                    description = <"Codes for the position of the Delta with respect to the Anchor
+A range in time relative to the Point of Reference
+
+e.g.: the week week before Christmas
+
+Defined Modifiers for temporal relationships between ranges:
+before - after
+overlaps - overlapped-by
+during - contains
+equals -  not-equals
+meets - met-by
+starts - started by
+finishes - finished-by
+">
+                >
+                ["at0346"] = <
+                    text = <"LITAnchorPointByReference">
+                    description = <"Links package
+Links will allow reference to:- named objects
+- results of queries
+- instantiated data
+- etc.
+This Anchor point plus the Delta describes the Begin or End
+
+Via an Archetype Slot
+">
+                >
+                ["at0348"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0349"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year
+">
+                >
+                ["at0350"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0351"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0352"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0353"] = <
+                    text = <"ISO22220 Accuracy duration">
+                    description = <"A- Accurate
+E- Estimated
+U- Unknown">
+                >
+                ["at0354"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0355"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0356"] = <
+                    text = <"DURATION">
+                    description = <"">
+                >
+                ["at0357"] = <
+                    text = <"ISO2220 Accuracy in time">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0358"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0359"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0360"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0365"] = <
+                    text = <"SCP">
+                    description = <"SCP">
+                >
+                ["at0366"] = <
+                    text = <"SCPState">
+                    description = <"Status
+Each element in an artifact, that contains defines an Information Model, can have a Status attached to it.
+
+There are three STATE MODELS provided.
+	•	The simple one that can be used for for instance the Observation Archetype.
+	•	The one provided by EN13606 in part 3
+	•	The one proposed by OpenEHR
+
+It is proposed to use the Simple and OpenEHR variant.
+
+
+Any item can be Final, Not-Final or Not-Available
+Sometimes there is a more elaborate Sate Model attached to it in the case of Actions.
+
+Is the result: final, preliminary, not available?
+-1=Preliminary
+0= Not available
+1= Final
+">
+                >
+                ["at0367"] = <
+                    text = <"SCPCertainty">
+                    description = <"Certainty
+C= Certain
+U= Uncertain">
+                >
+                ["at0368"] = <
+                    text = <"SCPPresence/Absence">
+                    description = <"Presence/Absence
+
+Coding for Presente or Absense
+
+
+Allowed     P - Present (default)
+          A - Absense
+">
+                >
+                ["at0370"] = <
+                    text = <"StateComment">
+                    description = <"register comments
+">
+                >
+                ["at0371"] = <
+                    text = <"SCPSValueNT">
+                    description = <"Code for the State 
+
+See 13606-3 and openEHR 
+
+TBD:
+">
+                >
+                ["at0373"] = <
+                    text = <"SCPCComment">
+                    description = <"Document any uncertainty as text.">
+                >
+                ["at0374"] = <
+                    text = <"SCPCIndicator">
+                    description = <"Certain/Uncertain coded as  C/U
+
+Default=Certain=C
+
+
+">
+                >
+                ["at0376"] = <
+                    text = <"SCPPAIndicator">
+                    description = <"P= Present (default)
+a
+a= absent">
+                >
+                ["at0377"] = <
+                    text = <"SCPPAComment">
+                    description = <"">
+                >
+                ["at0379"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0380"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0381"] = <
+                    text = <"Presence/Absense">
+                    description = <"Code for P or A">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

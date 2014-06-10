@@ -1,0 +1,386 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOLODemographics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131003">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOLODemographics
+        parts existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0022] occurrences matches {0..1} matches {  -- NOLODBiologicalSex
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {"Male","Female"}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0033] occurrences matches {0..1} matches {  -- NOLODMotherFamilyName
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0028] occurrences matches {0..1} matches {  -- NOLODCountryPlaceOfOrigin
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0027] occurrences matches {0..1} matches {  -- NOLODBirthPlurality
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                value existence matches {0..1} matches {
+                    INT[at0017] occurrences matches {0..1} matches {  -- NOLODBirthOrder
+                        value existence matches {1..1} matches {|>=0|}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0032] occurrences matches {0..1} matches {  -- NOLODIdentificationComment
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0019] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0020] occurrences matches {0..1} matches {  -- NOLODAdministrativeGender
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {"Male","Female","Intersex"}
+                    }
+                }
+            }
+            ELEMENT[at0021] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0031] occurrences matches {0..1} matches {  -- NOLODEtnicity
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0024] occurrences matches {0..1} matches {  -- NOLODRace
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0034] occurrences matches {0..1} matches {  -- NOLODRace
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0003] occurrences matches {0..1} matches {  -- NOLODBirthDetails
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0004] occurrences matches {0..1} matches {  -- NOLODBirthDate
+                        value existence matches {0..1} matches {
+                            DATE[at0009] occurrences matches {1..1} matches {  -- NOLODBirthDate
+                                date existence matches {1..1} matches {2013-10-03}
+                            }
+                        }
+                    }
+                    ELEMENT[at0006] occurrences matches {0..1} matches {  -- NOLODDeathFollowUpIndicator
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0010] occurrences matches {1..1} matches {  -- NOLODDeathFollowUpIndicator
+                                originalText existence matches {0..1} matches {"Yes","No"; "No"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0023] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0012] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0014] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                        value existence matches {0..1} matches {
+                            DATE[at0018] occurrences matches {0..1} matches {  -- NOLODDeathDate
+                                date existence matches {1..1} matches {2013-10-03}
+                            }
+                        }
+                    }
+                    ELEMENT[at0015] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0030] occurrences matches {0..1} matches {  -- NOLODDeathSourceNotification
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0001] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0007] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOLODemographics">
+                    description = <"ISO 22220 (extended)
+
+Codes for characteristics of Living Objects.
+E.g. Name, Demographics, Biometrics
+">
+                >
+                ["at0002"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female
+3- Intersex - Indeterminate
+
+9- Not sated/Inadequately described">
+                >
+                ["at0005"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0008"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"ISO 22220
+
+The country in which the subject of care was born.
+">
+                >
+                ["at0011"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0013"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"ISO:2220
+Codes for the birth order">
+                >
+                ["at0016"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0019"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate
+
+9- Not stated / inadequately described">
+                >
+                ["at0021"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)
+">
+                >
+                ["at0024"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0003"] = <
+                    text = <"NOLODBirthDetails">
+                    description = <"NOLODBirthDetails">
+                >
+                ["at0004"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth
+
+">
+                >
+                ["at0006"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+
+
+[PM: Via SCP?]">
+                >
+                ["at0009"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth">
+                >
+                ["at0010"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+">
+                >
+                ["at0012"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 2220
+Codes for the details about the death
+
+">
+                >
+                ["at0014"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death
+
+">
+                >
+                ["at0015"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0018"] = <
+                    text = <"NOLODDeathDate">
+                    description = <"ISO 22220
+Codes for the Date of Death">
+                >
+                ["at0020"] = <
+                    text = <"NOLODAdministrativeGender">
+                    description = <"ISO:22220 (Extension)
+The sex of the subject as used for administrative purposes.
+
+1- Male
+2- Female
+3- Intersex / indeterminate">
+                >
+                ["at0022"] = <
+                    text = <"NOLODBiologicalSex">
+                    description = <"ISO:22220
+Codes the sex of the subject.
+Sex is the biological distinction between male and female. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.
+1- Male
+2- Female">
+                >
+                ["at0027"] = <
+                    text = <"NOLODBirthPlurality">
+                    description = <"ISO:22220
+Codes an indicator of multiple birth, showing the total number of births resulting from a single pregnancy. 
+1- Singleton
+2- Twins
+3- Triplets
+4- Quadruplets
+5- Quintuplets
+6- Sectuplets
+
+8- Other
+9- Not stated">
+                >
+                ["at0028"] = <
+                    text = <"NOLODCountryPlaceOfOrigin">
+                    description = <"NOLODCountryPlaceOfOrigin
+
+Use ISO Country code">
+                >
+                ["at0030"] = <
+                    text = <"NOLODDeathSourceNotification">
+                    description = <"ISO:22220
+
+Indicates the source of information about a subject of care’s death. This field provides an indication of the certainty of the information.
+
+-  Registry
+-  HcProvider
+-  Relative
+- Other
+- Unknown">
+                >
+                ["at0031"] = <
+                    text = <"NOLODEtnicity">
+                    description = <"ISO 22220 (extension)
+Codes for Etnicity  (tbd)">
+                >
+                ["at0032"] = <
+                    text = <"NOLODIdentificationComment">
+                    description = <"ISO 22220
+Codes for comments recorded for a subject of care registration to distinguish between two or more subjects with the same or similar demographic information.
+">
+                >
+                ["at0033"] = <
+                    text = <"NOLODMotherFamilyName">
+                    description = <"ISO 22220
+Codes the original family name of the subject of care’s mother.
+">
+                >
+                ["at0034"] = <
+                    text = <"NOLODRace">
+                    description = <"ISO 22220 (Extension)
+Codes for Race (tbd)
+">
+                >
+                ["at0017"] = <
+                    text = <"NOLODBirthOrder">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

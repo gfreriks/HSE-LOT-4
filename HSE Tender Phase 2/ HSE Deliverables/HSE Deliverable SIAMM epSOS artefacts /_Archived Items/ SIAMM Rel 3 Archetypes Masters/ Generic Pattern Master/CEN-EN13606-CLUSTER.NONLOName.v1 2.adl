@@ -1,0 +1,406 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NONLOName.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20130930">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for ">
+            keywords = <"SIAMM","NamedObject","NonLiving","Name">
+            copyright = <"ERS B.V.">
+            use = <"Use for SIAMM Generic artefact">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NONLOName
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0019] occurrences matches {1..1} matches {  -- NONLOName
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0001] occurrences matches {0..1} matches {  -- NONLOName
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0004] occurrences matches {0..0} matches {  -- NONLOReferencedName
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- NONLONameType
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0002] occurrences matches {0..1} matches {  -- NONLONameType
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {1..1} matches {  -- NONLONameValidity
+                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0011] occurrences matches {0..1} matches {  -- LITAbsolute
+                        parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                            ELEMENT[at0012] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                value existence matches {0..1} matches {
+                                    DATE[at0013] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                        date existence matches {1..1} matches {2013-10-06}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0014] occurrences matches {0..1} matches {  -- LITAbsBeginAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0016] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0017] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0018] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                value existence matches {0..1} matches {
+                                    DATE[at0020] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                        date existence matches {1..1} matches {2013-10-06}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0021] occurrences matches {0..1} matches {  -- LITAbsEndAccuracy
+                                value existence matches {0..1} matches {
+                                    ORD[at0022] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                        symbol existence matches {1..1} matches {
+                                            CODED_TEXT[at0023] occurrences matches {1..1} matches {  -- 
+                                                codedValue existence matches {1..1} matches {*}
+                                                originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                            }
+                                        }
+                                        value existence matches {1..1} matches {|>0..<1|; 0}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0024] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                value existence matches {0..1} matches {
+                                    DURATION[at0025] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                        days existence matches {0..1} matches {0; 0}
+                                        hours existence matches {0..1} matches {0; 0}
+                                        minutes existence matches {0..1} matches {0; 0}
+                                        seconds existence matches {0..1} matches {0; 0}
+                                        fractional_second existence matches {0..1} matches {*}
+                                        sign existence matches {0..1} matches {1; 1}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0026] occurrences matches {0..1} matches {  -- LITAbsDurationAccuracy
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0027] occurrences matches {0..1} matches {  -- ISO22220 Accuracy duration
+                                        originalText existence matches {0..1} matches {"A","E","U"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0052] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0051] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0049] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0019"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0004"] = <
+                    text = <"NONLOReferencedName">
+                    description = <"Code for the Name of the Non Living Object Type. This can be to a resource/catalogue with more information.via LINKS
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0008"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0001"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0002"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0010"] = <
+                    text = <"NONLONameValidity">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0011"] = <
+                    text = <"LITAbsolute">
+                    description = <"Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0012"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0013"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0014"] = <
+                    text = <"LITAbsBeginAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the BeginTime.
+
+See 22220">
+                >
+                ["at0016"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year
+">
+                >
+                ["at0017"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0020"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0021"] = <
+                    text = <"LITAbsEndAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the EndTime.">
+                >
+                ["at0022"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0023"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0024"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0025"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0026"] = <
+                    text = <"LITAbsDurationAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the DurationTime.">
+                >
+                ["at0027"] = <
+                    text = <"ISO22220 Accuracy duration">
+                    description = <"A- Accurate
+E- Estimated
+U- Unknown">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+                ["at0010"] = <[DCM::CEN-EN13606-CLUSTER.LocalisationInTime.v1]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

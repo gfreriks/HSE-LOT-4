@@ -1,0 +1,2573 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.epSOSPatientSummaryUC.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordervices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20140521">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Define the epSOS Patient Summary as defined by EU Guideline">
+            keywords = <"epSOS","PatientSummary","UnplannedCare","Release 1">
+            copyright = <"Gerard Freriks">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- A0-epSOSPatientSummaryUC
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            SECTION[at0001] occurrences matches {1..1} matches {  -- A1-Patient Administrative Data
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0005] occurrences matches {1..1} matches {  -- D0-PatientSummaryDocument
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0003] occurrences matches {1..1} matches {  -- D1-Country
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0011] occurrences matches {0..1} matches {  -- D1-Country
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0004] occurrences matches {1..1} matches {  -- D2-PatientSummary
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0013] occurrences matches {1..1} matches {  -- D2.1-DateCreated
+                                        value existence matches {0..1} matches {
+                                            DATE[at0020] occurrences matches {0..1} matches {  -- D2.1-DateCreated
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0016] occurrences matches {0..1} matches {  -- D2.2-DateOfLastUpdate
+                                        value existence matches {0..1} matches {
+                                            DATE[at0021] occurrences matches {0..1} matches {  -- D2.2-DateOfLastUpdate
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0022] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0007] occurrences matches {1..1} matches {  -- D3.1-NatureOfPS
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0023] occurrences matches {0..1} matches {  -- D3.1-NatureOfPS
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"Human","Automated","HumanAndAutomated"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0024] occurrences matches {0..*} matches {  -- D4.1-AuthorOrganisation
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0025] occurrences matches {0..1} matches {  -- D4.1-AuthorOrganisation
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype ENTRY[at0019] occurrences matches {1..1} matches {  -- SubjectOfCare
+                        include
+                            archetype_id/value matches {/CEN-EN13606-ENTRY.SubjectOfCare.v3/}
+                    }
+                }
+                links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            SECTION[at0002] occurrences matches {1..1} matches {  -- C-PatientClinicalData
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    SECTION[at0006] occurrences matches {1..1} matches {  -- C1-Alerts
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0008] occurrences matches {1..1} matches {  -- C2-MedicalHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0009] occurrences matches {1..1} matches {  -- C3-MedicalProblems
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0010] occurrences matches {1..1} matches {  -- C4-MedicationSummary
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0012] occurrences matches {1..1} matches {  -- C8-DiagnosticTests
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0613] occurrences matches {1..1} matches {  -- C8.1-Bloodgroup
+                                items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+                                    CLUSTER[at0614] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            ELEMENT[at0615] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0616] occurrences matches {0..1} matches {  -- TargetReferenceModel
+                                                        originalText existence matches {0..1} matches {"En13606:2008"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0617] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0618] occurrences matches {0..1} matches {  -- TargetReferenceModelClass
+                                                        originalText existence matches {0..1} matches {"Entry"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0619] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0620] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                        originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0621] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0622] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                        originalText existence matches {0..1} matches {"Observation"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0623] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0624] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {
+                                                            [ac0002]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0625] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0626] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                        originalText existence matches {0..1} matches {"ResultCollection"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0627] occurrences matches {0..1} matches {  -- ProcessContext
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0628] occurrences matches {0..1} matches {  -- ProcessContext
+                                                        originalText existence matches {0..1} matches {"Administrative"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0629] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0630] occurrences matches {1..1} matches {  -- NamedObject
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            CLUSTER[at0631] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                    CLUSTER[at0632] occurrences matches {0..1} matches {  -- NONLOName
+                                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                            ELEMENT[at0633] occurrences matches {1..1} matches {  -- NONLOName
+                                                                value existence matches {0..1} matches {
+                                                                    CODED_TEXT[at0634] occurrences matches {0..1} matches {  -- NONLOName
+                                                                        codedValue existence matches {1..1} matches {*}
+                                                                        originalText existence matches {0..1} matches {
+                                                                            [ac0003]
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            ELEMENT[at0635] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                value existence matches {0..1} matches {
+                                                                    CODED_TEXT[at0636] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                        codedValue existence matches {1..1} matches {*}
+                                                                        originalText existence matches {0..1} matches {"Measurement"}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0637] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0638] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0639] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0702] occurrences matches {0..1} matches {  -- LocalisationInTime
+                                        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            CLUSTER[at0703] occurrences matches {0..1} matches {  -- LITAbsolute
+                                                parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                                    ELEMENT[at0704] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                        value existence matches {0..1} matches {
+                                                            DATE[at0705] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                                date existence matches {1..1} matches {2013-10-06}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0706] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                                        value existence matches {0..1} matches {
+                                                            DATE[at0707] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                                                date existence matches {1..1} matches {2013-10-06}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0708] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0709] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0710] occurrences matches {1..1} matches {  -- ResultValues
+                                        parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                                            ELEMENT[at0711] occurrences matches {0..1} matches {  -- ResultCodedtext
+                                                value existence matches {0..1} matches {
+                                                    CODED_TEXT[at0712] occurrences matches {1..1} matches {  -- ResultCodedtext
+                                                        codedValue existence matches {1..1} matches {*}
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0713] occurrences matches {0..1} matches {  -- ResultComments
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0714] occurrences matches {0..1} matches {  -- ResultComments
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0779] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0014] occurrences matches {1..1} matches {  -- C5-SocialHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0015] occurrences matches {1..1} matches {  -- C6-PregnancyHistory
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0018] occurrences matches {0..1} matches {  -- C6.1-PregnancyHistory
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0026] occurrences matches {0..1} matches {  -- C6.1.1-PregnancyDeliveryDate
+                                        value existence matches {0..1} matches {
+                                            DATE[at0027] occurrences matches {0..1} matches {  -- C6.1.1-PregnancyDeliveryDate
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                    SECTION[at0017] occurrences matches {1..1} matches {  -- C7-PhysicalFindings
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            SECTION[at0219] occurrences matches {0..*} matches {  -- C7.1-Vitalsigns
+                                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ENTRY[at0220] occurrences matches {0..1} matches {  -- C7.1.1-SystolicBloodPressure
+                                        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+                                            CLUSTER[at0221] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    ELEMENT[at0222] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0223] occurrences matches {0..1} matches {  -- TargetReferenceModel
+                                                                originalText existence matches {0..1} matches {"En13606:2008"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0224] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0225] occurrences matches {0..1} matches {  -- TargetReferenceModelClass
+                                                                originalText existence matches {0..1} matches {"Entry"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0226] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0227] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                                originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0228] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0229] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                                originalText existence matches {0..1} matches {"Observation","Evaluation","Instruction","Action"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0230] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                                                        value existence matches {0..1} matches {
+                                                            CODED_TEXT[at0231] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                                codedValue existence matches {1..1} matches {*}
+                                                                originalText existence matches {0..1} matches {"HealthObservedCondition"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0232] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0233] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                                originalText existence matches {0..1} matches {"ResultCollection"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0234] occurrences matches {0..1} matches {  -- ProcessContext
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0235] occurrences matches {0..1} matches {  -- ProcessContext
+                                                                originalText existence matches {0..1} matches {"Administrative"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0236] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0237] occurrences matches {1..1} matches {  -- C7.1.1-SystolicBloodPressure
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    CLUSTER[at0238] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+                                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                            CLUSTER[at0239] occurrences matches {0..1} matches {  -- NONLOName
+                                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                                    ELEMENT[at0240] occurrences matches {1..1} matches {  -- NONLOName
+                                                                        value existence matches {0..1} matches {
+                                                                            CODED_TEXT[at0241] occurrences matches {0..1} matches {  -- NONLOName
+                                                                                codedValue existence matches {1..1} matches {*}
+                                                                                originalText existence matches {0..1} matches {"SystolicBloodPressure"}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0242] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                        value existence matches {0..1} matches {
+                                                                            CODED_TEXT[at0243] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                                codedValue existence matches {1..1} matches {*}
+                                                                                originalText existence matches {0..1} matches {"Measurement"}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0244] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0245] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0246] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0247] occurrences matches {1..1} matches {  -- ResultValues
+                                                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                                                    CLUSTER[at0248] occurrences matches {0..1} matches {  -- ResultNumeric
+                                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                            CLUSTER[at0249] occurrences matches {1..1} matches {  -- RNValue
+                                                                parts existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                                                                    ELEMENT[at0250] occurrences matches {1..1} matches {  -- RNValueNumber
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0251] occurrences matches {1..1} matches {  -- RNValueNumber
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0262] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                            CLUSTER[at0263] occurrences matches {0..1} matches {  -- RNAllowedRange
+                                                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                                                    ELEMENT[at0264] occurrences matches {0..1} matches {  -- RNARLowerBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0265] occurrences matches {0..1} matches {  -- RNARLowerBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0266] occurrences matches {0..1} matches {  -- RNARLowerBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0267] occurrences matches {0..1} matches {  -- RNARLowerBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0268] occurrences matches {0..1} matches {  -- RNARUpperBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0269] occurrences matches {1..1} matches {  -- RNARUpperBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0270] occurrences matches {0..1} matches {  -- RNARUpperBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0271] occurrences matches {0..1} matches {  -- RNARUpperBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0272] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                            CLUSTER[at0273] occurrences matches {0..1} matches {  -- RNSignalRange
+                                                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                                                    ELEMENT[at0274] occurrences matches {0..1} matches {  -- RNSRLowerBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0275] occurrences matches {0..1} matches {  -- RNSRLowerBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0276] occurrences matches {0..1} matches {  -- RNSRLowerBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0277] occurrences matches {1..1} matches {  -- RNSRLowerBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0278] occurrences matches {0..1} matches {  -- RNSRUpperBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0279] occurrences matches {0..1} matches {  -- RNSRUpperBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0280] occurrences matches {0..1} matches {  -- RNSRUpperBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0281] occurrences matches {1..1} matches {  -- RNSRUpperBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0282] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                            CLUSTER[at0283] occurrences matches {0..1} matches {  -- RNNormalRange
+                                                                parts existence matches {0..1} cardinality matches {0..4; unordered; unique} matches {
+                                                                    ELEMENT[at0284] occurrences matches {0..1} matches {  -- RNNRLowerBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0285] occurrences matches {0..1} matches {  -- RNNRLowerBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0286] occurrences matches {0..1} matches {  -- RNNRLowerBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0287] occurrences matches {1..1} matches {  -- RNNRLowerBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0288] occurrences matches {0..1} matches {  -- RNNRUpperBoundComment
+                                                                        value existence matches {0..1} matches {
+                                                                            SIMPLE_TEXT[at0289] occurrences matches {1..1} matches {  -- RNNRUpperBoundComment
+                                                                                originalText existence matches {0..1} matches {/.*/}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0290] occurrences matches {0..1} matches {  -- RNNRUpperBound
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0291] occurrences matches {0..1} matches {  -- RNNRUpperBound
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0292] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                            CLUSTER[at0293] occurrences matches {0..1} matches {  -- RNFraction
+                                                                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                                                                    ELEMENT[at0294] occurrences matches {1..1} matches {  -- RNFractionNumerator
+                                                                        value existence matches {0..1} matches {
+                                                                            INT[at0295] occurrences matches {1..1} matches {  -- RNFractionNumerator
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0296] occurrences matches {1..1} matches {  -- RNFractionDenominator
+                                                                        value existence matches {0..1} matches {
+                                                                            INT[at0297] occurrences matches {1..1} matches {  -- RNFractionDenominator
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0298] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                            CLUSTER[at0299] occurrences matches {0..1} matches {  -- RNStDev
+                                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                                    ELEMENT[at0300] occurrences matches {0..1} matches {  -- RNStDev
+                                                                        value existence matches {0..1} matches {
+                                                                            INT[at0301] occurrences matches {0..1} matches {  -- RNStDev
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0302] occurrences matches {0..*} matches {  -- RNStDevResultMean
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0303] occurrences matches {0..1} matches {  -- RNStDevResultMean
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0304] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0305] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0308] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0309] occurrences matches {0..1} matches {  -- LocalisationInTime
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    CLUSTER[at0310] occurrences matches {0..1} matches {  -- LITAbsolute
+                                                        parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                                            ELEMENT[at0311] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                                value existence matches {0..1} matches {
+                                                                    DATE[at0312] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                                        date existence matches {1..1} matches {2013-10-06}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0315] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0316] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ENTRY[at0512] occurrences matches {0..1} matches {  -- C7.1.2-DiastolicBloodPressure
+                                        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+                                            CLUSTER[at0513] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    ELEMENT[at0514] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0515] occurrences matches {0..1} matches {  -- TargetReferenceModel
+                                                                originalText existence matches {0..1} matches {"En13606:2008"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0516] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0517] occurrences matches {0..1} matches {  -- TargetReferenceModelClass
+                                                                originalText existence matches {0..1} matches {"Entry"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0518] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0519] occurrences matches {0..1} matches {  -- ArtefactUse
+                                                                originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0520] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0521] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                                originalText existence matches {0..1} matches {"Observation","Evaluation","Instruction","Action"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0522] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                                                        value existence matches {0..1} matches {
+                                                            CODED_TEXT[at0523] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                                                                codedValue existence matches {1..1} matches {*}
+                                                                originalText existence matches {0..1} matches {"HealthObservedCondition"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0524] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0525] occurrences matches {0..1} matches {  -- ProcessPattern
+                                                                originalText existence matches {0..1} matches {"ResultCollection"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0526] occurrences matches {0..1} matches {  -- ProcessContext
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0527] occurrences matches {0..1} matches {  -- ProcessContext
+                                                                originalText existence matches {0..1} matches {"Administrative"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0528] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0529] occurrences matches {1..1} matches {  -- NamedObject
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    CLUSTER[at0530] occurrences matches {0..1} matches {  -- NONLOCharacteristics
+                                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                            CLUSTER[at0531] occurrences matches {0..1} matches {  -- NONLOName
+                                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                                    ELEMENT[at0532] occurrences matches {1..1} matches {  -- NONLOName
+                                                                        value existence matches {0..1} matches {
+                                                                            CODED_TEXT[at0533] occurrences matches {0..1} matches {  -- NONLOName
+                                                                                codedValue existence matches {1..1} matches {*}
+                                                                                originalText existence matches {0..1} matches {
+                                                                                    [ac0001]
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    ELEMENT[at0534] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                        value existence matches {0..1} matches {
+                                                                            CODED_TEXT[at0535] occurrences matches {0..1} matches {  -- NONLONameType
+                                                                                codedValue existence matches {1..1} matches {*}
+                                                                                originalText existence matches {0..1} matches {"Measurement"}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0536] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0537] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0538] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0539] occurrences matches {1..1} matches {  -- ResultValues
+                                                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                                                    CLUSTER[at0540] occurrences matches {0..1} matches {  -- ResultNumeric
+                                                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                            CLUSTER[at0541] occurrences matches {1..1} matches {  -- RNValue
+                                                                parts existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                                                                    ELEMENT[at0542] occurrences matches {1..1} matches {  -- RNValueNumber
+                                                                        value existence matches {0..1} matches {
+                                                                            PQ[at0543] occurrences matches {1..1} matches {  -- RNValueNumber
+                                                                                units existence matches {1..1} matches {*}
+                                                                                value existence matches {1..1} matches {*}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                structure_type existence matches {1..1} matches {
+                                                                    CS[at0554] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0597] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0600] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0601] occurrences matches {0..1} matches {  -- LocalisationInTime
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                    CLUSTER[at0602] occurrences matches {0..1} matches {  -- LITAbsolute
+                                                        parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                                            ELEMENT[at0603] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                                value existence matches {0..1} matches {
+                                                                    DATE[at0604] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                                                        date existence matches {1..1} matches {2013-10-06}
+                                                                    }
+                                                                }
+                                                            }
+                                                            ELEMENT[at0605] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                                                value existence matches {0..1} matches {
+                                                                    DATE[at0606] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                                                        date existence matches {1..1} matches {2013-10-06}
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        structure_type existence matches {1..1} matches {
+                                                            CS[at0607] occurrences matches {1..1} matches {  -- 
+                                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0608] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                        links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"epSOS", "SNOMED-CT", "DCM", "LOINC", "SIAMMR3", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"A0-epSOSPatientSummaryUC">
+                    description = <"epSOSPatientSummaryUC">
+                >
+                ["at0001"] = <
+                    text = <"A1-Patient Administrative Data">
+                    description = <"Patient Administrative data that identifies a person">
+                >
+                ["at0002"] = <
+                    text = <"C-PatientClinicalData">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"D0-PatientSummaryDocument">
+                    description = <"Specifies PS Documet related data">
+                >
+                ["at0003"] = <
+                    text = <"D1-Country">
+                    description = <"Name of Country A">
+                >
+                ["at0004"] = <
+                    text = <"D2-PatientSummary">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"D3.1-NatureOfPS">
+                    description = <"Defines the context in which it was generated:
+- Human
+- Automated
+- Human and Automated">
+                >
+                ["at0011"] = <
+                    text = <"D1-Country">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"D2.1-DateCreated">
+                    description = <"Date on whichPS was generated">
+                >
+                ["at0016"] = <
+                    text = <"D2.2-DateOfLastUpdate">
+                    description = <"">
+                >
+                ["at0020"] = <
+                    text = <"D2.1-DateCreated">
+                    description = <"">
+                >
+                ["at0021"] = <
+                    text = <"D2.2-DateOfLastUpdate">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"D3.1-NatureOfPS">
+                    description = <"">
+                >
+                ["at0024"] = <
+                    text = <"D4.1-AuthorOrganisation">
+                    description = <"At least one author or organisation (HCP) shall be listed. If there is no HCP, at least one HP shall be listed.">
+                >
+                ["at0025"] = <
+                    text = <"D4.1-AuthorOrganisation">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"C1-Alerts">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"C2-MedicalHistory">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"C3-MedicalProblems">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"C4-MedicationSummary">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"C8-DiagnosticTests">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"C5-SocialHistory">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"C6-PregnancyHistory">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"C7-PhysicalFindings">
+                    description = <"">
+                >
+                ["at0019"] = <
+                    text = <"SubjectOfCare">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"C6.1-PregnancyHistory">
+                    description = <"An ad-hoc Entry.
+At this moment there is NO formal Pregnancy Model.">
+                >
+                ["at0026"] = <
+                    text = <"C6.1.1-PregnancyDeliveryDate">
+                    description = <"Date on which the woman is due to give birth, Year, month, and dat are required (eg 01/01/2014)
+
+There was NO SNOMED code for 'Birth date'">
+                >
+                ["at0027"] = <
+                    text = <"C6.1.1-PregnancyDeliveryDate">
+                    description = <"">
+                >
+                ["at0219"] = <
+                    text = <"C7.1-Vitalsigns">
+                    description = <"">
+                >
+                ["at0220"] = <
+                    text = <"C7.1.1-SystolicBloodPressure">
+                    description = <"PhysicalFindingsVitalSigns">
+                >
+                ["at0221"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0222"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0223"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0224"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0225"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0226"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0227"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0228"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0229"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0230"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ContSys concept
+
+=> Should ContSysCODES become part of SNOMED <=
+">
+                >
+                ["at0231"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes for the binding with one ContSys concept
+">
+                >
+                ["at0232"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0233"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0234"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0235"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0236"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0237"] = <
+                    text = <"C7.1.1-SystolicBloodPressure">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0238"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics
+
+=> No codes for Characteristics of an OBJECT <=
+> Organisation or Physical or non physical">
+                >
+                ["at0239"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+=>NO SNOMED CODE for a Name of any Non-Living Object (Physical or logical <=
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0240"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0241"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0242"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0243"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0244"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0245"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0246"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0247"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0248"] = <
+                    text = <"ResultNumeric">
+                    description = <"=> NO SNOMED CODE for 'NUmeric result and its subordinate items' <=
+
+Holds one numeric result
+
+Codes for:
+	•	Numeric result including
+	•	Units of Measurement via Data Type
+	•	Normal range: the range of normal values as publsihed
+	•	Signal range: the used to generate alerts
+	•	Allowed range: the Multitude that can be entered as number
+
+The WHAT: NamedObject will hold the Name attached to the numeric result.
+e.g.
+WHAT:NamedObject...NameType=‘Finding:Lab-Test’
+WHAT:NamedObject...Name=‘Glucose concentration’
+WHAT:ResultValueNumericResult=’7.4’, Units=’mM/L’
+">
+                >
+                ["at0249"] = <
+                    text = <"RNValue">
+                    description = <"Holds the numeric value with its Units of Measurement
+
+CLUSTER model that codes for a Number and Units of Measurement HL7: UCAM
+And Number attributes such as:
+- Precision
+- Scale
+- Sensitivity
+- Specificity
+">
+                >
+                ["at0250"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0251"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0262"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0263"] = <
+                    text = <"RNAllowedRange">
+                    description = <"=> NO SNOMED CODE for Allowedrange' <=
+
+CLUSTER model that codes for the Allowed range in an artefact for a Number.
+It is a course grained number that the AOM allows to be specified and sets allowed numbers.
+It specifies a constraint at design time.
+A constraint that can be refined in Templates and at run-time depending on circumstances.
+E.G
+  Systolic Blood Pressure
+Number 120 mmHg
+Magnitude: 0-1000
+Results like -10 or 2000 are NOT allowed.
+">
+                >
+                ["at0264"] = <
+                    text = <"RNARLowerBound">
+                    description = <"Codes for the Allowed range Lowerbound including its units">
+                >
+                ["at0265"] = <
+                    text = <"RNARLowerBound">
+                    description = <"Codes for the Allowed range Lowerbound including its units">
+                >
+                ["at0266"] = <
+                    text = <"RNARLowerBoundComment">
+                    description = <"Comments connected to the lower bound">
+                >
+                ["at0267"] = <
+                    text = <"RNARLowerBoundComment">
+                    description = <"Comments connected to the lower bound">
+                >
+                ["at0268"] = <
+                    text = <"RNARUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound ">
+                >
+                ["at0269"] = <
+                    text = <"RNARUpperBoundComment">
+                    description = <"">
+                >
+                ["at0270"] = <
+                    text = <"RNARUpperBound">
+                    description = <"Codes for the Allowed range Upper bound including Units
+">
+                >
+                ["at0271"] = <
+                    text = <"RNARUpperBound">
+                    description = <"Codes for the Allowed range Upper bound including Units">
+                >
+                ["at0272"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0273"] = <
+                    text = <"RNSignalRange">
+                    description = <"=> NO SNOMED CODE for 'signal range' <=
+
+CLUSTER model that codes for a range of values that can give rise to a signal when the number is outside this range
+">
+                >
+                ["at0274"] = <
+                    text = <"RNSRLowerBound">
+                    description = <"Codes for the Signal range attached to the Result including Units">
+                >
+                ["at0275"] = <
+                    text = <"RNSRLowerBound">
+                    description = <"Codes for the Signal range attached to the Result including Units">
+                >
+                ["at0276"] = <
+                    text = <"RNSRLowerBoundComment">
+                    description = <"Codes for a comment
+">
+                >
+                ["at0277"] = <
+                    text = <"RNSRLowerBoundComment">
+                    description = <"Codes for a comment">
+                >
+                ["at0278"] = <
+                    text = <"RNSRUpperBound">
+                    description = <"Codes for the Signal range Upper bound including Units
+">
+                >
+                ["at0279"] = <
+                    text = <"RNSRUpperBound">
+                    description = <"Codes for the Signal range Upper bound including Units">
+                >
+                ["at0280"] = <
+                    text = <"RNSRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0281"] = <
+                    text = <"RNSRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound ">
+                >
+                ["at0282"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0283"] = <
+                    text = <"RNNormalRange">
+                    description = <"CLUSTER model that codes for a range of normal values
+">
+                >
+                ["at0284"] = <
+                    text = <"RNNRLowerBound">
+                    description = <"Codes for the Normal range lower bound 
+">
+                >
+                ["at0285"] = <
+                    text = <"RNNRLowerBound">
+                    description = <"Codes for the Normal range lower bound ">
+                >
+                ["at0286"] = <
+                    text = <"RNNRLowerBoundComment">
+                    description = <"Codes for comment on the Normal range Lower bound 
+">
+                >
+                ["at0287"] = <
+                    text = <"RNNRLowerBoundComment">
+                    description = <"">
+                >
+                ["at0288"] = <
+                    text = <"RNNRUpperBoundComment">
+                    description = <"Codes for comment on the Normal range Upper bound 
+">
+                >
+                ["at0289"] = <
+                    text = <"RNNRUpperBoundComment">
+                    description = <"">
+                >
+                ["at0290"] = <
+                    text = <"RNNRUpperBound">
+                    description = <"Codes for the Normal range Upper bound ">
+                >
+                ["at0291"] = <
+                    text = <"RNNRUpperBound">
+                    description = <"Codes for the Normal range Upper bound ">
+                >
+                ["at0292"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0293"] = <
+                    text = <"RNFraction">
+                    description = <"=> Is this the correct SNOMED CODE?<=
+
+The number/result as a fraction = Nominator / Denominator, both as Integers
+E.g. 2 out of 5, 1 on a scale 1 out of 10,
+When multiplied by 100 it is equal to Percentage.
+Percentage is defined in HL7 UCUM
+">
+                >
+                ["at0294"] = <
+                    text = <"RNFractionNumerator">
+                    description = <"The Nominator
+
+=> NO SNOMED CODE for 'Nominator' <=
+
+=> Denominator is defined <=">
+                >
+                ["at0295"] = <
+                    text = <"RNFractionNumerator">
+                    description = <"The Numerator">
+                >
+                ["at0296"] = <
+                    text = <"RNFractionDenominator">
+                    description = <"The Denominator of the pair
+">
+                >
+                ["at0297"] = <
+                    text = <"RNFractionDenominator">
+                    description = <"The Denominator of the pair
+">
+                >
+                ["at0298"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0299"] = <
+                    text = <"RNStDev">
+                    description = <"Codes for the range as Mean +/-  x times a Standard Deviation">
+                >
+                ["at0300"] = <
+                    text = <"RNStDev">
+                    description = <"The number of standard deviations that is reported about.
+
+Mean ± x StDev">
+                >
+                ["at0301"] = <
+                    text = <"RNStDev">
+                    description = <"The number of standard deviations that is reported about.
+
+Mean ± x StDev">
+                >
+                ["at0302"] = <
+                    text = <"RNStDevResultMean">
+                    description = <"The resulting Mean in Units">
+                >
+                ["at0303"] = <
+                    text = <"RNStDevResultMean">
+                    description = <"The resulting Mean in Units">
+                >
+                ["at0304"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0305"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0308"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0309"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+=> Which SNOMED time code is appropriate? <=
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0310"] = <
+                    text = <"LITAbsolute">
+                    description = <"=>NO SNOMED CODES for all subordinate items<=
+
+
+Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0311"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0312"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0315"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0316"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0512"] = <
+                    text = <"C7.1.2-DiastolicBloodPressure">
+                    description = <"PhysicalFindingsVitalSigns">
+                >
+                ["at0513"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0514"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0515"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0516"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0517"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0518"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0519"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0520"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0521"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0522"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ContSys concept
+
+=> Should ContSysCODES become part of SNOMED <=
+">
+                >
+                ["at0523"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes for the binding with one ContSys concept
+">
+                >
+                ["at0524"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0525"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0526"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0527"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0528"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0529"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0530"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics
+
+=> No codes for Characteristics of an OBJECT <=
+> Organisation or Physical or non physical">
+                >
+                ["at0531"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+=>NO SNOMED CODE for a Name of any Non-Living Object (Physical or logical <=
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0532"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0533"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+There is NO SNOMED CODE for 'Diastolic Blood Pressure'
+
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0534"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0535"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0536"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0537"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0538"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0539"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0540"] = <
+                    text = <"ResultNumeric">
+                    description = <"=> NO SNOMED CODE for 'NUmeric result and its subordinate items' <=
+
+Holds one numeric result
+
+Codes for:
+	•	Numeric result including
+	•	Units of Measurement via Data Type
+	•	Normal range: the range of normal values as publsihed
+	•	Signal range: the used to generate alerts
+	•	Allowed range: the Multitude that can be entered as number
+
+The WHAT: NamedObject will hold the Name attached to the numeric result.
+e.g.
+WHAT:NamedObject...NameType=‘Finding:Lab-Test’
+WHAT:NamedObject...Name=‘Glucose concentration’
+WHAT:ResultValueNumericResult=’7.4’, Units=’mM/L’
+">
+                >
+                ["at0541"] = <
+                    text = <"RNValue">
+                    description = <"Holds the numeric value with its Units of Measurement
+
+CLUSTER model that codes for a Number and Units of Measurement HL7: UCAM
+And Number attributes such as:
+- Precision
+- Scale
+- Sensitivity
+- Specificity
+">
+                >
+                ["at0542"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0543"] = <
+                    text = <"RNValueNumber">
+                    description = <"Codes for the Number including via the Data Type the Units of Measurement
+(see HL7 UCUM)
+">
+                >
+                ["at0554"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0597"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0600"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0601"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+=> Which SNOMED time code is appropriate? <=
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0602"] = <
+                    text = <"LITAbsolute">
+                    description = <"=>NO SNOMED CODES for all subordinate items<=
+
+
+Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0603"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0604"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0605"] = <
+                    text = <"LITAbsEnd">
+                    description = <"=> NO SNOMED CODE for 'End Time' <=
+=> There is a code or Completion time of procedure that could be applicable <=
+
+Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0606"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0607"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0608"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0613"] = <
+                    text = <"C8.1-Bloodgroup">
+                    description = <"PhysicalFindingsVitalSigns">
+                >
+                ["at0614"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0615"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0616"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0617"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0618"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0619"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0620"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0621"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0622"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0623"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ContSys concept
+
+=> Should ContSysCODES become part of SNOMED <=
+">
+                >
+                ["at0624"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes for the binding with one ContSys concept
+">
+                >
+                ["at0625"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0626"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0627"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0628"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0629"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0630"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0631"] = <
+                    text = <"NONLOCharacteristics">
+                    description = <"NONLOCharacteristics
+
+=> No codes for Characteristics of an OBJECT <=
+> Organisation or Physical or non physical">
+                >
+                ["at0632"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type.
+e.g. Procedure for something specific
+When NONLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+=>NO SNOMED CODE for a Name of any Non-Living Object (Physical or logical <=
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0633"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0634"] = <
+                    text = <"NONLOName">
+                    description = <"Code for the Name of the Non Living Object Type. 
+e.g. Procedure for something specific
+When NLONNameType= Intervention:Prescription procedure
+Then in order to prescribe a Medicinal product NLOName=Medicinal Product
+
+The CLUSTER ResultValues via its COMPLEX CLUSTER model will allow to specify the specific medicinal product.
+Since in the Order pattern this has the function of detailing the precise medicinal product.
+">
+                >
+                ["at0635"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0636"] = <
+                    text = <"NONLONameType">
+                    description = <"NONLONameType">
+                >
+                ["at0637"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0638"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0639"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0702"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+=> Which SNOMED time code is appropriate? <=
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0703"] = <
+                    text = <"LITAbsolute">
+                    description = <"=>NO SNOMED CODES for all subordinate items<=
+
+
+Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0704"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0705"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0706"] = <
+                    text = <"LITAbsEnd">
+                    description = <"=> NO SNOMED CODE for 'End Time' <=
+=> There is a code or Completion time of procedure that could be applicable <=
+
+Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0707"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0708"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0709"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0710"] = <
+                    text = <"ResultValues">
+                    description = <"ResultValues.
+
+Minimally one, ,aximally choice can occur only once.
+Rules need to be spcified on more detailed allowed behaviors.
+
+Minimally one result is allowed and optionally in addition: Comments and SCN.">
+                >
+                ["at0711"] = <
+                    text = <"ResultCodedtext">
+                    description = <"Holds the result as Codedtext">
+                >
+                ["at0712"] = <
+                    text = <"ResultCodedtext">
+                    description = <"Holds the result as Codedtext">
+                >
+                ["at0713"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0714"] = <
+                    text = <"ResultComments">
+                    description = <"Holds the Comments about the result">
+                >
+                ["at0779"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"DiastolicBloodPressure">
+                    description = <"">
+                >
+                ["ac0002"] = <
+                    text = <"HealthObservedCondition">
+                    description = <"">
+                >
+                ["ac0003"] = <
+                    text = <"BloodGroup">
+                    description = <"">
+                >
+            >
+        >
+    >
+    term_binding = <
+        ["epSOS"] = <
+            items = <
+                ["at0020"] = <[epSOS::D2.1-DateCreated]>
+                ["at0021"] = <[epSOS::D2.2-DateOfLastUpdate]>
+                ["at0005"] = <[epSOS::D0-PatientSummaryDocument]>
+                ["at0016"] = <[epSOS::D2.2-DateOfLastUpdate]>
+                ["at0004"] = <[epSOS::D2-PatientSummary]>
+                ["at0013"] = <[epSOS::D2.1-DateCreated]>
+                ["at0003"] = <[epSOS::D1-Country]>
+                ["at0011"] = <[epSOS::D1-Country]>
+                ["at0023"] = <[epSOS::D3.1-NatureOfPS]>
+                ["at0024"] = <[epSOS::D4.1-AuthorOrganisation]>
+                ["at0025"] = <[epSOS::D4.1-AuthorOrganisation]>
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0005"] = <[SNOMED-CT::116154003],[SNOMED-CT::371534008]>
+                ["at0016"] = <[SNOMED-CT::83324001]>
+                ["at0004"] = <[SNOMED-CT::116154003],[SNOMED-CT::422735006]>
+                ["at0013"] = <[SNOMED-CT::129376004],[SNOMED-CT::410671006]>
+                ["at0003"] = <[SNOMED-CT::223369002]>
+                ["at0024"] = <[SNOMED-CT::37920003]>
+                ["at0025"] = <[SNOMED-CT::21139007],[SNOMED-CT::37920003]>
+                ["at0018"] = <[SNOMED-CT::15592002]>
+                ["at0264"] = <[SNOMED-CT::385524004]>
+                ["at0270"] = <[SNOMED-CT::371933006]>
+                ["at0274"] = <[SNOMED-CT::385524004]>
+                ["at0278"] = <[SNOMED-CT::385524004]>
+                ["at0283"] = <[SNOMED-CT::260395002]>
+                ["at0284"] = <[SNOMED-CT::385524004]>
+                ["at0290"] = <[SNOMED-CT::385524004]>
+                ["at0293"] = <[SNOMED-CT::115468007]>
+                ["at0311"] = <[SNOMED-CT::398201009]>
+                ["at0309"] = <[SNOMED-CT::410670007],[SNOMED-CT::410669006]>
+                ["at0247"] = <[SNOMED-CT::423100009]>
+                ["at0237"] = <[SNOMED-CT::272734009]>
+                ["at0539"] = <[SNOMED-CT::423100009]>
+                ["at0603"] = <[SNOMED-CT::398201009]>
+                ["at0529"] = <[SNOMED-CT::272734009]>
+                ["at0601"] = <[SNOMED-CT::410670007],[SNOMED-CT::410669006]>
+                ["at0630"] = <[SNOMED-CT::272734009]>
+                ["at0704"] = <[SNOMED-CT::398201009]>
+                ["at0702"] = <[SNOMED-CT::410670007],[SNOMED-CT::410669006]>
+                ["at0713"] = <[SNOMED-CT::281296001]>
+                ["at0710"] = <[SNOMED-CT::423100009]>
+            >
+        >
+        ["DCM"] = <
+            items = <
+                ["at0018"] = <[DCM::CEN-EN13606-ENTRY.PregnancyHistory.v1]>
+                ["at0220"] = <[DCM::CEN-EN13606-ENTRY.PrRcHealthObservedCondition.v1]>
+                ["at0512"] = <[DCM::CEN-EN13606-ENTRY.PrRcHealthObservedCondition.v1]>
+                ["at0613"] = <[DCM::CEN-EN13606-ENTRY.PrRcHealthObservedCondition.v1]>
+                ["at0710"] = <[DCM::CEN-EN13606-CLUSTER.ResultValues.v2]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["at0026"] = <[LOINC::21112-8]>
+                ["at0018"] = <[LOINC::67471-3]>
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+                ["at0221"] = <[SIAMMR3::MetaDataArtefact]>
+                ["at0222"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0223"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0224"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0225"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0226"] = <[SIAMMR3::ArtefactUse]>
+                ["at0228"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0229"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0230"] = <[SIAMMR3::TargetReferenceModelClassName]>
+                ["at0231"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0232"] = <[SIAMMR3::ProcessPattern]>
+                ["at0233"] = <[SIAMMR3::ProcessPattern]>
+                ["at0234"] = <[SIAMMR3::ProcessContext]>
+                ["at0235"] = <[SIAMMR3::ArtefactUse],[SIAMMR3::ProcessContext]>
+                ["at0242"] = <[SIAMMR3::NONLONameType]>
+                ["at0264"] = <[SIAMMR3::RNARLowerBound]>
+                ["at0266"] = <[SIAMMR3::RNARLowerBoundComment]>
+                ["at0268"] = <[SIAMMR3::RNARUpperBoundComment]>
+                ["at0270"] = <[SIAMMR3::RNARUpperBound]>
+                ["at0273"] = <[SIAMMR3::RNSignalRange]>
+                ["at0274"] = <[SIAMMR3::RNSRLowerBound]>
+                ["at0276"] = <[SIAMMR3::RNSRLowerBoundComment]>
+                ["at0278"] = <[SIAMMR3::RNSRUpperBound]>
+                ["at0280"] = <[SIAMMR3::RNSRUpperBoundComment]>
+                ["at0283"] = <[SIAMMR3::RNNormalRange]>
+                ["at0284"] = <[SIAMMR3::RNNRLowerBound]>
+                ["at0286"] = <[SIAMMR3::RNNRLowerBoundComment]>
+                ["at0288"] = <[SIAMMR3::RNNRUpperBoundComment]>
+                ["at0290"] = <[SIAMMR3::RNNRUpperBound]>
+                ["at0293"] = <[SIAMMR3::RNFraction]>
+                ["at0294"] = <[SIAMMR3::RNFractionNumerator]>
+                ["at0296"] = <[SIAMMR3::RNFractionDenominator]>
+                ["at0299"] = <[SIAMMR3::RNStDev]>
+                ["at0300"] = <[SIAMMR3::RNStDev]>
+                ["at0302"] = <[SIAMMR3::RNStDevResultMean]>
+                ["at0311"] = <[SIAMMR3::LITAbsBegin]>
+                ["at0239"] = <[SIAMMR3::NONLOName]>
+                ["at0240"] = <[SIAMMR3::NONLOName]>
+                ["at0238"] = <[SIAMMR3::NONLOCharacteristics]>
+                ["at0309"] = <[SIAMMR3::LocalisationInTime]>
+                ["at0310"] = <[SIAMMR3::LITAbsolute],[SIAMMR3::LocalisationInTime]>
+                ["at0247"] = <[SIAMMR3::ResultValues]>
+                ["at0248"] = <[SIAMMR3::ResultNumeric]>
+                ["at0263"] = <[SIAMMR3::RNAllowedRange]>
+                ["at0250"] = <[SIAMMR3::RNValueNumber]>
+                ["at0249"] = <[SIAMMR3::RNValue]>
+                ["at0237"] = <[SIAMMR3::NamedObject]>
+                ["at0513"] = <[SIAMMR3::MetaDataArtefact]>
+                ["at0514"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0515"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0516"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0517"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0518"] = <[SIAMMR3::ArtefactUse]>
+                ["at0520"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0521"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0522"] = <[SIAMMR3::TargetReferenceModelClassName]>
+                ["at0523"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0524"] = <[SIAMMR3::ProcessPattern]>
+                ["at0525"] = <[SIAMMR3::ProcessPattern]>
+                ["at0526"] = <[SIAMMR3::ProcessContext]>
+                ["at0527"] = <[SIAMMR3::ArtefactUse],[SIAMMR3::ProcessContext]>
+                ["at0539"] = <[SIAMMR3::ResultValues]>
+                ["at0540"] = <[SIAMMR3::ResultNumeric]>
+                ["at0541"] = <[SIAMMR3::RNValue]>
+                ["at0542"] = <[SIAMMR3::RNValue]>
+                ["at0602"] = <[SIAMMR3::LITAbsolute],[SIAMMR3::LocalisationInTime]>
+                ["at0603"] = <[SIAMMR3::LITAbsBegin]>
+                ["at0605"] = <[SIAMMR3::LITAbsEnd]>
+                ["at0529"] = <[SIAMMR3::NamedObject]>
+                ["at0530"] = <[SIAMMR3::NONLOCharacteristics]>
+                ["at0534"] = <[SIAMMR3::NONLONameType]>
+                ["at0531"] = <[SIAMMR3::NONLOName]>
+                ["at0532"] = <[SIAMMR3::NONLOName]>
+                ["at0601"] = <[SIAMMR3::LocalisationInTime]>
+                ["at0220"] = <[SIAMMR3::ENTRY.MPF]>
+                ["at0512"] = <[SIAMMR3::ENTRY.MPF]>
+                ["at0614"] = <[SIAMMR3::MetaDataArtefact]>
+                ["at0615"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0617"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0619"] = <[SIAMMR3::ArtefactUse]>
+                ["at0621"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0625"] = <[SIAMMR3::ProcessPattern]>
+                ["at0627"] = <[SIAMMR3::ProcessContext]>
+                ["at0631"] = <[SIAMMR3::NONLOCharacteristics]>
+                ["at0632"] = <[SIAMMR3::NONLOName]>
+                ["at0633"] = <[SIAMMR3::NONLOName]>
+                ["at0635"] = <[SIAMMR3::NONLONameType]>
+                ["at0703"] = <[SIAMMR3::LITAbsolute],[SIAMMR3::LocalisationInTime]>
+                ["at0704"] = <[SIAMMR3::LITAbsBegin]>
+                ["at0706"] = <[SIAMMR3::LITAbsEnd]>
+                ["at0702"] = <[SIAMMR3::LocalisationInTime]>
+                ["at0623"] = <[SIAMMR3::TargetReferenceModelClassName]>
+                ["at0618"] = <[SIAMMR3::TargetReferenceModelClass]>
+                ["at0616"] = <[SIAMMR3::TargetReferenceModel]>
+                ["at0626"] = <[SIAMMR3::ProcessPattern]>
+                ["at0628"] = <[SIAMMR3::ArtefactUse],[SIAMMR3::ProcessContext]>
+                ["at0622"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0624"] = <[SIAMMR3::TargetReferenceModelClassType]>
+                ["at0713"] = <[SIAMMR3::ResultComments]>
+                ["at0613"] = <[SIAMMR3::ENTRY.MPF],[SIAMMR3::PrRcHealthObservedCondition]>
+                ["at0710"] = <[SIAMMR3::ResultValues]>
+            >
+        >
+    >
+    constraint_binding = <
+        ["SNOMED-CT"] = <
+            items = <
+                ["ac0003"] = <[SNOMED-CT::365636006]>
+            >
+        >
+        ["LOINC"] = <
+            items = <
+                ["ac0003"] = <[LOINC::883-9]>
+            >
+        >
+    >

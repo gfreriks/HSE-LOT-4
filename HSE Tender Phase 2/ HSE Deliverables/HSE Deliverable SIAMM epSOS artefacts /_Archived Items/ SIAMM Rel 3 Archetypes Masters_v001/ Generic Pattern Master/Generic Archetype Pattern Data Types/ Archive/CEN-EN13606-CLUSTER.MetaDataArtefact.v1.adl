@@ -1,0 +1,243 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.MetaDataArtefact.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131005">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.">
+            keywords = <"SIAMM","Metadata: Artefact">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- MetaDataArtefact
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {1..1} matches {  -- TargetReferenceModel
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0003] occurrences matches {0..1} matches {  -- TargetReferenceModel
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {1..1} matches {  -- TargetReferenceModelClass
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0004] occurrences matches {0..1} matches {  -- TargetReferenceModelClass
+                        originalText existence matches {0..1} matches {"Folder","Composition","Section","Entry","Cluster","Element","EHR-Extract"}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- ArtefactUse
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0006] occurrences matches {0..1} matches {  -- ArtefactUse
+                        originalText existence matches {0..1} matches {"Persistence","Querying","InputExchange","OutputExchange","Presentation","DataCapture"}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0007] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- TargetReferenceModelClassName
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0009] occurrences matches {0..1} matches {  -- TargetReferenceModelClassType
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- ProcessPattern
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0010] occurrences matches {0..1} matches {  -- ProcessPattern
+                        originalText existence matches {0..1} matches {"Order","Execute","Assess","ResultCollection","Inference"}
+                    }
+                }
+            }
+            ELEMENT[at0019] occurrences matches {0..1} matches {  -- ProcessContext
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0012] occurrences matches {0..1} matches {  -- ProcessContext
+                        originalText existence matches {0..1} matches {"Diagnostic","Therapeutic","Administrative","Management","ReUse"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"This SIAMM sub-pattern is a Cluster Model.
+It is used in the SIAM Main ENTRY Pattern.
+Its purpose is to describe the nature of the artefact: reference model used, class of the reference model, name of the class, binding to ContSys, sub-pattern used, intended use of the artefact, context in which the artefact will be used, etc.
+This Cluster Model defines:
+	•	the generic Class name from the Target Reference Model
+	•	the name given to that generic class from the TrM
+	•	the context of the artefact when it is used to document events during the care treatment cycle
+	•	the use of the rate fact. Is it defined for use for persistence, querying or presentation
+
+In the case of an ENTRY class from the TrM the possible FUnctions are: Order, Execution, Observation of results and Assessment of any procedure.
+
+All the choices in this ToA branch of they generic semantic pattern define the specific pattern to be used.">
+                >
+                ["at0002"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model (e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0005"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0008"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0011"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes fro the kind of artefact:
+	•	Observation
+	•	Evaluation
+	•	Instruction
+	•	Action">
+                >
+                ["at0013"] = <
+                    text = <"TargetReferenceModelClassName">
+                    description = <"Codes for the binding with one ontSys concept
+">
+                >
+                ["at0016"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0019"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+                ["at0003"] = <
+                    text = <"TargetReferenceModel">
+                    description = <"Provide the name + version of the Reference Model
+(e.g. En13606:2008 or SIAMM:2013, etc)
+">
+                >
+                ["at0004"] = <
+                    text = <"TargetReferenceModelClass">
+                    description = <"Specify what class of the RM is used as starting point:
+
+	•	EHR-EXtract
+	•	Folder
+	•	Composition
+	•	Section
+	•	Entry
+	•	Cluster
+	•	Element
+">
+                >
+                ["at0006"] = <
+                    text = <"ArtefactUse">
+                    description = <"Codes fro the use of the artefact
+
+	•	Persistence
+	•	Querying
+	•	InputExchange
+	•	OutputExchange
+	•	Presentation
+	•	DataCapture
+">
+                >
+                ["at0007"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"TargetReferenceModelClassType">
+                    description = <"Codes for the binding with one ontSys concept
+">
+                >
+                ["at0010"] = <
+                    text = <"ProcessPattern">
+                    description = <"Codes for one of the five SIAMM patterns for an ENTRY class
+
+	•	Order
+	•	Execute
+	•	Assess
+	•	ResultCollection (summary)
+	•	Inference
+">
+                >
+                ["at0012"] = <
+                    text = <"ProcessContext">
+                    description = <"Codes for the process context the artefact is used in
+
+	•	Diagnostic
+	•	Therapeutic
+	•	Administrative
+	•	Management
+	•	ReUse">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,28 @@
+archetype
+    CEN-EN13606-ENTRY.MP3.v1
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-RecordServices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20130918">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"The SIAMM Backbone pattern for all artefacts">
+            keywords = <"SIAMM","Main Pattern","Release 3">
+            copyright = <"ERS B.V.">
+            use = <"Used to specialise into COntSys harmonised Generic Ineformation Models">
+        >
+    >
+
+objectBuilder
+    object_builder_definition = <"<?xml version='1.0' encoding='UTF-8'?><objectBuilder hasBagSemantics='false'><sourcePaths><sourcePath>/source[anySource]/type[XML]/document[anyDocument]/element[linkEHRvirtualIDPatient]</sourcePath></sourcePaths></objectBuilder>">
+mapping
+    map_definitions = <
+    >
+
+

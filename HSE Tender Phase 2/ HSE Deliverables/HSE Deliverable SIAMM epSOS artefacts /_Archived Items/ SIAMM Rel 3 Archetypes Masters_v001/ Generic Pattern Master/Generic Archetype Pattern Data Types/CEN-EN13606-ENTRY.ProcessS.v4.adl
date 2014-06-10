@@ -1,0 +1,175 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.ProcessS.v4
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-RecordServices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"Gerard Freriks">
+        ["date"] = <"20130918">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"The SIAMM Backbone pattern for all artefacts">
+            keywords = <"SIAMM","Main Pattern","Release 3">
+            copyright = <"ERS B.V.">
+            use = <"Used to specialise into ContSys harmonised Generic Ineformation Models">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- ENTRY.Process.v4
+        items existence matches {0..1} cardinality matches {0..11; unordered; unique} matches {
+            allow_archetype CLUSTER[at0010] occurrences matches {0..1} matches {  -- ProcessHow
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0612] occurrences matches {0..1} matches {  -- ProcessConfoundingFactors
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0614] occurrences matches {0..1} matches {  -- ProcessLocalisationInPatientSystem
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0615] occurrences matches {0..1} matches {  -- ProcessLocalisationInSpace
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0616] occurrences matches {0..1} matches {  -- ProcessLocalisationInTime
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0617] occurrences matches {1..1} matches {  -- ProcessNamedObject
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0618] occurrences matches {0..1} matches {  -- ProcessParticipations
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0619] occurrences matches {0..1} matches {  -- ProcessReasons
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0620] occurrences matches {1..1} matches {  -- ProcessResultValues
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0621] occurrences matches {0..1} matches {  -- SCP
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0650] occurrences matches {1..1} matches {  -- MetaDataArtefact
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0001] occurrences matches {0..1} matches {  -- ProcessKind
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SIAMMR4", "SNOMED-CT", "SIAMMR4", "SIAMMR3", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"ENTRY.Process.v4">
+                    description = <"MainPattern to be speialised.
+Each ENTRY documents an aspect of a PROCESS: (order, assess, execute and collectresults)">
+                >
+                ["at0010"] = <
+                    text = <"ProcessHow">
+                    description = <"Slot that sepcifies the Method">
+                >
+                ["at0612"] = <
+                    text = <"ProcessConfoundingFactors">
+                    description = <"Ddefine the influencing factos that impact the What(Topic, Result)">
+                >
+                ["at0614"] = <
+                    text = <"ProcessLocalisationInPatientSystem">
+                    description = <"">
+                >
+                ["at0615"] = <
+                    text = <"ProcessLocalisationInSpace">
+                    description = <"">
+                >
+                ["at0616"] = <
+                    text = <"ProcessLocalisationInTime">
+                    description = <"">
+                >
+                ["at0617"] = <
+                    text = <"ProcessNamedObject">
+                    description = <"">
+                >
+                ["at0618"] = <
+                    text = <"ProcessParticipations">
+                    description = <"">
+                >
+                ["at0619"] = <
+                    text = <"ProcessReasons">
+                    description = <"">
+                >
+                ["at0620"] = <
+                    text = <"ProcessResultValues">
+                    description = <"">
+                >
+                ["at0621"] = <
+                    text = <"SCP">
+                    description = <"">
+                >
+                ["at0650"] = <
+                    text = <"MetaDataArtefact">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"ProcessKind">
+                    description = <"Order
+Assess
+Execute
+ResultCollection
+Inference
+
+Depending on the choice a specific CLUSTER model will be added">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en-gb"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+        ["SIAMMR4"] = <
+            items = <
+                ["at0000"] = <[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4],[SIAMMR4::ENTRY.Process.v4]>
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+            >
+        >
+        ["SIAMMR4"] = <
+            items = <
+            >
+        >
+        ["SIAMMR3"] = <
+            items = <
+            >
+        >
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,170 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NamedObject.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20130926">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NamedObject
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {  -- ObjectUniqueIdentifiers
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {  -- NonLivingObjectCharacteristics
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {  -- LivingObjectCharacteristics
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {  -- ObjectPostalAddress
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {  -- ObjectGeographicPosition
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {  -- ObjectOtherAddress
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {  -- ObjectLocalisationInPatientSystems
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {  -- ObjectComponents
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0004] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NamedObject">
+                    description = <"Codes for the Entity that is part of a process
+Each Entity and its characteristics can be coded.
+Describes 'demographic data about living and non-licving objects:
+	•	ID's
+	•	Names
+	•	Characteristics
+	•	LIfeCycle
+	•	Location
+	•	Particicipations/Roles
+
+
+Aligned with:
+	•	ISO TS 22220: Health Informatics _ identification of Subjects of health care
+	•	CEN/ISO ContSys 12940
+
+">
+                >
+                ["at0002"] = <
+                    text = <"ObjectUniqueIdentifiers">
+                    description = <" CLUSTER that codes for the set of Unique Identifiers and their attributes for this entity
+">
+                >
+                ["at0005"] = <
+                    text = <"NonLivingObjectCharacteristics">
+                    description = <"CLUSTER coding for Non Living Object characteristics
+">
+                >
+                ["at0008"] = <
+                    text = <"LivingObjectCharacteristics">
+                    description = <"CLUSTER coding for characteristics of Living Objects
+">
+                >
+                ["at0011"] = <
+                    text = <"ObjectPostalAddress">
+                    description = <"CLUSTER coding for characteristics of Postal (Physical) Addresses
+
+ISO:22220
+A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. “suburb/town/locality name”, “postal code”, “state/territory/province”, and “country”, forms a complete geographical/physical address.">
+                >
+                ["at0013"] = <
+                    text = <"ObjectGeographicPosition">
+                    description = <"CLUSTER coding for the geographical position:
+- Altitude
+- Longitude
+- Latitude
+
+A geographic coordinate system is a coordinate system that enables every location on the Earth to be specified by a set of numbers or letters. The coordinates are often chosen such that one of the numbers represents vertical position , and two or three of the numbers represent horizontal position . A common choice of coordinates is latitude , longitude and elevation .[1]
+Any position on the earth defined by means of its geographical coordinates, either astronomical or geodetic. 
+http://en.wikipedia.org/wiki/Geographic_coordinate_system
+">
+                >
+                ["at0016"] = <
+                    text = <"ObjectOtherAddress">
+                    description = <"CLUSTER coding for other kinds of addresses:
+- e-mail
+- social media
+- unstructured">
+                >
+                ["at0019"] = <
+                    text = <"ObjectLocalisationInPatientSystems">
+                    description = <"CLUSTER coding for the localisation in the Patient System
+Using an archetype slot and reference to: LocalisationInPatientSystems
+">
+                >
+                ["at0021"] = <
+                    text = <"ObjectComponents">
+                    description = <"A branch of NamedObject as CLUSTER coding for Components of the Entity and that is modeled via this NamedObject.
+Participations allows the coding of the Role, Competences, and a sub-ordinate entity via NamedObjects.
+Via an Archetype Slot: Participations.
+In the case of Non Living Objects components of the entity can be modeled.
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

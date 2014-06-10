@@ -1,0 +1,126 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Reasons.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131008">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This branch of the main SIAMM pattern codes for the reasons WHY this topic is documented.
+A CLUSTER model coding for reasons WHY.
+In order to capture cause effect relationships it is necessary to be able to indicate why events happened, are happening or will happen.
+It codes for references inside and between artifacts and with the outside world:
+	•	- codes
+	•	- queries
+	•	- Artefact Slots
+	•	- external resources
+	•	- ...
+">
+            keywords = <"SIAMM","Why">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Reasons
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- ReasonUnstructured
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0003] occurrences matches {0..1} matches {  -- ReasonUnstructured
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..*} matches {  -- ReasonStructured
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0001] occurrences matches {0..1} matches {  -- ReasonStructured
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {  -- ReasonAsLinkedData
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0011] occurrences matches {0..1} matches {  -- ReasonAsTime
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0013] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Reasons">
+                    description = <"This branch of the main SIAMM pattern codes for the reasons WHY this topic is documented.
+A CLUSTER model coding for reasons WHY.
+In order to capture cause effect relationships it is necessary to be able to indicate why events happened, are happening or will happen.
+It codes for references inside and between artifacts and with the outside world:
+	•	- codes
+	•	- queries
+	•	- Artefact Slots
+	•	- external resources
+	•	- ...
+">
+                >
+                ["at0002"] = <
+                    text = <"ReasonUnstructured">
+                    description = <"Reasons Coded as Free text
+">
+                >
+                ["at0005"] = <
+                    text = <"ReasonStructured">
+                    description = <"Coded as Codedtext">
+                >
+                ["at0008"] = <
+                    text = <"ReasonAsLinkedData">
+                    description = <"Coded as Semantic Link to an instantiated data element in the EHR in the past or to a documented (instantiated) ordered, executed, assessed or terminated procedure.
+
+Via an Archetype Slot to LINKS">
+                >
+                ["at0011"] = <
+                    text = <"ReasonAsTime">
+                    description = <"Coded as a point in time or time period.
+Via an Archetype Slot: LocalisationInTime
+">
+                >
+                ["at0001"] = <
+                    text = <"ReasonStructured">
+                    description = <"Coded as Codedtext">
+                >
+                ["at0003"] = <
+                    text = <"ReasonUnstructured">
+                    description = <"Reasons Coded as Free text
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

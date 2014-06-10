@@ -1,0 +1,94 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOLODBirthDetails.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131003">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Code Borthe details">
+            keywords = <"SIAMM","NamedObject","LivingObject","Demographics","Birth">
+            copyright = <"ERS B.V.">
+            use = <"SIamm Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOLODBirthDetails
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOLODBirthDate
+                value existence matches {0..1} matches {
+                    DATE[at0007] occurrences matches {1..1} matches {  -- DATE
+                        date existence matches {1..1} matches {2013-10-03}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- NOLODDeathFollowUpIndicator
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0008] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {"Yes","No"; "No"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0006] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOLODBirthDetails">
+                    description = <"NOLODBirthDetails">
+                >
+                ["at0002"] = <
+                    text = <"NOLODBirthDate">
+                    description = <"ISO 22220
+Codes for the Date of Birth
+
+">
+                >
+                ["at0005"] = <
+                    text = <"NOLODDeathFollowUpIndicator">
+                    description = <"Iso 22220
+
+Codes for date of birth requires follow-up to obtain a more accurate date.
+Yes/No
+
+
+[PM: Via SCP?]">
+                >
+                ["at0007"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

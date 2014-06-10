@@ -1,0 +1,159 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.LocalisationInSpace.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131007">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Codes for the Localistation in Space of the modeled process
+">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- LocalisationInSpace
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..1} matches {  -- LISReal
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    allow_archetype CLUSTER[at0022] occurrences matches {0..1} matches {  -- LIPRAbsPhysical
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                    CLUSTER[at0025] occurrences matches {0..1} matches {  -- LISRRel
+                        parts existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+                            allow_archetype CLUSTER[at0030] occurrences matches {0..1} matches {  -- LIPRRPhysicalAnchor
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                            ELEMENT[at0037] occurrences matches {0..1} matches {  -- LIPRRPhysicalDelta
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0047] occurrences matches {0..1} matches {  -- LIPRRPhysicalDeltaDescription
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0053] occurrences matches {0..1} matches {  -- CODED_TEXT
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0052] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0026] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0006] occurrences matches {0..0} matches {  -- LISVirtual
+                parts existence matches {0..1} cardinality matches {0..0; unordered; unique} matches {*}
+                structure_type existence matches {1..1} matches {
+                    CS[at0019] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0013] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"LocalisationInSpace">
+                    description = <"Codes for the Localistation in Space of the modeled process
+">
+                >
+                ["at0002"] = <
+                    text = <"LISReal">
+                    description = <"A CLUSTER model that codes for the Real Physical locations in Absolute and Relative sense.
+
+It is making use of the NamedObject module">
+                >
+                ["at0006"] = <
+                    text = <"LISVirtual">
+                    description = <"Coding for virtual place in space.
+
+e.g. Localisation in an organisation, etc.
+
+Placeholder: tbd
+">
+                >
+                ["at0022"] = <
+                    text = <"LIPRAbsPhysical">
+                    description = <"Re-use Named-Object since the location is treated as any other Object. It will allow LocalisationInPatientSystem aswell
+
+Use those parts that deal with addresses.
+">
+                >
+                ["at0025"] = <
+                    text = <"LISRRel">
+                    description = <"Codes for the physical location in a relative sense in relation to an anchor point by re-using the Named-Object Cluster Model 
+">
+                >
+                ["at0030"] = <
+                    text = <"LIPRRPhysicalAnchor">
+                    description = <"Codes for the absolute localisation as anchor point
+Re-use Named-Object since the location is treated as for any other  entity via an Archetype Slot.
+
+Use those parts in the NamedObject that deal with addresses: NamedObject:Postaladdress or NamedObject:GeogragicalPosition.
+">
+                >
+                ["at0037"] = <
+                    text = <"LIPRRPhysicalDelta">
+                    description = <"Codes for the distance in units of measurement
+
+e.g. 5 cm
+">
+                >
+                ["at0047"] = <
+                    text = <"LIPRRPhysicalDeltaDescription">
+                    description = <"Codes for the relative position of the location with respect to the Anchor position
+TermList:
+Left, right, above, under, in front, in the back and all synonyms.
+It will encompass ‘laterality’.">
+                >
+                ["at0053"] = <
+                    text = <"CODED_TEXT">
+                    description = <"Left, right, above, under, in front, in the back and all synonyms.
+It will encompass ‘laterality’.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

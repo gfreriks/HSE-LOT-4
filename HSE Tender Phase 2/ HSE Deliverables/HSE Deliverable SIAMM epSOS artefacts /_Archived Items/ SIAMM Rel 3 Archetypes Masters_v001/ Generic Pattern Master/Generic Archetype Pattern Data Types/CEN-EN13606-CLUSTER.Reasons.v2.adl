@@ -1,0 +1,179 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Reasons.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["name"] = <"GF">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20131008">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This branch of the main SIAMM pattern codes for the reasons WHY this topic is documented.
+A CLUSTER model coding for reasons WHY.
+In order to capture cause effect relationships it is necessary to be able to indicate why events happened, are happening or will happen.
+It codes for references inside and between artifacts and with the outside world:
+	•	- codes
+	•	- queries
+	•	- Artefact Slots
+	•	- external resources
+	•	- ...
+">
+            keywords = <"SIAMM","Why">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Reasons
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- ReasonUnstructured
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0003] occurrences matches {0..1} matches {  -- ReasonUnstructured
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {  -- ReasonAsLinkedData
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0011] occurrences matches {0..1} matches {  -- ReasonAsTime
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            CLUSTER[at0009] occurrences matches {0..*} matches {  -- ReasonsStructured
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0014] occurrences matches {0..1} matches {  -- RSTarget
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0017] occurrences matches {0..1} matches {  -- RSTarget
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                            URI[at0019] occurrences matches {0..1} matches {  -- RSTarget
+                                value existence matches {0..1} matches {/.*/; ""}
+                                scheme existence matches {0..1} matches {/.*/; ""}
+                            }
+                        }
+                    }
+                    ELEMENT[at0023] occurrences matches {0..1} matches {  -- RSSemanticLinkType
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0025] occurrences matches {0..1} matches {  -- RSSemanticLinkType
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0027] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0010] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SIAMMR3", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Reasons">
+                    description = <"This branch of the main SIAMM pattern codes for the reasons WHY this topic is documented.
+A CLUSTER model coding for reasons WHY.
+In order to capture cause effect relationships it is necessary to be able to indicate why events happened, are happening or will happen.
+It codes for references inside and between artifacts and with the outside world:
+	•	- codes
+	•	- queries
+	•	- Artefact Slots
+	•	- external resources
+	•	- ...
+">
+                >
+                ["at0002"] = <
+                    text = <"ReasonUnstructured">
+                    description = <"Reasons Coded as Free text
+">
+                >
+                ["at0008"] = <
+                    text = <"ReasonAsLinkedData">
+                    description = <"Coded as Semantic Link to an instantiated data element in the EHR in the past or to a documented (instantiated) ordered, executed, assessed or terminated procedure.
+
+Via an Archetype Slot to LINKS">
+                >
+                ["at0011"] = <
+                    text = <"ReasonAsTime">
+                    description = <"Coded as a point in time or time period.
+Via an Archetype Slot: LocalisationInTime
+">
+                >
+                ["at0003"] = <
+                    text = <"ReasonUnstructured">
+                    description = <"Reasons Coded as Free text
+">
+                >
+                ["at0009"] = <
+                    text = <"ReasonsStructured">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"RSTarget">
+                    description = <"Document the url to the target">
+                >
+                ["at0017"] = <
+                    text = <"RSTarget">
+                    description = <"">
+                >
+                ["at0019"] = <
+                    text = <"RSTarget">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"RSSemanticLinkType">
+                    description = <"">
+                >
+                ["at0025"] = <
+                    text = <"RSSemanticLinkType">
+                    description = <"13606-3 Termlist LINK_NATURE, Class LINK, attribute nature (Normative)
+(see fine grained list informative)
+
+LINK-A0= is related to
+LINK-B0= is confirmed by
+LINK-C0=is related to the same problem or health issue
+LINK-D0= is related to the same care plan, act or episode
+LINK-E0= is related documentation">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SIAMMR3"] = <
+            items = <
+                ["at0009"] = <[SIAMMR3::ReasonsStructured]>
+                ["at0023"] = <[SIAMMR3::RSSemanticLinkType]>
+                ["at0014"] = <[SIAMMR3::RSTarget]>
+                ["at0002"] = <[SIAMMR3::ReasonUnstructured]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,580 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.LocalisationInTime.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g/freriks@e-recordservices.eu">
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131006">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+">
+            keywords = <"SIAMM","Context:WHERE">
+            copyright = <"ERS B.V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- LocalisationInTime
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..1} matches {  -- LITAbsolute
+                parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                    ELEMENT[at0033] occurrences matches {0..1} matches {  -- LITAbsBegin
+                        value existence matches {0..1} matches {
+                            DATE[at0057] occurrences matches {0..1} matches {  -- LITAbsBegin
+                                date existence matches {1..1} matches {2013-10-06}
+                            }
+                        }
+                    }
+                    ELEMENT[at0036] occurrences matches {0..1} matches {  -- LITAbsBeginAccuracy
+                        value existence matches {0..1} matches {
+                            ORD[at0064] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                symbol existence matches {1..1} matches {
+                                    CODED_TEXT[at0065] occurrences matches {1..1} matches {  -- 
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>0..<1|; 0}
+                            }
+                        }
+                    }
+                    ELEMENT[at0039] occurrences matches {0..1} matches {  -- LITAbsEnd
+                        value existence matches {0..1} matches {
+                            DATE[at0062] occurrences matches {0..1} matches {  -- LITAbsEnd
+                                date existence matches {1..1} matches {2013-10-06}
+                            }
+                        }
+                    }
+                    ELEMENT[at0042] occurrences matches {0..1} matches {  -- LITAbsEndAccuracy
+                        value existence matches {0..1} matches {
+                            ORD[at0008] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                symbol existence matches {1..1} matches {
+                                    CODED_TEXT[at0010] occurrences matches {1..1} matches {  -- 
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>0..<1|; 0}
+                            }
+                        }
+                    }
+                    ELEMENT[at0045] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                        value existence matches {0..1} matches {
+                            DURATION[at0061] occurrences matches {0..1} matches {  -- LITAbsDurationTime
+                                days existence matches {0..1} matches {0; 0}
+                                hours existence matches {0..1} matches {0; 0}
+                                minutes existence matches {0..1} matches {0; 0}
+                                seconds existence matches {0..1} matches {0; 0}
+                                fractional_second existence matches {0..1} matches {*}
+                                sign existence matches {0..1} matches {1; 1}
+                            }
+                        }
+                    }
+                    ELEMENT[at0048] occurrences matches {0..1} matches {  -- LITAbsDurationAccuracy
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0060] occurrences matches {0..1} matches {  -- ISO22220 Accuracy duration
+                                originalText existence matches {0..1} matches {"A","E","U"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0030] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0006] occurrences matches {0..1} matches {  -- LITRelative
+                parts existence matches {0..1} cardinality matches {0..8; unordered; unique} matches {
+                    ELEMENT[at0009] occurrences matches {0..1} matches {  -- LITAnchorPointInTime
+                        value existence matches {0..1} matches {
+                            DATE[at0011] occurrences matches {0..1} matches {  -- LITAnchorPointInTime
+                                date existence matches {1..1} matches {2013-10-06}
+                            }
+                        }
+                    }
+                    ELEMENT[at0012] occurrences matches {0..1} matches {  -- LITRelAnchorPointInTimeAccuracy
+                        value existence matches {0..1} matches {
+                            ORD[at0013] occurrences matches {0..1} matches {  -- ISO22220 Accuracy in tme
+                                symbol existence matches {1..1} matches {
+                                    CODED_TEXT[at0014] occurrences matches {1..1} matches {  -- 
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"AAA","EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>0..<1|; 0}
+                            }
+                        }
+                    }
+                    ELEMENT[at0015] occurrences matches {0..1} matches {  -- LITRelDeltaInTime
+                        value existence matches {0..1} matches {
+                            DURATION[at0003] occurrences matches {0..1} matches {  -- LITRelDeltaInTime
+                                days existence matches {0..1} matches {0; 0}
+                                hours existence matches {0..1} matches {0; 0}
+                                minutes existence matches {0..1} matches {0; 0}
+                                seconds existence matches {0..1} matches {0; 0}
+                                fractional_second existence matches {0..1} matches {*}
+                                sign existence matches {0..1} matches {1; 1}
+                            }
+                        }
+                    }
+                    ELEMENT[at0018] occurrences matches {0..1} matches {  -- LITRelDeltaInTimeAccuracy
+                        value existence matches {0..1} matches {
+                            ORD[at0016] occurrences matches {0..1} matches {  -- ISO2220 Accuracy in time
+                                symbol existence matches {1..1} matches {
+                                    CODED_TEXT[at0017] occurrences matches {1..1} matches {  -- 
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {"EEE","UUU","EAA","AAU","EUU","AUU"; ""}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>0..<1|; 0}
+                            }
+                        }
+                    }
+                    ELEMENT[at0021] occurrences matches {0..1} matches {  -- LITRelDeltaInUnit
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0019] occurrences matches {0..1} matches {  -- LITRelDeltaInUnit
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {0..1} matches {  -- LITRelDeltaInUnitAccuracy
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0020] occurrences matches {0..1} matches {  -- LITRelDeltaInUnitAccuracy
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0027] occurrences matches {0..1} matches {  -- LITRelDeltaInDescription
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0001] occurrences matches {0..1} matches {  -- LITRelDeltaInDescription
+                                codedValue existence matches {1..1} matches {*}
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0004] occurrences matches {0..1} matches {  -- LITAnchorPointByReference
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0029] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0028] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"SIAMMR3", "SNOMED-CT", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"LocalisationInTime">
+                    description = <"This CLUSTER model codes for the Localistation in Time of the modeled activity.
+Both as Absolute point in time or Relative to an Anchor point in time.
+It is possible to code for a single point in time or a period.
+
+=> Which SNOMED time code is appropriate? <=
+
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data/">
+                >
+                ["at0002"] = <
+                    text = <"LITAbsolute">
+                    description = <"=>NO SNOMED CODES for all subordinate items<=
+
+
+Codes for Absolute points in time as Duration and/or Begin adn End times
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0006"] = <
+                    text = <"LITRelative">
+                    description = <"Codes fro Relative Times relative to the Anchor point / Event
+
+=> Which SNOMED code is correct? <=
+
+=>NO SNOMED CODES for all subordinate items<=
+">
+                >
+                ["at0009"] = <
+                    text = <"LITAnchorPointInTime">
+                    description = <"Codes for an Anchor point measured in Absolute Time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0012"] = <
+                    text = <"LITRelAnchorPointInTimeAccuracy">
+                    description = <"See ISO22220">
+                >
+                ["at0015"] = <
+                    text = <"LITRelDeltaInTime">
+                    description = <"Codes for the Delta in Absolute Time
+">
+                >
+                ["at0018"] = <
+                    text = <"LITRelDeltaInTimeAccuracy">
+                    description = <"See ISO2220">
+                >
+                ["at0021"] = <
+                    text = <"LITRelDeltaInUnit">
+                    description = <"Codes for the Delta in other units than Absolute Time.
+E.g. Cycle, month, quarter, etc.
+">
+                >
+                ["at0024"] = <
+                    text = <"LITRelDeltaInUnitAccuracy">
+                    description = <"ISO:22220
+  tbd
+">
+                >
+                ["at0027"] = <
+                    text = <"LITRelDeltaInDescription">
+                    description = <"Codes for the position of the Delta with respect to the Anchor
+A range in time relative to the Point of Reference
+
+e.g.: the week week before Christmas
+
+Defined Modifiers for temporal relationships between ranges:
+before - after
+overlaps - overlapped-by
+during - contains
+equals -  not-equals
+meets - met-by
+starts - started by
+finishes - finished-by
+">
+                >
+                ["at0033"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0036"] = <
+                    text = <"LITAbsBeginAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the BeginTime.
+
+See 22220">
+                >
+                ["at0039"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0042"] = <
+                    text = <"LITAbsEndAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the EndTime.">
+                >
+                ["at0045"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0048"] = <
+                    text = <"LITAbsDurationAccuracy">
+                    description = <"ISO:22220
+Codes for the accuracy of the DurationTime.">
+                >
+                ["at0057"] = <
+                    text = <"LITAbsBegin">
+                    description = <"Codes for the begin point in time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0060"] = <
+                    text = <"ISO22220 Accuracy duration">
+                    description = <"A- Accurate
+E- Estimated
+U- Unknown">
+                >
+                ["at0061"] = <
+                    text = <"LITAbsDurationTime">
+                    description = <"Codes for the duration measured in time.
+The units can be either Date/Time or any other defined unit
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0062"] = <
+                    text = <"LITAbsEnd">
+                    description = <"Codes for the End point in time
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+
+">
+                >
+                ["at0064"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year
+">
+                >
+                ["at0008"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA- Accurate date
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0004"] = <
+                    text = <"LITAnchorPointByReference">
+                    description = <"Links package
+Links will allow reference to:- named objects
+- results of queries
+- instantiated data
+- etc.
+This Anchor point plus the Delta describes the Begin or End
+
+Via an Archetype Slot
+">
+                >
+                ["at0011"] = <
+                    text = <"LITAnchorPointInTime">
+                    description = <"Codes for an Anchor point measured in Absolute Time.
+
+Rules:
+A point in time has Begin=End time
+When Begin=End it is a point in time.
+When Duration= 0 it is a point in time where Begin=End.
+
+A period in time has Begin and End time
+or Begin + Duration
+0r End-Duration
+A pont in time has Begin=End time
+
+Preferred is Begin and End time for storing and retrieving data
+">
+                >
+                ["at0013"] = <
+                    text = <"ISO22220 Accuracy in tme">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0001"] = <
+                    text = <"LITRelDeltaInDescription">
+                    description = <"Codes for the position of the Delta with respect to the Anchor
+A range in time relative to the Point of Reference
+
+e.g.: the week week before Christmas
+
+Defined Modifiers for temporal relationships between ranges:
+before - after
+overlaps - overlapped-by
+during - contains
+equals -  not-equals
+meets - met-by
+starts - started by
+finishes - finished-by
+">
+                >
+                ["at0003"] = <
+                    text = <"LITRelDeltaInTime">
+                    description = <"Codes for the Delta in Absolute Time
+">
+                >
+                ["at0016"] = <
+                    text = <"ISO2220 Accuracy in time">
+                    description = <"AAA
+EEE- Estimated date
+UUU- Unknown date
+EAA- Accurate day and mont, estimated eysr
+AAU- Unknown dat, accurate month and yesr
+EUU- Unknown day and month, estimated year
+AUU- Unknon dat and month, accuate year">
+                >
+                ["at0019"] = <
+                    text = <"LITRelDeltaInUnit">
+                    description = <"Codes for the Delta in other units than Absolute Time.
+E.g. Cycle, month, quarter, etc.
+">
+                >
+                ["at0020"] = <
+                    text = <"LITRelDeltaInUnitAccuracy">
+                    description = <"ISO:22220
+  tbd
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["SIAMMR3"] = <
+            items = <
+                ["at0036"] = <[SIAMMR3::LITAbsBeginAccuracy]>
+                ["at0048"] = <[SIAMMR3::LITAbsDurationAccuracy]>
+                ["at0045"] = <[SIAMMR3::LITAbsDurationTime]>
+                ["at0039"] = <[SIAMMR3::LITAbsEnd]>
+                ["at0042"] = <[SIAMMR3::LITAbsEndAccuracy]>
+                ["at0009"] = <[SIAMMR3::LITAnchorPointInTime]>
+                ["at0012"] = <[SIAMMR3::LITRelAnchorPointInTimeAccuracy]>
+                ["at0027"] = <[SIAMMR3::LITRelDeltaInDescription]>
+                ["at0015"] = <[SIAMMR3::LITRelDeltaInTime]>
+                ["at0018"] = <[SIAMMR3::LITRelDeltaInTimeAccuracy]>
+                ["at0021"] = <[SIAMMR3::LITRelDeltaInUnit]>
+                ["at0024"] = <[SIAMMR3::LITRelDeltaInUnitAccuracy]>
+                ["at0000"] = <[SIAMMR3::LocalisationInTime]>
+                ["at0033"] = <[SIAMMR3::LITAbsBegin]>
+                ["at0006"] = <[SIAMMR3::LITRelative]>
+                ["at0002"] = <[SIAMMR3::LITAbsolute],[SIAMMR3::LocalisationInTime]>
+            >
+        >
+        ["SNOMED-CT"] = <
+            items = <
+                ["at0000"] = <[SNOMED-CT::410670007],[SNOMED-CT::410669006]>
+                ["at0006"] = <[SNOMED-CT::118578006],[SNOMED-CT::272112001]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

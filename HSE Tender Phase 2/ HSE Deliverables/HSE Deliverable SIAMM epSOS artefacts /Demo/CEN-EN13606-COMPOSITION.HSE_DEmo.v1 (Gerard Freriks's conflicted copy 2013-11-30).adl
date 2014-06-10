@@ -1,0 +1,174 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.HSE_DEmo.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131127">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- 
+        content existence matches {0..1} cardinality matches {0..3; unordered; unique} matches {
+            SECTION[at0001] occurrences matches {0..*} matches {  -- 
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    SECTION[at0002] occurrences matches {0..1} matches {  -- 
+                        members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ENTRY[at0003] occurrences matches {0..*} matches {  -- 
+                                items existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+                                    ELEMENT[at0006] occurrences matches {0..*} matches {  -- 
+                                        value existence matches {0..1} matches {
+                                            TS[at0007] occurrences matches {0..1} matches {  -- 
+                                                time existence matches {1..1} matches {????-??-??T??:??:??}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            ENTRY[at0008] occurrences matches {0..1} matches {  -- 
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0004] occurrences matches {0..1} matches {  -- 
+                members existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ENTRY[at0010] occurrences matches {0..*} matches {  -- 
+                        include
+                            archetype_id/value matches {/.Diagnosis/}
+                            archetype_id/value matches {/.Complaints/}
+                            archetype_id/value matches {/.Findings/}
+                    }
+                }
+            }
+            ENTRY[at0005] occurrences matches {0..1} matches {  -- 
+                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            ENTRY[at0009] occurrences matches {0..1} matches {  -- 
+                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0011] occurrences matches {0..*} matches {  -- 
+                        value existence matches {0..1} matches {
+                            CODED_TEXT[at0012] occurrences matches {0..1} matches {  -- 
+                                codedValue existence matches {1..1} matches {
+                                    CD[at0013] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"123"}
+                                        codingSchemeName existence matches {0} matches {"LOCAL"}
+                                        displayName existence matches {0} matches {"Comments codes text"}
+                                    }
+                                }
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CONTSYS", "epSOS", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"HSE_DEmo">
+                    description = <"HSE_DEmo">
+                >
+                ["at0001"] = <
+                    text = <"WHERE">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"SECTION">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Time">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"ProblemList">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"Author">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"Location">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"ENTRY">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"Time">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"TS">
+                    description = <"Time of the Report">
+                >
+                ["at0009"] = <
+                    text = <"Comments">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"Comment">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"CODED_TEXT">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"CommentCode 1">
+                    description = <"A default created CD">
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0012"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["CONTSYS"] = <
+            items = <
+                ["at0010"] = <[CONTSYS::HealthProblem]>
+                ["at0005"] = <[CONTSYS::HealthcareProvider]>
+                ["at0004"] = <[CONTSYS::HealthProblemList]>
+            >
+        >
+        ["epSOS"] = <
+            items = <
+                ["at0005"] = <[epSOS::12.1.2.12.12.01]>
+            >
+        >
+    >
+    constraint_binding = <
+    >

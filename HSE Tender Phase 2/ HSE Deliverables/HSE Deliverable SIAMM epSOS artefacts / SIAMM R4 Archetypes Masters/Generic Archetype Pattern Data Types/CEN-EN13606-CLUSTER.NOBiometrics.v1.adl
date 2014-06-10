@@ -1,0 +1,198 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.NOBiometrics.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["email"] = <"g.freriks@e-recordservices.eu">
+        ["name"] = <"Gerard Freriks">
+        ["organisation"] = <"ERS B.V.">
+        ["date"] = <"20140224">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"Code for Biometric Data 22220:2008">
+            keywords = <"SIAMM">
+            copyright = <"ERS B.V.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- NOBiometrics
+        parts existence matches {0..1} cardinality matches {0..9; unordered; unique} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- NOBBiometricType
+                value existence matches {0..1} matches {*}
+            }
+            CLUSTER[at0005] occurrences matches {0..1} matches {  -- NOBBiometricDataTemplate
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+                structure_type existence matches {1..1} matches {
+                    CS[at0033] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            ELEMENT[at0009] occurrences matches {0..1} matches {  -- NOBBiometricEnrolmentQuality
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- NOBLocationBiometricIdentifier
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0019] occurrences matches {0..1} matches {  -- NOBBiometricSchema
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0022] occurrences matches {0..1} matches {  -- NONBiometricDeviceIdentification
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0025] occurrences matches {0..1} matches {  -- NOBBiometricVersion
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0028] occurrences matches {0..1} matches {  -- NOBBiometricDateOfCreation
+                value existence matches {0..1} matches {*}
+            }
+            ELEMENT[at0035] occurrences matches {0..1} matches {  -- NOBLocationBiometricId
+                value existence matches {0..1} matches {*}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0036] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"NOBiometrics">
+                    description = <"NOBiometrics
+
+Identification of the type of biometric identifier described by this set of data.">
+                >
+                ["at0002"] = <
+                    text = <"NOBBiometricType">
+                    description = <"Definition
+Source standards Data type
+Data domain
+Identification of the type of biometric identifier described by this set of data. Not applicable.
+Coded text.
+Code Description
+Guide for use
+13.3 Biometric data template
+Definition Synonym
+Source standards Guide for use
+The format for a BIR that is fully defined by a CBEFF patron. CBEFF Patron Format.
+ISO/IEC 19785-2
+A patron is a recognised standards development organization (which can be a standards body, working group or industry consortium) that has been accepted for registration with the biometric registration authority in accordance with ISO/IEC 19785-2 as a CBEFF patron, and that can therefore specify one or more CBEFF patron formats.
+68
+PROOF/ÉPREUVE © ISO 2008 – All rights reserved
+01 Finger print – rolled 02 Finger print – flat 03 Facial features
+04 Voice
+05 Iris
+06 Retina
+07 Hand geometry
+08 Signature dynamics
+09 Keystroke dynamics
+10 Lip movement
+11 Thermal face image
+12 Thermal hand image
+13 Gait
+14 Blood type (including rh factor) 15 DNA
+99 Unknown
+Not applicable.
+">
+                >
+                ["at0005"] = <
+                    text = <"NOBBiometricDataTemplate">
+                    description = <"Definition Synonym
+Source standards Guide for use
+The format for a BIR that is fully defined by a CBEFF patron. CBEFF Patron Format.
+ISO/IEC 19785-2
+A patron is a recognised standards development organization (which can be a standards body, working group or industry consortium) that has been accepted for registration with the biometric registration authority in accordance with ISO/IEC 19785-2 as a CBEFF patron, and that can therefore specify one or more CBEFF patron formats.">
+                >
+                ["at0009"] = <
+                    text = <"NOBBiometricEnrolmentQuality">
+                    description = <"Definition Synonym
+Source standards
+Data type Data domain Guide for use
+A numeric indicator of the quality of the biometric object. CBEFF_BDB_quality.
+ISO/IEC 19784-1
+ISO/IEC 19785-1
+Number.
+Number between 0 and 100 (inclusive).
+These data indicate the level to which biometric data are likely to suit a given application. For the purpose of quality patient identification, it is recommended that only “adequate” and “excellent” values (range 51 to 100) be accepted.
+Each biometric format is different and will meet different quality indicators in different ways. For this reason it is normal that many indicators will not be able to score in some of the areas rated in the quality indicator. Therefore, a score of less than 100 does not indicate that the identifier is poor.">
+                >
+                ["at0016"] = <
+                    text = <"NOBLocationBiometricIdentifier">
+                    description = <"Definition
+Synonym
+Source standards Data type
+Data domain Guide for use
+Where the biometric could represent a number of alternative options, the specific location should be identified. If the biometric represents more than one, multiple locations should be indicated.
+Biometric subtype.
+ISO/IEC 19785-1
+Code.
+Refer to ISO/IEC 19785-1.
+This field can be used to indicate finger locations such as those indicated in Figure 10.">
+                >
+                ["at0019"] = <
+                    text = <"NOBBiometricSchema">
+                    description = <"Definition
+Source standards Data type
+An identifier assigned to a biometric product that unambiguously identifies the biometric product within the biometric products that have been assigned an identifier by a biometric product owner.
+ISO/IEC 19785-1
+Refer to ISO/IEC 19785-1">
+                >
+                ["at0022"] = <
+                    text = <"NONBiometricDeviceIdentification">
+                    description = <"Definition
+Synonym
+Source standards
+The transformation of a BIR in an initial patron format into a BIR in a target patron format.
+Biometric transformation. ISO/IEC 19785-1">
+                >
+                ["at0025"] = <
+                    text = <"NOBBiometricVersion">
+                    description = <"">
+                >
+                ["at0028"] = <
+                    text = <"NOBBiometricDateOfCreation">
+                    description = <"Definition Synonym
+Source standards Guide for use
+The date upon which the biometric identifier was created. CBEFF_BDB_creation_date
+ISO/IEC 19785-1
+It is essential that the date be presented in a manner that will be understood in the regional area in which it is used. This requirement is controlled by the date of birth presentation style field.">
+                >
+                ["at0035"] = <
+                    text = <"NOBLocationBiometricId">
+                    description = <"Definition
+Synonym
+Source standards Data type
+Data domain Guide for use
+Where the biometric could represent a number of alternative options, the specific location should be identified. If the biometric represents more than one, multiple locations should be indicated.
+Biometric subtype.
+ISO/IEC 19785-1
+Code.
+Refer to ISO/IEC 19785-1.
+This field can be used to indicate finger locations such as those indicated in Figure 10.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

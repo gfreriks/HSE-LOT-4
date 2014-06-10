@@ -1,0 +1,346 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.SemanticOrdinal.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["organisation"] = <"ERS B.V.">
+        ["name"] = <"GF">
+        ["date"] = <"20131009">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+            purpose = <"A Cluster Model that allows the definition of a Semantic Ordinal.
+Not only a Ranking number, a Label and a description but also:
+- number of items in the list
+- attributes dealing with inclusion and exclusion criteria
+- attached numeric/coded values
+- attributes dealing with the presentation
+
+E.g. A scale, a list of questions, etc.
+">
+            keywords = <"SIAMM">
+            copyright = <"ERS B>V.">
+            use = <"SIAMM Generic Pattern">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- SemanticOrdinal
+        parts existence matches {0..1} cardinality matches {0..6; unordered} matches {
+            allow_archetype CLUSTER[at0009] occurrences matches {0..1} matches {  -- SOReferenced
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0035] occurrences matches {0..1} matches {  -- SOResultValues
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            ELEMENT[at0003] occurrences matches {1..1} matches {  -- SOName
+                value existence matches {0..1} matches {
+                    CODED_TEXT[at0037] occurrences matches {1..1} matches {  -- SOName
+                        codedValue existence matches {1..1} matches {*}
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {1..1} matches {  -- SONumberOfItems
+                value existence matches {0..1} matches {
+                    INT[at0040] occurrences matches {1..1} matches {  -- SONumberOfItems
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0026] occurrences matches {1..1} matches {  -- SOResultRules
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0041] occurrences matches {1..1} matches {  -- SOResultRules
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0071] occurrences matches {1..1} matches {  -- SOGroup
+                parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                    CLUSTER[at0077] occurrences matches {1..1} matches {  -- SOItemGroupItem1
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0078] occurrences matches {1..1} matches {  -- SOIGRank
+                                value existence matches {0..1} matches {
+                                    INT[at0079] occurrences matches {1..1} matches {  -- SOIGRank
+                                        value existence matches {1..1} matches {1}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0080] occurrences matches {1..1} matches {  -- SOGISortingRank
+                                value existence matches {0..1} matches {
+                                    INT[at0081] occurrences matches {1..1} matches {  -- SOGISortingRank
+                                        value existence matches {1..1} matches {1}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0082] occurrences matches {1..1} matches {  -- SOIGLabel
+                                value existence matches {0..1} matches {
+                                    CODED_TEXT[at0083] occurrences matches {0..1} matches {  -- SmokingStatus
+                                        codedValue existence matches {1..1} matches {*}
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0084] occurrences matches {1..1} matches {  -- SOIGDescription
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0085] occurrences matches {1..1} matches {  -- SOIGDescription
+                                        originalText existence matches {0..1} matches {"NoSmoker","CurrentSmoker","SmokedPreviously","-"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0086] occurrences matches {0..1} matches {  -- SOIGSymbol
+                                value existence matches {0..1} matches {
+                                    URI[at0087] occurrences matches {0..1} matches {  -- SOIGSymbol
+                                        value existence matches {0..1} matches {/.*/; ""}
+                                        scheme existence matches {0..1} matches {/.*/; ""}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0088] occurrences matches {0..1} matches {  -- SOIGInclusionCriteria
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0089] occurrences matches {0..1} matches {  -- SOIGInclusionCriteria
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0090] occurrences matches {0..1} matches {  -- SOIGExclusionCriteria
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0091] occurrences matches {0..1} matches {  -- SOIGExclusionCriteria
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0092] occurrences matches {0..1} matches {  -- SOIGAssociatedValue
+                                value existence matches {0..1} matches {
+                                    REAL[at0005] occurrences matches {0..1} matches {  -- SOIGAssociatedValue
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0010] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0004] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0002] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", ...>
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"SemanticOrdinal">
+                    description = <"SemanticOrdinal.
+The result is captured in the ResultValues sub-pattern from where this pattern is reached.
+
+Or when used outside the ResultValues the ResultValues SLOT could be used.">
+                >
+                ["at0009"] = <
+                    text = <"SOReferenced">
+                    description = <"Codes for a Semantic Ordinal that is not coded inline but referenced in an external resource (by pointer/code or query)
+It uses an Archetype Slot to LINKS
+">
+                >
+                ["at0035"] = <
+                    text = <"SOResultValues">
+                    description = <"Codes the result in case this pattern is NOT reached from ResultValues itself.
+
+In case this Semantic Ordinal is reached from INSIDE ResultValues, then ResultValues holds the result;">
+                >
+                ["at0003"] = <
+                    text = <"SOName">
+                    description = <"Codes for the Name of the Semantic Ordinal List
+E.g.‘SystolicBloodPressureScale’
+">
+                >
+                ["at0008"] = <
+                    text = <"SONumberOfItems">
+                    description = <"Codes for the Number of Items In the list with ordinals. 
+E.g. ‘5’ When the classification has only 5 classes.">
+                >
+                ["at0026"] = <
+                    text = <"SOResultRules">
+                    description = <"Codes for the Rules that define what is allowed when a selection is made from the list.
+Defined rules that allow to specify how many of the list can be selected and what the interdependencies are:
+- select 3 out of all in the list
+- when #1 is selected #n can not be selected, etc.
+The Rules are stored in a TEXT.
+">
+                >
+                ["at0037"] = <
+                    text = <"SOName">
+                    description = <"Codes for the Name of the Semantic Ordinal List
+E.g.‘SystolicBloodPressureScale’
+">
+                >
+                ["at0040"] = <
+                    text = <"SONumberOfItems">
+                    description = <"Codes for the Number of Items In the list with ordinals. 
+E.g. ‘5’ When the classification has only 5 classes.">
+                >
+                ["at0041"] = <
+                    text = <"SOResultRules">
+                    description = <"Codes for the Rules that define what is allowed when a selection is made from the list.
+Defined rules that allow to specify how many of the list can be selected and what the interdependencies are:
+- select 3 out of all in the list
+- when #1 is selected #n can not be selected, etc.
+The Rules are stored in a TEXT.
+">
+                >
+                ["at0071"] = <
+                    text = <"SOGroup">
+                    description = <"Bundels all Items in th e grouo">
+                >
+                ["at0077"] = <
+                    text = <"SOItemGroupItem1">
+                    description = <"Codes for each class/item/line in the Semantic Ordinal
+">
+                >
+                ["at0078"] = <
+                    text = <"SOIGRank">
+                    description = <"The rank in the original list
+(1,2,3,4, ..)">
+                >
+                ["at0079"] = <
+                    text = <"SOIGRank">
+                    description = <"The rank in the original list
+(1,2,3,4, ..)">
+                >
+                ["at0080"] = <
+                    text = <"SOGISortingRank">
+                    description = <"Codes for the sorting order/index of this item in the semantic ordinal class
+E.g. ‘1’  when it is presented first
+">
+                >
+                ["at0081"] = <
+                    text = <"SOGISortingRank">
+                    description = <"Codes for the sorting order/index of this item in the semantic ordinal class
+E.g. ‘1’  when it is presented first
+">
+                >
+                ["at0082"] = <
+                    text = <"SOIGLabel">
+                    description = <"Codes for the label attached to this item
+E.g. ‘Normal’
+">
+                >
+                ["at0083"] = <
+                    text = <"SmokingStatus">
+                    description = <"Codes for the label attached to this item
+E.g. ‘Normal’
+">
+                >
+                ["at0084"] = <
+                    text = <"SOIGDescription">
+                    description = <"Codes for the Description or additional information for this Item
+">
+                >
+                ["at0085"] = <
+                    text = <"SOIGDescription">
+                    description = <"Codes for the Description or additional information for this Item.
+">
+                >
+                ["at0086"] = <
+                    text = <"SOIGSymbol">
+                    description = <"Codes for the Graphical presentation (symbol) for this Item.
+E.g. ‘ Normal ’ or an icon, etc.
+">
+                >
+                ["at0087"] = <
+                    text = <"SOIGSymbol">
+                    description = <"Codes for the Graphical presentation (symbol) for this Item.
+E.g. ‘ Normal ’ or an icon, etc.
+">
+                >
+                ["at0088"] = <
+                    text = <"SOIGInclusionCriteria">
+                    description = <"Codes for the Inclusion Criteria
+
+ResultNumericNumberAllowedRange.
+E.g. ‘Result is > 110 and < 130 in the case of Systolic Blood pressure 
+
+Format TBD
+">
+                >
+                ["at0089"] = <
+                    text = <"SOIGInclusionCriteria">
+                    description = <"Codes for the Inclusion Criteria
+
+ResultNumericNumberAllowedRange.
+E.g. ‘Result is > 110 and < 130 in the case of Systolic Blood pressure 
+
+Format TBD
+">
+                >
+                ["at0090"] = <
+                    text = <"SOIGExclusionCriteria">
+                    description = <"Codes for the Exclusion criteria
+Format TBD (GDL?)
+">
+                >
+                ["at0091"] = <
+                    text = <"SOIGExclusionCriteria">
+                    description = <"Codes for the Exclusion criteria
+Format TBD (GDL?)
+">
+                >
+                ["at0092"] = <
+                    text = <"SOIGAssociatedValue">
+                    description = <"Codes for a result attachted to this item in the Ordinal List used for processing using the SOResultsRules and ithe algorithm defined.
+This result can be used for display and calculations
+It codes for the numeric or code attached to this Item.
+
+
+E.g. 1, 2, ...
+E.g.in the case of the APGAR score: the result of the observation.">
+                >
+                ["at0005"] = <
+                    text = <"SOIGAssociatedValue">
+                    description = <"Codes for a result attachted to this item in the Ordinal List used for processing using the SOResultsRules and ithe algorithm defined.
+This result can be used for display and calculations
+It codes for the numeric or code attached to this Item.
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+                ["at0077"] = <[DCM::CEN-EN13606-CLUSTER.SOItemGroup.v1]>
+            >
+        >
+    >
+    constraint_binding = <
+    >
